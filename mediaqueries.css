@@ -1,103 +1,251 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
+/* ═══════════════════════════════════════════
+   MEDIA QUERIES — Responsive Design
+   Shahkar Ahmad Portfolio
+   ═══════════════════════════════════════════ */
 
-@media screen and (max-width: 1200px) {
-  #desktop-nav {
-    display: none;
-  }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
-  }
+/* ── LARGE DESKTOP (1400px+) ── */
+@media (min-width: 1400px) {
   section {
-    margin: 0 5%;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
-  .about-containers {
-    margin-top: 0;
+  #experience, #projects, #contact {
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
+/* ── TABLET (max 1200px) ── */
+@media (max-width: 1200px) {
+  section {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
+
+  #experience, #projects, #contact {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    gap: 3rem;
   }
-  article {
-    font-size: 1rem;
+
+  .hero-name {
+    font-size: 3.5rem;
   }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
+
+  #about {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
+}
+
+/* ── TABLET / SMALL LAPTOP (max 900px) ── */
+@media (max-width: 900px) {
+  /* Switch navigation */
+  #desktop-nav { display: none; }
+  #hamburger-nav { display: flex; }
+
+  section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-height: auto;
+    padding-top: calc(70px + 3rem);
+    padding-bottom: 3rem;
   }
-  .contact-info-container {
-    margin: 0;
+
+  #experience, #projects, #contact {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
+
+  /* Hero */
+  #profile {
     flex-direction: column;
-    gap: 0.5rem;
     text-align: center;
-  }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
+    gap: 2.5rem;
+    padding-top: calc(70px + 2rem);
+    min-height: 100vh;
+    align-items: center;
     justify-content: center;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
+
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .hero-name { font-size: 3rem; }
+
+  .hero-description {
+    text-align: center;
+    max-width: 480px;
+  }
+
+  .hero-role {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .section__pic-container {
+    height: 260px;
+    width: 260px;
+  }
+
+  /* About */
+  #about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: calc(70px + 3rem);
+  }
+
+  #about .section-header {
+    text-align: center !important;
+  }
+
+  #about .divider {
+    margin: 1rem auto !important;
+  }
+
+  .about-pic-container {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /* Skills */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  /* Contact */
+  .contact-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-card {
+    min-width: unset;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Arrow */
+  .arrow {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-links {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ── MOBILE (max 600px) ── */
+@media (max-width: 600px) {
+  section {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #experience, #projects, #contact {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #about {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-name { font-size: 2.4rem; }
+
+  .section__pic-container {
+    height: 220px;
+    width: 220px;
+  }
+
+  .hero-role {
+    gap: 0.4rem;
+  }
+
+  .hero-role-tag {
+    font-size: 0.78rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .title {
     font-size: 2rem;
   }
-  .text-container {
-    text-align: justify;
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .project-btn {
+    width: 100%;
+  }
+
+  .skills-grid {
+    gap: 1.25rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ── VERY SMALL MOBILE (max 400px) ── */
+@media (max-width: 400px) {
+  .hero-name { font-size: 2rem; }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-card-text h3,
+  .contact-card-text p {
+    text-align: center;
   }
 }

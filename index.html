@@ -5,25 +5,28 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <meta name="description" content="Portfolio of Shahkar Ahmad, Python and Machine Learning Expert." />
+  <title>Shahkar Ahmad — Python & ML Engineer</title>
+  <meta name="description" content="Portfolio of Shahkar Ahmad — CS student at University of Peshawar specializing in Python, Machine Learning, Generative AI, and Agentic Systems." />
+  <meta name="keywords" content="Shahkar Ahmad, Python, Machine Learning, Generative AI, LLM, RAG, Portfolio" />
+  <meta name="author" content="Shahkar Ahmad" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
   <header>
     <nav id="desktop-nav">
       <div class="logo">Shahkar Ahmad</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+
     <nav id="hamburger-nav">
       <div class="logo">Shahkar Ahmad</div>
       <div class="hamburger-menu">
@@ -34,416 +37,548 @@
         </div>
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
   </header>
+
   <main>
+
+    <!-- ═══════════════ HERO SECTION ═══════════════ -->
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/IMG-20240410-WA0023_Nero AI_Face_x2.jpeg" alt="Shahkar profile picture" />
+      <div class="hero-image-wrapper">
+        <div class="hero-image-ring"></div>
+        <div class="section__pic-container">
+          <img src="./assets/IMG-20240410-WA0023_Nero AI_Face_x2.jpeg" alt="Shahkar Ahmad — Python & ML Engineer" />
+        </div>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Shahkar Ahmad</h1>
-        <p class="section__text__p2">Python and Machine Learning Expert</p>
+
+      <div class="hero-content">
+        <span class="hero-greeting">👋 Hello, I'm</span>
+        <h1 class="hero-name">Shahkar<br />Ahmad</h1>
+        <div class="hero-role">
+          <span class="hero-role-tag">Python</span>
+          <span class="hero-role-tag">Machine Learning</span>
+          <span class="hero-role-tag">Generative AI</span>
+        </div>
+        <p class="hero-description">
+          CS student at University of Peshawar passionate about building intelligent systems — from LLM-powered agents to data-driven ML applications.
+        </p>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/MyResume.docx')">
-            Download CV
+          <button class="btn btn-primary" id="hero-cv-btn" onclick="window.open('./assets/MyResume.docx')">
+            ↓ Download CV
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+          <button class="btn btn-secondary" id="hero-contact-btn" onclick="location.href='#contact'">
+            Contact Me
           </button>
         </div>
         <div id="socials-container">
-          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-            onclick="location.href='https://www.linkedin.com/in/shahkar-ahmad-730b41279/'" />
-          <img src="./assets/github.png" alt="My Github profile" class="icon"
-            onclick="location.href='https://github.com/Shah-123'" />
+          <div class="social-btn" id="linkedin-btn" onclick="location.href='https://www.linkedin.com/in/shahkar-ahmad-730b41279/'" title="LinkedIn">
+            <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" />
+          </div>
+          <div class="social-btn" id="github-btn" onclick="location.href='https://github.com/Shah-123'" title="GitHub">
+            <img src="./assets/github.png" alt="GitHub" class="icon" />
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════════ ABOUT SECTION ═══════════════ -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img src="./assets/IMG-20240410-WA0023_Nero AI_Face_x2.jpeg" alt="Profile picture" class="about-pic" />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-              <h3>Experience</h3>
-              <p>1+ Year <br />Python, ML & Generative AI</p>
-            </div>
-            <div class="details-container">
-              <img src="./assets/education.png" alt="Education icon" class="icon" />
-              <h3>Education</h3>
-              <p>Current Student<br />B.Sc. Computer Science</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Hello I'm Shahkar Ahmad, a passionate Computer Science student currently pursuing my Bachelor's degree at
-              the University of Peshawar. With a keen interest in the dynamic fields of Machine Learning and Python, I am
-              eager to expand my knowledge and apply it to real-world problems. My journey so far has been filled with
-              curiosity and a relentless pursuit of understanding the intricacies of artificial intelligence and its
-              potential to revolutionize various aspects of our lives. As I continue my academic journey, I look forward
-              to exploring new opportunities and challenges that will allow me to contribute meaningfully to the tech
-              community.
-            </p>
-          </div>
+      <div class="about-img-wrapper reveal">
+        <div class="about-img-bg"></div>
+        <div class="about-pic-container">
+          <img src="./assets/IMG-20240410-WA0023_Nero AI_Face_x2.jpeg" alt="Shahkar Ahmad" class="about-pic" />
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+
+      <div class="reveal">
+        <div class="section-header" style="text-align:left;">
+          <span class="section__text__p1" style="text-align:left;">Get To Know More</span>
+          <h2 class="title" style="text-align:left;">About Me</h2>
+          <div class="divider" style="margin:1rem 0;"></div>
+        </div>
+
+        <div class="about-cards">
+          <div class="about-card">
+            <span class="about-card-icon">🚀</span>
+            <h3>Experience</h3>
+            <p>1+ Year<br />Python, ML & Gen AI</p>
+          </div>
+          <div class="about-card">
+            <span class="about-card-icon">🎓</span>
+            <h3>Education</h3>
+            <p>Current Student<br />B.Sc. Computer Science</p>
+          </div>
+          <div class="about-card">
+            <span class="about-card-icon">🏫</span>
+            <h3>University</h3>
+            <p>University of<br />Peshawar</p>
+          </div>
+          <div class="about-card">
+            <span class="about-card-icon">📌</span>
+            <h3>Focus</h3>
+            <p>Agentic AI &<br />LLM Systems</p>
+          </div>
+        </div>
+
+        <p class="about-text">
+          I'm Shahkar Ahmad, a passionate Computer Science student specializing in Machine Learning and Generative AI. 
+          I love building real-world AI pipelines — from RAG systems and multi-agent architectures to interactive data 
+          applications. My journey has been driven by curiosity and a relentless pursuit of understanding how intelligent 
+          systems can solve meaningful problems. I'm always looking for new challenges that push my skills further.
+        </p>
+      </div>
     </section>
-    <br><br><br>
+
+    <!-- ═══════════════ SKILLS / EXPERIENCE SECTION ═══════════════ -->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Python Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>pandas</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>numpy</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>matplotlib</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Data analytics</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+      <div class="section-header reveal">
+        <span class="section__text__p1">What I Work With</span>
+        <h2 class="title">Technical Skills</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🐍</div>
+            <h3 class="skill-category-title">Python Development</h3>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Machine Learning</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>sklearn</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>tensorflow</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Pandas &amp; NumPy</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="90"></div></div>
             </div>
+            <span class="skill-level">Expert</span>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Generative AI</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>LLMs / RAG</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Agentic AI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>LangChain</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Streamlit / FastAPI</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Matplotlib / Seaborn</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="85"></div></div>
             </div>
+            <span class="skill-level">Expert</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Data Analytics</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="75"></div></div>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">FastAPI / Streamlit</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="80"></div></div>
+            </div>
+            <span class="skill-level">Expert</span>
           </div>
         </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🤖</div>
+            <h3 class="skill-category-title">Machine Learning</h3>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Scikit-Learn</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="78"></div></div>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">TensorFlow / Keras</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="70"></div></div>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Deep Learning</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="68"></div></div>
+            </div>
+            <span class="skill-level">Intermediate</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Power BI</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="72"></div></div>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">✨</div>
+            <h3 class="skill-category-title">Generative AI</h3>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">LLMs &amp; RAG Systems</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="88"></div></div>
+            </div>
+            <span class="skill-level">Expert</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">LangChain / LangGraph</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="85"></div></div>
+            </div>
+            <span class="skill-level">Expert</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Agentic AI Systems</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="80"></div></div>
+            </div>
+            <span class="skill-level">Advanced</span>
+          </div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-name">Prompt Engineering</div>
+              <div class="skill-bar-wrapper"><div class="skill-bar" data-width="90"></div></div>
+            </div>
+            <span class="skill-level">Expert</span>
+          </div>
+        </div>
+
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+      <img src="./assets/arrow.png" alt="Scroll to projects" class="icon arrow" onclick="location.href='#projects'" />
     </section>
+
+    <!-- ═══════════════ PROJECTS SECTION ═══════════════ -->
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/multi_agent_bg_1775804293319.png"
-                alt="Multi-Agent Blog Generator" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Multi-Agent Blog Gen (FYP)</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/Multi_Agent_Blog_generator_FYP'">
-                Github
-              </button>
-            </div>
+      <div class="section-header reveal">
+        <span class="section__text__p1">Browse My Recent Work</span>
+        <h2 class="title">Projects</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- FYP - Featured -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/multi_agent_bg_1775804293319.png" alt="Multi-Agent Blog Generator" class="project-img" />
+            <div class="project-overlay"></div>
+            <span class="project-badge">FYP ⭐</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/live_agent_bg_1775804274771.png"
-                alt="Live-Agent-Hub" class="project-img" />
+          <div class="project-content">
+            <h3 class="project-title">Multi-Agent Blog Generator</h3>
+            <p class="project-desc">Final Year Project — An intelligent multi-agent system that autonomously generates comprehensive, research-backed blog posts using LLMs and LangGraph.</p>
+            <div class="project-tags">
+              <span class="project-tag">LangGraph</span>
+              <span class="project-tag">Multi-Agent</span>
+              <span class="project-tag">LLM</span>
+              <span class="project-tag">RAG</span>
             </div>
-            <h2 class="experience-sub-title project-title">Live-Agent-Hub</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/Live-Agent-Hub-'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/corrective_rag_bg_1775804209725.png"
-                alt="Corrective-RAG" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Corrective-RAG</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/Corrective-RAG-'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/chess_agent_bg_1775804192303.png"
-                alt="ChessAgent" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">ChessAgent</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/chessAgent'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/yt_summarizer_bg_1775804307459.png"
-                alt="YouTube Video Summarizer" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">YT Video Summarizer</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/YouTubeVideoSummarizer'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="https://th.bing.com/th/id/OIP.Zpmbw-h5O9EZchRvLiXIUQHaEK?w=800&h=450&rs=1&pid=ImgDetMain"
-                alt="ODI Cricket Runs Predictor" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">ODI Cricket Runs Predictor</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/datascience/tree/main/Cricket_APP'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://datascience-yfalmubuxo9fmqyzrnkfly.streamlit.app/'">
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBKXAFab5xR1voWJ8d2aHd9AXrBVE-JGg-g&s"
-                alt="Heart Failure Prediction" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Heart Failure Prediction</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/datascience'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://datascience-pvtjmcl3qbqlhryriupybu.streamlit.app/'">
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="https://th.bing.com/th?id=OIP.kFNEzzGa5lvZ-L-KyPJCSAHaFl&w=287&h=217&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"
-                alt="House Price Prediction" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">House Price Prediction</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/datascience/tree/main/Houses_price%20prediction'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href=''">
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="https://t3.ftcdn.net/jpg/05/41/67/80/360_F_541678033_4hV4tUbYkUfN9y2vpoNob4Gx2whxFjBn.jpg"
-                alt="Netflix EDA" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Netflix EDA</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/datascience'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://datascience-yfalmubuxo9fmqyzrnkfly.streamlit.app/'">
-              Live Demo
-            </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="https://th.bing.com/th/id/OIP.iVWAoUucb4mUK1-vmcT35gHaE8?w=241&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
-                alt="Student Performance" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Student Performance</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/datascience/tree/main/Student_preformance'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href=''">
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="assets/download.jpg" alt="Google Playstore Apps EDA" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Google Playstore Apps EDA</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/playstore_data_analysis'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-              onclick="location.href=''">
-              Live Demo
-            </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="assets/powerBI.png" alt="Power BI Projects" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Power BI Projects</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/PowerBI_projects'">
-                Github
-              </button>
-              <button class="btn btn-color-2 project-btn"
-              onclick="location.href=''">
-              Live Demo
-            </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/dl_mini_bg_1775804229050.png"
-                alt="DL Mini Projects" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">DL Mini Projects</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/DL-mini-projects'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/friendship_score_bg_1775804245673.png"
-                alt="Friendship Score Calculator" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Friendship Score Calculator</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/FirendShipScoreCalculator'">
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/leetcode_bg_1775804260535.png"
-                alt="Leetcode Questions" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Leetcode Questions</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Shah-123/leetcodequestions'">
-                Github
-              </button>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/Multi_Agent_Blog_generator_FYP'">GitHub →</button>
             </div>
           </div>
         </div>
+
+        <!-- Live Agent Hub -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/live_agent_bg_1775804274771.png" alt="Live-Agent-Hub" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Live-Agent-Hub</h3>
+            <p class="project-desc">Real-time AI agent platform enabling AI personas to interact with live Twitch streams — simulating chat, reactions, and streamer replies.</p>
+            <div class="project-tags">
+              <span class="project-tag">Agentic AI</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Real-time</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/Live-Agent-Hub-'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corrective RAG -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/corrective_rag_bg_1775804209725.png" alt="Corrective-RAG" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Corrective-RAG</h3>
+            <p class="project-desc">Advanced RAG pipeline with self-correction mechanisms — evaluates retrieved context quality and dynamically re-queries for better responses.</p>
+            <div class="project-tags">
+              <span class="project-tag">RAG</span>
+              <span class="project-tag">LangChain</span>
+              <span class="project-tag">Vector DB</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/Corrective-RAG-'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ChessAgent -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/chess_agent_bg_1775804192303.png" alt="ChessAgent" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ChessMastermind</h3>
+            <p class="project-desc">AI-powered chess application with an LLM-integrated agent that analyzes board positions, suggests moves, and teaches chess strategy.</p>
+            <div class="project-tags">
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Chess Engine</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/chessAgent'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- YT Summarizer -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/yt_summarizer_bg_1775804307459.png" alt="YT Video Summarizer" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">YouTube Video Summarizer</h3>
+            <p class="project-desc">Extracts and summarizes YouTube video transcripts using LLMs, generating structured summaries with key takeaways.</p>
+            <div class="project-tags">
+              <span class="project-tag">LLM</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">NLP</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/YouTubeVideoSummarizer'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ODI Cricket -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="https://th.bing.com/th/id/OIP.Zpmbw-h5O9EZchRvLiXIUQHaEK?w=800&h=450&rs=1&pid=ImgDetMain" alt="ODI Cricket Runs Predictor" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ODI Cricket Runs Predictor</h3>
+            <p class="project-desc">ML model predicting ODI cricket run totals using historical match data with an interactive Streamlit dashboard.</p>
+            <div class="project-tags">
+              <span class="project-tag">Scikit-Learn</span>
+              <span class="project-tag">Streamlit</span>
+              <span class="project-tag">EDA</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="location.href='https://github.com/Shah-123/datascience/tree/main/Cricket_APP'">GitHub</button>
+              <button class="project-btn primary" onclick="location.href='https://datascience-yfalmubuxo9fmqyzrnkfly.streamlit.app/'">Live Demo →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heart Failure -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBKXAFab5xR1voWJ8d2aHd9AXrBVE-JGg-g&s" alt="Heart Failure Prediction" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Heart Failure Prediction</h3>
+            <p class="project-desc">Clinical ML model predicting heart failure risk from patient data, deployed with an interactive Streamlit interface.</p>
+            <div class="project-tags">
+              <span class="project-tag">ML</span>
+              <span class="project-tag">Healthcare AI</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="location.href='https://github.com/Shah-123/datascience'">GitHub</button>
+              <button class="project-btn primary" onclick="location.href='https://datascience-pvtjmcl3qbqlhryriupybu.streamlit.app/'">Live Demo →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DL Mini Projects -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="./assets/dl_mini_bg_1775804229050.png" alt="DL Mini Projects" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Deep Learning Projects</h3>
+            <p class="project-desc">Collection of deep learning mini-projects covering CNNs, RNNs, and transfer learning using TensorFlow and Keras.</p>
+            <div class="project-tags">
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">CNN</span>
+              <span class="project-tag">Transfer Learning</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/DL-mini-projects'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Power BI -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/powerBI.png" alt="Power BI Projects" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Power BI Dashboards</h3>
+            <p class="project-desc">Business intelligence dashboards built with Power BI, visualizing KPIs and data insights for decision-making.</p>
+            <div class="project-tags">
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">Data Viz</span>
+              <span class="project-tag">BI</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/PowerBI_projects'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Netflix EDA -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="https://t3.ftcdn.net/jpg/05/41/67/80/360_F_541678033_4hV4tUbYkUfN9y2vpoNob4Gx2whxFjBn.jpg" alt="Netflix EDA" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Netflix EDA</h3>
+            <p class="project-desc">Exploratory data analysis of Netflix's content library — uncovering trends in genres, release years, and regional content.</p>
+            <div class="project-tags">
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Streamlit</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="location.href='https://github.com/Shah-123/datascience'">GitHub</button>
+              <button class="project-btn primary" onclick="location.href='https://datascience-yfalmubuxo9fmqyzrnkfly.streamlit.app/'">Live Demo →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- House Price -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="https://th.bing.com/th?id=OIP.kFNEzzGa5lvZ-L-KyPJCSAHaFl&w=287&h=217&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="House Price Prediction" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">House Price Prediction</h3>
+            <p class="project-desc">Regression model predicting house prices based on features like location, size, and amenities using ensemble ML methods.</p>
+            <div class="project-tags">
+              <span class="project-tag">Regression</span>
+              <span class="project-tag">Ensemble</span>
+              <span class="project-tag">Scikit-Learn</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/datascience/tree/main/Houses_price%20prediction'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Playstore EDA -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/download.jpg" alt="Google Playstore Apps EDA" class="project-img" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Google Playstore EDA</h3>
+            <p class="project-desc">In-depth analysis of 10K+ Google Play apps — exploring categories, ratings, installs, and monetization patterns.</p>
+            <div class="project-tags">
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Visualization</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn primary" onclick="location.href='https://github.com/Shah-123/playstore_data_analysis'">GitHub →</button>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+
+      <img src="./assets/arrow.png" alt="Scroll to contact" class="icon arrow" onclick="location.href='#contact'" />
     </section>
+
+    <!-- ═══════════════ CONTACT SECTION ═══════════════ -->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-          <p><a href="mailto:shahkaramad342@gmail.com">Shahkar Ahmad</a></p>
+      <div class="contact-container">
+        <div class="section-header reveal">
+          <span class="section__text__p1">Get In Touch</span>
+          <h2 class="title">Contact Me</h2>
+          <div class="divider"></div>
         </div>
-        <div class="contact-info-container">
-          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-          <p><a href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/">LinkedIn</a></p>
+
+        <p class="contact-subtitle reveal">
+          I'm always open to discussing new opportunities, collaborations,<br />
+          or just having a chat about AI and technology.
+        </p>
+
+        <div class="contact-cards reveal">
+          <a href="mailto:shahkaramad342@gmail.com" class="contact-card" id="email-contact">
+            <div class="contact-card-icon">
+              <img src="./assets/email.png" alt="Email" />
+            </div>
+            <div class="contact-card-text">
+              <h3>Email</h3>
+              <p>shahkaramad342@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank" class="contact-card" id="linkedin-contact">
+            <div class="contact-card-icon">
+              <img src="./assets/linkedin.png" alt="LinkedIn" />
+            </div>
+            <div class="contact-card-text">
+              <h3>LinkedIn</h3>
+              <p>Connect with me</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/Shah-123" target="_blank" class="contact-card" id="github-contact">
+            <div class="contact-card-icon">
+              <img src="./assets/github.png" alt="GitHub" />
+            </div>
+            <div class="contact-card-text">
+              <h3>GitHub</h3>
+              <p>View my code</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
+
   </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer>
-    <p>Copyright &#169; 2023 Shahkar Ahmad. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-logo">Shahkar Ahmad</div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p>© 2024 Shahkar Ahmad. All Rights Reserved.</p>
+    </div>
   </footer>
+
   <script src="script.js"></script>
+
 </body>
 
 </html>
