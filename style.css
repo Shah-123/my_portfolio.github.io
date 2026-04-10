@@ -367,15 +367,26 @@ article .icon {
   position: relative;
 }
 
+#projects .about-containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  border-radius: 1rem;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background-color: #f3f3f3;
 }
 
 .project-title {
