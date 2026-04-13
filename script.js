@@ -235,7 +235,7 @@ function initHeroTilt() {
   });
 }
 
-/* ── CANVAS PARTICLE BACKGROUND ── */
+/* ── NEURAL NETWORK CANVAS BACKGROUND ── */
 function initCanvasBackground() {
   const canvas = document.getElementById("hero-canvas");
   if (!canvas) return;
@@ -246,7 +246,7 @@ function initCanvasBackground() {
   }
 
   const ctx = canvas.getContext("2d");
-  let width, height, particles = [];
+  let width, height, particles = [], pulses = [];
   let mouse = { x: null, y: null };
   let animId = null;
 
@@ -286,9 +286,10 @@ function initCanvasBackground() {
     reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 1.8 + 0.8;
+      this.size = Math.random() * 2 + 1; // Slightly larger for glow
       this.vx = (Math.random() - 0.5) * 0.4;
       this.vy = (Math.random() - 0.5) * 0.4;
+      this.baseAlpha = Math.random() * 0.5 + 0.2;
     }
 
     update() {
@@ -300,24 +301,68 @@ function initCanvasBackground() {
 
     draw() {
       const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      ctx.fillStyle = isDark
-        ? "rgba(129, 140, 248, 0.5)"
-        : "rgba(99, 102, 241, 0.25)";
+      const r = isDark ? 129 : 99;
+      const g = isDark ? 140 : 102;
+      const b = isDark ? 248 : 241;
+      
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = `rgba(${r}, ${g}, ${b}, 0.8)`;
+      ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${this.baseAlpha})`;
+      
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
+      ctx.shadowBlur = 0; // reset for lines
+    }
+  }
+
+  class Pulse {
+    constructor(startX, startY, targetX, targetY, color) {
+      this.x = startX;
+      this.y = startY;
+      this.targetX = targetX;
+      this.targetY = targetY;
+      this.color = color;
+      this.progress = 0;
+      this.speed = 0.01 + Math.random() * 0.02; // Speed of the data pulse
+      this.active = true;
+    }
+
+    update() {
+      this.progress += this.speed;
+      if (this.progress >= 1) {
+        this.active = false;
+      }
+    }
+
+    draw() {
+      if (!this.active) return;
+      const currentX = this.x + (this.targetX - this.x) * this.progress;
+      const currentY = this.y + (this.targetY - this.y) * this.progress;
+      
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = this.color;
+      ctx.fillStyle = this.color;
+      
+      ctx.beginPath();
+      ctx.arc(currentX, currentY, 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
     }
   }
 
   function initParticles() {
-    const count = window.innerWidth < 768 ? 35 : 70;
+    const count = window.innerWidth < 768 ? 40 : 80;
     particles = Array.from({ length: count }, () => new Particle());
+    pulses = []; // Reset pulses on resize
   }
 
   function connectParticles() {
-    const maxDist = window.innerWidth < 768 ? 80 : 110;
+    const maxDist = window.innerWidth < 768 ? 90 : 130;
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
     const baseColor = isDark ? "129, 140, 248" : "99, 102, 241";
+    // Aurora accent colors for data pulses
+    const pulseColor = isDark ? "rgba(168, 85, 247, 0.9)" : "rgba(8, 145, 178, 0.9)"; 
 
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -326,13 +371,19 @@ function initCanvasBackground() {
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDist) {
-          const opacity = (1 - dist / maxDist) * (isDark ? 0.18 : 0.12);
+          const opacity = (1 - dist / maxDist) * (isDark ? 0.3 : 0.2);
           ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
+
+          // Randomly spawn pulses on connected lines (simulate neural data firing)
+          // Adjust 0.001 probability for more or fewer pulses
+          if (Math.random() < 0.001) {
+            pulses.push(new Pulse(particles[i].x, particles[i].y, particles[j].x, particles[j].y, pulseColor));
+          }
         }
       }
 
@@ -340,14 +391,23 @@ function initCanvasBackground() {
         const dx = particles[i].x - mouse.x;
         const dy = particles[i].y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 140) {
-          const opacity = (1 - dist / 140) * (isDark ? 0.45 : 0.35);
+        if (dist < 160) {
+          const opacity = (1 - dist / 160) * (isDark ? 0.6 : 0.4);
           ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.stroke();
+          
+          // Draw a soft glowing energy ring around the mouse connection radius
+          ctx.shadowBlur = 20;
+          ctx.shadowColor = `rgba(${baseColor}, 0.5)`;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, dist, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(${baseColor}, ${opacity * 0.05})`;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
         }
       }
     }
@@ -355,8 +415,21 @@ function initCanvasBackground() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-    particles.forEach(p => { p.update(); p.draw(); });
+    
+    // Connections update first so particles and pulses sit on top
     connectParticles();
+    
+    particles.forEach(p => { p.update(); p.draw(); });
+    
+    // Draw data pulses
+    for (let i = pulses.length - 1; i >= 0; i--) {
+      pulses[i].update();
+      pulses[i].draw();
+      if (!pulses[i].active) {
+        pulses.splice(i, 1);
+      }
+    }
+    
     animId = requestAnimationFrame(animate);
   }
 
