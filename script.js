@@ -1,4 +1,11 @@
-/* Toggle hamburger menu */
+/* ============================================================
+   SHAHKAR AHMAD — Portfolio script.js v2.0 "Nova"
+   ============================================================ */
+
+/* ── Utility: check if user prefers reduced motion ── */
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ── Toggle hamburger menu ── */
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
@@ -6,26 +13,26 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-/* ── SCROLL REVEAL ANIMATION ── */
+/* ── SCROLL REVEAL ── */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll(".reveal");
+  if (prefersReducedMotion) {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    return;
+  }
 
+  const reveals = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Stagger the animations slightly
           setTimeout(() => {
             entry.target.classList.add("visible");
-          }, index * 80);
+          }, index * 70);
           observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.1,
-      rootMargin: "0px 0px -60px 0px",
-    }
+    { threshold: 0.08, rootMargin: "0px 0px -50px 0px" }
   );
 
   reveals.forEach((el) => observer.observe(el));
@@ -35,6 +42,15 @@ function initScrollReveal() {
 function initSkillBars() {
   const bars = document.querySelectorAll(".skill-bar");
 
+  if (prefersReducedMotion) {
+    bars.forEach((bar) => {
+      const width = bar.getAttribute("data-width");
+      bar.style.width = width + "%";
+      bar.style.transition = "none";
+    });
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -43,7 +59,7 @@ function initSkillBars() {
           const width = bar.getAttribute("data-width");
           setTimeout(() => {
             bar.style.width = width + "%";
-          }, 300);
+          }, 250);
           observer.unobserve(bar);
         }
       });
@@ -57,18 +73,21 @@ function initSkillBars() {
 /* ── NAVBAR SCROLL EFFECT ── */
 function initNavScroll() {
   const header = document.querySelector("header");
-  let lastScroll = 0;
 
+  let ticking = false;
   window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 100) {
-      header.style.boxShadow = "0 4px 30px rgba(0,0,0,0.4)";
-    } else {
-      header.style.boxShadow = "none";
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (scrollY > 80) {
+          header.style.boxShadow = "0 4px 32px rgba(0,0,0,0.3)";
+        } else {
+          header.style.boxShadow = "none";
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-
-    lastScroll = currentScroll;
   });
 }
 
@@ -83,10 +102,9 @@ function initActiveNav() {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute("id");
           navLinks.forEach((link) => {
-            link.style.color = "";
-            if (link.getAttribute("href") === `#${id}`) {
-              link.style.color = "var(--text-primary)";
-            }
+            const isActive = link.getAttribute("href") === `#${id}`;
+            link.style.color = isActive ? "var(--accent-primary)" : "";
+            link.style.background = isActive ? "rgba(99,102,241,0.1)" : "";
           });
         }
       });
@@ -101,48 +119,56 @@ function initActiveNav() {
 function initTypingEffect() {
   const el = document.querySelector(".hero-name");
   if (!el) return;
-  
+
   const text1 = "Shahkar";
   const text2 = "Ahmad";
-  
-  el.innerHTML = '<span class="type-line1"></span><span class="type-line2"></span><span class="type-cursor">|</span>';
-  
-  const line1 = el.querySelector('.type-line1');
-  const line2 = el.querySelector('.type-line2');
-  const cursor = el.querySelector('.type-cursor');
-  
+
+  el.innerHTML =
+    '<span class="type-line1"></span><span class="type-line2"></span><span class="type-cursor">|</span>';
+
+  const line1 = el.querySelector(".type-line1");
+  const line2 = el.querySelector(".type-line2");
+  const cursor = el.querySelector(".type-cursor");
+
+  if (prefersReducedMotion) {
+    line1.textContent = text1;
+    line1.insertAdjacentHTML("afterend", "<br />");
+    line2.textContent = text2;
+    cursor.style.display = "none";
+    return;
+  }
+
   let i = 0;
   let j = 0;
-  
-  cursor.classList.add('blink');
-  
+  cursor.classList.add("blink");
+
   function typeWriter() {
-    cursor.classList.remove('blink');
+    cursor.classList.remove("blink");
     if (i < text1.length) {
       line1.innerHTML += text1.charAt(i);
       i++;
-      setTimeout(typeWriter, 100);
+      setTimeout(typeWriter, 95);
     } else if (i === text1.length && j === 0) {
-      line1.insertAdjacentHTML('afterend', '<br />');
-      j++; 
-      setTimeout(typeWriter, 300); 
-    } else if (j <= text2.length) {
-      line2.innerHTML += text2.charAt(j-1);
+      line1.insertAdjacentHTML("afterend", "<br />");
       j++;
-      setTimeout(typeWriter, 100);
+      setTimeout(typeWriter, 280);
+    } else if (j <= text2.length) {
+      line2.innerHTML += text2.charAt(j - 1);
+      j++;
+      setTimeout(typeWriter, 95);
     } else {
-      cursor.classList.add('blink');
+      cursor.classList.add("blink");
     }
   }
-  
-  setTimeout(typeWriter, 800);
+
+  setTimeout(typeWriter, 700);
 }
 
 /* ── CUSTOM CURSOR ── */
 function initCustomCursor() {
   const dot = document.getElementById("cursor-dot");
   const trail = document.getElementById("cursor-trail");
-  if (!dot || !trail) return;
+  if (!dot || !trail || prefersReducedMotion) return;
 
   let mouseX = 0, mouseY = 0;
   let dotX = 0, dotY = 0;
@@ -154,11 +180,10 @@ function initCustomCursor() {
   });
 
   function animate() {
-    dotX += (mouseX - dotX) * 0.5;
-    dotY += (mouseY - dotY) * 0.5;
-    
-    trailX += (mouseX - trailX) * 0.15;
-    trailY += (mouseY - trailY) * 0.15;
+    dotX += (mouseX - dotX) * 0.55;
+    dotY += (mouseY - dotY) * 0.55;
+    trailX += (mouseX - trailX) * 0.12;
+    trailY += (mouseY - trailY) * 0.12;
 
     dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
     trail.style.transform = `translate(${trailX}px, ${trailY}px) translate(-50%, -50%)`;
@@ -168,25 +193,66 @@ function initCustomCursor() {
 
   animate();
 
-  const interactives = document.querySelectorAll("a, button, .social-btn, .project-card, .skill-category");
-  interactives.forEach(el => {
-    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover-active"));
-    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover-active"));
+  const interactives = document.querySelectorAll(
+    "a, button, .social-btn, .project-card, .skill-category, .contact-card"
+  );
+  interactives.forEach((el) => {
+    el.addEventListener("mouseenter", () =>
+      document.body.classList.add("cursor-hover-active")
+    );
+    el.addEventListener("mouseleave", () =>
+      document.body.classList.remove("cursor-hover-active")
+    );
   });
 }
 
-/* ── CANVAS BACKGROUND ── */
+/* ── HERO IMAGE TILT EFFECT ── */
+function initHeroTilt() {
+  const wrapper = document.querySelector(".hero-image-wrapper");
+  if (!wrapper || prefersReducedMotion) return;
+
+  const profile = document.getElementById("profile");
+  if (!profile) return;
+
+  profile.addEventListener("mousemove", (e) => {
+    const rect = profile.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+
+    const dx = (e.clientX - cx) / (rect.width / 2);
+    const dy = (e.clientY - cy) / (rect.height / 2);
+
+    const tiltX = dy * 8;
+    const tiltY = -dx * 8;
+
+    wrapper.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`;
+    wrapper.style.transition = "transform 0.15s ease";
+  });
+
+  profile.addEventListener("mouseleave", () => {
+    wrapper.style.transform = "perspective(600px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    wrapper.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+  });
+}
+
+/* ── CANVAS PARTICLE BACKGROUND ── */
 function initCanvasBackground() {
   const canvas = document.getElementById("hero-canvas");
   if (!canvas) return;
-  const ctx = canvas.getContext("2d");
 
-  let width, height;
-  let particles = [];
+  if (prefersReducedMotion) {
+    canvas.style.display = "none";
+    return;
+  }
+
+  const ctx = canvas.getContext("2d");
+  let width, height, particles = [];
   let mouse = { x: null, y: null };
+  let animId = null;
 
   function resize() {
     const profile = document.getElementById("profile");
+    if (!profile) return;
     width = profile.offsetWidth;
     height = profile.offsetHeight;
     canvas.width = width;
@@ -194,38 +260,49 @@ function initCanvasBackground() {
     initParticles();
   }
 
-  window.addEventListener("resize", resize);
-  
-  const profile = document.getElementById("profile");
-  profile.addEventListener("mousemove", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-  
-  profile.addEventListener("mouseleave", () => {
-    mouse.x = null;
-    mouse.y = null;
+  // Debounce resize
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
   });
 
+  const profile = document.getElementById("profile");
+  if (profile) {
+    profile.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+    profile.addEventListener("mouseleave", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+  }
+
   class Particle {
-    constructor() {
+    constructor() { this.reset(); }
+
+    reset() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 1;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
+      this.size = Math.random() * 1.8 + 0.8;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
     }
+
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      
       if (this.x > width || this.x < 0) this.vx *= -1;
       if (this.y > height || this.y < 0) this.vy *= -1;
     }
+
     draw() {
       const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-      ctx.fillStyle = isDark ? "rgba(99, 102, 241, 0.4)" : "rgba(99, 102, 241, 0.2)";
+      ctx.fillStyle = isDark
+        ? "rgba(129, 140, 248, 0.5)"
+        : "rgba(99, 102, 241, 0.25)";
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
@@ -233,46 +310,44 @@ function initCanvasBackground() {
   }
 
   function initParticles() {
-    particles = [];
-    const numParticles = window.innerWidth < 768 ? 40 : 80;
-    for (let i = 0; i < numParticles; i++) {
-      particles.push(new Particle());
-    }
+    const count = window.innerWidth < 768 ? 35 : 70;
+    particles = Array.from({ length: count }, () => new Particle());
   }
 
   function connectParticles() {
-    let maxDistance = window.innerWidth < 768 ? 80 : 120;
+    const maxDist = window.innerWidth < 768 ? 80 : 110;
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    
+    const baseColor = isDark ? "129, 140, 248" : "99, 102, 241";
+
     for (let i = 0; i < particles.length; i++) {
-      for (let j = i; j < particles.length; j++) {
-        let dx = particles[i].x - particles[j].x;
-        let dy = particles[i].y - particles[j].y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < maxDistance) {
-          let opacity = 1 - (distance / maxDistance);
-          ctx.strokeStyle = isDark ? `rgba(99, 102, 241, ${opacity * 0.2})` : `rgba(79, 70, 229, ${opacity * 0.15})`;
-          ctx.lineWidth = 1;
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDist) {
+          const opacity = (1 - dist / maxDist) * (isDark ? 0.18 : 0.12);
+          ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
+          ctx.lineWidth = 0.8;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
         }
       }
-      
-      if (mouse.x && mouse.y) {
-        let dx = particles[i].x - mouse.x;
-        let dy = particles[i].y - mouse.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 150) {
-           let opacity = 1 - (distance / 150);
-           ctx.strokeStyle = isDark ? `rgba(99, 102, 241, ${opacity * 0.4})` : `rgba(79, 70, 229, ${opacity * 0.3})`;
-           ctx.lineWidth = 1;
-           ctx.beginPath();
-           ctx.moveTo(particles[i].x, particles[i].y);
-           ctx.lineTo(mouse.x, mouse.y);
-           ctx.stroke();
+
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = particles[i].x - mouse.x;
+        const dy = particles[i].y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 140) {
+          const opacity = (1 - dist / 140) * (isDark ? 0.45 : 0.35);
+          ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
         }
       }
     }
@@ -280,15 +355,11 @@ function initCanvasBackground() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
+    particles.forEach(p => { p.update(); p.draw(); });
     connectParticles();
-    requestAnimationFrame(animate);
+    animId = requestAnimationFrame(animate);
   }
 
-  // Force first resize to happen after fonts/images load
   setTimeout(() => {
     resize();
     animate();
@@ -299,21 +370,36 @@ function initCanvasBackground() {
 function initThemeToggle() {
   const toggleBtns = document.querySelectorAll(".theme-btn");
   const html = document.documentElement;
-  
-  // Check local storage or system preference
+
+  // Apply saved or system preference
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
     html.setAttribute("data-theme", savedTheme);
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     html.setAttribute("data-theme", "dark");
   }
 
-  toggleBtns.forEach(btn => {
+  toggleBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const currentTheme = html.getAttribute("data-theme") || "light";
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      html.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
+      const current = html.getAttribute("data-theme") || "light";
+      const next = current === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  });
+}
+
+/* ── SMOOTH CLOSE MENU ON LINK CLICK ── */
+function initMenuClose() {
+  const navLinks = document.querySelectorAll(".menu-links a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      if (menu.classList.contains("open")) {
+        menu.classList.remove("open");
+        icon.classList.remove("open");
+      }
     });
   });
 }
@@ -327,5 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initActiveNav();
   initTypingEffect();
   initCustomCursor();
+  initHeroTilt();
   initCanvasBackground();
+  initMenuClose();
 });
