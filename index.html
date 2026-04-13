@@ -8,7 +8,8 @@
   <title>Shahkar Ahmad — Python & ML Engineer</title>
   <meta name="description"
     content="Portfolio of Shahkar Ahmad — CS student at University of Peshawar specializing in Python, Machine Learning, Generative AI, and Agentic Systems." />
-  <meta name="keywords" content="Shahkar Ahmad, Python, Machine Learning, Generative AI, LLM, RAG, Portfolio" />
+  <meta name="keywords"
+    content="Shahkar Ahmad, Python, Machine Learning, Generative AI, LLM, RAG, LangGraph, Agentic AI, Portfolio" />
   <meta name="author" content="Shahkar Ahmad" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
@@ -22,7 +23,7 @@
   <!-- ═══════════════ NAVIGATION ═══════════════ -->
   <header>
     <nav id="desktop-nav">
-      <div class="logo">Shahkar Ahmad</div>
+      <div class="logo">shahkar.ahmad</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Skills</a></li>
@@ -37,7 +38,7 @@
     </nav>
 
     <nav id="hamburger-nav">
-      <div class="logo">Shahkar Ahmad</div>
+      <div class="logo">shahkar.ahmad</div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -72,22 +73,51 @@
       </div>
 
       <div class="hero-content">
-        <span class="hero-greeting"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            style="display:inline-block; vertical-align:text-bottom; margin-right:4px;">
+        <span class="hero-greeting">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display:inline-block; vertical-align:text-bottom;">
             <path
               d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-          </svg> Hello, I'm</span>
+          </svg>
+          Hello, I'm
+        </span>
         <h1 class="hero-name">Shahkar<br />Ahmad</h1>
         <div class="hero-role">
           <span class="hero-role-tag">Python</span>
           <span class="hero-role-tag">Machine Learning</span>
           <span class="hero-role-tag">Generative AI</span>
+          <span class="hero-role-tag">Agentic AI</span>
         </div>
         <p class="hero-description">
-          CS student at University of Peshawar passionate about building intelligent systems — from LLM-powered agents
-          to data-driven ML applications.
+          CS student at University of Peshawar building intelligent systems —
+          LLM-powered agents, multi-agent pipelines, RAG architectures,
+          and data-driven ML applications.
         </p>
+
+        <!-- ── TERMINAL CODE WIDGET ── -->
+        <div class="hero-terminal reveal">
+          <div class="terminal-header">
+            <div class="t-dots">
+              <span class="t-dot" style="background:#FF5F57;"></span>
+              <span class="t-dot" style="background:#FEBC2E;"></span>
+              <span class="t-dot" style="background:#28C840;"></span>
+            </div>
+            <span class="t-title">agent_pipeline.py</span>
+          </div>
+          <pre class="terminal-body"><code><span class="t-comment"># Multi-Agent RAG Pipeline (FYP)</span>
+<span class="t-kw">from</span> langgraph.graph <span class="t-kw">import</span> StateGraph
+<span class="t-kw">from</span> langchain_openai <span class="t-kw">import</span> ChatOpenAI
+
+llm <span class="t-op">=</span> ChatOpenAI(model<span class="t-op">=</span><span class="t-str">"gpt-4o"</span>, temperature<span class="t-op">=</span><span class="t-str">0</span>)
+graph <span class="t-op">=</span> StateGraph(AgentState)
+graph.add_node(<span class="t-str">"researcher"</span>, research_agent)
+graph.add_node(<span class="t-str">"writer"</span>,     writer_agent)
+graph.add_edge(<span class="t-str">"researcher"</span>, <span class="t-str">"writer"</span>)
+<span class="t-comment"># ✓ Graph compiled — agents ready</span>
+chain <span class="t-op">=</span> graph.<span class="t-fn">compile</span>()<span class="t-cursor"></span></code></pre>
+        </div>
+
         <div class="btn-container">
           <button class="btn btn-primary" id="hero-cv-btn" onclick="window.open('./assets/MyResume.pdf')">
             ↓ Download CV
@@ -126,61 +156,69 @@
 
         <div class="about-cards">
           <div class="about-card">
-            <span class="about-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+            <span class="about-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
                 <path
                   d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
                 <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
                 <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-              </svg></span>
+              </svg>
+            </span>
             <h3>Experience</h3>
-            <p>1+ Year<br />Python, ML & Gen AI</p>
+            <span class="stat-value">1+ yr</span>
+            <p>Python · ML · Gen AI</p>
           </div>
           <div class="about-card">
-            <span class="about-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
+            <span class="about-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                 <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg></span>
+              </svg>
+            </span>
             <h3>Education</h3>
-            <p>Current Student<br />B.Sc. Computer Science</p>
+            <span class="stat-value">B.Sc.</span>
+            <p>Computer Science<br />Univ. of Peshawar</p>
           </div>
           <div class="about-card">
-            <span class="about-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <line x1="3" x2="21" y1="22" y2="22" />
-                <line x1="6" x2="6" y1="18" y2="11" />
-                <line x1="10" x2="10" y1="18" y2="11" />
-                <line x1="14" x2="14" y1="18" y2="11" />
-                <line x1="18" x2="18" y1="18" y2="11" />
-                <polygon points="12 2 20 7 4 7" />
-              </svg></span>
-            <h3>University</h3>
-            <p>University of<br />Peshawar</p>
+            <span class="about-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+              </svg>
+            </span>
+            <h3>Projects Built</h3>
+            <span class="stat-value">12+</span>
+            <p>ML · RAG · Agents</p>
           </div>
           <div class="about-card">
-            <span class="about-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <circle cx="12" cy="12" r="6" />
-                <circle cx="12" cy="12" r="2" />
-              </svg></span>
-            <h3>Focus</h3>
-            <p>Agentic AI &<br />LLM Systems</p>
+            <span class="about-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                <path d="M5 3v4" />
+                <path d="M19 17v4" />
+                <path d="M3 5h4" />
+                <path d="M17 19h4" />
+              </svg>
+            </span>
+            <h3>Focus Area</h3>
+            <span class="stat-value">LLMs</span>
+            <p>Agentic AI &amp; RAG</p>
           </div>
         </div>
 
         <p class="about-text">
-          I'm Shahkar Ahmad, a passionate Computer Science student specializing in Machine Learning and Generative AI.
-          I love building real-world AI pipelines — from RAG systems and multi-agent architectures to interactive data
-          applications. My journey has been driven by curiosity and a relentless pursuit of understanding how
-          intelligent
-          systems can solve meaningful problems. I'm always looking for new challenges that push my skills further.
+          I'm Shahkar Ahmad, a Computer Science student specializing in Machine Learning and Generative AI.
+          I build real-world AI pipelines — from corrective RAG systems and multi-agent architectures
+          (LangGraph, LangChain) to deep learning applications and interactive data dashboards.
+          My work sits at the intersection of LLM engineering and practical ML — turning research
+          ideas into working, deployable systems.
         </p>
       </div>
     </section>
@@ -188,7 +226,7 @@
     <!-- ═══════════════ SKILLS / EXPERIENCE SECTION ═══════════════ -->
     <section id="experience">
       <div class="section-header reveal">
-        <span class="section__text__p1">What I Work With</span>
+        <span class="section__text__p1">Tech Stack</span>
         <h2 class="title">Technical Skills</h2>
         <div class="divider"></div>
       </div>
@@ -208,7 +246,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Pandas &amp; NumPy</div>
+              <div class="skill-name">pandas &amp; numpy</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="90"></div>
               </div>
@@ -217,7 +255,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Matplotlib / Seaborn</div>
+              <div class="skill-name">matplotlib / seaborn</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="85"></div>
               </div>
@@ -226,7 +264,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Data Analytics</div>
+              <div class="skill-name">data analytics</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="75"></div>
               </div>
@@ -235,7 +273,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">FastAPI / Streamlit</div>
+              <div class="skill-name">fastapi / streamlit</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="80"></div>
               </div>
@@ -261,7 +299,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Scikit-Learn</div>
+              <div class="skill-name">scikit-learn</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="78"></div>
               </div>
@@ -270,7 +308,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">TensorFlow / Keras</div>
+              <div class="skill-name">tensorflow / keras</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="70"></div>
               </div>
@@ -279,7 +317,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Deep Learning</div>
+              <div class="skill-name">deep learning (CNN/RNN)</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="68"></div>
               </div>
@@ -288,7 +326,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Power BI</div>
+              <div class="skill-name">power bi</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="72"></div>
               </div>
@@ -311,11 +349,11 @@
                 <path d="M17 19h4"></path>
               </svg>
             </div>
-            <h3 class="skill-category-title">Generative AI</h3>
+            <h3 class="skill-category-title">Generative AI &amp; LLMs</h3>
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">LLMs &amp; RAG Systems</div>
+              <div class="skill-name">llms &amp; rag systems</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="88"></div>
               </div>
@@ -324,7 +362,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">LangChain / LangGraph</div>
+              <div class="skill-name">langchain / langgraph</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="85"></div>
               </div>
@@ -333,7 +371,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Agentic AI Systems</div>
+              <div class="skill-name">agentic ai systems</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="80"></div>
               </div>
@@ -342,7 +380,7 @@
           </div>
           <div class="skill-item">
             <div>
-              <div class="skill-name">Prompt Engineering</div>
+              <div class="skill-name">prompt engineering</div>
               <div class="skill-bar-wrapper">
                 <div class="skill-bar" data-width="90"></div>
               </div>
@@ -358,7 +396,7 @@
     <!-- ═══════════════ PROJECTS SECTION ═══════════════ -->
     <section id="projects">
       <div class="section-header reveal">
-        <span class="section__text__p1">Browse My Recent Work</span>
+        <span class="section__text__p1">Recent Work</span>
         <h2 class="title">Projects</h2>
         <div class="divider"></div>
       </div>
@@ -370,15 +408,15 @@
           <div class="project-img-wrapper">
             <img src="./assets/multi_agent_bg_1775804293319.png" alt="Multi-Agent Blog Generator" class="project-img" />
             <div class="project-overlay"></div>
-            <span class="project-badge">FYP <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" style="display:inline-block; vertical-align:text-bottom; margin-left:4px;">
-                <polygon
-                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg></span>
+            <span class="project-badge">FYP ★</span>
           </div>
           <div class="project-content">
             <h3 class="project-title">Multi-Agent Blog Generator</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">5 agents</span>
+              <span class="ml-chip green">LangGraph</span>
+              <span class="ml-chip violet">RAG pipeline</span>
+            </div>
             <p class="project-desc">Final Year Project — An intelligent multi-agent system that autonomously generates
               comprehensive, research-backed blog posts using LLMs and LangGraph.</p>
             <div class="project-tags">
@@ -402,6 +440,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Live-Agent-Hub</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">real-time</span>
+              <span class="ml-chip green">AI personas</span>
+            </div>
             <p class="project-desc">Real-time AI agent platform enabling AI personas to interact with live Twitch
               streams — simulating chat, reactions, and streamer replies.</p>
             <div class="project-tags">
@@ -424,6 +466,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Corrective-RAG</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">self-correction</span>
+              <span class="ml-chip violet">vector db</span>
+            </div>
             <p class="project-desc">Advanced RAG pipeline with self-correction mechanisms — evaluates retrieved context
               quality and dynamically re-queries for better responses.</p>
             <div class="project-tags">
@@ -446,6 +492,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">ChessMastermind</h3>
+            <div class="project-metrics">
+              <span class="ml-chip green">LLM agent</span>
+              <span class="ml-chip">chess engine</span>
+            </div>
             <p class="project-desc">AI-powered chess application with an LLM-integrated agent that analyzes board
               positions, suggests moves, and teaches chess strategy.</p>
             <div class="project-tags">
@@ -468,6 +518,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">YouTube Video Summarizer</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">NLP</span>
+              <span class="ml-chip violet">transcript → summary</span>
+            </div>
             <p class="project-desc">Extracts and summarizes YouTube video transcripts using LLMs, generating structured
               summaries with key takeaways.</p>
             <div class="project-tags">
@@ -491,6 +545,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">ODI Cricket Runs Predictor</h3>
+            <div class="project-metrics">
+              <span class="ml-chip green">regression</span>
+              <span class="ml-chip">live demo</span>
+            </div>
             <p class="project-desc">ML model predicting ODI cricket run totals using historical match data with an
               interactive Streamlit dashboard.</p>
             <div class="project-tags">
@@ -516,6 +574,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Heart Failure Prediction</h3>
+            <div class="project-metrics">
+              <span class="ml-chip violet">healthcare AI</span>
+              <span class="ml-chip green">live demo</span>
+            </div>
             <p class="project-desc">Clinical ML model predicting heart failure risk from patient data, deployed with an
               interactive Streamlit interface.</p>
             <div class="project-tags">
@@ -540,6 +602,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Deep Learning Projects</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">CNN / RNN</span>
+              <span class="ml-chip violet">transfer learning</span>
+            </div>
             <p class="project-desc">Collection of deep learning mini-projects covering CNNs, RNNs, and transfer learning
               using TensorFlow and Keras.</p>
             <div class="project-tags">
@@ -562,6 +628,9 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Power BI Dashboards</h3>
+            <div class="project-metrics">
+              <span class="ml-chip green">BI · KPIs</span>
+            </div>
             <p class="project-desc">Business intelligence dashboards built with Power BI, visualizing KPIs and data
               insights for decision-making.</p>
             <div class="project-tags">
@@ -585,6 +654,9 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Netflix EDA</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">8k+ records</span>
+            </div>
             <p class="project-desc">Exploratory data analysis of Netflix's content library — uncovering trends in
               genres, release years, and regional content.</p>
             <div class="project-tags">
@@ -611,6 +683,9 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">House Price Prediction</h3>
+            <div class="project-metrics">
+              <span class="ml-chip green">ensemble methods</span>
+            </div>
             <p class="project-desc">Regression model predicting house prices based on features like location, size, and
               amenities using ensemble ML methods.</p>
             <div class="project-tags">
@@ -634,6 +709,10 @@
           </div>
           <div class="project-content">
             <h3 class="project-title">Google Playstore EDA</h3>
+            <div class="project-metrics">
+              <span class="ml-chip">10k+ apps</span>
+              <span class="ml-chip violet">pattern analysis</span>
+            </div>
             <p class="project-desc">In-depth analysis of 10K+ Google Play apps — exploring categories, ratings,
               installs, and monetization patterns.</p>
             <div class="project-tags">
@@ -663,18 +742,18 @@
         </div>
 
         <p class="contact-subtitle reveal">
-          I'm always open to discussing new opportunities, collaborations,<br />
-          or just having a chat about AI and technology.
+          Open to collaborations, research discussions, or just a chat about AI &amp; LLMs.<br />
+          Let's build something intelligent together.
         </p>
 
         <div class="contact-cards reveal">
-          <a href="mailto:shahkaramad342@gmail.com" class="contact-card" id="email-contact">
+          <a href="mailto:shahkarahmad342@gmail.com" class="contact-card" id="email-contact">
             <div class="contact-card-icon">
               <img src="./assets/email.png" alt="Email" />
             </div>
             <div class="contact-card-text">
               <h3>Email</h3>
-              <p>shahkaramad342@gmail.com</p>
+              <p>shahkarahmad342@gmail.com</p>
             </div>
           </a>
 
@@ -695,7 +774,7 @@
             </div>
             <div class="contact-card-text">
               <h3>GitHub</h3>
-              <p>View my code</p>
+              <p>Shah-123</p>
             </div>
           </a>
         </div>
@@ -707,14 +786,14 @@
   <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer>
     <div class="footer-content">
-      <div class="footer-logo">Shahkar Ahmad</div>
+      <div class="footer-logo">shahkar.ahmad</div>
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <p>© 2024 Shahkar Ahmad. All Rights Reserved.</p>
+      <p>© 2025 Shahkar Ahmad — Built with Python thinking.</p>
     </div>
   </footer>
 

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
-   MEDIA QUERIES — Responsive Design v2.0
-   Shahkar Ahmad Portfolio — Nova Theme
+   MEDIA QUERIES — Responsive Design v3.0
+   Shahkar Ahmad Portfolio — Neural Theme
    ═══════════════════════════════════════════ */
 
 /* ── LARGE DESKTOP (1400px+) ── */
@@ -9,14 +9,19 @@
     padding-left: 10rem;
     padding-right: 10rem;
   }
-  #experience, #projects, #contact {
+
+  #experience,
+  #projects,
+  #contact {
     padding-left: 10rem;
     padding-right: 10rem;
   }
+
   #about {
     padding-left: 10rem;
     padding-right: 10rem;
   }
+
   #profile {
     gap: 9rem;
   }
@@ -28,29 +33,45 @@
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }
-  #experience, #projects, #contact {
+
+  #experience,
+  #projects,
+  #contact {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }
+
   #profile {
     gap: 4rem;
   }
+
   .hero-name {
     font-size: 3.75rem;
   }
+
   #about {
     grid-template-columns: 1fr 1.2fr;
     gap: 3.5rem;
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }
+
+  .hero-terminal {
+    max-width: 100%;
+  }
 }
 
 /* ── TABLET / SMALL LAPTOP (max 900px) ── */
 @media (max-width: 900px) {
+
   /* Switch navigation */
-  #desktop-nav  { display: none; }
-  #hamburger-nav { display: flex; }
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
 
   section {
     padding-left: 2.5rem;
@@ -60,7 +81,9 @@
     padding-bottom: 4rem;
   }
 
-  #experience, #projects, #contact {
+  #experience,
+  #projects,
+  #contact {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
@@ -83,7 +106,10 @@
     align-items: center;
   }
 
-  .hero-name { font-size: 3.25rem; letter-spacing: -1px; }
+  .hero-name {
+    font-size: 3.25rem;
+    letter-spacing: -1px;
+  }
 
   .hero-description {
     text-align: center;
@@ -107,6 +133,13 @@
     justify-content: center;
   }
 
+  /* Terminal widget on tablet */
+  .hero-terminal {
+    width: 100%;
+    max-width: 480px;
+    text-align: left;
+  }
+
   .section__pic-container {
     height: 280px;
     width: 280px;
@@ -119,20 +152,40 @@
     padding-top: calc(70px + 3rem);
   }
 
-  #about .section-header { text-align: center !important; }
-  #about .section__text__p1 { text-align: center !important; }
-  #about .title { text-align: center !important; }
-  #about .divider { margin: 1rem auto !important; }
-  #about .about-text { text-align: center; }
+  #about .section-header {
+    text-align: center !important;
+  }
 
-  .about-pic-container { max-width: 360px; margin: 0 auto; }
+  #about .section__text__p1 {
+    text-align: center !important;
+  }
+
+  #about .title {
+    text-align: center !important;
+  }
+
+  #about .divider {
+    margin: 1rem auto !important;
+  }
+
+  #about .about-text {
+    text-align: center;
+  }
+
+  .about-pic-container {
+    max-width: 360px;
+    margin: 0 auto;
+  }
 
   /* Skills */
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  .skill-category:nth-child(3) { grid-column: span 1; }
+
+  .skill-category:nth-child(3) {
+    grid-column: span 1;
+  }
 
   /* Projects */
   .projects-grid {
@@ -145,8 +198,14 @@
     flex-direction: column;
     align-items: stretch;
   }
-  .contact-card { min-width: unset; }
-  .contact-subtitle { font-size: 1rem; }
+
+  .contact-card {
+    min-width: unset;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+  }
 
   /* Arrow */
   .arrow {
@@ -158,6 +217,7 @@
   footer {
     padding: 2.5rem 2rem;
   }
+
   .footer-links {
     gap: 1.5rem;
     flex-wrap: wrap;
@@ -174,7 +234,9 @@
     padding-bottom: 3rem;
   }
 
-  #experience, #projects, #contact {
+  #experience,
+  #projects,
+  #contact {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
@@ -184,11 +246,23 @@
     padding-right: 1.5rem;
   }
 
-  .hero-name { font-size: 2.5rem; letter-spacing: -0.5px; }
+  .hero-name {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+  }
 
   .section__pic-container {
     height: 240px;
     width: 240px;
+  }
+
+  /* Terminal: slightly smaller font on mobile */
+  .hero-terminal {
+    font-size: 0.72rem;
+  }
+
+  .terminal-body {
+    padding: 0.875rem 1rem 1rem;
   }
 
   .hero-role {
@@ -196,8 +270,8 @@
   }
 
   .hero-role-tag {
-    font-size: 0.76rem;
-    padding: 0.3rem 0.75rem;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
   }
 
   .btn-container {
@@ -256,17 +330,28 @@
   }
 
   .hero-description {
-    font-size: 0.975rem;
+    font-size: 0.95rem;
   }
 
   .about-text {
     font-size: 0.95rem;
   }
+
+  .project-metrics {
+    gap: 0.35rem;
+  }
+
+  .ml-chip {
+    font-size: 0.62rem;
+    padding: 0.18rem 0.5rem;
+  }
 }
 
 /* ── VERY SMALL MOBILE (max 400px) ── */
 @media (max-width: 400px) {
-  .hero-name { font-size: 2.1rem; }
+  .hero-name {
+    font-size: 2.1rem;
+  }
 
   .about-cards {
     grid-template-columns: 1fr;
@@ -293,7 +378,13 @@
     width: 210px;
   }
 
-  .skill-category { padding: 1.25rem; }
+  .skill-category {
+    padding: 1.25rem;
+  }
+
+  .hero-terminal {
+    font-size: 0.66rem;
+  }
 }
 
 /* ── LANDSCAPE MOBILE ── */
@@ -312,10 +403,32 @@
     width: 200px;
   }
 
-  .hero-name { font-size: 2.5rem; }
-  .hero-content { align-items: flex-start; text-align: left; }
-  .hero-role { justify-content: flex-start; }
-  .hero-description { text-align: left; }
-  .btn-container { justify-content: flex-start; }
-  #socials-container { justify-content: flex-start; }
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-role {
+    justify-content: flex-start;
+  }
+
+  .hero-description {
+    text-align: left;
+  }
+
+  .btn-container {
+    justify-content: flex-start;
+  }
+
+  #socials-container {
+    justify-content: flex-start;
+  }
+
+  .hero-terminal {
+    max-width: 380px;
+  }
 }
