@@ -1,0 +1,116 @@
+.section {
+  position: relative;
+  border-top: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  gap: 0;
+  margin-top: var(--space-6);
+  border-top: 1px solid var(--line);
+}
+
+.card {
+  position: relative;
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--line);
+  transition: background-color var(--dur) var(--ease-out);
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--step-2);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  color: var(--text);
+}
+
+.summary {
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-bottom: var(--space-5);
+}
+
+.items {
+  display: grid;
+  gap: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--line);
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  transition: color var(--dur) var(--ease-out), padding-left var(--dur) var(--ease-out);
+}
+
+.item:hover {
+  color: var(--text);
+  padding-left: 0.4rem;
+}
+
+.tick {
+  width: 5px;
+  height: 5px;
+  flex-shrink: 0;
+  border-radius: 1px;
+  rotate: 45deg;
+  background: var(--accent);
+  opacity: 0.55;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+.item:hover .tick {
+  opacity: 1;
+}
+
+.marqueeWrap {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.marqueeLabel {
+  display: block;
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+  .card {
+    padding: var(--space-6) 0 var(--space-7);
+  }
+  .card + .card {
+    padding-left: clamp(2rem, 4vw, 3.5rem);
+    margin-left: clamp(-2rem, -4vw, -3.5rem);
+    border-left: 1px solid var(--line);
+  }
+}

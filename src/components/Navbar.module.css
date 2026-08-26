@@ -1,0 +1,206 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-nav);
+  transition:
+    background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    backdrop-filter var(--dur) var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom-color: var(--line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  height: var(--nav-h);
+}
+
+/* ── Wordmark ── */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding-top: 2px;
+  transition: background-color var(--dur) var(--ease-out);
+}
+
+.brand:hover .monogram {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.brandText {
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* ── Desktop nav ── */
+.nav {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+}
+
+.navLink {
+  position: relative;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: var(--step--1);
+  font-weight: 450;
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease-out);
+}
+
+.navLink:hover {
+  color: var(--text);
+}
+
+.navLinkActive {
+  color: var(--text);
+}
+
+/* Shared layout pill that slides between active items. */
+.pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: var(--radius-full);
+  background: var(--surface-hover);
+  border: 1px solid var(--line);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.resumeBtn {
+  display: none;
+}
+
+/* ── Mobile trigger ── */
+.burger {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.burgerBars {
+  display: grid;
+  gap: 5px;
+  width: 16px;
+}
+
+.burgerBars span {
+  display: block;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform var(--dur) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+}
+
+.burgerOpen .burgerBars span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.burgerOpen .burgerBars span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen .burgerBars span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Mobile sheet ── */
+.sheet {
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  z-index: calc(var(--z-nav) - 1);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: var(--space-6) var(--gutter) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sheetLink {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.sheetIndex {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  color: var(--accent);
+}
+
+.sheetFooter {
+  margin-top: auto;
+  padding-top: var(--space-7);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.sheetMeta {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+@media (min-width: 860px) {
+  .nav {
+    display: flex;
+  }
+  .burger {
+    display: none;
+  }
+  .resumeBtn {
+    display: inline-flex;
+  }
+}

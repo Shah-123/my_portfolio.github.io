@@ -1,0 +1,140 @@
+/* ============================================================
+   DESIGN TOKENS
+   A restrained editorial system: near-black canvas, warm ivory
+   light mode, and a single muted-gold accent used sparingly.
+   ============================================================ */
+
+:root {
+  /* ── Type families ── */
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* ── Fluid type scale (clamped to viewport) ── */
+  --step--2: clamp(0.69rem, 0.67rem + 0.1vw, 0.75rem);
+  --step--1: clamp(0.81rem, 0.78rem + 0.15vw, 0.89rem);
+  --step-0: clamp(0.95rem, 0.92rem + 0.18vw, 1.05rem);
+  --step-1: clamp(1.14rem, 1.08rem + 0.3vw, 1.33rem);
+  --step-2: clamp(1.37rem, 1.27rem + 0.5vw, 1.78rem);
+  --step-3: clamp(1.64rem, 1.48rem + 0.8vw, 2.37rem);
+  --step-4: clamp(1.97rem, 1.72rem + 1.25vw, 3.16rem);
+  --step-5: clamp(2.36rem, 1.98rem + 1.9vw, 4.21rem);
+  --step-6: clamp(2.83rem, 2.26rem + 2.85vw, 5.61rem);
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-y: clamp(5rem, 10vw, 9rem);
+
+  /* ── Layout ── */
+  --shell: 1240px;
+  --shell-narrow: 880px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --nav-h: 72px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 620ms;
+
+  /* ── Z-index ── */
+  --z-grain: 1;
+  --z-raised: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+}
+
+/* ──────────────────────────────────────────
+   DARK — default
+   ────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #08090a;
+  --bg-elevated: #0d0e10;
+  --bg-sunken: #050506;
+  --surface: rgba(255, 255, 255, 0.026);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --surface-solid: #121316;
+
+  --text: #f2f1ee;
+  --text-secondary: #b4b3ae;
+  --text-muted: #95948e;
+  --text-faint: #807f79;
+  --text-on-accent: #0a0800;
+
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  --accent: #d8b45c;
+  --accent-soft: rgba(216, 180, 92, 0.14);
+  --accent-line: rgba(216, 180, 92, 0.34);
+  --accent-glow: rgba(216, 180, 92, 0.1);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 12px 32px -12px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 32px 64px -24px rgba(0, 0, 0, 0.85);
+
+  --grain-opacity: 0.035;
+  --code-bg: #0b0c0e;
+  --code-comment: #5f7a5f;
+  --code-kw: #8fb4d8;
+  --code-str: #c8a07c;
+  --code-fn: #d8b45c;
+  --code-text: #b9bcc2;
+}
+
+/* ──────────────────────────────────────────
+   LIGHT — warm paper
+   ────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6f5f2;
+  --bg-elevated: #fffefb;
+  --bg-sunken: #eceae5;
+  --surface: rgba(18, 18, 15, 0.022);
+  --surface-hover: rgba(18, 18, 15, 0.045);
+  --surface-solid: #fffefb;
+
+  --text: #14140f;
+  --text-secondary: #43423c;
+  --text-muted: #5f5e57;
+  --text-faint: #6a6961;
+  --text-on-accent: #fffefb;
+
+  --line: rgba(20, 20, 15, 0.11);
+  --line-strong: rgba(20, 20, 15, 0.2);
+
+  --accent: #8a6a1f;
+  --accent-soft: rgba(138, 106, 31, 0.09);
+  --accent-line: rgba(138, 106, 31, 0.3);
+  --accent-glow: rgba(138, 106, 31, 0.07);
+
+  --shadow-sm: 0 1px 2px rgba(20, 20, 15, 0.06);
+  --shadow-md: 0 12px 32px -14px rgba(20, 20, 15, 0.22);
+  --shadow-lg: 0 32px 64px -28px rgba(20, 20, 15, 0.28);
+
+  --grain-opacity: 0.024;
+  --code-bg: #17181a;
+  --code-comment: #6b8a6b;
+  --code-kw: #9dc0e2;
+  --code-str: #d0a882;
+  --code-fn: #e0c274;
+  --code-text: #c6c9cf;
+}

@@ -1,0 +1,113 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: var(--space-7) var(--space-6);
+  background: var(--bg-sunken);
+}
+
+.top {
+  display: grid;
+  gap: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--line);
+}
+
+.brandBlock {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 34ch;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.tagline {
+  font-size: var(--step--1);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.colTitle {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.colList {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.colLink {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+  transition: color var(--dur) var(--ease-out);
+  width: fit-content;
+}
+
+.colLink:hover {
+  color: var(--accent);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
+
+.toTop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease-out);
+}
+
+.toTop:hover {
+  color: var(--accent);
+}
+
+.toTop svg {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.toTop:hover svg {
+  transform: translateY(-3px);
+}
+
+@media (min-width: 760px) {
+  .top {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: start;
+  }
+}
