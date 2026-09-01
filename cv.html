@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahkar Ahmad — CV | AI Engineer</title>
+  <meta name="description"
+    content="Curriculum Vitae of Shahkar Ahmad — AI Engineer specialising in agentic AI, LangGraph multi-agent systems, RAG pipelines and applied machine learning." />
+  <meta name="author" content="Shahkar Ahmad" />
+  <style>
+    /* ═══════════════ FONTS (self-hosted — no external requests) ═══════════════ */
+    @font-face {
+      font-family: "Inter";
+      src: url("./assets/fonts/inter-latin-var.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "JetBrains Mono";
+      src: url("./assets/fonts/jetbrains-mono-latin-var.woff2") format("woff2");
+      font-weight: 100 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ═══════════════ TOKENS ═══════════════ */
+    :root {
+      --ink: #14181d;
+      --ink-soft: #3d4650;
+      --ink-mute: #6b7683;
+      --rule: #d9dee4;
+      --sep: #a7b0ba;
+      --rule-soft: #eaeef2;
+      --accent: #0e7490;
+      --accent-soft: #e6f4f7;
+      --page: #ffffff;
+      --desk: #eceff3;
+
+      --fs-body: 9.15pt;
+      --fs-small: 8.05pt;
+      --lh: 1.36;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--desk);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "kern" 1, "liga" 1;
+    }
+
+    /* ═══════════════ PAGE ═══════════════ */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      padding: 13mm 15mm 12mm;
+      background: var(--page);
+      box-shadow: 0 1px 2px rgba(20, 24, 29, .08), 0 12px 34px rgba(20, 24, 29, .10);
+      font-size: var(--fs-body);
+      line-height: var(--lh);
+    }
+
+    /* ═══════════════ HEADER ═══════════════ */
+    .name {
+      margin: 0;
+      font-size: 25pt;
+      font-weight: 700;
+      letter-spacing: -.022em;
+      line-height: 1;
+    }
+
+    .role {
+      margin: 5px 0 0;
+      font-size: 10pt;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .004em;
+    }
+
+    .role .sep {
+      color: var(--sep);
+      font-weight: 400;
+      margin: 0 .38em;
+    }
+
+    .contact {
+      margin: 9px 0 0;
+      padding-top: 8px;
+      border-top: 1.4px solid var(--ink);
+      font-size: var(--fs-small);
+      color: var(--ink-soft);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 .55em;
+      align-items: baseline;
+    }
+
+    .contact a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: .5px solid var(--rule);
+    }
+
+    .contact a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .contact .dot {
+      color: var(--sep);
+    }
+
+    /* ═══════════════ SECTIONS ═══════════════ */
+    section {
+      margin-top: 11px;
+    }
+
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 7px;
+      font-size: 7.9pt;
+      font-weight: 700;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .sec-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--ink-soft);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .summary strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ═══════════════ SKILLS ═══════════════ */
+    .skills {
+      display: grid;
+      grid-template-columns: 30mm 1fr;
+      gap: 3.5px 10px;
+    }
+
+    .skills dt {
+      font-weight: 600;
+      font-size: var(--fs-small);
+      color: var(--ink);
+      padding-top: .5px;
+    }
+
+    .skills dd {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: var(--fs-small);
+    }
+
+    .skills dd b {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .skills .mid {
+      color: var(--sep);
+      margin: 0 .18em;
+    }
+
+    /* ═══════════════ ENTRIES ═══════════════ */
+    .entry {
+      margin-bottom: 8px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 2.5px;
+    }
+
+    .entry-title {
+      font-size: 9.9pt;
+      font-weight: 700;
+      letter-spacing: -.008em;
+      margin: 0;
+    }
+
+    .entry-title .qualifier {
+      font-weight: 400;
+      color: var(--ink-soft);
+      font-size: 9.1pt;
+    }
+
+    .entry-title .tag {
+      display: inline-block;
+      margin-left: 5px;
+      padding: 1px 5px 1.5px;
+      border-radius: 3px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 6.6pt;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      vertical-align: 1.5px;
+    }
+
+    .entry-meta {
+      flex-shrink: 0;
+      text-align: right;
+      font-size: var(--fs-small);
+      color: var(--ink-mute);
+      white-space: nowrap;
+    }
+
+    .entry-meta a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .entry-meta .date {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .entry-meta .dot {
+      color: var(--sep);
+      margin: 0 .3em;
+    }
+
+    ul.bullets {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 1.5px;
+      color: var(--ink-soft);
+    }
+
+    ul.bullets li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: .55em;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    ul.bullets li b {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .stack {
+      margin-top: 3px;
+      padding-left: 11px;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size: 7.5pt;
+      letter-spacing: -.012em;
+      color: var(--ink-mute);
+    }
+
+    .stack span {
+      color: var(--ink-soft);
+    }
+
+    /* ═══════════════ EDUCATION ═══════════════ */
+    .edu-detail {
+      color: var(--ink-soft);
+      font-size: var(--fs-small);
+      padding-left: 0;
+    }
+
+    /* ═══════════════ ADDITIONAL WORK ═══════════════ */
+    ul.compact {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.compact li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 2.5px;
+      color: var(--ink-soft);
+      font-size: var(--fs-small);
+    }
+
+    ul.compact li::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: .5em;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--rule);
+    }
+
+    ul.compact li b {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .availability {
+      margin: 14px 0 0;
+      padding-top: 7px;
+      border-top: 1px solid var(--rule-soft);
+      font-size: var(--fs-small);
+      color: var(--ink-mute);
+      text-align: center;
+      break-inside: avoid;
+    }
+
+    .availability .dot {
+      color: var(--sep);
+      margin: 0 .3em;
+    }
+
+    a.src {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ═══════════════ SCREEN-ONLY TOOLBAR ═══════════════ */
+    .toolbar {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .toolbar a,
+    .toolbar button {
+      font: inherit;
+      font-size: 8.8pt;
+      font-weight: 600;
+      padding: 9px 15px;
+      border-radius: 7px;
+      border: 1px solid var(--rule);
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 3px 12px rgba(20, 24, 29, .12);
+    }
+
+    .toolbar button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .toolbar a:hover,
+    .toolbar button:hover {
+      transform: translateY(-1px);
+    }
+
+    /* ═══════════════ PRINT ═══════════════ */
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 22px 18px;
+        box-shadow: none;
+        font-size: 11px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+        gap: 1px 0;
+      }
+
+      .skills dt {
+        margin-top: 5px;
+      }
+
+      .entry-head {
+        flex-direction: column;
+        gap: 1px;
+      }
+
+      .entry-meta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <header>
+      <h1 class="name">Shahkar Ahmad</h1>
+      <p class="role">AI Engineer<span class="sep">/</span>Agentic Systems, LLM Applications &amp; Applied ML</p>
+      <div class="contact">
+        <span>Peshawar, Pakistan</span><span class="dot">·</span>
+        <span>+92 332 9507635</span><span class="dot">·</span>
+        <a href="mailto:shahkarahmad342@gmail.com">shahkarahmad342@gmail.com</a><span class="dot">·</span>
+        <a href="https://github.com/Shah-123">github.com/Shah-123</a><span class="dot">·</span>
+        <a href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/">linkedin.com/in/shahkar-ahmad</a><span
+          class="dot">·</span>
+        <a href="https://shah-123.github.io">shah-123.github.io</a>
+      </div>
+    </header>
+
+    <!-- ═══════════════ SUMMARY ═══════════════ -->
+    <section>
+      <h2 class="sec-label">Summary</h2>
+      <p class="summary">
+        Final-year Computer Science student (AI specialisation) who builds agentic AI systems end to end — LangGraph
+        state machines, hybrid retrieval pipelines, and the evaluation harnesses that prove they work rather than merely
+        demo well. Recent work includes a voice-first multi-agent moot-court simulator whose retrieval scores
+        <strong>MRR 1.00</strong> with <strong>100% citation accuracy</strong> against an authenticated legal corpus, and
+        a 13-agent content engine with human-in-the-loop control and LLM-as-judge scoring. Comfortable across the stack:
+        Python and FastAPI for reasoning services, TypeScript and React for the surface, PostgreSQL underneath. Seeking
+        an AI/ML internship or a remote AI Engineer role.
+      </p>
+    </section>
+
+    <!-- ═══════════════ SKILLS ═══════════════ -->
+    <section>
+      <h2 class="sec-label">Technical Skills</h2>
+      <dl class="skills">
+        <dt>Agentic AI</dt>
+        <dd>LangGraph <span class="mid">·</span> LangChain <span class="mid">·</span> Multi-Agent Orchestration <span
+            class="mid">·</span> ReAct &amp; Supervisor Patterns <span class="mid">·</span> Human-in-the-Loop <span
+            class="mid">·</span> Tool Calling <span class="mid">·</span> MCP</dd>
+
+        <dt>RAG &amp; Retrieval</dt>
+        <dd>Hybrid BM25 + dense vectors <span class="mid">·</span> Reciprocal Rank Fusion <span class="mid">·</span> LLM
+          reranking <span class="mid">·</span> Semantic chunking <span class="mid">·</span> Citation grounding &amp;
+          auditing</dd>
+
+        <dt>LLMs &amp; Evaluation</dt>
+        <dd>GPT-4o / 4o-mini <span class="mid">·</span> Gemini 2.5 Flash (native audio) <span class="mid">·</span>
+          OpenAI Embeddings <span class="mid">·</span> Prompt Engineering <span class="mid">·</span> DeepEval G-Eval
+          <span class="mid">·</span> LLM-as-Judge <span class="mid">·</span> recall@k / MRR / F1
+        </dd>
+
+        <dt>Machine Learning</dt>
+        <dd>Scikit-learn <span class="mid">·</span> TensorFlow / Keras <span class="mid">·</span> CNN, RNN, MLP <span
+            class="mid">·</span> Pandas <span class="mid">·</span> NumPy <span class="mid">·</span> Matplotlib /
+          Seaborn <span class="mid">·</span> EDA <span class="mid">·</span> Feature Engineering</dd>
+
+        <dt>Backend &amp; Data</dt>
+        <dd>Python <span class="mid">·</span> FastAPI <span class="mid">·</span> Express.js <span class="mid">·</span>
+          TypeScript <span class="mid">·</span> PostgreSQL <span class="mid">·</span> Drizzle ORM <span
+            class="mid">·</span> Supabase <span class="mid">·</span> SQLite <span class="mid">·</span> OpenAPI /
+          REST <span class="mid">·</span> WebSockets</dd>
+
+        <dt>Frontend &amp; Tools</dt>
+        <dd>React 19 <span class="mid">·</span> Vite <span class="mid">·</span> Streamlit <span class="mid">·</span>
+          Tailwind CSS <span class="mid">·</span> Git &amp; GitHub <span class="mid">·</span> Docker <span
+            class="mid">·</span> Jupyter <span class="mid">·</span> Power BI</dd>
+
+        <dt>Languages</dt>
+        <dd>English <span class="mid">·</span> Urdu <span class="mid">·</span> Pashto</dd>
+      </dl>
+    </section>
+
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
+    <section>
+      <h2 class="sec-label">Selected Projects</h2>
+
+      <!-- Adalat AI -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Adalat AI <span class="qualifier">— Voice-First AI Moot-Court Simulator</span></h3>
+          <div class="entry-meta"><a href="https://github.com/Shah-123/CourtSimulator">Shah-123/CourtSimulator</a><span
+              class="dot">·</span><span class="date">2026</span></div>
+        </div>
+        <ul class="bullets">
+          <li>Architected a <b>LangGraph state machine</b> where a supervisor routes each student utterance through
+            independent Judge, Opposing Counsel and Witness agents, backed by two-tier memory — verbatim working memory
+            plus a summarised case file — so counsel catches a student who changes their story across phases.</li>
+          <li>Built a <b>ReAct Judge</b> that calls a <code>search_statute</code> tool to read the governing provision
+            before ruling, and an Opposing Counsel raising autonomous evidentiary objections verified against the
+            Qanun-e-Shahadat Order 1984.</li>
+          <li>Engineered a hybrid <b>RAG pipeline</b> fusing BM25 and dense vectors via Reciprocal Rank Fusion
+            (k&nbsp;=&nbsp;60) with LLM reranking, plus a citation audit engine that flags fabricated provisions rather
+            than presenting them as settled law.</li>
+          <li>Designed a contract-first microservice architecture — Express API, Python FastAPI reasoning service,
+            OpenAPI-generated clients and validators — with streaming STT/TTS, cutting time-to-first-audio from
+            <b>16.1s to 6.9s</b>.</li>
+          <li>Established an evaluation harness over <b>32 labelled scenarios</b>: retrieval MRR 1.00, objection F1 1.00,
+            citation accuracy 100% versus 0% for the ungrounded baseline.</li>
+        </ul>
+        <p class="stack">Tech: <span>LangGraph · Python · FastAPI · Express.js · React 19 · OpenAI API · PostgreSQL ·
+            Drizzle ORM</span></p>
+      </div>
+
+      <!-- AI Content Factory -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">AI Content Factory <span class="qualifier">— Multi-Agent Content Engine</span><span class="tag">Final Year Project</span></h3>
+          <div class="entry-meta"><a
+              href="https://github.com/Shah-123/AI-Content-Factory">Shah-123/AI-Content-Factory</a><span
+              class="dot">·</span><span class="date">2025 – 2026</span></div>
+        </div>
+        <ul class="bullets">
+          <li>Built a <b>13-agent LangGraph pipeline</b> — router, researcher, orchestrator, parallel workers, QC
+            auditor, SEO optimiser, podcast studio, video generator and academic judge — turning one prompt into a
+            researched blog post, social campaign, podcast and short-form video.</li>
+          <li>Parallelised the writing phase with fan-out worker agents scoped to their own evidence records, cutting
+            generation time against sequential writing while preventing redundant text and source-stuffing.</li>
+          <li>Implemented <b>Human-in-the-Loop</b> outline control via LangGraph interrupts and a SQLite checkpointer, so
+            users approve or rewrite the plan before costly generation and interrupted runs resume from the last saved
+            step instead of repeating LLM calls.</li>
+          <li>Grounded output in retrieved evidence — semantic chunking over <code>text-embedding-3-small</code> plus a
+            Tavily-backed fact-checking auditor — and scored every run with an in-house rubric and <b>DeepEval
+              G-Eval</b> across coherence, relevance, grounding and tone.</li>
+        </ul>
+        <p class="stack">Tech: <span>LangGraph · Python 3.11 · FastAPI · OpenAI API · Gemini 2.5 Flash · Tavily ·
+            DeepEval · MoviePy · React</span></p>
+      </div>
+
+      <!-- Live Agent Hub -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">Live Agent Hub <span class="qualifier">— AI Streamer Practice Platform</span></h3>
+          <div class="entry-meta"><a href="https://live-agent-hub.vercel.app">live-agent-hub.vercel.app</a><span
+              class="dot">·</span><span class="date">2025</span></div>
+        </div>
+        <ul class="bullets">
+          <li>Built a full-stack platform that simulates a live Twitch chat with <b>8 distinct AI personas</b> driven by
+            OpenAI completion endpoints, letting streamers rehearse against a realistic audience.</li>
+          <li>Engineered humanised agent traits — slang, typo simulation, chattiness filters and dynamic reaction to
+            on-screen context — so the room reads as people rather than a bot loop.</li>
+          <li>Architected an Express.js backend on PostgreSQL/Supabase behind a React + Vite frontend, deployed and
+            publicly playable.</li>
+        </ul>
+        <p class="stack">Tech: <span>React · Vite · TypeScript · Tailwind CSS · Radix UI · Express.js · PostgreSQL ·
+            Supabase · OpenAI API</span></p>
+      </div>
+
+      <!-- ChessMastermind -->
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">ChessMastermind <span class="qualifier">— Chess Engine Built From Scratch</span></h3>
+          <div class="entry-meta"><a
+              href="https://github.com/Shah-123/chessAgent">Shah-123/chessAgent</a><span
+              class="dot">·</span><span class="date">2025</span></div>
+        </div>
+        <ul class="bullets">
+          <li>Implemented minimax with <b>alpha-beta pruning</b>, iterative deepening, aspiration windows and quiescence
+            search — no engine library doing the thinking.</li>
+          <li>Optimised search with transposition tables (FEN hashing), MVV-LVA move ordering, killer-move and history
+            heuristics.</li>
+          <li>Wrote evaluation covering piece-square tables, pawn structure (passed/isolated), king safety and knight
+            outposts, served through a FastAPI + Streamlit interface that explains its reasoning.</li>
+        </ul>
+        <p class="stack">Tech: <span>Python · python-chess · FastAPI · Streamlit · NumPy</span></p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════ EDUCATION ═══════════════ -->
+    <section>
+      <h2 class="sec-label">Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3 class="entry-title">University of Peshawar <span class="qualifier">— BS Computer Science, AI
+              Specialisation</span></h3>
+          <div class="entry-meta">Peshawar, Pakistan<span class="dot">·</span><span class="date">Oct 2022 – Oct
+              2026 (expected)</span></div>
+        </div>
+        <p class="edu-detail" style="margin:0;">Final Year Project: AI Content Factory — stateful multi-agent content
+          orchestration and evaluation engine. Relevant coursework: Machine Learning · Deep Learning · Data Structures ·
+          Database Systems · Software Engineering.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ ADDITIONAL WORK ═══════════════ -->
+    <section>
+      <h2 class="sec-label">Additional ML &amp; Data Work</h2>
+      <ul class="compact">
+        <li><b>Corrective RAG</b> — retrieval pipeline that grades the context it retrieves and re-queries when quality
+          falls short, rather than answering from a weak match. <a class="src"
+            href="https://github.com/Shah-123/Corrective-RAG-">GitHub</a></li>
+        <li><b>Polio Campaign Monitor</b> (2024) — forecast “Not Available Children” field metrics to help supervisors
+          allocate vaccination resources; ~91% accuracy on messy real-world data, delivered as a Streamlit dashboard.
+        </li>
+        <li><b>ODI Run Predictor</b> — regression model (R² 0.92, MSE 0.11) predicting cricket innings totals from match
+          conditions, exposed via a FastAPI endpoint and a Streamlit UI. <a class="src"
+            href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor">GitHub</a></li>
+        <li><b>YouTube Video Summariser</b> — LangChain pipeline turning transcripts into chapter summaries, key
+          insights and action items. <a class="src"
+            href="https://github.com/Shah-123/YouTubeVideoSummarizer">GitHub</a></li>
+        <li><b>Also:</b> Heart Failure Prediction (clinical risk classification) · Google Play Store EDA across 10,000+
+          apps · deep-learning mini-projects in CNNs, RNNs and transfer learning · Power BI KPI dashboards.</li>
+      </ul>
+    </section>
+
+    <p class="availability">Open to AI/ML internships, remote AI Engineer roles and freelance LLM &amp; agentic-AI
+      contracts <span class="dot">·</span> UTC+5, flexible hours <span class="dot">·</span> References available on
+      request</p>
+
+  </div>
+
+  <div class="toolbar">
+    <a href="./index.html">← Portfolio</a>
+    <button class="primary" onclick="window.print()">Download PDF</button>
+  </div>
+
+</body>
+
+</html>
