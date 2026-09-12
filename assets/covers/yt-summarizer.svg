@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Audio waveform condensing into a structured written summary">
   <defs>
     <linearGradient id="yt-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="yt-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="yt-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
     <marker id="yt-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#C6A667"/>
+      <path d="M0 0 10 5 0 10z" fill="#2EE6A8"/>
     </marker>
   </defs>
 
@@ -21,18 +21,18 @@
   <circle cx="600" cy="375" r="340" fill="url(#yt-glow)"/>
 
   <g transform="translate(110 375)">
-    <text x="0" y="-186" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">TRANSCRIPT</text>
-    <g fill="#4A4D55">
+    <text x="0" y="-186" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">TRANSCRIPT</text>
+    <g fill="#3A434F">
       <rect x="0" y="-46" width="7" height="92" rx="3.5"/>
       <rect x="18" y="-88" width="7" height="176" rx="3.5"/>
       <rect x="36" y="-30" width="7" height="60" rx="3.5"/>
       <rect x="54" y="-118" width="7" height="236" rx="3.5"/>
       <rect x="72" y="-66" width="7" height="132" rx="3.5"/>
-      <rect x="90" y="-140" width="7" height="280" rx="3.5" fill="#C6A667" fill-opacity=".75"/>
+      <rect x="90" y="-140" width="7" height="280" rx="3.5" fill="#2EE6A8" fill-opacity=".75"/>
       <rect x="108" y="-52" width="7" height="104" rx="3.5"/>
       <rect x="126" y="-96" width="7" height="192" rx="3.5"/>
       <rect x="144" y="-24" width="7" height="48" rx="3.5"/>
-      <rect x="162" y="-126" width="7" height="252" rx="3.5" fill="#C6A667" fill-opacity=".5"/>
+      <rect x="162" y="-126" width="7" height="252" rx="3.5" fill="#2EE6A8" fill-opacity=".5"/>
       <rect x="180" y="-70" width="7" height="140" rx="3.5"/>
       <rect x="198" y="-40" width="7" height="80" rx="3.5"/>
       <rect x="216" y="-104" width="7" height="208" rx="3.5"/>
@@ -42,35 +42,35 @@
       <rect x="288" y="-112" width="7" height="224" rx="3.5"/>
       <rect x="306" y="-62" width="7" height="124" rx="3.5"/>
     </g>
-    <text x="0" y="196" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#6E7076">42:18</text>
+    <text x="0" y="196" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#646C79">42:18</text>
   </g>
 
-  <path d="M470 375 H 600" fill="none" stroke="#C6A667" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#yt-ar)"/>
-  <text x="535" y="352" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="1.8" fill="#C6A667">llm</text>
+  <path d="M470 375 H 600" fill="none" stroke="#2EE6A8" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#yt-ar)"/>
+  <text x="535" y="352" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="1.8" fill="#2EE6A8">llm</text>
 
   <g transform="translate(640 168)">
-    <rect x="0" y="0" width="450" height="414" rx="12" fill="#0E0F12" stroke="#33363D"/>
-    <text x="32" y="48" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#C6A667">SUMMARY</text>
-    <g fill="#3A3D44">
+    <rect x="0" y="0" width="450" height="414" rx="12" fill="#0A0C10" stroke="#2A313B"/>
+    <text x="32" y="48" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#2EE6A8">SUMMARY</text>
+    <g fill="#2F3742">
       <rect x="32" y="76" width="386" height="9" rx="4.5"/>
       <rect x="32" y="100" width="330" height="9" rx="4.5"/>
       <rect x="32" y="124" width="362" height="9" rx="4.5"/>
     </g>
-    <line x1="32" y1="164" x2="418" y2="164" stroke="#33363D"/>
-    <text x="32" y="200" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">KEY TAKEAWAYS</text>
+    <line x1="32" y1="164" x2="418" y2="164" stroke="#2A313B"/>
+    <text x="32" y="200" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">KEY TAKEAWAYS</text>
     <g>
-      <circle cx="38" cy="234" r="4" fill="#C6A667"/>
-      <rect x="58" y="230" width="290" height="8" rx="4" fill="#4A4D55"/>
-      <circle cx="38" cy="272" r="4" fill="#C6A667"/>
-      <rect x="58" y="268" width="340" height="8" rx="4" fill="#4A4D55"/>
-      <circle cx="38" cy="310" r="4" fill="#C6A667"/>
-      <rect x="58" y="306" width="252" height="8" rx="4" fill="#4A4D55"/>
-      <circle cx="38" cy="348" r="4" fill="#C6A667"/>
-      <rect x="58" y="344" width="308" height="8" rx="4" fill="#4A4D55"/>
+      <circle cx="38" cy="234" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="230" width="290" height="8" rx="4" fill="#3A434F"/>
+      <circle cx="38" cy="272" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="268" width="340" height="8" rx="4" fill="#3A434F"/>
+      <circle cx="38" cy="310" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="306" width="252" height="8" rx="4" fill="#3A434F"/>
+      <circle cx="38" cy="348" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="344" width="308" height="8" rx="4" fill="#3A434F"/>
     </g>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">TRANSCRIPT → STRUCTURED SUMMARY</text>
     <text x="1144" y="702" text-anchor="end">NLP · STREAMLIT</text>
   </g>

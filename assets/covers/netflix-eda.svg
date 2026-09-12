@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Stacked area chart of catalogue growth by year beside a genre distribution">
   <defs>
     <linearGradient id="nf-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="nf-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="nf-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".2"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -18,62 +18,62 @@
   <circle cx="560" cy="400" r="340" fill="url(#nf-glow)"/>
 
   <g transform="translate(110 170)">
-    <text x="0" y="-20" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#6E7076">TITLES ADDED PER YEAR</text>
-    <g stroke="#26292F">
+    <text x="0" y="-20" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">TITLES ADDED PER YEAR</text>
+    <g stroke="#1B2129">
       <line x1="0" y1="0" x2="700" y2="0"/>
       <line x1="0" y1="98" x2="700" y2="98"/>
       <line x1="0" y1="196" x2="700" y2="196"/>
       <line x1="0" y1="294" x2="700" y2="294"/>
     </g>
-    <line x1="0" y1="392" x2="700" y2="392" stroke="#3A3D44"/>
+    <line x1="0" y1="392" x2="700" y2="392" stroke="#2F3742"/>
 
     <path d="M0 392 L 0 372 L 100 358 L 200 330 L 300 268 L 400 186 L 500 132 L 600 148 L 700 118 L 700 392 Z"
-          fill="#C6A667" fill-opacity=".22"/>
+          fill="#2EE6A8" fill-opacity=".22"/>
     <path d="M0 372 L 100 358 L 200 330 L 300 268 L 400 186 L 500 132 L 600 148 L 700 118"
-          fill="none" stroke="#C6A667" stroke-width="2.5"/>
+          fill="none" stroke="#2EE6A8" stroke-width="2.5"/>
 
     <path d="M0 392 L 0 386 L 100 380 L 200 366 L 300 336 L 400 300 L 500 276 L 600 288 L 700 262 L 700 392 Z"
-          fill="#7C808A" fill-opacity=".18"/>
+          fill="#565F6C" fill-opacity=".18"/>
     <path d="M0 386 L 100 380 L 200 366 L 300 336 L 400 300 L 500 276 L 600 288 L 700 262"
-          fill="none" stroke="#7C808A" stroke-width="2"/>
+          fill="none" stroke="#565F6C" stroke-width="2"/>
 
-    <g fill="#C6A667">
+    <g fill="#2EE6A8">
       <circle cx="400" cy="186" r="5"/><circle cx="700" cy="118" r="5"/>
     </g>
 
-    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6E7076">
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">
       <text x="0" y="418">2013</text>
       <text x="200" y="418" text-anchor="middle">2015</text>
       <text x="400" y="418" text-anchor="middle">2017</text>
       <text x="600" y="418" text-anchor="middle">2019</text>
       <text x="700" y="418" text-anchor="end">2021</text>
     </g>
-    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#9BA0A9">
-      <circle cx="6" cy="452" r="5" fill="#C6A667"/><text x="22" y="457">Movies</text>
-      <circle cx="120" cy="452" r="5" fill="#7C808A"/><text x="136" y="457">TV Shows</text>
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#9AA2AE">
+      <circle cx="6" cy="452" r="5" fill="#2EE6A8"/><text x="22" y="457">Movies</text>
+      <circle cx="120" cy="452" r="5" fill="#565F6C"/><text x="136" y="457">TV Shows</text>
     </g>
   </g>
 
   <g transform="translate(884 170)" font-family="ui-monospace,'JetBrains Mono',monospace">
-    <text x="0" y="-20" font-size="12" letter-spacing="2.2" fill="#6E7076">TOP GENRES</text>
+    <text x="0" y="-20" font-size="12" letter-spacing="2.2" fill="#646C79">TOP GENRES</text>
     <g font-size="13">
-      <text x="0" y="26" fill="#9BA0A9">International</text>
-      <rect x="0" y="38" width="220" height="8" rx="4" fill="#26292F"/><rect x="0" y="38" width="200" height="8" rx="4" fill="#C6A667"/>
-      <text x="0" y="86" fill="#9BA0A9">Drama</text>
-      <rect x="0" y="98" width="220" height="8" rx="4" fill="#26292F"/><rect x="0" y="98" width="168" height="8" rx="4" fill="#C6A667" fill-opacity=".8"/>
-      <text x="0" y="146" fill="#9BA0A9">Comedy</text>
-      <rect x="0" y="158" width="220" height="8" rx="4" fill="#26292F"/><rect x="0" y="158" width="132" height="8" rx="4" fill="#7C808A"/>
-      <text x="0" y="206" fill="#9BA0A9">Documentary</text>
-      <rect x="0" y="218" width="220" height="8" rx="4" fill="#26292F"/><rect x="0" y="218" width="94" height="8" rx="4" fill="#7C808A"/>
-      <text x="0" y="266" fill="#9BA0A9">Action</text>
-      <rect x="0" y="278" width="220" height="8" rx="4" fill="#26292F"/><rect x="0" y="278" width="72" height="8" rx="4" fill="#4A4D55"/>
+      <text x="0" y="26" fill="#9AA2AE">International</text>
+      <rect x="0" y="38" width="220" height="8" rx="4" fill="#1B2129"/><rect x="0" y="38" width="200" height="8" rx="4" fill="#2EE6A8"/>
+      <text x="0" y="86" fill="#9AA2AE">Drama</text>
+      <rect x="0" y="98" width="220" height="8" rx="4" fill="#1B2129"/><rect x="0" y="98" width="168" height="8" rx="4" fill="#2EE6A8" fill-opacity=".8"/>
+      <text x="0" y="146" fill="#9AA2AE">Comedy</text>
+      <rect x="0" y="158" width="220" height="8" rx="4" fill="#1B2129"/><rect x="0" y="158" width="132" height="8" rx="4" fill="#565F6C"/>
+      <text x="0" y="206" fill="#9AA2AE">Documentary</text>
+      <rect x="0" y="218" width="220" height="8" rx="4" fill="#1B2129"/><rect x="0" y="218" width="94" height="8" rx="4" fill="#565F6C"/>
+      <text x="0" y="266" fill="#9AA2AE">Action</text>
+      <rect x="0" y="278" width="220" height="8" rx="4" fill="#1B2129"/><rect x="0" y="278" width="72" height="8" rx="4" fill="#3A434F"/>
     </g>
-    <line x1="0" y1="330" x2="220" y2="330" stroke="#33363D"/>
-    <text x="0" y="366" font-size="12" fill="#6E7076">RECORDS</text>
-    <text x="220" y="366" font-size="12" text-anchor="end" fill="#E8E6E1">8,807</text>
+    <line x1="0" y1="330" x2="220" y2="330" stroke="#2A313B"/>
+    <text x="0" y="366" font-size="12" fill="#646C79">RECORDS</text>
+    <text x="220" y="366" font-size="12" text-anchor="end" fill="#E9EBEE">8,807</text>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">CATALOGUE EDA</text>
     <text x="1144" y="702" text-anchor="end">PANDAS · SEABORN</text>
   </g>

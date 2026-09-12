@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Directed graph of five collaborating agents feeding a writer node">
   <defs>
     <linearGradient id="ma-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="ma-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="ma-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
     <marker id="ma-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#7C808A"/>
+      <path d="M0 0 10 5 0 10z" fill="#565F6C"/>
     </marker>
   </defs>
 
@@ -20,7 +20,7 @@
   <rect width="1200" height="750" fill="url(#ma-grid)"/>
   <circle cx="640" cy="375" r="330" fill="url(#ma-glow)"/>
 
-  <g stroke="#7C808A" stroke-opacity=".55" stroke-width="1.5" fill="none" marker-end="url(#ma-ar)">
+  <g stroke="#565F6C" stroke-opacity=".55" stroke-width="1.5" fill="none" marker-end="url(#ma-ar)">
     <path d="M212 375 C 270 375, 280 262, 322 258"/>
     <path d="M212 375 C 270 375, 280 490, 322 494"/>
     <path d="M446 258 C 510 258, 530 360, 566 372"/>
@@ -28,29 +28,29 @@
     <path d="M714 375 C 780 375, 800 264, 838 258"/>
     <path d="M962 258 C 1010 258, 1024 350, 1036 366"/>
   </g>
-  <path d="M900 300 C 900 420, 760 470, 700 430" fill="none" stroke="#C6A667" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="5 6"/>
+  <path d="M900 300 C 900 420, 760 470, 700 430" fill="none" stroke="#2EE6A8" stroke-opacity=".5" stroke-width="1.5" stroke-dasharray="5 6"/>
 
   <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.4" text-anchor="middle">
-    <g fill="#0A0B0D">
-      <rect x="120" y="349" width="92" height="52" rx="8" fill="#1B1D22" stroke="#33363D"/>
-      <rect x="322" y="232" width="124" height="52" rx="8" fill="#1B1D22" stroke="#33363D"/>
-      <rect x="322" y="468" width="124" height="52" rx="8" fill="#1B1D22" stroke="#33363D"/>
-      <rect x="838" y="232" width="124" height="52" rx="8" fill="#1B1D22" stroke="#33363D"/>
-      <rect x="1036" y="349" width="104" height="52" rx="8" fill="#1B1D22" stroke="#33363D"/>
+    <g fill="#06070A">
+      <rect x="120" y="349" width="92" height="52" rx="8" fill="#151A21" stroke="#2A313B"/>
+      <rect x="322" y="232" width="124" height="52" rx="8" fill="#151A21" stroke="#2A313B"/>
+      <rect x="322" y="468" width="124" height="52" rx="8" fill="#151A21" stroke="#2A313B"/>
+      <rect x="838" y="232" width="124" height="52" rx="8" fill="#151A21" stroke="#2A313B"/>
+      <rect x="1036" y="349" width="104" height="52" rx="8" fill="#151A21" stroke="#2A313B"/>
     </g>
-    <text x="166" y="381" fill="#9BA0A9">TOPIC</text>
-    <text x="384" y="264" fill="#D7D4CE">RESEARCH</text>
-    <text x="384" y="500" fill="#D7D4CE">OUTLINE</text>
-    <text x="900" y="264" fill="#D7D4CE">CRITIC</text>
-    <text x="1088" y="381" fill="#9BA0A9">BLOG</text>
+    <text x="166" y="381" fill="#9AA2AE">TOPIC</text>
+    <text x="384" y="264" fill="#E9EBEE">RESEARCH</text>
+    <text x="384" y="500" fill="#E9EBEE">OUTLINE</text>
+    <text x="900" y="264" fill="#E9EBEE">CRITIC</text>
+    <text x="1088" y="381" fill="#9AA2AE">BLOG</text>
   </g>
 
-  <circle cx="640" cy="375" r="74" fill="#0E0F12" stroke="#C6A667" stroke-width="1.5"/>
-  <circle cx="640" cy="375" r="92" fill="none" stroke="#C6A667" stroke-opacity=".22" stroke-width="1"/>
-  <text x="640" y="370" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="17" letter-spacing="1.6" fill="#E8E6E1">WRITER</text>
-  <text x="640" y="394" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#C6A667">llm</text>
+  <circle cx="640" cy="375" r="74" fill="#0A0C10" stroke="#2EE6A8" stroke-width="1.5"/>
+  <circle cx="640" cy="375" r="92" fill="none" stroke="#2EE6A8" stroke-opacity=".22" stroke-width="1"/>
+  <text x="640" y="370" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="17" letter-spacing="1.6" fill="#E9EBEE">WRITER</text>
+  <text x="640" y="394" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#2EE6A8">llm</text>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">LANGGRAPH · STATEGRAPH</text>
     <text x="56" y="702">5 AGENTS</text>
     <text x="1144" y="702" text-anchor="end">DIRECTED · CYCLIC</text>

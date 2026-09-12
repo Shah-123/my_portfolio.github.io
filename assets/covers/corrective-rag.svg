@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Retrieval pipeline with a grading loop that re-queries the vector store">
   <defs>
     <linearGradient id="cr-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="cr-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="cr-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".24"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
     <marker id="cr-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#7C808A"/>
+      <path d="M0 0 10 5 0 10z" fill="#565F6C"/>
     </marker>
     <marker id="cr-arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#C6A667"/>
+      <path d="M0 0 10 5 0 10z" fill="#2EE6A8"/>
     </marker>
   </defs>
 
@@ -24,56 +24,56 @@
   <circle cx="600" cy="330" r="340" fill="url(#cr-glow)"/>
 
   <g>
-    <rect x="112" y="268" width="130" height="168" rx="10" fill="#1B1D22" stroke="#33363D"/>
-    <rect x="128" y="252" width="130" height="168" rx="10" fill="#1B1D22" stroke="#33363D"/>
-    <rect x="144" y="236" width="130" height="168" rx="10" fill="#212429" stroke="#3A3D44"/>
-    <g fill="#3A3D44">
+    <rect x="112" y="268" width="130" height="168" rx="10" fill="#151A21" stroke="#2A313B"/>
+    <rect x="128" y="252" width="130" height="168" rx="10" fill="#151A21" stroke="#2A313B"/>
+    <rect x="144" y="236" width="130" height="168" rx="10" fill="#171C23" stroke="#2F3742"/>
+    <g fill="#2F3742">
       <rect x="166" y="268" width="86" height="7" rx="3.5"/>
       <rect x="166" y="288" width="66" height="7" rx="3.5"/>
       <rect x="166" y="308" width="78" height="7" rx="3.5"/>
       <rect x="166" y="328" width="52" height="7" rx="3.5"/>
     </g>
-    <text x="193" y="470" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9BA0A9">CORPUS</text>
+    <text x="193" y="470" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">CORPUS</text>
   </g>
 
-  <path d="M290 330 H 428" fill="none" stroke="#7C808A" stroke-opacity=".55" stroke-width="1.5" marker-end="url(#cr-ar)"/>
+  <path d="M290 330 H 428" fill="none" stroke="#565F6C" stroke-opacity=".55" stroke-width="1.5" marker-end="url(#cr-ar)"/>
 
   <g>
-    <circle cx="560" cy="330" r="118" fill="none" stroke="#33363D"/>
-    <g fill="#7C808A">
+    <circle cx="560" cy="330" r="118" fill="none" stroke="#2A313B"/>
+    <g fill="#565F6C">
       <circle cx="512" cy="286" r="6"/><circle cx="576" cy="266" r="6"/>
       <circle cx="620" cy="316" r="6"/><circle cx="494" cy="356" r="6"/>
       <circle cx="548" cy="382" r="6"/><circle cx="608" cy="388" r="6"/>
       <circle cx="536" cy="326" r="6"/>
     </g>
-    <g fill="#C6A667">
+    <g fill="#2EE6A8">
       <circle cx="576" cy="330" r="8"/><circle cx="530" cy="352" r="8"/>
     </g>
-    <text x="560" y="490" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9BA0A9">EMBEDDINGS</text>
+    <text x="560" y="490" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">EMBEDDINGS</text>
   </g>
 
-  <path d="M690 330 H 818" fill="none" stroke="#7C808A" stroke-opacity=".55" stroke-width="1.5" marker-end="url(#cr-ar)"/>
+  <path d="M690 330 H 818" fill="none" stroke="#565F6C" stroke-opacity=".55" stroke-width="1.5" marker-end="url(#cr-ar)"/>
 
   <g>
-    <rect x="828" y="236" width="256" height="188" rx="12" fill="#0E0F12" stroke="#C6A667" stroke-opacity=".55"/>
-    <text x="858" y="286" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.4" fill="#C6A667">grade()</text>
-    <g fill="#3A3D44">
+    <rect x="828" y="236" width="256" height="188" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".55"/>
+    <text x="858" y="286" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.4" fill="#2EE6A8">grade()</text>
+    <g fill="#2F3742">
       <rect x="858" y="312" width="196" height="7" rx="3.5"/>
       <rect x="858" y="332" width="160" height="7" rx="3.5"/>
       <rect x="858" y="352" width="176" height="7" rx="3.5"/>
     </g>
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13">
-      <text x="858" y="396" fill="#6E7076">relevance</text>
-      <text x="1054" y="396" text-anchor="end" fill="#E8E6E1">0.42</text>
+      <text x="858" y="396" fill="#646C79">relevance</text>
+      <text x="1054" y="396" text-anchor="end" fill="#E9EBEE">0.42</text>
     </g>
-    <text x="956" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9BA0A9">EVALUATOR</text>
+    <text x="956" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">EVALUATOR</text>
   </g>
 
   <path d="M956 500 C 956 606, 700 620, 560 570 C 480 542, 466 494, 486 448"
-        fill="none" stroke="#C6A667" stroke-opacity=".7" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#cr-arg)"/>
-  <text x="740" y="628" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.2" fill="#C6A667">RE-QUERY IF LOW</text>
+        fill="none" stroke="#2EE6A8" stroke-opacity=".7" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#cr-arg)"/>
+  <text x="740" y="628" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.2" fill="#2EE6A8">RE-QUERY IF LOW</text>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">SELF-CORRECTING RETRIEVAL</text>
     <text x="1144" y="76" text-anchor="end">LANGCHAIN</text>
   </g>

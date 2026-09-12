@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Bubble chart of app installs against rating, sized by review volume">
   <defs>
     <linearGradient id="ps-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="ps-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="ps-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".2"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -18,17 +18,17 @@
   <circle cx="560" cy="375" r="340" fill="url(#ps-glow)"/>
 
   <g transform="translate(140 140)">
-    <text x="0" y="-20" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#6E7076">INSTALLS × RATING · SIZED BY REVIEWS</text>
-    <g stroke="#26292F">
+    <text x="0" y="-20" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">INSTALLS × RATING · SIZED BY REVIEWS</text>
+    <g stroke="#1B2129">
       <line x1="0" y1="0" x2="720" y2="0"/>
       <line x1="0" y1="110" x2="720" y2="110"/>
       <line x1="0" y1="220" x2="720" y2="220"/>
       <line x1="0" y1="330" x2="720" y2="330"/>
     </g>
-    <line x1="0" y1="-10" x2="0" y2="440" stroke="#3A3D44"/>
-    <line x1="-10" y1="440" x2="720" y2="440" stroke="#3A3D44"/>
+    <line x1="0" y1="-10" x2="0" y2="440" stroke="#2F3742"/>
+    <line x1="-10" y1="440" x2="720" y2="440" stroke="#2F3742"/>
 
-    <g fill="#7C808A" fill-opacity=".38" stroke="#7C808A" stroke-opacity=".5">
+    <g fill="#565F6C" fill-opacity=".38" stroke="#565F6C" stroke-opacity=".5">
       <circle cx="72" cy="386" r="18"/><circle cx="146" cy="332" r="26"/><circle cx="214" cy="358" r="14"/>
       <circle cx="286" cy="278" r="34"/><circle cx="352" cy="316" r="20"/><circle cx="410" cy="240" r="28"/>
       <circle cx="472" cy="292" r="16"/><circle cx="530" cy="196" r="40"/><circle cx="588" cy="264" r="22"/>
@@ -36,13 +36,13 @@
       <circle cx="502" cy="352" r="12"/><circle cx="596" cy="330" r="18"/><circle cx="676" cy="238" r="24"/>
       <circle cx="112" cy="410" r="11"/><circle cx="322" cy="200" r="18"/><circle cx="450" cy="160" r="20"/>
     </g>
-    <g fill="#C6A667" fill-opacity=".55" stroke="#C6A667">
+    <g fill="#2EE6A8" fill-opacity=".55" stroke="#2EE6A8">
       <circle cx="530" cy="196" r="40"/>
       <circle cx="640" cy="150" r="30"/>
       <circle cx="286" cy="278" r="34"/>
     </g>
 
-    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6E7076">
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">
       <text x="-16" y="445" text-anchor="end">3.0</text>
       <text x="-16" y="335" text-anchor="end">3.7</text>
       <text x="-16" y="225" text-anchor="end">4.3</text>
@@ -55,20 +55,20 @@
   </g>
 
   <g transform="translate(920 150)" font-family="ui-monospace,'JetBrains Mono',monospace">
-    <rect x="0" y="0" width="212" height="330" rx="12" fill="#0E0F12" stroke="#33363D"/>
-    <text x="24" y="38" font-size="12" letter-spacing="2.2" fill="#C6A667">DATASET</text>
+    <rect x="0" y="0" width="212" height="330" rx="12" fill="#0A0C10" stroke="#2A313B"/>
+    <text x="24" y="38" font-size="12" letter-spacing="2.2" fill="#2EE6A8">DATASET</text>
     <g font-size="13">
-      <text x="24" y="86" fill="#6E7076">apps</text><text x="188" y="86" text-anchor="end" fill="#E8E6E1">10,841</text>
-      <text x="24" y="128" fill="#6E7076">categories</text><text x="188" y="128" text-anchor="end" fill="#E8E6E1">33</text>
-      <text x="24" y="170" fill="#6E7076">median ★</text><text x="188" y="170" text-anchor="end" fill="#E8E6E1">4.3</text>
-      <text x="24" y="212" fill="#6E7076">free</text><text x="188" y="212" text-anchor="end" fill="#E8E6E1">92.6%</text>
+      <text x="24" y="86" fill="#646C79">apps</text><text x="188" y="86" text-anchor="end" fill="#E9EBEE">10,841</text>
+      <text x="24" y="128" fill="#646C79">categories</text><text x="188" y="128" text-anchor="end" fill="#E9EBEE">33</text>
+      <text x="24" y="170" fill="#646C79">median ★</text><text x="188" y="170" text-anchor="end" fill="#E9EBEE">4.3</text>
+      <text x="24" y="212" fill="#646C79">free</text><text x="188" y="212" text-anchor="end" fill="#E9EBEE">92.6%</text>
     </g>
-    <line x1="24" y1="248" x2="188" y2="248" stroke="#33363D"/>
-    <text x="24" y="286" font-size="12" fill="#6E7076">TOP CATEGORY</text>
-    <text x="24" y="310" font-size="14" fill="#C6A667">FAMILY</text>
+    <line x1="24" y1="248" x2="188" y2="248" stroke="#2A313B"/>
+    <text x="24" y="286" font-size="12" fill="#646C79">TOP CATEGORY</text>
+    <text x="24" y="310" font-size="14" fill="#2EE6A8">FAMILY</text>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">PLAY STORE · EXPLORATORY ANALYSIS</text>
     <text x="1144" y="702" text-anchor="end">PANDAS · MATPLOTLIB</text>
   </g>

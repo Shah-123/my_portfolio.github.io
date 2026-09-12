@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Ensemble of decision trees producing a price estimate with feature importances">
   <defs>
     <linearGradient id="hp-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#131519"/>
-      <stop offset="1" stop-color="#08090B"/>
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
     </linearGradient>
     <pattern id="hp-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="hp-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#C6A667" stop-opacity=".2"/>
-      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -18,8 +18,8 @@
   <circle cx="560" cy="360" r="340" fill="url(#hp-glow)"/>
 
   <g transform="translate(96 150)">
-    <text x="0" y="-16" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#6E7076">ENSEMBLE · 3 OF 200 ESTIMATORS</text>
-    <g stroke="#3A3D44" stroke-width="1.4" fill="none">
+    <text x="0" y="-16" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">ENSEMBLE · 3 OF 200 ESTIMATORS</text>
+    <g stroke="#2F3742" stroke-width="1.4" fill="none">
       <g transform="translate(0 0)">
         <path d="M110 20 L 60 88 M110 20 L 160 88 M60 88 L 30 156 M60 88 L 90 156 M160 88 L 130 156 M160 88 L 190 156"/>
       </g>
@@ -30,15 +30,15 @@
         <path d="M110 20 L 60 88 M110 20 L 160 88 M60 88 L 30 156 M60 88 L 90 156 M160 88 L 130 156 M160 88 L 190 156"/>
       </g>
     </g>
-    <g fill="#212429" stroke="#4A4D55">
+    <g fill="#171C23" stroke="#3A434F">
       <g><circle cx="110" cy="20" r="11"/><circle cx="60" cy="88" r="9"/><circle cx="160" cy="88" r="9"/><circle cx="30" cy="156" r="8"/><circle cx="90" cy="156" r="8"/><circle cx="130" cy="156" r="8"/><circle cx="190" cy="156" r="8"/></g>
       <g transform="translate(240 0)"><circle cx="110" cy="20" r="11"/><circle cx="60" cy="88" r="9"/><circle cx="160" cy="88" r="9"/><circle cx="30" cy="156" r="8"/><circle cx="90" cy="156" r="8"/><circle cx="130" cy="156" r="8"/><circle cx="190" cy="156" r="8"/></g>
       <g transform="translate(480 0)"><circle cx="110" cy="20" r="11"/><circle cx="60" cy="88" r="9"/><circle cx="160" cy="88" r="9"/><circle cx="30" cy="156" r="8"/><circle cx="90" cy="156" r="8"/><circle cx="130" cy="156" r="8"/><circle cx="190" cy="156" r="8"/></g>
     </g>
-    <g fill="#C6A667">
+    <g fill="#2EE6A8">
       <circle cx="90" cy="156" r="8"/><circle cx="370" cy="156" r="8"/><circle cx="670" cy="156" r="8"/>
     </g>
-    <g stroke="#C6A667" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="5 6" fill="none">
+    <g stroke="#2EE6A8" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="5 6" fill="none">
       <path d="M90 168 C 90 240, 340 230, 380 246"/>
       <path d="M370 168 C 370 220, 380 226, 388 246"/>
       <path d="M670 168 C 670 240, 430 230, 396 246"/>
@@ -46,27 +46,27 @@
   </g>
 
   <g transform="translate(388 420)" font-family="ui-monospace,'JetBrains Mono',monospace">
-    <rect x="-192" y="0" width="384" height="132" rx="12" fill="#0E0F12" stroke="#C6A667" stroke-opacity=".5"/>
-    <text x="0" y="36" text-anchor="middle" font-size="12" letter-spacing="2.2" fill="#C6A667">PREDICTED PRICE</text>
-    <text x="0" y="90" text-anchor="middle" font-size="44" fill="#E8E6E1">$412,900</text>
-    <text x="0" y="116" text-anchor="middle" font-size="12" fill="#6E7076">MAE $11.2K · r² 0.91</text>
+    <rect x="-192" y="0" width="384" height="132" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".5"/>
+    <text x="0" y="36" text-anchor="middle" font-size="12" letter-spacing="2.2" fill="#2EE6A8">PREDICTED PRICE</text>
+    <text x="0" y="90" text-anchor="middle" font-size="44" fill="#E9EBEE">$412,900</text>
+    <text x="0" y="116" text-anchor="middle" font-size="12" fill="#646C79">MAE $11.2K · r² 0.91</text>
   </g>
 
   <g transform="translate(852 420)" font-family="ui-monospace,'JetBrains Mono',monospace">
-    <text x="0" y="0" font-size="12" letter-spacing="2.2" fill="#6E7076">FEATURE IMPORTANCE</text>
+    <text x="0" y="0" font-size="12" letter-spacing="2.2" fill="#646C79">FEATURE IMPORTANCE</text>
     <g font-size="13">
-      <text x="0" y="36" fill="#9BA0A9">sqft_living</text>
-      <rect x="0" y="46" width="252" height="8" rx="4" fill="#26292F"/><rect x="0" y="46" width="234" height="8" rx="4" fill="#C6A667"/>
-      <text x="0" y="88" fill="#9BA0A9">location</text>
-      <rect x="0" y="98" width="252" height="8" rx="4" fill="#26292F"/><rect x="0" y="98" width="190" height="8" rx="4" fill="#C6A667" fill-opacity=".75"/>
-      <text x="0" y="140" fill="#9BA0A9">grade</text>
-      <rect x="0" y="150" width="252" height="8" rx="4" fill="#26292F"/><rect x="0" y="150" width="140" height="8" rx="4" fill="#7C808A"/>
-      <text x="0" y="192" fill="#9BA0A9">yr_built</text>
-      <rect x="0" y="202" width="252" height="8" rx="4" fill="#26292F"/><rect x="0" y="202" width="84" height="8" rx="4" fill="#4A4D55"/>
+      <text x="0" y="36" fill="#9AA2AE">sqft_living</text>
+      <rect x="0" y="46" width="252" height="8" rx="4" fill="#1B2129"/><rect x="0" y="46" width="234" height="8" rx="4" fill="#2EE6A8"/>
+      <text x="0" y="88" fill="#9AA2AE">location</text>
+      <rect x="0" y="98" width="252" height="8" rx="4" fill="#1B2129"/><rect x="0" y="98" width="190" height="8" rx="4" fill="#2EE6A8" fill-opacity=".75"/>
+      <text x="0" y="140" fill="#9AA2AE">grade</text>
+      <rect x="0" y="150" width="252" height="8" rx="4" fill="#1B2129"/><rect x="0" y="150" width="140" height="8" rx="4" fill="#565F6C"/>
+      <text x="0" y="192" fill="#9AA2AE">yr_built</text>
+      <rect x="0" y="202" width="252" height="8" rx="4" fill="#1B2129"/><rect x="0" y="202" width="84" height="8" rx="4" fill="#3A434F"/>
     </g>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
     <text x="56" y="76">GRADIENT BOOSTING · REGRESSION</text>
     <text x="1144" y="702" text-anchor="end">SCIKIT-LEARN</text>
   </g>

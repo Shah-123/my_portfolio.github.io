@@ -1,77 +1,81 @@
 /* ==========================================================================
-   SHAHKAR AHMAD — Portfolio v4 "Atelier"
-   Responsive layer. Breakpoints: 1200 / 1100 / 1024 / 900 / 768 / 560 / 400
+   SHAHKAR AHMAD — Portfolio v5 "Agentic OS"
+   Responsive layer. Breakpoints: 1200 / 1100 / 1024 / 900 / 768 / 700 / 560 / 420
    Loaded after style.css, so these rules win at equal specificity.
    ========================================================================== */
 
 /* ── ≤ 1200px — tighten the shell ─────────────────────────── */
 @media (max-width: 1200px) {
   :root {
-    --section-y: clamp(4.5rem, 10vw, 8rem);
+    --section-y: clamp(4.25rem, 9vw, 7.5rem);
+  }
+
+  .nav {
+    gap: 1rem;
+  }
+
+  .nav-list {
+    gap: 0.2rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.45rem;
+    font-size: 0.72rem;
   }
 
   .hero-grid {
-    gap: clamp(2rem, 4vw, 3.5rem);
-  }
-
-  .portrait-plate {
-    left: -1rem;
+    gap: clamp(1.75rem, 4vw, 3rem);
   }
 }
 
-/* ── ≤ 1100px — featured project stacks ───────────────────── */
+/* ── ≤ 1100px — case art gets taller as the card narrows ──── */
 @media (max-width: 1100px) {
-  .project--featured {
-    flex-direction: column;
+  .case-media {
+    aspect-ratio: 2 / 1;
   }
 
-  .project--featured .project-media {
-    flex: none;
-    aspect-ratio: 16 / 9;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .project--featured .project-body {
-    flex: none;
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* ── ≤ 1024px — hero and capability columns collapse ──────── */
+/* ── ≤ 1024px — hero, about, stack and contact collapse ───── */
 @media (max-width: 1024px) {
   .hero {
     min-height: auto;
-    padding-block: clamp(8rem, 18vh, 11rem) clamp(3rem, 8vh, 5rem);
+    padding-block: clamp(7.5rem, 17vh, 10rem) clamp(3rem, 8vh, 5rem);
   }
 
   .hero-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: clamp(3rem, 7vw, 4.5rem);
+    gap: clamp(2.75rem, 7vw, 4rem);
   }
 
-  .hero-portrait {
-    justify-self: start;
-    max-width: 400px;
+  .graph-panel {
+    max-width: 620px;
   }
 
-  .portrait-plate {
-    left: auto;
-    right: -1rem;
+  .graph-stage {
+    aspect-ratio: 16 / 10;
   }
 
-  .cap-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.75rem, 4vw, 3rem);
+  .hero-lede {
+    max-width: 62ch;
   }
 
   .about-grid,
   .contact-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: clamp(2.75rem, 6vw, 4rem);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .section-title,
+  .contact-title {
+    max-width: none;
   }
 }
 
-/* ── ≤ 900px — mobile navigation, single-column work ──────── */
+/* ── ≤ 900px — mobile navigation, single-column stack ─────── */
 @media (max-width: 900px) {
   .nav-list {
     display: none;
@@ -81,161 +85,307 @@
     display: grid;
   }
 
-  .projects-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .projects-head {
-    align-items: flex-start;
-    gap: 1.75rem;
-  }
-}
-
-/* ── ≤ 768px — spacing and type step down ─────────────────── */
-@media (max-width: 768px) {
-  :root {
-    --section-y: clamp(3.75rem, 12vw, 5.5rem);
-  }
-
   .nav {
     height: 66px;
   }
 
-  .hero-roles {
-    gap: 0.4rem 0.65rem;
-    font-size: 0.66rem;
+  .menu {
+    top: 66px;
   }
 
-  .hero-actions .btn {
-    flex: 1 1 auto;
-    min-width: 160px;
+  html {
+    scroll-padding-top: 84px;
+  }
+
+  .stack-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .more-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ── ≤ 768px — type and spacing step down ─────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-y: clamp(3.5rem, 11vw, 5.25rem);
+  }
+
+  .hero-name {
+    font-size: clamp(2.9rem, 15vw, 5rem);
+  }
+
+  .hero-role {
+    gap: 0.25rem 0.6rem;
+    font-size: 0.68rem;
   }
 
   .hero-meta {
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 
-  .cap-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2.5rem;
+  .telemetry {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .spec-row {
-    padding-block: 1.25rem;
+  .telemetry > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .telemetry > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
   }
 
   .spec-val {
-    font-size: clamp(1.5rem, 7vw, 2rem);
+    font-size: clamp(1.3rem, 6vw, 1.6rem);
+  }
+
+  .case-head {
+    gap: 0.75rem;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .filters {
-    gap: 0.4rem;
+    gap: 0.3rem;
   }
 
   .filter {
-    font-size: 0.66rem;
-    padding: 0 0.85rem;
+    font-size: 0.64rem;
+    padding: 0.3rem 0.6rem;
   }
 
-  .project-actions {
-    gap: 1.25rem;
+  .timeline {
+    padding-left: 1.4rem;
+  }
+
+  .tl-node {
+    left: calc(-1.4rem + 0.32rem - 4px);
+  }
+
+  .channel {
+    grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+    gap: 0.7rem;
+    font-size: 0.72rem;
   }
 
   .footer-grid {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.4rem;
+  }
+
+  .footer-links {
+    margin-left: 0;
+    gap: 0.4rem 1.1rem;
+  }
+}
+
+/* ── ≤ 700px — compact chrome, log becomes stacked rows ───── */
+@media (max-width: 700px) {
+  .palette-trigger kbd {
+    display: none;
+  }
+
+  .palette-trigger {
+    padding: 0.42rem;
+  }
+
+  .wordmark {
+    font-size: 0.85rem;
+  }
+
+  .log-head {
+    display: none;
+  }
+
+  .log-row {
+    grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      "idx  name  link"
+      ".    stack year";
+    gap: 0.45rem 0.8rem;
+    align-items: start;
+    padding-block: 1rem;
+  }
+
+  .log-idx {
+    grid-area: idx;
+  }
+
+  .log-name {
+    grid-area: name;
+  }
+
+  .log-link {
+    grid-area: link;
+    align-self: center;
+  }
+
+  .log-stack {
+    grid-area: stack;
+    white-space: normal;
+  }
+
+  .log-year {
+    grid-area: year;
+    text-align: right;
   }
 }
 
 /* ── ≤ 560px — small phones ───────────────────────────────── */
 @media (max-width: 560px) {
   .hero {
-    padding-top: clamp(7rem, 16vh, 9rem);
-  }
-
-  .hero-portrait {
-    max-width: 100%;
-  }
-
-  .portrait-frame {
-    aspect-ratio: 1 / 1;
-  }
-
-  .portrait-plate {
-    right: auto;
-    left: 1rem;
-    bottom: 1rem;
-    padding: 0.8rem 1.1rem;
+    padding-top: clamp(6.5rem, 15vh, 8.5rem);
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
+    gap: 0.7rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+  }
+
+  .btn--submit {
+    justify-content: space-between;
   }
 
   .hero-meta {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .section-title {
-    max-width: none;
-  }
-
-  /* Keep the capability row readable when names wrap */
-  .cap-item {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.5rem;
-  }
-
-  .cap-meta {
-    justify-content: space-between;
-  }
-
-  .channel {
-    grid-template-columns: auto 1fr;
     gap: 1rem;
   }
 
-  .channel-arrow {
-    display: none;
+  .hero-socials {
+    margin-left: 0;
+  }
+
+  .scroll-cue {
+    margin-top: 2rem;
+  }
+
+  .graph-stage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .case-media {
+    aspect-ratio: 3 / 2;
+  }
+
+  .case-flag,
+  .case-idx {
+    font-size: 0.56rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .board-val {
+    font-size: clamp(1.4rem, 8vw, 1.85rem);
   }
 
   .contact-email {
-    font-size: clamp(1.05rem, 5.4vw, 1.5rem);
+    font-size: clamp(0.86rem, 4.6vw, 1.05rem);
   }
 
-  .marquee-group span {
-    gap: 1.9rem;
-    padding: 1.1rem 0.95rem;
+  .channel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "key   arrow"
+      "val   arrow";
+    gap: 0.2rem 0.7rem;
+  }
+
+  .channel-key {
+    grid-area: key;
+  }
+
+  .channel-val {
+    grid-area: val;
+  }
+
+  .channel-arrow {
+    grid-area: arrow;
+    align-self: center;
+  }
+
+  .ticker-group span {
+    padding: 0.85rem 0.7rem;
     font-size: 0.7rem;
+  }
+
+  .menu a {
+    font-size: 1.2rem;
+    padding: 0.6rem 0;
+  }
+
+  .palette {
+    padding-top: 5rem;
+  }
+
+  .palette-foot {
+    gap: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
-/* ── ≤ 400px — very small viewports ───────────────────────── */
-@media (max-width: 400px) {
+/* ── ≤ 420px — very small viewports ───────────────────────── */
+@media (max-width: 420px) {
   :root {
-    --gutter: 1.1rem;
+    --gutter: 1.05rem;
   }
 
-  .wordmark {
-    font-size: 1.12rem;
+  .hero-name {
+    font-size: clamp(2.5rem, 13.5vw, 3.4rem);
+    letter-spacing: -0.035em;
   }
 
-  .hero-roles {
-    letter-spacing: 0.12em;
+  .panel-bar {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.62rem;
   }
 
-  .spec-row:hover,
-  .cap-item:hover,
-  .channel:hover {
-    padding-inline: 0;
+  .panel-year {
+    display: none;
+  }
+
+  .board {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skill {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.45rem;
+  }
+
+  .skill-meta {
+    justify-content: space-between;
+  }
+
+  .bar {
+    width: 100%;
+    max-width: 130px;
   }
 }
 
@@ -243,7 +393,7 @@
 @media (max-height: 560px) and (orientation: landscape) {
   .hero {
     min-height: auto;
-    padding-block: 7rem 3rem;
+    padding-block: 6.5rem 2.5rem;
   }
 
   .scroll-cue {
@@ -253,45 +403,131 @@
   .menu {
     align-content: start;
     overflow-y: auto;
+    max-height: calc(100vh - 66px);
   }
 
   .menu a {
-    font-size: 1.5rem;
-    padding-block: 0.5rem;
+    font-size: 1.15rem;
+    padding-block: 0.45rem;
+  }
+
+  .graph-stage {
+    aspect-ratio: 16 / 9;
+  }
+
+  .palette {
+    padding-top: 3rem;
+  }
+}
+
+/* ── Short viewports — never force a full-height hero ─────── */
+@media (min-height: 900px) {
+  .hero {
+    min-height: 92svh;
   }
 }
 
 /* ── Coarse pointers — drop hover-only affordances ────────── */
 @media (hover: none) {
-  .project:hover {
+  .case:hover {
+    border-color: var(--line);
+    box-shadow: var(--shadow-sm);
     transform: none;
-    box-shadow: none;
   }
 
-  .spec-row:hover,
-  .cap-item:hover,
-  .channel:hover {
+  .case--featured:hover {
+    border-color: var(--signal-line);
+  }
+
+  .case:hover .case-media img {
+    transform: none;
+    filter: saturate(0.85);
+  }
+
+  .spec .spec-row:hover,
+  .skill:hover,
+  .log-row:hover,
+  .channel:hover,
+  .tl-card:hover {
+    transform: none;
+  }
+
+  .spec .spec-row:hover,
+  .log-row:hover {
     background: none;
-    padding-inline: 0;
   }
 
-  .hero-portrait:hover .portrait-frame img {
-    filter: grayscale(0.55) contrast(1.06) brightness(0.94);
-    transform: scale(1.02);
+  /* Keep the row's own surface — the grid behind it is a hairline colour. */
+  .channel:hover {
+    background: var(--ink-1);
   }
+
+  .panel:hover::before,
+  .panel:hover::after {
+    width: 9px;
+    height: 9px;
+  }
+
+  /* The custom cursor is pointless without a pointer — keep the native one. */
+  .cursor-ring,
+  .cursor-dot {
+    display: none;
+  }
+
+  body.cursor-ready,
+  body.cursor-ready a,
+  body.cursor-ready button {
+    cursor: auto;
+  }
+}
+
+/* ── No JavaScript — everything must still be readable ────── */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.no-js .bar i {
+  width: calc(var(--lvl, 3) * 20%);
+}
+
+.no-js .mask-reveal {
+  clip-path: none;
+}
+
+.no-js .case-detail {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  border-top-color: var(--line);
+}
+
+.no-js .case-toggle {
+  display: none;
+}
+
+.no-js .boot {
+  display: none !important;
 }
 
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   .site-header,
   .menu,
+  .boot,
+  .palette,
+  .grid-bg,
+  .scanlines,
   .grain,
   .progress,
   .cursor-ring,
   .cursor-dot,
-  .marquee,
+  .ticker,
   .scroll-cue,
-  .filters {
+  .filters,
+  .graph-panel,
+  .case-toggle,
+  .form-panel,
+  .hp {
     display: none !important;
   }
 
@@ -300,12 +536,60 @@
     color: #000;
   }
 
+  main > section {
+    padding-block: 1.5rem;
+  }
+
+  .panel,
+  .case,
+  .board-cell,
+  .cred {
+    border-color: #bbb;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .panel::before,
+  .panel::after {
+    display: none;
+  }
+
   .reveal {
     opacity: 1 !important;
     transform: none !important;
   }
 
-  .project {
+  .mask-reveal {
+    clip-path: none !important;
+  }
+
+  .char {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Show every case study in full — a printed portfolio shouldn't hide work. */
+  .case-detail {
+    grid-template-rows: 1fr !important;
+    visibility: visible !important;
+    border-top-color: #bbb !important;
+  }
+
+  .case,
+  .tl-item,
+  .board-cell,
+  .cred {
     break-inside: avoid;
+  }
+
+  .log-row {
+    break-inside: avoid;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.6em;
+    color: #555;
+    word-break: break-all;
   }
 }
