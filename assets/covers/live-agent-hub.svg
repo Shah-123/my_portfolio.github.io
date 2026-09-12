@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Live broadcast node radiating to AI persona chat messages">
+  <defs>
+    <linearGradient id="lh-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#131519"/>
+      <stop offset="1" stop-color="#08090B"/>
+    </linearGradient>
+    <pattern id="lh-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="lh-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#C6A667" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#lh-bg)"/>
+  <rect width="1200" height="750" fill="url(#lh-grid)"/>
+  <circle cx="330" cy="375" r="330" fill="url(#lh-glow)"/>
+
+  <g fill="none" stroke="#C6A667" stroke-opacity=".3">
+    <circle cx="330" cy="375" r="96"/>
+    <circle cx="330" cy="375" r="150" stroke-opacity=".2"/>
+    <circle cx="330" cy="375" r="212" stroke-opacity=".12"/>
+    <circle cx="330" cy="375" r="282" stroke-opacity=".07"/>
+  </g>
+
+  <circle cx="330" cy="375" r="56" fill="#0E0F12" stroke="#C6A667" stroke-width="1.5"/>
+  <circle cx="330" cy="375" r="9" fill="#C6A667"/>
+  <text x="330" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.6" fill="#9BA0A9">STREAM</text>
+
+  <g stroke="#7C808A" stroke-opacity=".4" stroke-width="1.5" stroke-dasharray="4 7">
+    <path d="M386 300 H 700"/>
+    <path d="M390 375 H 700"/>
+    <path d="M386 450 H 700"/>
+    <path d="M372 520 C 520 600, 600 594, 700 570"/>
+  </g>
+
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15">
+    <g>
+      <rect x="700" y="252" width="404" height="72" rx="10" fill="#1B1D22" stroke="#33363D"/>
+      <circle cx="732" cy="288" r="12" fill="#C6A667" fill-opacity=".85"/>
+      <text x="762" y="282" fill="#D7D4CE">persona::hype</text>
+      <rect x="762" y="294" width="200" height="7" rx="3.5" fill="#3A3D44"/>
+    </g>
+    <g>
+      <rect x="700" y="340" width="404" height="72" rx="10" fill="#1B1D22" stroke="#33363D"/>
+      <circle cx="732" cy="376" r="12" fill="#7C808A"/>
+      <text x="762" y="370" fill="#D7D4CE">persona::analyst</text>
+      <rect x="762" y="382" width="264" height="7" rx="3.5" fill="#3A3D44"/>
+    </g>
+    <g>
+      <rect x="700" y="428" width="404" height="72" rx="10" fill="#1B1D22" stroke="#33363D"/>
+      <circle cx="732" cy="464" r="12" fill="#7C808A"/>
+      <text x="762" y="458" fill="#D7D4CE">persona::skeptic</text>
+      <rect x="762" y="470" width="156" height="7" rx="3.5" fill="#3A3D44"/>
+    </g>
+    <g>
+      <rect x="700" y="534" width="404" height="72" rx="10" fill="#0E0F12" stroke="#C6A667" stroke-opacity=".55"/>
+      <circle cx="732" cy="570" r="12" fill="none" stroke="#C6A667"/>
+      <text x="762" y="564" fill="#C6A667">streamer::reply</text>
+      <rect x="762" y="576" width="228" height="7" rx="3.5" fill="#C6A667" fill-opacity=".35"/>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4">
+    <circle cx="62" cy="71" r="5" fill="#C6A667"/>
+    <text x="80" y="76" fill="#C6A667">LIVE</text>
+    <text x="152" y="76" fill="#6E7076">· WEBSOCKET · FASTAPI</text>
+    <text x="1144" y="702" text-anchor="end" fill="#6E7076">REAL-TIME AGENTS</text>
+  </g>
+</svg>

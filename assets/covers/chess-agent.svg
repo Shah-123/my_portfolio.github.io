@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Chess board with a candidate move vector and a position evaluation bar">
+  <defs>
+    <linearGradient id="ch-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#131519"/>
+      <stop offset="1" stop-color="#08090B"/>
+    </linearGradient>
+    <pattern id="ch-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="ch-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#C6A667" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="ch-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#C6A667"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#ch-bg)"/>
+  <rect width="1200" height="750" fill="url(#ch-grid)"/>
+  <circle cx="430" cy="375" r="330" fill="url(#ch-glow)"/>
+
+  <g transform="translate(140 135)">
+    <rect x="-1" y="-1" width="482" height="482" rx="8" fill="none" stroke="#3A3D44"/>
+    <g fill="#1B1D22">
+      <rect x="0" y="0" width="60" height="60"/><rect x="120" y="0" width="60" height="60"/><rect x="240" y="0" width="60" height="60"/><rect x="360" y="0" width="60" height="60"/>
+      <rect x="60" y="60" width="60" height="60"/><rect x="180" y="60" width="60" height="60"/><rect x="300" y="60" width="60" height="60"/><rect x="420" y="60" width="60" height="60"/>
+      <rect x="0" y="120" width="60" height="60"/><rect x="120" y="120" width="60" height="60"/><rect x="240" y="120" width="60" height="60"/><rect x="360" y="120" width="60" height="60"/>
+      <rect x="60" y="180" width="60" height="60"/><rect x="180" y="180" width="60" height="60"/><rect x="300" y="180" width="60" height="60"/><rect x="420" y="180" width="60" height="60"/>
+      <rect x="0" y="240" width="60" height="60"/><rect x="120" y="240" width="60" height="60"/><rect x="240" y="240" width="60" height="60"/><rect x="360" y="240" width="60" height="60"/>
+      <rect x="60" y="300" width="60" height="60"/><rect x="180" y="300" width="60" height="60"/><rect x="300" y="300" width="60" height="60"/><rect x="420" y="300" width="60" height="60"/>
+      <rect x="0" y="360" width="60" height="60"/><rect x="120" y="360" width="60" height="60"/><rect x="240" y="360" width="60" height="60"/><rect x="360" y="360" width="60" height="60"/>
+      <rect x="60" y="420" width="60" height="60"/><rect x="180" y="420" width="60" height="60"/><rect x="300" y="420" width="60" height="60"/><rect x="420" y="420" width="60" height="60"/>
+    </g>
+    <rect x="180" y="300" width="60" height="60" fill="#C6A667" fill-opacity=".16"/>
+    <rect x="240" y="180" width="60" height="60" fill="#C6A667" fill-opacity=".28" stroke="#C6A667" stroke-opacity=".6"/>
+    <path d="M210 330 L 210 240 L 258 210" fill="none" stroke="#C6A667" stroke-width="2.5" marker-end="url(#ch-ar)"/>
+    <circle cx="210" cy="330" r="9" fill="#C6A667"/>
+  </g>
+
+  <g transform="translate(700 135)">
+    <text x="0" y="-24" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">EVALUATION</text>
+    <rect x="0" y="0" width="26" height="480" rx="6" fill="#1B1D22" stroke="#33363D"/>
+    <rect x="0" y="0" width="26" height="186" rx="6" fill="#E8E6E1" fill-opacity=".82"/>
+    <line x1="-10" y1="186" x2="36" y2="186" stroke="#C6A667" stroke-width="2"/>
+    <text x="50" y="192" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="20" fill="#E8E6E1">+1.4</text>
+  </g>
+
+  <g transform="translate(830 152)" font-family="ui-monospace,'JetBrains Mono',monospace">
+    <rect x="0" y="0" width="230" height="446" rx="12" fill="#0E0F12" stroke="#33363D"/>
+    <text x="24" y="42" font-size="13" letter-spacing="2.4" fill="#C6A667">AGENT · ANALYSIS</text>
+    <g font-size="15" fill="#D7D4CE">
+      <text x="24" y="94">1. Nf3-e5</text>
+      <text x="24" y="130">2. d4</text>
+      <text x="24" y="166">3. Bxc4</text>
+    </g>
+    <g fill="#3A3D44">
+      <rect x="24" y="200" width="182" height="7" rx="3.5"/>
+      <rect x="24" y="220" width="150" height="7" rx="3.5"/>
+      <rect x="24" y="240" width="168" height="7" rx="3.5"/>
+      <rect x="24" y="260" width="120" height="7" rx="3.5"/>
+    </g>
+    <line x1="24" y1="298" x2="206" y2="298" stroke="#33363D"/>
+    <g font-size="13" fill="#6E7076">
+      <text x="24" y="332">depth</text><text x="206" y="332" text-anchor="end" fill="#E8E6E1">18</text>
+      <text x="24" y="366">nodes</text><text x="206" y="366" text-anchor="end" fill="#E8E6E1">2.1M</text>
+      <text x="24" y="400">tactic</text><text x="206" y="400" text-anchor="end" fill="#C6A667">fork</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+    <text x="56" y="76">LLM + ENGINE</text>
+    <text x="1144" y="702" text-anchor="end">POSITION ANALYSIS</text>
+  </g>
+</svg>

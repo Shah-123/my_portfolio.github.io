@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Scatter plot of match data with a fitted regression line and prediction band">
+  <defs>
+    <linearGradient id="od-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#131519"/>
+      <stop offset="1" stop-color="#08090B"/>
+    </linearGradient>
+    <pattern id="od-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="od-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#C6A667" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#C6A667" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#od-bg)"/>
+  <rect width="1200" height="750" fill="url(#od-grid)"/>
+  <circle cx="620" cy="390" r="330" fill="url(#od-glow)"/>
+
+  <g transform="translate(140 130)">
+    <g stroke="#26292F">
+      <line x1="0" y1="0" x2="860" y2="0"/>
+      <line x1="0" y1="105" x2="860" y2="105"/>
+      <line x1="0" y1="210" x2="860" y2="210"/>
+      <line x1="0" y1="315" x2="860" y2="315"/>
+      <line x1="0" y1="420" x2="860" y2="420"/>
+    </g>
+    <line x1="0" y1="-10" x2="0" y2="440" stroke="#3A3D44"/>
+    <line x1="-10" y1="420" x2="860" y2="420" stroke="#3A3D44"/>
+
+    <path d="M0 372 L 860 78 L 860 158 L 0 452 Z" fill="#C6A667" fill-opacity=".1"/>
+    <path d="M0 412 L 860 118" stroke="#C6A667" stroke-width="2.5" fill="none"/>
+
+    <g fill="#7C808A" fill-opacity=".85">
+      <circle cx="42" cy="392" r="7"/><circle cx="96" cy="404" r="7"/><circle cx="128" cy="358" r="7"/>
+      <circle cx="182" cy="376" r="7"/><circle cx="216" cy="330" r="7"/><circle cx="268" cy="352" r="7"/>
+      <circle cx="304" cy="306" r="7"/><circle cx="352" cy="330" r="7"/><circle cx="392" cy="272" r="7"/>
+      <circle cx="436" cy="296" r="7"/><circle cx="472" cy="250" r="7"/><circle cx="520" cy="268" r="7"/>
+      <circle cx="558" cy="216" r="7"/><circle cx="606" cy="238" r="7"/><circle cx="644" cy="186" r="7"/>
+      <circle cx="690" cy="208" r="7"/><circle cx="728" cy="152" r="7"/><circle cx="776" cy="176" r="7"/>
+      <circle cx="812" cy="128" r="7"/>
+      <circle cx="160" cy="412" r="7"/><circle cx="336" cy="368" r="7"/><circle cx="588" cy="286" r="7"/>
+      <circle cx="252" cy="288" r="7"/><circle cx="500" cy="318" r="7"/><circle cx="700" cy="252" r="7"/>
+    </g>
+
+    <circle cx="812" cy="128" r="16" fill="none" stroke="#C6A667" stroke-width="1.5"/>
+    <circle cx="812" cy="128" r="7" fill="#C6A667"/>
+
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#6E7076">
+      <text x="-16" y="425" text-anchor="end">120</text>
+      <text x="-16" y="320" text-anchor="end">200</text>
+      <text x="-16" y="215" text-anchor="end">280</text>
+      <text x="-16" y="110" text-anchor="end">360</text>
+      <text x="0" y="458">10 ov</text>
+      <text x="430" y="458" text-anchor="middle">30 ov</text>
+      <text x="860" y="458" text-anchor="end">50 ov</text>
+    </g>
+  </g>
+
+  <g transform="translate(834 152)" font-family="ui-monospace,'JetBrains Mono',monospace">
+    <rect x="0" y="0" width="212" height="126" rx="10" fill="#0E0F12" stroke="#C6A667" stroke-opacity=".5"/>
+    <text x="22" y="34" font-size="12" letter-spacing="2.2" fill="#C6A667">PREDICTED</text>
+    <text x="22" y="82" font-size="38" fill="#E8E6E1">312</text>
+    <text x="118" y="82" font-size="14" fill="#6E7076">± 18</text>
+    <text x="22" y="108" font-size="12" fill="#6E7076">r² 0.87</text>
+  </g>
+
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6E7076">
+    <text x="56" y="76">ODI RUN TOTAL · REGRESSION</text>
+    <text x="1144" y="702" text-anchor="end">SCIKIT-LEARN</text>
+  </g>
+</svg>

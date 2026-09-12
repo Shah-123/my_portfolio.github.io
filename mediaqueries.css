@@ -1,434 +1,311 @@
-/* ═══════════════════════════════════════════
-   MEDIA QUERIES — Responsive Design v3.0
-   Shahkar Ahmad Portfolio — Neural Theme
-   ═══════════════════════════════════════════ */
+/* ==========================================================================
+   SHAHKAR AHMAD — Portfolio v4 "Atelier"
+   Responsive layer. Breakpoints: 1200 / 1100 / 1024 / 900 / 768 / 560 / 400
+   Loaded after style.css, so these rules win at equal specificity.
+   ========================================================================== */
 
-/* ── LARGE DESKTOP (1400px+) ── */
-@media (min-width: 1400px) {
-  section {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  #experience,
-  #projects,
-  #contact {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  #about {
-    padding-left: 10rem;
-    padding-right: 10rem;
-  }
-
-  #profile {
-    gap: 9rem;
-  }
-}
-
-/* ── TABLET (max 1200px) ── */
+/* ── ≤ 1200px — tighten the shell ─────────────────────────── */
 @media (max-width: 1200px) {
-  section {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+  :root {
+    --section-y: clamp(4.5rem, 10vw, 8rem);
   }
 
-  #experience,
-  #projects,
-  #contact {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+  .hero-grid {
+    gap: clamp(2rem, 4vw, 3.5rem);
   }
 
-  #profile {
-    gap: 4rem;
-  }
-
-  .hero-name {
-    font-size: 3.75rem;
-  }
-
-  #about {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 3.5rem;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-
-  .hero-terminal {
-    max-width: 100%;
+  .portrait-plate {
+    left: -1rem;
   }
 }
 
-/* ── TABLET / SMALL LAPTOP (max 900px) ── */
-@media (max-width: 900px) {
+/* ── ≤ 1100px — featured project stacks ───────────────────── */
+@media (max-width: 1100px) {
+  .project--featured {
+    flex-direction: column;
+  }
 
-  /* Switch navigation */
-  #desktop-nav {
+  .project--featured .project-media {
+    flex: none;
+    aspect-ratio: 16 / 9;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project--featured .project-body {
+    flex: none;
+  }
+}
+
+/* ── ≤ 1024px — hero and capability columns collapse ──────── */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding-block: clamp(8rem, 18vh, 11rem) clamp(3rem, 8vh, 5rem);
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(3rem, 7vw, 4.5rem);
+  }
+
+  .hero-portrait {
+    justify-self: start;
+    max-width: 400px;
+  }
+
+  .portrait-plate {
+    left: auto;
+    right: -1rem;
+  }
+
+  .cap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2.75rem, 6vw, 4rem);
+  }
+}
+
+/* ── ≤ 900px — mobile navigation, single-column work ──────── */
+@media (max-width: 900px) {
+  .nav-list {
     display: none;
   }
 
-  #hamburger-nav {
-    display: flex;
+  .burger {
+    display: grid;
   }
 
-  section {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    min-height: auto;
-    padding-top: calc(70px + 3rem);
-    padding-bottom: 4rem;
-  }
-
-  #experience,
-  #projects,
-  #contact {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  /* Hero */
-  #profile {
-    flex-direction: column;
-    text-align: center;
-    gap: 3rem;
-    padding-top: calc(70px + 3rem);
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-name {
-    font-size: 3.25rem;
-    letter-spacing: -1px;
-  }
-
-  .hero-description {
-    text-align: center;
-    max-width: 500px;
-  }
-
-  .hero-greeting {
-    align-self: center;
-  }
-
-  .hero-role {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn-container {
-    justify-content: center;
-  }
-
-  #socials-container {
-    justify-content: center;
-  }
-
-  /* Terminal widget on tablet */
-  .hero-terminal {
-    width: 100%;
-    max-width: 480px;
-    text-align: left;
-  }
-
-  .section__pic-container {
-    height: 280px;
-    width: 280px;
-  }
-
-  /* About */
-  #about {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-top: calc(70px + 3rem);
-  }
-
-  #about .section-header {
-    text-align: center !important;
-  }
-
-  #about .section__text__p1 {
-    text-align: center !important;
-  }
-
-  #about .title {
-    text-align: center !important;
-  }
-
-  #about .divider {
-    margin: 1rem auto !important;
-  }
-
-  #about .about-text {
-    text-align: center;
-  }
-
-  .about-pic-container {
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  /* Skills */
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-
-  .skill-category:nth-child(3) {
-    grid-column: span 1;
-  }
-
-  /* Projects */
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Contact */
-  .contact-cards {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .contact-card {
-    min-width: unset;
-  }
-
-  .contact-subtitle {
-    font-size: 1rem;
-  }
-
-  /* Arrow */
-  .arrow {
-    right: 1rem;
-    bottom: 1.25rem;
-  }
-
-  /* Footer */
-  footer {
-    padding: 2.5rem 2rem;
-  }
-
-  .footer-links {
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .projects-head {
+    align-items: flex-start;
+    gap: 1.75rem;
   }
 }
 
-/* ── MOBILE (max 600px) ── */
-@media (max-width: 600px) {
-  section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: calc(70px + 2.5rem);
-    padding-bottom: 3rem;
+/* ── ≤ 768px — spacing and type step down ─────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-y: clamp(3.75rem, 12vw, 5.5rem);
   }
 
-  #experience,
-  #projects,
-  #contact {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .nav {
+    height: 66px;
   }
 
-  #about {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .hero-roles {
+    gap: 0.4rem 0.65rem;
+    font-size: 0.66rem;
   }
 
-  .hero-name {
-    font-size: 2.5rem;
-    letter-spacing: -0.5px;
+  .hero-actions .btn {
+    flex: 1 1 auto;
+    min-width: 160px;
   }
 
-  .section__pic-container {
-    height: 240px;
-    width: 240px;
+  .hero-meta {
+    gap: 1.25rem;
   }
 
-  /* Terminal: slightly smaller font on mobile */
-  .hero-terminal {
-    font-size: 0.72rem;
+  .cap-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
   }
 
-  .terminal-body {
-    padding: 0.875rem 1rem 1rem;
+  .spec-row {
+    padding-block: 1.25rem;
   }
 
-  .hero-role {
+  .spec-val {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .filters {
     gap: 0.4rem;
   }
 
-  .hero-role-tag {
-    font-size: 0.68rem;
-    padding: 0.25rem 0.65rem;
-  }
-
-  .btn-container {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about-cards {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-  }
-
-  .title {
-    font-size: 1.9rem;
-  }
-
-  .section-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .filter {
+    font-size: 0.66rem;
+    padding: 0 0.85rem;
   }
 
   .project-actions {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .project-btn {
-    width: 100%;
-  }
-
-  .skills-grid {
-    gap: 1rem;
-  }
-
-  .skill-category {
-    padding: 1.5rem;
-  }
-
-  .footer-links {
     gap: 1.25rem;
-    font-size: 0.8rem;
   }
 
-  .contact-card {
-    min-width: unset;
-    padding: 1rem 1.25rem;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
-  .about-text {
-    font-size: 0.95rem;
-  }
-
-  .project-metrics {
-    gap: 0.35rem;
-  }
-
-  .ml-chip {
-    font-size: 0.62rem;
-    padding: 0.18rem 0.5rem;
+  .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 }
 
-/* ── VERY SMALL MOBILE (max 400px) ── */
-@media (max-width: 400px) {
-  .hero-name {
-    font-size: 2.1rem;
+/* ── ≤ 560px — small phones ───────────────────────────────── */
+@media (max-width: 560px) {
+  .hero {
+    padding-top: clamp(7rem, 16vh, 9rem);
   }
 
-  .about-cards {
-    grid-template-columns: 1fr;
+  .hero-portrait {
+    max-width: 100%;
   }
 
-  .contact-card {
+  .portrait-frame {
+    aspect-ratio: 1 / 1;
+  }
+
+  .portrait-plate {
+    right: auto;
+    left: 1rem;
+    bottom: 1rem;
+    padding: 0.8rem 1.1rem;
+  }
+
+  .hero-actions {
     flex-direction: column;
-    text-align: center;
+    align-items: stretch;
     gap: 0.75rem;
   }
 
-  .contact-card-text h3,
-  .contact-card-text p {
-    text-align: center;
+  .hero-actions .btn {
+    width: 100%;
   }
 
-  section {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  .hero-meta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .section__pic-container {
-    height: 210px;
-    width: 210px;
+  .section-title {
+    max-width: none;
   }
 
-  .skill-category {
-    padding: 1.25rem;
+  /* Keep the capability row readable when names wrap */
+  .cap-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
   }
 
-  .hero-terminal {
-    font-size: 0.66rem;
+  .cap-meta {
+    justify-content: space-between;
+  }
+
+  .channel {
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+
+  .channel-arrow {
+    display: none;
+  }
+
+  .contact-email {
+    font-size: clamp(1.05rem, 5.4vw, 1.5rem);
+  }
+
+  .marquee-group span {
+    gap: 1.9rem;
+    padding: 1.1rem 0.95rem;
+    font-size: 0.7rem;
   }
 }
 
-/* ── LANDSCAPE MOBILE ── */
-@media (max-width: 900px) and (orientation: landscape) {
-  #profile {
+/* ── ≤ 400px — very small viewports ───────────────────────── */
+@media (max-width: 400px) {
+  :root {
+    --gutter: 1.1rem;
+  }
+
+  .wordmark {
+    font-size: 1.12rem;
+  }
+
+  .hero-roles {
+    letter-spacing: 0.12em;
+  }
+
+  .spec-row:hover,
+  .cap-item:hover,
+  .channel:hover {
+    padding-inline: 0;
+  }
+}
+
+/* ── Landscape phones — reclaim vertical space ────────────── */
+@media (max-height: 560px) and (orientation: landscape) {
+  .hero {
     min-height: auto;
-    padding-top: calc(70px + 2rem);
-    padding-bottom: 2rem;
-    flex-direction: row;
-    gap: 3rem;
-    align-items: center;
+    padding-block: 7rem 3rem;
   }
 
-  .section__pic-container {
-    height: 200px;
-    width: 200px;
+  .scroll-cue {
+    display: none;
   }
 
-  .hero-name {
-    font-size: 2.5rem;
+  .menu {
+    align-content: start;
+    overflow-y: auto;
   }
 
-  .hero-content {
-    align-items: flex-start;
-    text-align: left;
+  .menu a {
+    font-size: 1.5rem;
+    padding-block: 0.5rem;
+  }
+}
+
+/* ── Coarse pointers — drop hover-only affordances ────────── */
+@media (hover: none) {
+  .project:hover {
+    transform: none;
+    box-shadow: none;
   }
 
-  .hero-role {
-    justify-content: flex-start;
+  .spec-row:hover,
+  .cap-item:hover,
+  .channel:hover {
+    background: none;
+    padding-inline: 0;
   }
 
-  .hero-description {
-    text-align: left;
+  .hero-portrait:hover .portrait-frame img {
+    filter: grayscale(0.55) contrast(1.06) brightness(0.94);
+    transform: scale(1.02);
+  }
+}
+
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  .site-header,
+  .menu,
+  .grain,
+  .progress,
+  .cursor-ring,
+  .cursor-dot,
+  .marquee,
+  .scroll-cue,
+  .filters {
+    display: none !important;
   }
 
-  .btn-container {
-    justify-content: flex-start;
+  body {
+    background: #fff;
+    color: #000;
   }
 
-  #socials-container {
-    justify-content: flex-start;
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  .hero-terminal {
-    max-width: 380px;
+  .project {
+    break-inside: avoid;
   }
 }

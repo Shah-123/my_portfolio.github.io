@@ -1,485 +1,355 @@
-/* ============================================================
-   SHAHKAR AHMAD — Portfolio script.js v3.0 "Neural"
-   ML / DL / Agentic AI Theme
-   ============================================================ */
+/* ==========================================================================
+   SHAHKAR AHMAD — Portfolio v4 "Atelier"
+   Restrained motion: reveals, magnetics, filtering, theme.
+   Every animated path checks prefers-reduced-motion first.
+   ========================================================================== */
 
-/* ── Utility: check if user prefers reduced motion ── */
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function () {
+  "use strict";
 
-/* ── Toggle hamburger menu ── */
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
-}
+  const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const finePointer = window.matchMedia("(pointer: fine)");
+  let reduced = motionQuery.matches;
 
-/* ── SCROLL REVEAL ── */
-function initScrollReveal() {
-  if (prefersReducedMotion) {
-    document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-    return;
-  }
+  const $ = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
 
-  const reveals = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("visible");
-          }, index * 70);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.08, rootMargin: "0px 0px -50px 0px" }
-  );
+  /* ── THEME ─────────────────────────────────────────────── */
+  function initTheme() {
+    const root = document.documentElement;
+    const toggle = $("#themeToggle");
+    if (!toggle) return;
 
-  reveals.forEach((el) => observer.observe(el));
-}
-
-/* ── SKILL BAR ANIMATION ── */
-function initSkillBars() {
-  const bars = document.querySelectorAll(".skill-bar");
-
-  if (prefersReducedMotion) {
-    bars.forEach((bar) => {
-      const width = bar.getAttribute("data-width");
-      bar.style.width = width + "%";
-      bar.style.transition = "none";
-    });
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          const width = bar.getAttribute("data-width");
-          setTimeout(() => {
-            bar.style.width = width + "%";
-          }, 250);
-          observer.unobserve(bar);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-
-  bars.forEach((bar) => observer.observe(bar));
-}
-
-/* ── NAVBAR SCROLL EFFECT ── */
-function initNavScroll() {
-  const header = document.querySelector("header");
-
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        if (scrollY > 80) {
-          header.style.boxShadow = "0 4px 32px rgba(0,0,0,0.3)";
-        } else {
-          header.style.boxShadow = "none";
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-}
-
-/* ── ACTIVE NAV LINK ── */
-function initActiveNav() {
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll(".nav-links a");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
-          navLinks.forEach((link) => {
-            const isActive = link.getAttribute("href") === `#${id}`;
-            link.style.color = isActive ? "var(--accent-primary)" : "";
-            link.style.background = isActive ? "rgba(6,182,212,0.1)" : "";
-          });
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
-}
-
-/* ── TYPING EFFECT ── */
-function initTypingEffect() {
-  const el = document.querySelector(".hero-name");
-  if (!el) return;
-
-  const text1 = "Shahkar";
-  const text2 = "Ahmad";
-
-  el.innerHTML =
-    '<span class="type-line1"></span><span class="type-line2"></span><span class="type-cursor">|</span>';
-
-  const line1 = el.querySelector(".type-line1");
-  const line2 = el.querySelector(".type-line2");
-  const cursor = el.querySelector(".type-cursor");
-
-  if (prefersReducedMotion) {
-    line1.textContent = text1;
-    line1.insertAdjacentHTML("afterend", "<br />");
-    line2.textContent = text2;
-    cursor.style.display = "none";
-    return;
-  }
-
-  let i = 0;
-  let j = 0;
-  cursor.classList.add("blink");
-
-  function typeWriter() {
-    cursor.classList.remove("blink");
-    if (i < text1.length) {
-      line1.innerHTML += text1.charAt(i);
-      i++;
-      setTimeout(typeWriter, 95);
-    } else if (i === text1.length && j === 0) {
-      line1.insertAdjacentHTML("afterend", "<br />");
-      j++;
-      setTimeout(typeWriter, 280);
-    } else if (j <= text2.length) {
-      line2.innerHTML += text2.charAt(j - 1);
-      j++;
-      setTimeout(typeWriter, 95);
-    } else {
-      cursor.classList.add("blink");
-    }
-  }
-
-  setTimeout(typeWriter, 700);
-}
-
-/* ── CUSTOM CURSOR ── */
-function initCustomCursor() {
-  const dot = document.getElementById("cursor-dot");
-  const trail = document.getElementById("cursor-trail");
-  if (!dot || !trail || prefersReducedMotion) return;
-
-  let mouseX = 0, mouseY = 0;
-  let dotX = 0, dotY = 0;
-  let trailX = 0, trailY = 0;
-
-  window.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    dotX += (mouseX - dotX) * 0.55;
-    dotY += (mouseY - dotY) * 0.55;
-    trailX += (mouseX - trailX) * 0.12;
-    trailY += (mouseY - trailY) * 0.12;
-
-    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-    trail.style.transform = `translate(${trailX}px, ${trailY}px) translate(-50%, -50%)`;
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-
-  const interactives = document.querySelectorAll(
-    "a, button, .social-btn, .project-card, .skill-category, .contact-card"
-  );
-  interactives.forEach((el) => {
-    el.addEventListener("mouseenter", () =>
-      document.body.classList.add("cursor-hover-active")
-    );
-    el.addEventListener("mouseleave", () =>
-      document.body.classList.remove("cursor-hover-active")
-    );
-  });
-}
-
-/* ── HERO IMAGE TILT EFFECT ── */
-function initHeroTilt() {
-  const wrapper = document.querySelector(".hero-image-wrapper");
-  if (!wrapper || prefersReducedMotion) return;
-
-  const profile = document.getElementById("profile");
-  if (!profile) return;
-
-  profile.addEventListener("mousemove", (e) => {
-    const rect = profile.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-
-    const dx = (e.clientX - cx) / (rect.width / 2);
-    const dy = (e.clientY - cy) / (rect.height / 2);
-
-    const tiltX = dy * 8;
-    const tiltY = -dx * 8;
-
-    wrapper.style.transform = `perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`;
-    wrapper.style.transition = "transform 0.15s ease";
-  });
-
-  profile.addEventListener("mouseleave", () => {
-    wrapper.style.transform = "perspective(600px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-    wrapper.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
-  });
-}
-
-/* ── NEURAL NETWORK CANVAS BACKGROUND ── */
-/* Updated with cyan-dominant Neural theme colors */
-function initCanvasBackground() {
-  const canvas = document.getElementById("hero-canvas");
-  if (!canvas) return;
-
-  if (prefersReducedMotion) {
-    canvas.style.display = "none";
-    return;
-  }
-
-  const ctx = canvas.getContext("2d");
-  let width, height, particles = [], pulses = [];
-  let mouse = { x: null, y: null };
-
-  function resize() {
-    const profile = document.getElementById("profile");
-    if (!profile) return;
-    width = profile.offsetWidth;
-    height = profile.offsetHeight;
-    canvas.width = width;
-    canvas.height = height;
-    initParticles();
-  }
-
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(resize, 150);
-  });
-
-  const profile = document.getElementById("profile");
-  if (profile) {
-    profile.addEventListener("mousemove", (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
-    profile.addEventListener("mouseleave", () => {
-      mouse.x = null;
-      mouse.y = null;
+    toggle.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      const meta = $('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", next === "dark" ? "#08090b" : "#f7f5f1");
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {
+        /* private mode — theme just won't persist */
+      }
     });
   }
 
-  /* Helper: get theme-aware neural colors */
-  function getNeuralColors() {
-    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    return {
-      isDark,
-      /* Cyan base (6, 182, 212) in dark; teal (8, 145, 178) in light */
-      nodeR: isDark ? 6 : 8,
-      nodeG: isDark ? 182 : 145,
-      nodeB: isDark ? 212 : 178,
-      /* Pulse color — emerald green for "data firing" */
-      pulseColor: isDark
-        ? "rgba(52, 211, 153, 0.9)"   /* emerald */
-        : "rgba(5, 150, 105, 0.85)",
-      lineOpacityMax: isDark ? 0.28 : 0.18,
-      mouseOpacityMax: isDark ? 0.55 : 0.38,
+  /* ── MOBILE MENU ───────────────────────────────────────── */
+  function initMenu() {
+    const burger = $("#burger");
+    const menu = $("#menu");
+    if (!burger || !menu) return;
+
+    const setOpen = (open) => {
+      burger.classList.toggle("is-open", open);
+      menu.classList.toggle("is-open", open);
+      document.body.classList.toggle("menu-open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      menu.setAttribute("aria-hidden", String(!open));
     };
-  }
 
-  class Particle {
-    constructor() { this.reset(); }
-
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.size = Math.random() * 1.8 + 0.8;
-      this.vx = (Math.random() - 0.5) * 0.38;
-      this.vy = (Math.random() - 0.5) * 0.38;
-      this.baseAlpha = Math.random() * 0.5 + 0.2;
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x > width || this.x < 0) this.vx *= -1;
-      if (this.y > height || this.y < 0) this.vy *= -1;
-    }
-
-    draw() {
-      const { nodeR, nodeG, nodeB } = getNeuralColors();
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = `rgba(${nodeR}, ${nodeG}, ${nodeB}, 0.8)`;
-      ctx.fillStyle = `rgba(${nodeR}, ${nodeG}, ${nodeB}, ${this.baseAlpha})`;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  class Pulse {
-    constructor(startX, startY, targetX, targetY, color) {
-      this.x = startX; this.y = startY;
-      this.targetX = targetX; this.targetY = targetY;
-      this.color = color;
-      this.progress = 0;
-      this.speed = 0.012 + Math.random() * 0.018;
-      this.active = true;
-    }
-
-    update() {
-      this.progress += this.speed;
-      if (this.progress >= 1) this.active = false;
-    }
-
-    draw() {
-      if (!this.active) return;
-      const cx = this.x + (this.targetX - this.x) * this.progress;
-      const cy = this.y + (this.targetY - this.y) * this.progress;
-      ctx.shadowBlur = 12;
-      ctx.shadowColor = this.color;
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  function initParticles() {
-    const count = window.innerWidth < 768 ? 38 : 75;
-    particles = Array.from({ length: count }, () => new Particle());
-    pulses = [];
-  }
-
-  function connectParticles() {
-    const maxDist = window.innerWidth < 768 ? 88 : 128;
-    const { nodeR, nodeG, nodeB, pulseColor, lineOpacityMax, mouseOpacityMax } = getNeuralColors();
-    const baseColor = `${nodeR}, ${nodeG}, ${nodeB}`;
-
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < maxDist) {
-          const opacity = (1 - dist / maxDist) * lineOpacityMax;
-          ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
-          ctx.lineWidth = 0.8;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-
-          /* Data pulse — slightly higher rate for more activity */
-          if (Math.random() < 0.0012) {
-            pulses.push(new Pulse(
-              particles[i].x, particles[i].y,
-              particles[j].x, particles[j].y,
-              pulseColor
-            ));
-          }
-        }
-      }
-
-      /* Mouse connection */
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = particles[i].x - mouse.x;
-        const dy = particles[i].y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 160) {
-          const opacity = (1 - dist / 160) * mouseOpacityMax;
-          ctx.strokeStyle = `rgba(${baseColor}, ${opacity})`;
-          ctx.lineWidth = 1.2;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-    connectParticles();
-    particles.forEach(p => { p.update(); p.draw(); });
-
-    for (let i = pulses.length - 1; i >= 0; i--) {
-      pulses[i].update();
-      pulses[i].draw();
-      if (!pulses[i].active) pulses.splice(i, 1);
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  setTimeout(() => {
-    resize();
-    animate();
-  }, 100);
-}
-
-/* ── THEME TOGGLE ── */
-function initThemeToggle() {
-  const toggleBtns = document.querySelectorAll(".theme-btn");
-  const html = document.documentElement;
-
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    html.setAttribute("data-theme", savedTheme);
-  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    html.setAttribute("data-theme", "dark");
-  }
-
-  toggleBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const current = html.getAttribute("data-theme") || "light";
-      const next = current === "dark" ? "light" : "dark";
-      html.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
+    burger.addEventListener("click", () => {
+      setOpen(!menu.classList.contains("is-open"));
     });
-  });
-}
 
-/* ── SMOOTH CLOSE MENU ON LINK CLICK ── */
-function initMenuClose() {
-  const navLinks = document.querySelectorAll(".menu-links a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      const menu = document.querySelector(".menu-links");
-      const icon = document.querySelector(".hamburger-icon");
-      if (menu.classList.contains("open")) {
-        menu.classList.remove("open");
-        icon.classList.remove("open");
+    $$("a", menu).forEach((a) => a.addEventListener("click", () => setOpen(false)));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) {
+        setOpen(false);
+        burger.focus();
       }
     });
-  });
-}
+  }
 
-/* ── INIT ALL ── */
-document.addEventListener("DOMContentLoaded", () => {
-  initThemeToggle();
-  initScrollReveal();
-  initSkillBars();
-  initNavScroll();
-  initActiveNav();
-  initTypingEffect();
-  initCustomCursor();
-  initHeroTilt();
-  initCanvasBackground();
-  initMenuClose();
-});
+  /* ── HEADER STATE + SCROLL PROGRESS ────────────────────── */
+  function initScrollChrome() {
+    const header = $("#header");
+    const bar = $("#progress");
+    let ticking = false;
+
+    const update = () => {
+      const y = window.scrollY;
+      if (header) header.classList.toggle("is-stuck", y > 24);
+
+      if (bar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+      }
+      ticking = false;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true }
+    );
+
+    update();
+  }
+
+  /* ── ACTIVE NAV LINK ───────────────────────────────────── */
+  function initActiveNav() {
+    const links = $$(".nav-link");
+    const sections = $$("main section[id]");
+    if (!links.length || !sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.id;
+          links.forEach((link) =>
+            link.classList.toggle("is-active", link.getAttribute("href") === "#" + id)
+          );
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+  }
+
+  /* ── SCROLL REVEAL (staggered within each section) ─────── */
+  function initReveal() {
+    const items = $$(".reveal");
+
+    if (reduced) {
+      items.forEach((el) => el.classList.add("is-in"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        // Stagger only the items entering together in this batch.
+        entries
+          .filter((e) => e.isIntersecting)
+          .forEach((entry, i) => {
+            entry.target.style.transitionDelay = i * 80 + "ms";
+            entry.target.classList.add("is-in");
+            obs.unobserve(entry.target);
+          });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    items.forEach((el) => observer.observe(el));
+  }
+
+  /* ── HERO WORD REVEAL ──────────────────────────────────── */
+  function initHero() {
+    const name = $(".hero-name");
+    if (!name) return;
+
+    if (reduced) {
+      name.classList.add("is-in");
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      setTimeout(() => name.classList.add("is-in"), 120);
+    });
+  }
+
+  /* ── CAPABILITY METERS ─────────────────────────────────── */
+  function initMeters() {
+    const meters = $$(".meter");
+    if (!meters.length) return;
+
+    if (reduced) {
+      meters.forEach((m) => m.classList.add("is-lit"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-lit");
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    meters.forEach((m) => observer.observe(m));
+  }
+
+  /* ── STAT COUNTERS ─────────────────────────────────────── */
+  function initCounters() {
+    const stats = $$("[data-count]");
+    if (!stats.length) return;
+
+    const render = (el, value) => {
+      el.textContent = value + (el.dataset.suffix || "");
+    };
+
+    if (reduced) {
+      stats.forEach((el) => render(el, Number(el.dataset.count)));
+      return;
+    }
+
+    const run = (el) => {
+      const target = Number(el.dataset.count) || 0;
+      const duration = 1100;
+      const start = performance.now();
+
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        // easeOutExpo
+        const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+        render(el, Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          run(entry.target);
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    stats.forEach((el) => observer.observe(el));
+  }
+
+  /* ── PROJECT FILTER ────────────────────────────────────── */
+  function initFilters() {
+    const buttons = $$(".filter");
+    const cards = $$(".project");
+    if (!buttons.length || !cards.length) return;
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const key = btn.dataset.filter;
+
+        buttons.forEach((b) => {
+          const on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        });
+
+        cards.forEach((card) => {
+          const cats = (card.dataset.cat || "").split(/\s+/);
+          card.classList.toggle("is-hidden", key !== "all" && !cats.includes(key));
+        });
+      });
+    });
+  }
+
+  /* ── CUSTOM CURSOR ─────────────────────────────────────── */
+  function initCursor() {
+    if (reduced || !finePointer.matches) return;
+
+    const ring = $(".cursor-ring");
+    const dot = $(".cursor-dot");
+    if (!ring || !dot) return;
+
+    let mx = window.innerWidth / 2;
+    let my = window.innerHeight / 2;
+    let rx = mx;
+    let ry = my;
+
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        document.body.classList.add("cursor-ready");
+      },
+      { passive: true }
+    );
+
+    document.addEventListener("mouseleave", () =>
+      document.body.classList.remove("cursor-ready")
+    );
+
+    const loop = () => {
+      rx += (mx - rx) * 0.16;
+      ry += (my - ry) * 0.16;
+      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+      dot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+      requestAnimationFrame(loop);
+    };
+    loop();
+
+    const hot = "a, button, .project, .cap-item, .spec-row, .channel";
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest(hot)) document.body.classList.add("cursor-hot");
+    });
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest(hot)) document.body.classList.remove("cursor-hot");
+    });
+  }
+
+  /* ── MAGNETIC BUTTONS ──────────────────────────────────── */
+  function initMagnetic() {
+    if (reduced || !finePointer.matches) return;
+
+    $$("[data-magnetic]").forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width / 2) * 0.22;
+        const y = (e.clientY - r.top - r.height / 2) * 0.32;
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+      });
+    });
+  }
+
+  /* ── FOOTER YEAR ───────────────────────────────────────── */
+  function initYear() {
+    const el = $("#year");
+    if (el) el.textContent = String(new Date().getFullYear());
+  }
+
+  /* ── BOOT ──────────────────────────────────────────────── */
+  function boot() {
+    initTheme();
+    initMenu();
+    initScrollChrome();
+    initActiveNav();
+    initReveal();
+    initHero();
+    initMeters();
+    initCounters();
+    initFilters();
+    initCursor();
+    initMagnetic();
+    initYear();
+  }
+
+  // Keep up if the user flips the OS motion setting mid-session.
+  const onMotionChange = () => {
+    reduced = motionQuery.matches;
+    if (reduced) {
+      $$(".reveal").forEach((el) => el.classList.add("is-in"));
+      $$(".meter").forEach((m) => m.classList.add("is-lit"));
+      document.body.classList.remove("cursor-ready", "cursor-hot");
+    }
+  };
+
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener("change", onMotionChange);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();

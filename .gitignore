@@ -1,0 +1,18 @@
+# Tooling / agent working dirs
+.claude/
+.qwen/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.local
+node_modules/
