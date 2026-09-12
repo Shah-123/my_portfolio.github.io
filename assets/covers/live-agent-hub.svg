@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Live broadcast node radiating to AI persona chat messages">
+    <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="lh-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -18,17 +38,17 @@
   <circle cx="330" cy="375" r="330" fill="url(#lh-glow)"/>
 
   <g fill="none" stroke="#2EE6A8" stroke-opacity=".3">
-    <circle cx="330" cy="375" r="96"/>
-    <circle cx="330" cy="375" r="150" stroke-opacity=".2"/>
-    <circle cx="330" cy="375" r="212" stroke-opacity=".12"/>
-    <circle cx="330" cy="375" r="282" stroke-opacity=".07"/>
+    <circle class="ring" cx="330" cy="375" r="96"/>
+    <circle class="ring" style="animation-delay:.7s" cx="330" cy="375" r="150" stroke-opacity=".2"/>
+    <circle class="ring" style="animation-delay:1.4s" cx="330" cy="375" r="212" stroke-opacity=".12"/>
+    <circle class="ring" style="animation-delay:2.1s" cx="330" cy="375" r="282" stroke-opacity=".07"/>
   </g>
 
   <circle cx="330" cy="375" r="56" fill="#0A0C10" stroke="#2EE6A8" stroke-width="1.5"/>
   <circle cx="330" cy="375" r="9" fill="#2EE6A8"/>
   <text x="330" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.6" fill="#9AA2AE">STREAM</text>
 
-  <g stroke="#565F6C" stroke-opacity=".4" stroke-width="1.5" stroke-dasharray="4 7">
+  <g class="flow" stroke="#565F6C" stroke-opacity=".4" stroke-width="1.5" stroke-dasharray="4 7">
     <path d="M386 300 H 700"/>
     <path d="M390 375 H 700"/>
     <path d="M386 450 H 700"/>
@@ -38,34 +58,34 @@
   <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15">
     <g>
       <rect x="700" y="252" width="404" height="72" rx="10" fill="#151A21" stroke="#2A313B"/>
-      <circle cx="732" cy="288" r="12" fill="#2EE6A8" fill-opacity=".85"/>
+      <circle class="wk" cx="732" cy="288" r="12" fill="#2EE6A8" fill-opacity=".85"/>
       <text x="762" y="282" fill="#E9EBEE">persona::hype</text>
       <rect x="762" y="294" width="200" height="7" rx="3.5" fill="#2F3742"/>
     </g>
     <g>
       <rect x="700" y="340" width="404" height="72" rx="10" fill="#151A21" stroke="#2A313B"/>
-      <circle cx="732" cy="376" r="12" fill="#565F6C"/>
+      <circle class="wk" style="animation-delay:.7s" cx="732" cy="376" r="12" fill="#565F6C"/>
       <text x="762" y="370" fill="#E9EBEE">persona::analyst</text>
       <rect x="762" y="382" width="264" height="7" rx="3.5" fill="#2F3742"/>
     </g>
     <g>
       <rect x="700" y="428" width="404" height="72" rx="10" fill="#151A21" stroke="#2A313B"/>
-      <circle cx="732" cy="464" r="12" fill="#565F6C"/>
+      <circle class="wk" style="animation-delay:1.4s" cx="732" cy="464" r="12" fill="#565F6C"/>
       <text x="762" y="458" fill="#E9EBEE">persona::skeptic</text>
       <rect x="762" y="470" width="156" height="7" rx="3.5" fill="#2F3742"/>
     </g>
     <g>
-      <rect x="700" y="534" width="404" height="72" rx="10" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".55"/>
-      <circle cx="732" cy="570" r="12" fill="none" stroke="#2EE6A8"/>
+      <rect class="glow" x="700" y="534" width="404" height="72" rx="10" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".55"/>
+      <circle class="wk" style="animation-delay:2.1s" cx="732" cy="570" r="12" fill="none" stroke="#2EE6A8"/>
       <text x="762" y="564" fill="#2EE6A8">streamer::reply</text>
       <rect x="762" y="576" width="228" height="7" rx="3.5" fill="#2EE6A8" fill-opacity=".35"/>
     </g>
   </g>
 
   <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4">
-    <circle cx="62" cy="71" r="5" fill="#2EE6A8"/>
+    <circle class="blink" cx="62" cy="71" r="5" fill="#2EE6A8"/>
     <text x="80" y="76" fill="#2EE6A8">LIVE</text>
-    <text x="152" y="76" fill="#646C79">· WEBSOCKET · FASTAPI</text>
+    <text x="152" y="76" fill="#646C79">· WEBSOCKET · EXPRESS.JS</text>
     <text x="1144" y="702" text-anchor="end" fill="#646C79">REAL-TIME AGENTS</text>
   </g>
 </svg>

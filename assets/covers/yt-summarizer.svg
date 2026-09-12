@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Audio waveform condensing into a structured written summary">
+    <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="yt-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -23,50 +43,50 @@
   <g transform="translate(110 375)">
     <text x="0" y="-186" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">TRANSCRIPT</text>
     <g fill="#3A434F">
-      <rect x="0" y="-46" width="7" height="92" rx="3.5"/>
-      <rect x="18" y="-88" width="7" height="176" rx="3.5"/>
-      <rect x="36" y="-30" width="7" height="60" rx="3.5"/>
-      <rect x="54" y="-118" width="7" height="236" rx="3.5"/>
-      <rect x="72" y="-66" width="7" height="132" rx="3.5"/>
-      <rect x="90" y="-140" width="7" height="280" rx="3.5" fill="#2EE6A8" fill-opacity=".75"/>
-      <rect x="108" y="-52" width="7" height="104" rx="3.5"/>
-      <rect x="126" y="-96" width="7" height="192" rx="3.5"/>
-      <rect x="144" y="-24" width="7" height="48" rx="3.5"/>
-      <rect x="162" y="-126" width="7" height="252" rx="3.5" fill="#2EE6A8" fill-opacity=".5"/>
-      <rect x="180" y="-70" width="7" height="140" rx="3.5"/>
-      <rect x="198" y="-40" width="7" height="80" rx="3.5"/>
-      <rect x="216" y="-104" width="7" height="208" rx="3.5"/>
-      <rect x="234" y="-58" width="7" height="116" rx="3.5"/>
-      <rect x="252" y="-82" width="7" height="164" rx="3.5"/>
-      <rect x="270" y="-34" width="7" height="68" rx="3.5"/>
-      <rect x="288" y="-112" width="7" height="224" rx="3.5"/>
-      <rect x="306" y="-62" width="7" height="124" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.00s" x="0" y="-46" width="7" height="92" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.09s" x="18" y="-88" width="7" height="176" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.18s" x="36" y="-30" width="7" height="60" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.27s" x="54" y="-118" width="7" height="236" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.36s" x="72" y="-66" width="7" height="132" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.45s" x="90" y="-140" width="7" height="280" rx="3.5" fill="#2EE6A8" fill-opacity=".75"/>
+      <rect class="bar" style="animation-delay:0.54s" x="108" y="-52" width="7" height="104" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.63s" x="126" y="-96" width="7" height="192" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.72s" x="144" y="-24" width="7" height="48" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.81s" x="162" y="-126" width="7" height="252" rx="3.5" fill="#2EE6A8" fill-opacity=".5"/>
+      <rect class="bar" style="animation-delay:0.90s" x="180" y="-70" width="7" height="140" rx="3.5"/>
+      <rect class="bar" style="animation-delay:0.99s" x="198" y="-40" width="7" height="80" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.08s" x="216" y="-104" width="7" height="208" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.17s" x="234" y="-58" width="7" height="116" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.26s" x="252" y="-82" width="7" height="164" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.35s" x="270" y="-34" width="7" height="68" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.44s" x="288" y="-112" width="7" height="224" rx="3.5"/>
+      <rect class="bar" style="animation-delay:1.53s" x="306" y="-62" width="7" height="124" rx="3.5"/>
     </g>
     <text x="0" y="196" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#646C79">42:18</text>
   </g>
 
-  <path d="M470 375 H 600" fill="none" stroke="#2EE6A8" stroke-opacity=".8" stroke-width="1.6" marker-end="url(#yt-ar)"/>
+  <path class="flow" d="M470 375 H 600" fill="none" stroke="#2EE6A8" stroke-opacity=".8" stroke-width="1.6" stroke-dasharray="4 6" marker-end="url(#yt-ar)"/>
   <text x="535" y="352" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="1.8" fill="#2EE6A8">llm</text>
 
   <g transform="translate(640 168)">
     <rect x="0" y="0" width="450" height="414" rx="12" fill="#0A0C10" stroke="#2A313B"/>
     <text x="32" y="48" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#2EE6A8">SUMMARY</text>
     <g fill="#2F3742">
-      <rect x="32" y="76" width="386" height="9" rx="4.5"/>
-      <rect x="32" y="100" width="330" height="9" rx="4.5"/>
-      <rect x="32" y="124" width="362" height="9" rx="4.5"/>
+      <rect class="wk" x="32" y="76" width="386" height="9" rx="4.5"/>
+      <rect class="wk" style="animation-delay:.6s" x="32" y="100" width="330" height="9" rx="4.5"/>
+      <rect class="wk" style="animation-delay:1.2s" x="32" y="124" width="362" height="9" rx="4.5"/>
     </g>
     <line x1="32" y1="164" x2="418" y2="164" stroke="#2A313B"/>
     <text x="32" y="200" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">KEY TAKEAWAYS</text>
     <g>
-      <circle cx="38" cy="234" r="4" fill="#2EE6A8"/>
-      <rect x="58" y="230" width="290" height="8" rx="4" fill="#3A434F"/>
-      <circle cx="38" cy="272" r="4" fill="#2EE6A8"/>
-      <rect x="58" y="268" width="340" height="8" rx="4" fill="#3A434F"/>
-      <circle cx="38" cy="310" r="4" fill="#2EE6A8"/>
-      <rect x="58" y="306" width="252" height="8" rx="4" fill="#3A434F"/>
-      <circle cx="38" cy="348" r="4" fill="#2EE6A8"/>
-      <rect x="58" y="344" width="308" height="8" rx="4" fill="#3A434F"/>
+      <g class="wk"><circle cx="38" cy="234" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="230" width="290" height="8" rx="4" fill="#3A434F"/></g>
+      <g class="wk" style="animation-delay:.6s"><circle cx="38" cy="272" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="268" width="340" height="8" rx="4" fill="#3A434F"/></g>
+      <g class="wk" style="animation-delay:1.2s"><circle cx="38" cy="310" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="306" width="252" height="8" rx="4" fill="#3A434F"/></g>
+      <g class="wk" style="animation-delay:1.8s"><circle cx="38" cy="348" r="4" fill="#2EE6A8"/>
+      <rect x="58" y="344" width="308" height="8" rx="4" fill="#3A434F"/></g>
     </g>
   </g>
 

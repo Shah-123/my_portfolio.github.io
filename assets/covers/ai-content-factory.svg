@@ -1,4 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="A single prompt fanning out through ten parallel LangGraph agents, past a human-in-the-loop approval gate, into blog, social, podcast and video outputs">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="cf-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -24,7 +40,7 @@
   <rect x="76" y="336" width="132" height="78" rx="8" fill="#151A21" stroke="#2EE6A8" stroke-width="1.6"/>
   <text x="142" y="368" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="1.6" fill="#E9EBEE">PROMPT</text>
   <text x="142" y="390" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#2EE6A8">1 input</text>
-  <g stroke="#565F6C" stroke-opacity=".45" stroke-width="1.3" fill="none">
+  <g class="flow-slow" stroke="#565F6C" stroke-opacity=".45" stroke-width="1.3" stroke-dasharray="3 7" fill="none">
     <path d="M208 375 C 258 375, 262 236, 300 236"/>
     <path d="M208 375 C 258 375, 262 236, 420 236"/>
     <path d="M208 375 C 258 375, 262 236, 540 236"/>
@@ -36,43 +52,63 @@
     <path d="M208 375 C 258 375, 262 486, 660 486"/>
     <path d="M208 375 C 258 375, 262 486, 780 486"/>
   </g>
-  <rect x="300" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="348" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#2EE6A8">AGENT</text>
-  <text x="348" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">01</text>
-  <rect x="420" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="468" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#2EE6A8">AGENT</text>
-  <text x="468" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">02</text>
-  <rect x="540" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="588" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="588" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">03</text>
-  <rect x="660" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="708" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="708" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">04</text>
-  <rect x="780" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="828" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="828" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">05</text>
-  <rect x="300" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="348" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="348" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">06</text>
-  <rect x="420" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="468" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="468" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">07</text>
-  <rect x="540" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
-  <text x="588" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
-  <text x="588" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">08</text>
-  <rect x="660" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#F5A524" stroke-width="1.1"/>
-  <text x="708" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#F5A524">AGENT</text>
-  <text x="708" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">09</text>
-  <rect x="780" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#F5A524" stroke-width="1.1"/>
-  <text x="828" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#F5A524">AGENT</text>
-  <text x="828" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">10</text>
-  <path d="M300 190 H 876" stroke="#8B5CF6" stroke-opacity=".55" stroke-width="1.4" fill="none"/>
+  <g class="wk" style="animation-delay:0.4s">
+    <rect x="300" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="348" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#2EE6A8">AGENT</text>
+    <text x="348" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">01</text>
+  </g>
+  <g class="wk" style="animation-delay:0.8s">
+    <rect x="420" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="468" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#2EE6A8">AGENT</text>
+    <text x="468" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">02</text>
+  </g>
+  <g class="wk" style="animation-delay:1.2s">
+    <rect x="540" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="588" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="588" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">03</text>
+  </g>
+  <g class="wk" style="animation-delay:1.6s">
+    <rect x="660" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="708" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="708" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">04</text>
+  </g>
+  <g class="wk" style="animation-delay:0.0s">
+    <rect x="780" y="210" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="828" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="828" y="251" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">05</text>
+  </g>
+  <g class="wk" style="animation-delay:0.4s">
+    <rect x="300" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="348" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="348" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">06</text>
+  </g>
+  <g class="wk" style="animation-delay:0.8s">
+    <rect x="420" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="468" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="468" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">07</text>
+  </g>
+  <g class="wk" style="animation-delay:1.2s">
+    <rect x="540" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#2A313B" stroke-width="1.1"/>
+    <text x="588" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#9AA2AE">AGENT</text>
+    <text x="588" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">08</text>
+  </g>
+  <g class="wk" style="animation-delay:1.6s">
+    <rect x="660" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#F5A524" stroke-width="1.1"/>
+    <text x="708" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#F5A524">AGENT</text>
+    <text x="708" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">09</text>
+  </g>
+  <g class="wk" style="animation-delay:0.0s">
+    <rect x="780" y="460" width="96" height="52" rx="6" fill="#151A21" stroke="#F5A524" stroke-width="1.1"/>
+    <text x="828" y="484" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.3" fill="#F5A524">AGENT</text>
+    <text x="828" y="501" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1" fill="#646C79">10</text>
+  </g>
+  <path class="glow" d="M300 190 H 876" stroke="#8B5CF6" stroke-opacity=".55" stroke-width="1.4" fill="none"/>
   <path d="M300 190 v 12 M876 190 v 12" stroke="#8B5CF6" stroke-opacity=".55" stroke-width="1.4" fill="none"/>
   <text x="588" y="178" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#8B5CF6">PARALLEL FAN-OUT</text>
-  <rect x="920" y="250" width="14" height="230" rx="4" fill="#F5A524" fill-opacity=".16" stroke="#F5A524" stroke-width="1.4"/>
+  <rect class="blink" x="920" y="250" width="14" height="230" rx="4" fill="#F5A524" fill-opacity=".16" stroke="#F5A524" stroke-width="1.4"/>
   <text x="927" y="234" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2" fill="#F5A524">HITL</text>
   <text x="927" y="504" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="10" letter-spacing="1.4" fill="#646C79">approve</text>
-  <g stroke="#565F6C" stroke-opacity=".38" stroke-width="1.2" fill="none">
+  <g class="flow-slow" stroke="#565F6C" stroke-opacity=".38" stroke-width="1.2" stroke-dasharray="3 7" fill="none">
     <path d="M396 236 C 450 236, 880 375, 920 375"/>
     <path d="M516 236 C 570 236, 880 375, 920 375"/>
     <path d="M636 236 C 690 236, 880 375, 920 375"/>
@@ -84,22 +120,28 @@
     <path d="M756 486 C 810 486, 880 375, 920 375"/>
     <path d="M876 486 C 930 486, 880 375, 920 375"/>
   </g>
-  <g stroke="#2EE6A8" stroke-opacity=".5" stroke-width="1.4" fill="none" marker-end="url(#cf-ar-s)">
+  <g class="flow" stroke="#2EE6A8" stroke-opacity=".5" stroke-width="1.4" fill="none" stroke-dasharray="3 7" marker-end="url(#cf-ar-s)">
     <path d="M934 375 C 966 375, 962 198, 994 198"/>
     <path d="M934 375 C 966 375, 962 308, 994 308"/>
     <path d="M934 375 C 966 375, 962 418, 994 418"/>
     <path d="M934 375 C 966 375, 962 528, 994 528"/>
   </g>
-  <g>
+  <g class="wk" style="animation-delay:0.0s">
     <rect x="996" y="170" width="150" height="56" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
     <text x="1071.0" y="195.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">BLOG</text>
     <text x="1071.0" y="215.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">markdown</text>
+  </g>
+  <g class="wk" style="animation-delay:0.5s">
     <rect x="996" y="280" width="150" height="56" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
     <text x="1071.0" y="305.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">SOCIAL</text>
     <text x="1071.0" y="325.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">campaign</text>
+  </g>
+  <g class="wk" style="animation-delay:1.0s">
     <rect x="996" y="390" width="150" height="56" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
     <text x="1071.0" y="415.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">PODCAST</text>
     <text x="1071.0" y="435.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">3 min audio</text>
+  </g>
+  <g class="wk" style="animation-delay:1.5s">
     <rect x="996" y="500" width="150" height="56" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
     <text x="1071.0" y="525.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">VIDEO</text>
     <text x="1071.0" y="545.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">rendered</text>

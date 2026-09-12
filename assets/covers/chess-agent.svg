@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Chess board with a candidate move vector and a position evaluation bar">
+    <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="ch-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -32,16 +52,16 @@
       <rect x="0" y="360" width="60" height="60"/><rect x="120" y="360" width="60" height="60"/><rect x="240" y="360" width="60" height="60"/><rect x="360" y="360" width="60" height="60"/>
       <rect x="60" y="420" width="60" height="60"/><rect x="180" y="420" width="60" height="60"/><rect x="300" y="420" width="60" height="60"/><rect x="420" y="420" width="60" height="60"/>
     </g>
-    <rect x="180" y="300" width="60" height="60" fill="#2EE6A8" fill-opacity=".16"/>
-    <rect x="240" y="180" width="60" height="60" fill="#2EE6A8" fill-opacity=".28" stroke="#2EE6A8" stroke-opacity=".6"/>
-    <path d="M210 330 L 210 240 L 258 210" fill="none" stroke="#2EE6A8" stroke-width="2.5" marker-end="url(#ch-ar)"/>
+    <rect class="pulse" x="180" y="300" width="60" height="60" fill="#2EE6A8" fill-opacity=".16"/>
+    <rect class="glow" x="240" y="180" width="60" height="60" fill="#2EE6A8" fill-opacity=".28" stroke="#2EE6A8" stroke-opacity=".6"/>
+    <path class="flow" d="M210 330 L 210 240 L 258 210" fill="none" stroke="#2EE6A8" stroke-width="2.5" stroke-dasharray="4 6" marker-end="url(#ch-ar)"/>
     <circle cx="210" cy="330" r="9" fill="#2EE6A8"/>
   </g>
 
   <g transform="translate(700 135)">
     <text x="0" y="-24" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">EVALUATION</text>
     <rect x="0" y="0" width="26" height="480" rx="6" fill="#151A21" stroke="#2A313B"/>
-    <rect x="0" y="0" width="26" height="186" rx="6" fill="#E9EBEE" fill-opacity=".82"/>
+    <rect class="evalbar" x="0" y="0" width="26" height="186" rx="6" fill="#E9EBEE" fill-opacity=".82"/>
     <line x1="-10" y1="186" x2="36" y2="186" stroke="#2EE6A8" stroke-width="2"/>
     <text x="50" y="192" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="20" fill="#E9EBEE">+1.4</text>
   </g>
@@ -55,10 +75,10 @@
       <text x="24" y="166">3. Bxc4</text>
     </g>
     <g fill="#2F3742">
-      <rect x="24" y="200" width="182" height="7" rx="3.5"/>
-      <rect x="24" y="220" width="150" height="7" rx="3.5"/>
-      <rect x="24" y="240" width="168" height="7" rx="3.5"/>
-      <rect x="24" y="260" width="120" height="7" rx="3.5"/>
+      <rect class="wk" x="24" y="200" width="182" height="7" rx="3.5"/>
+      <rect class="wk" style="animation-delay:.5s" x="24" y="220" width="150" height="7" rx="3.5"/>
+      <rect class="wk" style="animation-delay:1s" x="24" y="240" width="168" height="7" rx="3.5"/>
+      <rect class="wk" style="animation-delay:1.5s" x="24" y="260" width="120" height="7" rx="3.5"/>
     </g>
     <line x1="24" y1="298" x2="206" y2="298" stroke="#2A313B"/>
     <g font-size="13" fill="#646C79">
