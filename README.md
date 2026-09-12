@@ -5,7 +5,7 @@ hybrid RAG). Built as a static site: no framework, no build step — open `index
 to GitHub Pages.
 
 **Design language:** "Agentic OS" — a terminal-forward dark interface with a command palette,
-a live Three.js agent-topology graph, and a metrics board. Dark is primary; a paper-terminal
+a live Three.js agent-topology graph, and a credentials gallery. Dark is primary; a paper-terminal
 light theme is included.
 
 ## Run locally
@@ -21,11 +21,12 @@ Any static server works. There is nothing to install.
 
 | File | Purpose |
 |---|---|
-| `index.html` | All content and markup. Sections: hero, ticker, about, stack, work, journey, metrics, contact |
+| `index.html` | All content and markup. Sections: hero, ticker, about, stack, work, journey, credentials, contact |
 | `style.css` | Design tokens + components. Breakpoint-free base; edit tokens in `:root` to retheme |
 | `mediaqueries.css` | Responsive layer (1200 → 420px), print styles, `hover: none` and `no-js` fallbacks |
 | `script.js` | Behaviour. Boot sequence, command palette, 3D graph, reveals, counters, filters, form |
 | `assets/covers/` | Hand-drawn SVG cover art per project, composed for a 2.4:1 crop band |
+| `assets/credentials/` | Certificate and hackathon scans shown in the credentials gallery |
 | `assets/Shahkar Ahmad Shah.pdf` | The canonical CV, linked from every "Download CV" control |
 
 ## Configuration
@@ -34,14 +35,16 @@ Two constants at the top of `script.js` are the only places you should need to e
 
 ```js
 const CONFIG = {
-  adalatRepo: "",            // paste the Adalat AI repo URL to enable its card link
+  mootcourtRepo: "https://github.com/Shah-123/CourtSimulator",
+  mootcourtPublic: false,    // flip to true once the repo is public
   formspreeId: "YOUR_FORM_ID",
   ...
 };
 ```
 
-- **Adalat AI link** — while `adalatRepo` is empty the featured card shows a `private` badge
-  instead of a dead link. Setting it wires the link, removes the badge and adds the arrow.
+- **MootCourtSimulator link** — the repository (`CourtSimulator`) is private, so the URL 404s
+  for anonymous visitors. The link is wired but keeps a `private` badge until
+  `mootcourtPublic` is set to `true`, which removes the badge.
 - **Contact form** — the Formspree endpoint must be set in *both* `CONFIG.formspreeId` and the
   `<form action>` in `index.html`. Until then the form degrades to opening the visitor's mail
   client and says so, rather than pretending to send.

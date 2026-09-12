@@ -9,9 +9,12 @@
    CONFIG — the only two places you should need to edit
    ───────────────────────────────────────────────────────────── */
 const CONFIG = {
-  // INPUT A — paste the Adalat AI repository URL here and it wires itself up.
-  // Leave as "" while the repo is private; the card shows a `private` badge.
-  adalatRepo: "",
+  // INPUT A — the MootCourtSimulator repository (repo name: CourtSimulator).
+  // The link is wired immediately, but the card keeps its `private` badge until
+  // mootcourtPublic is flipped to true: the repo is not in the public repo list
+  // yet, so the URL 404s for anonymous visitors.
+  mootcourtRepo: "https://github.com/Shah-123/CourtSimulator",
+  mootcourtPublic: false,
 
   // INPUT C — your Formspree endpoint. Must also match the <form action> in
   // index.html. While it still contains YOUR_FORM_ID the form falls back to
@@ -36,19 +39,27 @@ const CONFIG = {
 
   /* ── PENDING LINKS (CONFIG-driven) ───────────────────────── */
   function initPendingLinks() {
-    if (!CONFIG.adalatRepo) return;
+    if (!CONFIG.mootcourtRepo) return;
 
-    $$("[data-pending-link='adalatRepo']").forEach((a) => {
-      a.href = CONFIG.adalatRepo;
+    $$("[data-pending-link='mootcourtRepo']").forEach((a) => {
+      a.href = CONFIG.mootcourtRepo;
       a.removeAttribute("aria-disabled");
       a.target = "_blank";
       a.rel = "noopener";
-      const badge = $(".badge-private", a);
-      if (badge) badge.remove();
-      a.insertAdjacentHTML(
-        "beforeend",
-        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>'
-      );
+
+      // Keep the `private` badge while the repo is unpublished — a 404 that
+      // explains itself beats a link that merely looks broken.
+      if (CONFIG.mootcourtPublic) {
+        const badge = $(".badge-private", a);
+        if (badge) badge.remove();
+      }
+
+      if (!$("svg", a)) {
+        a.insertAdjacentHTML(
+          "beforeend",
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>'
+        );
+      }
     });
   }
 
@@ -477,14 +488,18 @@ const CONFIG = {
       { group: "navigate", icon: "02", label: "Stack", hint: "#stack", go: "#stack" },
       { group: "navigate", icon: "03", label: "Selected work", hint: "#work", go: "#work" },
       { group: "navigate", icon: "04", label: "Journey", hint: "#journey", go: "#journey" },
-      { group: "navigate", icon: "05", label: "Metrics", hint: "#metrics", go: "#metrics" },
+      { group: "navigate", icon: "05", label: "Credentials", hint: "#credentials", go: "#credentials" },
       { group: "navigate", icon: "06", label: "Contact", hint: "#contact", go: "#contact" },
 
-      { group: "projects", icon: "›", label: "Adalat AI — moot-court simulator", hint: "2026", go: "#project-adalat", open: true },
+      { group: "projects", icon: "›", label: "MootCourtSimulator — voice-first moot court", hint: "2026", go: "#project-mootcourt", open: true },
       { group: "projects", icon: "›", label: "AI Content Factory — 10-agent pipeline", hint: "2025–26", go: "#project-content-factory", open: true },
       { group: "projects", icon: "›", label: "Live Agent Hub — AI personas", hint: "2025", go: "#project-live-agent-hub", open: true },
       { group: "projects", icon: "›", label: "ChessMastermind — engine from scratch", hint: "2025", go: "#project-chess", open: true },
       { group: "projects", icon: "›", label: "YouTube Video Summariser", hint: "2024", go: "#project-yt", open: true },
+
+      { group: "credentials", icon: "★", label: "Honorable Mention — Top 5 of 35, GIK Institute", hint: "2026", go: "#credentials" },
+      { group: "credentials", icon: "✓", label: "Advanced AI Bootcamp — Grade B+", hint: "2026", go: "#credentials" },
+      { group: "credentials", icon: "⚑", label: "Qwenathon 2026 — participant, team Xtreme Coders", hint: "hackathon", go: "#credentials" },
 
       { group: "skills", icon: "#", label: "LangGraph & LangChain", hint: "stack", go: "#stack" },
       { group: "skills", icon: "#", label: "Multi-agent workflows", hint: "stack", go: "#stack" },
