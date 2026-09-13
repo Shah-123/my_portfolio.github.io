@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Scatter plot of match data with a fitted regression line and prediction band">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="od-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -15,7 +35,7 @@
 
   <rect width="1200" height="750" fill="url(#od-bg)"/>
   <rect width="1200" height="750" fill="url(#od-grid)"/>
-  <circle cx="620" cy="390" r="330" fill="url(#od-glow)"/>
+  <circle class="glow" cx="620" cy="390" r="330" fill="url(#od-glow)"/>
 
   <g transform="translate(140 130)">
     <g stroke="#1B2129">
@@ -28,10 +48,10 @@
     <line x1="0" y1="-10" x2="0" y2="440" stroke="#2F3742"/>
     <line x1="-10" y1="420" x2="860" y2="420" stroke="#2F3742"/>
 
-    <path d="M0 372 L 860 78 L 860 158 L 0 452 Z" fill="#2EE6A8" fill-opacity=".1"/>
+    <path class="pulse" d="M0 372 L 860 78 L 860 158 L 0 452 Z" fill="#2EE6A8" fill-opacity=".1"/>
     <path d="M0 412 L 860 118" stroke="#2EE6A8" stroke-width="2.5" fill="none"/>
 
-    <g fill="#565F6C" fill-opacity=".85">
+    <g class="wk" fill="#565F6C" fill-opacity=".85">
       <circle cx="42" cy="392" r="7"/><circle cx="96" cy="404" r="7"/><circle cx="128" cy="358" r="7"/>
       <circle cx="182" cy="376" r="7"/><circle cx="216" cy="330" r="7"/><circle cx="268" cy="352" r="7"/>
       <circle cx="304" cy="306" r="7"/><circle cx="352" cy="330" r="7"/><circle cx="392" cy="272" r="7"/>
@@ -43,8 +63,8 @@
       <circle cx="252" cy="288" r="7"/><circle cx="500" cy="318" r="7"/><circle cx="700" cy="252" r="7"/>
     </g>
 
-    <circle cx="812" cy="128" r="16" fill="none" stroke="#2EE6A8" stroke-width="1.5"/>
-    <circle cx="812" cy="128" r="7" fill="#2EE6A8"/>
+    <circle class="ring" cx="812" cy="128" r="16" fill="none" stroke="#2EE6A8" stroke-width="1.5"/>
+    <circle class="blink" cx="812" cy="128" r="7" fill="#2EE6A8"/>
 
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" fill="#646C79">
       <text x="-16" y="425" text-anchor="end">120</text>
@@ -58,11 +78,11 @@
   </g>
 
   <g transform="translate(834 152)" font-family="ui-monospace,'JetBrains Mono',monospace">
-    <rect x="0" y="0" width="212" height="126" rx="10" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".5"/>
+    <rect class="glow" style="animation-delay:1.4s" x="0" y="0" width="212" height="126" rx="10" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".5"/>
     <text x="22" y="34" font-size="12" letter-spacing="2.2" fill="#2EE6A8">PREDICTED</text>
     <text x="22" y="82" font-size="38" fill="#E9EBEE">312</text>
-    <text x="118" y="82" font-size="14" fill="#646C79">± 18</text>
-    <text x="22" y="108" font-size="12" fill="#646C79">r² 0.87</text>
+    <text x="118" y="82" font-size="14" fill="#646C79">runs</text>
+    <text x="22" y="108" font-size="12" fill="#646C79">xgb · 50 ov</text>
   </g>
 
   <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">

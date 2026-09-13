@@ -590,17 +590,19 @@
 
               <div class="case-head">
                 <h3 class="case-title">MootCourtSimulator</h3>
-                <p class="case-sub">Voice-first AI moot-court simulator</p>
+                <p class="case-sub">The first voice-based moot court — argue a live case against AI agents</p>
                 <p class="case-award">
                   <span class="award-star" aria-hidden="true">★</span>
                   Honorable Mention — Top 5 of 35 projects · GIK Institute, Aug 2026
                 </p>
                 <p class="case-desc">
-                  A multi-agent courtroom in which a LangGraph supervisor routes between
-                  independent Judge, Opposing Counsel and Witness agents over two-tier memory.
-                  Retrieval fuses BM25 with dense vectors, reranks, and audits every citation
-                  against an authenticated legal corpus — so an objection is grounded in statute,
-                  not plausibility.
+                  A student stands up and argues. From the bench an <strong>AI Judge</strong> questions
+                  them and rules on the law; across the aisle <strong>AI Opposing Counsel</strong>
+                  cross-examines and objects on evidence; on the stand an <strong>AI Witness</strong>
+                  testifies under oath. Nobody types. The whole hearing is spoken, in real time,
+                  against a court that talks back — the first moot-court simulator built to be
+                  <em>argued</em> rather than prompted, so every objection lands grounded in statute
+                  instead of plausibility.
                 </p>
 
                 <dl class="metrics">
@@ -624,7 +626,7 @@
                 </dl>
 
                 <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-mootcourt">
-                  <span class="case-toggle-label">Read architecture</span>
+                  <span class="case-toggle-label" data-open="Close case file">Open case file</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" aria-hidden="true">
                     <path d="m6 9 6 6 6-6" />
@@ -635,19 +637,58 @@
 
             <div class="case-detail" id="detail-mootcourt">
               <div class="case-detail-inner">
+                <div class="case-brief">
+                  <p class="brief-label">// the premise</p>
+                  <p class="case-lede">
+                    Mooting is how lawyers learn to argue — a simulated hearing, real procedure, a bench
+                    that interrupts you mid-sentence. It teaches judgement, not recall: you have to hold
+                    your case in your head while someone tries to take it apart. The catch is that it
+                    needs a full room — judge, opposing counsel, witnesses — which is exactly why
+                    students get so few reps. MootCourtSimulator fills the room with agents instead, so
+                    a student can stand up and plead a case aloud, any hour, against a court that
+                    answers back.
+                  </p>
+
+                  <dl class="roles">
+                    <div>
+                      <dt>Student · Counsel</dt>
+                      <dd>Speaks their submissions out loud. Speech is transcribed, handed to whoever's
+                        turn it is, and answered in voice.</dd>
+                    </div>
+                    <div>
+                      <dt>AI Judge</dt>
+                      <dd>Keeps the bench: puts questions to counsel, weighs the submissions and rules on
+                        each objection after looking the statute up.</dd>
+                    </div>
+                    <div>
+                      <dt>AI Opposing Counsel</dt>
+                      <dd>Argues the other side — presses your weaknesses in cross-examination and objects
+                        to evidence it considers inadmissible.</dd>
+                    </div>
+                    <div>
+                      <dt>AI Witness</dt>
+                      <dd>Testifies under oath from the case record, and is held to that record when their
+                        answer drifts from it.</dd>
+                    </div>
+                  </dl>
+
+                  <p class="brief-label">// how the room is built</p>
+                </div>
+
                 <ul class="case-points">
-                  <li>Architected a multi-agent courtroom simulator on a <strong>LangGraph state machine</strong>,
-                    with a supervisor router orchestrating independent Judge, Opposing Counsel and
-                    Witness agents backed by <strong>two-tier memory</strong>.</li>
+                  <li>Carried the spoken loop end to end over a <strong>contract-first streaming
+                      architecture</strong> (Express API + Python FastAPI): real-time STT in, agent
+                    reasoning, TTS out — time-to-first-audio cut from 16.1s to 6.9s, so the court
+                    answers at something like conversational speed.</li>
+                  <li>Architected the courtroom as a <strong>LangGraph state machine</strong>, with a
+                    supervisor router deciding whose turn it is and orchestrating independent Judge,
+                    Opposing Counsel and Witness agents backed by <strong>two-tier memory</strong>.</li>
                   <li>Implemented <strong>ReAct-based Judge agents</strong> with dynamic statute-lookup tools,
                     and Opposing Counsel executing autonomous evidentiary objections verified against
                     the <strong>Qanun-e-Shahadat Order 1984</strong>.</li>
                   <li>Engineered a hybrid RAG pipeline fusing <strong>BM25 and dense vector search via
                       RRF (k = 60)</strong>, with LLM reranking and an automated citation-audit engine
                     against an authenticated legal corpus.</li>
-                  <li>Built a <strong>contract-first microservice streaming architecture</strong>
-                    (Express API + Python FastAPI) supporting real-time STT/TTS, optimising
-                    time-to-first-audio from 16.1s to 6.9s.</li>
                   <li>Established a <strong>quantitative evaluation harness</strong> measuring retrieval
                     performance (MRR 1.00) and multi-agent courtroom behaviour across 32 labelled
                     scenarios — Objection F1 1.00, ground accuracy 100%.</li>
@@ -981,109 +1022,446 @@
 
           <div class="log panel" id="moreGrid">
             <div class="log-head" aria-hidden="true">
-              <span>idx</span><span>project</span><span>stack</span><span>year</span><span>link</span>
+              <span>idx</span><span>project</span><span>stack</span><span>year</span><span>link</span><span></span>
             </div>
 
-            <a class="log-row" data-cat="rag" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank"
-              rel="noopener">
-              <span class="log-idx">06</span>
-              <span class="log-name">Corrective-RAG
-                <em>Retrieval that grades its own context and re-queries below threshold rather than
-                  answering from weak evidence.</em></span>
-              <span class="log-stack">LangChain · Vector DB</span>
-              <span class="log-year">2025</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="rag">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-crag"
+                  aria-label="Corrective-RAG — show project details">
+                  <span class="log-idx">06</span>
+                  <span class="log-name">Corrective-RAG
+                    <em>Retrieval that grades its own context and re-queries below threshold rather than
+                      answering from weak evidence.</em></span>
+                  <span class="log-stack">LangChain · Vector DB</span>
+                  <span class="log-year">2025</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-crag">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/corrective-rag.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="Retrieval pipeline with a grading loop that re-queries the vector store" />
+                      <figcaption>fig. 06 — corrective retrieval loop</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>A retrieval graph on <strong>LangGraph</strong>: a <strong>retrieve</strong> node searches a
+                          <strong>FAISS</strong> index and hands the hits to a <strong>generate</strong> node that
+                          composes the answer — the baseline pipeline every corrective-RAG variant is built on top
+                          of.</li>
+                        <li>The corpus is <strong>PDFs</strong> — loaded, split with a recursive character splitter and
+                          embedded — and the generator is pinned to a prompt that says <strong>answer only from the
+                            context, or say you don't know</strong>.</li>
+                        <li>The same graph runs against <strong>OpenAI or a local Ollama model</strong>, so retrieval
+                          quality can be compared with and without an API key.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>LangGraph</li><li>LangChain</li><li>FAISS</li><li>OpenAI API</li><li>Ollama</li>
+                        <li>Python</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank"
+                        rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="ml" href="https://github.com/Shah-123/DL-mini-projects" target="_blank"
-              rel="noopener">
-              <span class="log-idx">07</span>
-              <span class="log-name">Deep Learning Projects
-                <em>CNN, RNN and transfer-learning experiments — image classification, sequence
-                  modelling and fine-tuning pretrained backbones.</em></span>
-              <span class="log-stack">TensorFlow · Keras</span>
-              <span class="log-year">2025</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="ml">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-dl"
+                  aria-label="Deep Learning Projects — show project details">
+                  <span class="log-idx">07</span>
+                  <span class="log-name">Deep Learning Projects
+                    <em>CNN, RNN and transfer-learning experiments — image classification, sequence
+                      modelling and fine-tuning pretrained backbones.</em></span>
+                  <span class="log-stack">TensorFlow · Keras</span>
+                  <span class="log-year">2025</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/DL-mini-projects" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-dl">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/deep-learning.svg" width="1200" height="750" loading="lazy"
+                        decoding="async"
+                        alt="Convolutional network: stacked feature-map volumes narrowing into a dense classifier" />
+                      <figcaption>fig. 07 — conv stack to classifier</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>Three self-contained exercises: a <strong>cats-vs-dogs CNN</strong> (three conv-and-pool
+                          blocks over 256×256 images), an <strong>MNIST</strong> dense classifier, and an
+                          <strong>ANN over a 440,000-row customer-churn set</strong>.</li>
+                        <li>The classification project ships a <strong>Streamlit app</strong> beside its training
+                          notebook and loads the saved model — so the network gets demoed rather than left in a
+                          cell.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>TensorFlow</li><li>Keras</li><li>Streamlit</li><li>Python</li><li>CNN</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/DL-mini-projects" target="_blank"
+                        rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="ml"
-              href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project" target="_blank" rel="noopener">
-              <span class="log-idx">08</span>
-              <span class="log-name">Polio Monitors Predictor
-                <em>Forecasted "Not Available Children" field metrics to optimise campaign resource
-                  allocation during intra-campaign monitoring.</em></span>
-              <span class="log-stack">Scikit-Learn · Pandas</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="ml">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-polio"
+                  aria-label="Polio Monitors Predictor — show project details">
+                  <span class="log-idx">08</span>
+                  <span class="log-name">Polio Monitors Predictor
+                    <em>Forecasted "Not Available Children" field metrics to optimise campaign resource
+                      allocation during intra-campaign monitoring.</em></span>
+                  <span class="log-stack">Scikit-Learn · Pandas</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project"
+                  target="_blank" rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-polio">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/polio-monitor.svg" width="1200" height="750" loading="lazy"
+                        decoding="async"
+                        alt="Field monitoring records feeding a forecast model whose output drives campaign resource allocation" />
+                      <figcaption>fig. 08 — field data to allocation</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>Built on <strong>ICM_Data.csv</strong> — intra-campaign monitoring records from the field,
+                          where the "Not Available" child count is the measure of whether a district was actually
+                          covered.</li>
+                        <li>A <strong>scikit-learn</strong> model over that data, wrapped in a dashboard app so a
+                          supervisor can query the forecast instead of opening a notebook.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>Scikit-Learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project"
+                        target="_blank" rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="ml" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor"
-              target="_blank" rel="noopener">
-              <span class="log-idx">09</span>
-              <span class="log-name">ODI Run Predictor
-                <em>Regression over ball-by-ball match state — overs, wickets and run rate — reaching
-                  R² 0.92 on innings totals.</em></span>
-              <span class="log-stack">Scikit-Learn · Streamlit</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="ml">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-odi"
+                  aria-label="ODI Run Predictor — show project details">
+                  <span class="log-idx">09</span>
+                  <span class="log-name">ODI Run Predictor
+                    <em>Regression over ball-by-ball match state — overs, wickets and run rate — reaching
+                      R² 0.92 on innings totals.</em></span>
+                  <span class="log-stack">Scikit-Learn · Streamlit</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-odi">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/odi-cricket.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="Scatter plot of match data with a fitted regression line and prediction band" />
+                      <figcaption>fig. 09 — match state to projected total</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>Predicts an ODI innings total from match state — <strong>venue, batting and bowling side,
+                            balls and wickets in hand, current score, run rate and runs from the last five
+                            overs</strong>.</li>
+                        <li>An <strong>XGBoost regressor inside a scikit-learn Pipeline</strong> — scaler and one-hot
+                          encoder on the categorical side — with a Streamlit front end and a FastAPI
+                          <strong>/predict</strong> endpoint behind it.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>XGBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>FastAPI</li><li>Pandas</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor" target="_blank"
+                        rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="ml"
-              href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction" target="_blank"
-              rel="noopener">
-              <span class="log-idx">10</span>
-              <span class="log-name">Heart Failure Prediction
-                <em>Classification pipeline over patient clinical metrics for medical risk
-                  assessment, surfacing the features behind each prediction.</em></span>
-              <span class="log-stack">Scikit-Learn · Streamlit</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="ml">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-heart"
+                  aria-label="Heart Failure Prediction — show project details">
+                  <span class="log-idx">10</span>
+                  <span class="log-name">Heart Failure Prediction
+                    <em>Classification pipeline over patient clinical metrics for medical risk
+                      assessment, surfacing the features behind each prediction.</em></span>
+                  <span class="log-stack">Scikit-Learn · Streamlit</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link"
+                  href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-heart">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/heart-failure.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="ECG trace above a clinical risk gauge and feature readouts" />
+                      <figcaption>fig. 10 — clinical features to risk score</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>Binary classification on the <strong>heart-failure clinical records</strong> set — 5,000
+                          patients, 13 columns — with logistic regression and a <strong>grid-searched random
+                            forest</strong> compared on the same 80/20 split.</li>
+                        <li>Shipped as a <strong>Streamlit</strong> app returning the risk probability; feature
+                          importance sits beside the prediction, because in a clinical score <strong>which measurement
+                            moved the answer</strong> matters as much as the answer.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>Scikit-Learn</li><li>Streamlit</li><li>Pandas</li><li>Seaborn</li><li>Plotly</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction"
+                        target="_blank" rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="ml"
-              href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction" target="_blank"
-              rel="noopener">
-              <span class="log-idx">11</span>
-              <span class="log-name">House Price Prediction
-                <em>Gradient-boosted ensembles on location, size and condition, with
-                  feature-importance analysis explaining what moves the number.</em></span>
-              <span class="log-stack">Scikit-Learn · Ensembles</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="ml">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-house"
+                  aria-label="House Price Prediction — show project details">
+                  <span class="log-idx">11</span>
+                  <span class="log-name">House Price Prediction
+                    <em>Gradient-boosted ensembles on location, size and condition, with
+                      feature-importance analysis explaining what moves the number.</em></span>
+                  <span class="log-stack">Scikit-Learn · Ensembles</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction"
+                  target="_blank" rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-house">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/house-price.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="Ensemble of decision trees producing a price estimate with feature importances" />
+                      <figcaption>fig. 11 — boosted trees, explained</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li><strong>Gradient-boosted regression</strong> — XGBoost, against CatBoost, decision-tree and
+                          linear baselines in the app — over close to 100,000 Pakistan property listings: city,
+                          location, property type, purpose, bedrooms, baths and area in marla.</li>
+                        <li>The target is <strong>log-transformed and IQR-trimmed</strong> before fitting, and the
+                          Streamlit app reports error per model side by side, so the comparison is visible rather than
+                          asserted.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>XGBoost</li><li>CatBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>Plotly</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction"
+                        target="_blank" rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="data" href="https://github.com/Shah-123/playstore_data_analysis"
-              target="_blank" rel="noopener">
-              <span class="log-idx">12</span>
-              <span class="log-name">Google Play Store EDA
-                <em>Exploratory analysis across 10,000+ Android apps — category saturation,
-                  rating-to-install relationships and monetisation patterns.</em></span>
-              <span class="log-stack">Pandas · Matplotlib</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="data">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-playstore"
+                  aria-label="Google Play Store EDA — show project details">
+                  <span class="log-idx">12</span>
+                  <span class="log-name">Google Play Store EDA
+                    <em>Exploratory analysis across 10,000+ Android apps — category saturation,
+                      rating-to-install relationships and monetisation patterns.</em></span>
+                  <span class="log-stack">Pandas · Matplotlib</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/playstore_data_analysis" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-playstore">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/playstore-eda.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="Bubble chart of app installs against rating, sized by review volume" />
+                      <figcaption>fig. 12 — installs vs rating</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>Exploratory analysis over the full <strong>googleplaystore.csv</strong> dump — 10,841 apps
+                          across 13 columns — with the free-text size, installs and price fields
+                          <strong>parsed into numbers</strong> before anything is aggregated.</li>
+                        <li>Category saturation, rating against installs, and how free versus paid apps actually
+                          monetise — structured as <strong>questions with charts as answers</strong> rather than a
+                          descriptive data dump.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>Pandas</li><li>Matplotlib</li><li>Python</li><li>EDA</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/playstore_data_analysis" target="_blank"
+                        rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="data" href="https://github.com/Shah-123/PowerBI_projects" target="_blank"
-              rel="noopener">
-              <span class="log-idx">13</span>
-              <span class="log-name">Power BI Dashboards
-                <em>BI reports built for decisions — modelled data, defined DAX measures and KPI
-                  views that answer a specific question.</em></span>
-              <span class="log-stack">Power BI · DAX</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="data">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-powerbi"
+                  aria-label="Power BI Dashboards — show project details">
+                  <span class="log-idx">13</span>
+                  <span class="log-name">Power BI Dashboards
+                    <em>BI reports built for decisions — modelled data, defined DAX measures and KPI
+                      views that answer a specific question.</em></span>
+                  <span class="log-stack">Power BI · DAX</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/PowerBI_projects" target="_blank"
+                  rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-powerbi">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/power-bi.svg" width="1200" height="750" loading="lazy" decoding="async"
+                        alt="Business intelligence dashboard with KPI tiles, a bar chart and a donut breakdown" />
+                      <figcaption>fig. 13 — KPI tiles and breakdowns</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>A <strong>Superstore sales dashboard</strong> shipped as a <strong>.pbix</strong>, with the
+                          source dataset (XLSX and CSV) and the background art committed beside it — the report is
+                          reproducible from the folder alone.</li>
+                        <li>The data behind it carries <strong>23 fields</strong> — segment, region, city, category,
+                          sub-category, ship mode, payment mode, sales, quantity, profit and returns — enough to read
+                          <strong>margin against revenue</strong> instead of only totalling sales.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>Power BI</li><li>DAX</li><li>Excel</li><li>Data modelling</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/PowerBI_projects" target="_blank"
+                        rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <a class="log-row" data-cat="data" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb"
-              target="_blank" rel="noopener">
-              <span class="log-idx">14</span>
-              <span class="log-name">Netflix Catalogue EDA
-                <em>Analysis across 8,800+ titles — the shift from film to series, genre dominance
-                  and where regional content grew fastest.</em></span>
-              <span class="log-stack">Pandas · Streamlit</span>
-              <span class="log-year">2024</span>
-              <span class="log-link">repo ↗</span>
-            </a>
+            <div class="log-item" data-cat="data">
+              <div class="log-row">
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-netflix"
+                  aria-label="Netflix Catalogue EDA — show project details">
+                  <span class="log-idx">14</span>
+                  <span class="log-name">Netflix Catalogue EDA
+                    <em>Analysis across 8,800+ titles — the shift from film to series, genre dominance
+                      and where regional content grew fastest.</em></span>
+                  <span class="log-stack">Pandas · Streamlit</span>
+                  <span class="log-year">2024</span>
+                </button>
+                <a class="log-link" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb"
+                  target="_blank" rel="noopener">repo ↗</a>
+                <span class="log-caret" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="log-detail" id="logdetail-netflix">
+                <div class="log-detail-inner">
+                  <div class="log-body">
+                    <figure class="log-fig">
+                      <img src="./assets/covers/netflix-eda.svg" width="1200" height="750" loading="lazy"
+                        decoding="async" alt="Stacked area chart of catalogue growth by year beside a genre distribution" />
+                      <figcaption>fig. 14 — catalogue growth by year</figcaption>
+                    </figure>
+                    <div>
+                      <ul class="log-points">
+                        <li>A first pass over the catalogue dump: a <strong>null audit</strong>, then the
+                          <strong>film-versus-series split</strong> and the <strong>rating distribution</strong> — the
+                          finding being that films still outnumber series.</li>
+                        <li>The sharpest result is about the file itself: of its 26 columns, <strong>14 are entirely
+                            empty</strong>, so the workable dataset is twelve fields wide — worth knowing before
+                          anyone builds a dashboard on it.</li>
+                      </ul>
+                      <ul class="chips" aria-label="Technologies used">
+                        <li>Pandas</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Jupyter</li>
+                      </ul>
+                      <a class="link" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb"
+                        target="_blank" rel="noopener">Repository ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <p class="log-empty" id="logEmpty" hidden>// no entries match this filter</p>
           </div>
@@ -1167,9 +1545,11 @@
               </p>
               <h3 class="tl-title">MootCourtSimulator — Final Year Project</h3>
               <p class="tl-body">
-                A voice-first moot-court simulator: supervisor-routed Judge, Opposing Counsel and
-                Witness agents, hybrid BM25 + dense retrieval fused with RRF, citation auditing,
-                and a 32-scenario evaluation harness. Time-to-first-audio cut from 16.1s to 6.9s.
+                The first voice-based moot court: a student argues a live case out loud against an
+                AI Judge, AI Opposing Counsel and AI Witnesses — no typing, no script to hide
+                behind. Underneath, a supervisor-routed LangGraph courtroom with hybrid BM25 + dense
+                retrieval, citation auditing and a 32-scenario evaluation harness. Time-to-first-audio
+                cut from 16.1s to 6.9s.
               </p>
               <p class="tl-tag">langgraph · mcp · hybrid rag · fastapi · react 19</p>
             </div>

@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Convolutional network: stacked feature-map volumes narrowing into a dense classifier">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="dl-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -15,10 +35,10 @@
 
   <rect width="1200" height="750" fill="url(#dl-bg)"/>
   <rect width="1200" height="750" fill="url(#dl-grid)"/>
-  <circle cx="580" cy="375" r="340" fill="url(#dl-glow)"/>
+  <circle class="glow" cx="580" cy="375" r="340" fill="url(#dl-glow)"/>
 
-  <g stroke="#2A313B" stroke-opacity=".8" stroke-width="1">
-    <path d="M228 375 H 300" /><path d="M420 375 H 476" /><path d="M572 375 H 628" /><path d="M708 375 H 764" />
+  <g stroke="#2A313B" stroke-opacity=".8" stroke-width="1" stroke-dasharray="4 6">
+    <path class="flow" d="M228 375 H 300" /><path class="flow" style="animation-delay:.3s" d="M420 375 H 476" /><path class="flow" style="animation-delay:.6s" d="M572 375 H 628" /><path class="flow" style="animation-delay:.9s" d="M708 375 H 764" />
   </g>
 
   <g transform="translate(96 375)">
@@ -52,7 +72,7 @@
   </g>
 
   <g transform="translate(628 375)">
-    <g fill="#151A21" stroke="#2EE6A8" stroke-opacity=".55">
+    <g class="glow" fill="#151A21" stroke="#2EE6A8" stroke-opacity=".55">
       <rect x="0" y="-58" width="48" height="116" rx="4"/>
       <rect x="14" y="-48" width="48" height="116" rx="4"/>
       <rect x="28" y="-38" width="48" height="116" rx="4" fill="#101619"/>
@@ -62,7 +82,7 @@
   </g>
 
   <g transform="translate(800 375)">
-    <g stroke="#2A313B" stroke-width="1" stroke-opacity=".7">
+    <g class="flow-slow" stroke="#2A313B" stroke-width="1" stroke-opacity=".7" stroke-dasharray="4 6">
       <path d="M0 -108 L 120 -54"/><path d="M0 -108 L 120 0"/><path d="M0 -108 L 120 54"/>
       <path d="M0 -36 L 120 -54"/><path d="M0 -36 L 120 0"/><path d="M0 -36 L 120 54"/>
       <path d="M0 36 L 120 -54"/><path d="M0 36 L 120 0"/><path d="M0 36 L 120 54"/>
@@ -75,7 +95,7 @@
     <g fill="#171C23" stroke="#3A434F">
       <circle cx="120" cy="-54" r="13"/><circle cx="120" cy="54" r="13"/>
     </g>
-    <circle cx="120" cy="0" r="13" fill="#2EE6A8"/>
+    <circle class="blink" cx="120" cy="0" r="13" fill="#2EE6A8"/>
     <text x="60" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#9AA2AE">DENSE · SOFTMAX</text>
   </g>
 

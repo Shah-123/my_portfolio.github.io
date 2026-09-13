@@ -59,10 +59,14 @@ const CONFIG = {
 - **Motion** — every animation is gated on `prefers-reduced-motion`. With it set, the boot
   sequence is skipped, the graph renders one static frame, and reveals appear instantly.
 - **No-JS** — the page is fully readable without JavaScript: the boot overlay never mounts,
-  case studies render expanded, and skill bars show their level.
+  case studies and `more_work.log` rows render expanded, and skill bars show their level.
 
 ## Verification
 
 Headless-Chrome screenshots of every section, the open palette, an expanded case study,
 mobile widths and the light theme are reproducible with the scripts kept in `.qwen/tmp/`
-(`shoot.js`). All external and local links are audited by `.qwen/tmp/audit_links.py`.
+(`shoot.js`). `.qwen/tmp/verify_work.js` drives the same CDP session to exercise the
+`more_work.log` expanders specifically — column alignment against the table header, ARIA
+state, filter behaviour, and that a repo link inside a row does not toggle it. Markup is
+checked by `.qwen/tmp/check-html.mjs` (tag nesting, duplicate ids, `aria-controls` targets,
+local asset paths). All external and local links are audited by `.qwen/tmp/audit_links.py`.

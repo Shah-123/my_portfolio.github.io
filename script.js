@@ -391,28 +391,43 @@ const CONFIG = {
   /* ── CASE STUDY EXPANDERS ──────────────────────────────── */
   function initCases() {
     $$(".case-toggle").forEach((btn) => {
+      const label = $(".case-toggle-label", btn);
+      if (label) label.dataset.closed = label.textContent.trim();
+
       btn.addEventListener("click", () => {
         const card = btn.closest(".case");
         if (!card) return;
         const open = card.classList.toggle("is-open");
         btn.setAttribute("aria-expanded", String(open));
-        const label = $(".case-toggle-label", btn);
-        if (label) {
-          label.textContent = open
-            ? "Hide architecture"
-            : label.dataset.closed || "Read architecture";
-        }
+        if (!label) return;
+        const closed = label.dataset.closed || "Read details";
+        label.textContent = open
+          ? label.dataset.open || closed.replace(/^Read\b/i, "Hide")
+          : closed;
       });
+    });
+  }
 
-      const label = $(".case-toggle-label", btn);
-      if (label) label.dataset.closed = label.textContent;
+  /* ── MORE-WORK ROW EXPANDERS ───────────────────────────── */
+  function initLogRows() {
+    $$(".log-item").forEach((item) => {
+      const row = $(".log-row", item);
+      const btn = $(".log-toggle", item);
+      if (!row || !btn) return;
+
+      // The row itself toggles; the repo link inside it still navigates.
+      row.addEventListener("click", (e) => {
+        if (e.target.closest("a")) return;
+        const open = item.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", String(open));
+      });
     });
   }
 
   /* ── MORE-WORK FILTER ──────────────────────────────────── */
   function initFilters() {
     const buttons = $$(".filter");
-    const rows = $$(".log-row");
+    const rows = $$(".log-item");
     const empty = $("#logEmpty");
     if (!buttons.length || !rows.length) return;
 
@@ -491,7 +506,7 @@ const CONFIG = {
       { group: "navigate", icon: "05", label: "Credentials", hint: "#credentials", go: "#credentials" },
       { group: "navigate", icon: "06", label: "Contact", hint: "#contact", go: "#contact" },
 
-      { group: "projects", icon: "›", label: "MootCourtSimulator — voice-first moot court", hint: "2026", go: "#project-mootcourt", open: true },
+      { group: "projects", icon: "›", label: "MootCourtSimulator — argue a case against AI agents", hint: "2026", go: "#project-mootcourt", open: true },
       { group: "projects", icon: "›", label: "AI Content Factory — 10-agent pipeline", hint: "2025–26", go: "#project-content-factory", open: true },
       { group: "projects", icon: "›", label: "Live Agent Hub — AI personas", hint: "2025", go: "#project-live-agent-hub", open: true },
       { group: "projects", icon: "›", label: "ChessMastermind — engine from scratch", hint: "2025", go: "#project-chess", open: true },
@@ -1222,6 +1237,7 @@ const CONFIG = {
     initBars();
     initCounters();
     initCases();
+    initLogRows();
     initFilters();
     initTimeline();
     initPalette();

@@ -1911,6 +1911,15 @@ kbd {
   max-width: 62ch;
 }
 
+.case-desc strong {
+  color: var(--text-1);
+  font-weight: 500;
+}
+
+.case-desc em {
+  color: var(--text-1);
+}
+
 /* Metrics row */
 .metrics {
   display: grid;
@@ -2027,6 +2036,67 @@ kbd {
 .case-detail-inner {
   overflow: hidden;
   min-height: 0;
+}
+
+/* Concept brief — the plain-language "what is it" above the engineering bullets */
+.case-brief {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: 1.1rem;
+}
+
+.brief-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--signal);
+  margin-bottom: 0.9rem;
+}
+
+.case-brief .brief-label:last-child {
+  margin-bottom: 0;
+}
+
+.case-lede {
+  color: var(--text-2);
+  font-size: 0.97rem;
+  line-height: 1.75;
+  max-width: 74ch;
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(215px, 100%), 1fr));
+  gap: 1px;
+  margin-top: 1.4rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+
+.roles > div {
+  padding: 0.9rem 1rem;
+  background: var(--ink-2);
+  min-width: 0;
+}
+
+.roles dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--signal);
+  margin-bottom: 0.45rem;
+}
+
+.roles dd {
+  font-size: 0.85rem;
+  line-height: 1.62;
+  color: var(--text-3);
+}
+
+.case-brief + .case-points {
+  padding-top: 1.1rem;
 }
 
 .case-points {
@@ -2155,16 +2225,12 @@ kbd {
   overflow: hidden;
 }
 
-.log-head,
-.log-row {
+.log-head {
   display: grid;
-  grid-template-columns: 3.2rem minmax(0, 2.4fr) minmax(0, 1.3fr) 5.5rem 4.5rem;
+  grid-template-columns: 3.2rem minmax(0, 2.4fr) minmax(0, 1.3fr) 5.5rem 4.5rem 1.1rem;
   gap: 1rem;
   align-items: baseline;
   padding: 0.72rem clamp(0.9rem, 2vw, 1.3rem);
-}
-
-.log-head {
   border-bottom: 1px solid var(--line-strong);
   background: var(--ink-2);
   font-family: var(--font-mono);
@@ -2174,26 +2240,56 @@ kbd {
   color: var(--text-3);
 }
 
-.log-row {
+.log-item {
   border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-2);
-  transition: background-color var(--dur-fast), transform var(--dur) var(--ease),
-    opacity 0.35s var(--ease);
 }
 
-.log-row:last-of-type {
+.log-item:last-of-type {
   border-bottom: 0;
 }
 
-.log-row:hover {
+.log-item.is-hidden {
+  display: none;
+}
+
+/* Row = [ toggle | repo link | caret ]. The toggle's own grid mirrors the first
+   four .log-head columns so the table still lines up with its header. */
+.log-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 4.5rem 1.1rem;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.72rem clamp(0.9rem, 2vw, 1.3rem);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background-color var(--dur-fast), transform var(--dur) var(--ease);
+}
+
+.log-toggle {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 2.4fr) minmax(0, 1.3fr) 5.5rem;
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* An open row has a panel hanging off it — don't nudge it sideways. */
+.log-item:not(.is-open) .log-row:hover {
   background: var(--signal-soft);
   transform: translateX(0.45rem);
 }
 
-.log-row.is-hidden {
-  display: none;
+.log-item.is-open .log-row {
+  background: var(--signal-soft);
 }
 
 .log-idx {
@@ -2201,7 +2297,8 @@ kbd {
   font-size: 0.72rem;
 }
 
-.log-row:hover .log-idx {
+.log-item:not(.is-open) .log-row:hover .log-idx,
+.log-item.is-open .log-idx {
   color: var(--signal);
 }
 
@@ -2224,7 +2321,8 @@ kbd {
   max-width: 70ch;
 }
 
-.log-row:hover .log-name {
+.log-item:not(.is-open) .log-row:hover .log-name,
+.log-item.is-open .log-name {
   color: var(--signal);
 }
 
@@ -2243,10 +2341,122 @@ kbd {
   text-align: right;
   opacity: 0.7;
   transition: opacity var(--dur-fast);
+  align-self: center;
 }
 
-.log-row:hover .log-link {
+.log-row:hover .log-link,
+.log-link:hover,
+.log-link:focus-visible {
   opacity: 1;
+}
+
+.log-caret {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  color: var(--text-3);
+  transition: color var(--dur-fast), transform 0.36s var(--ease);
+}
+
+.log-caret svg {
+  width: 13px;
+  height: 13px;
+}
+
+.log-item.is-open .log-caret {
+  color: var(--signal);
+  transform: rotate(180deg);
+}
+
+/* Expanded panel — same 0fr → 1fr slide the case studies use */
+.log-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  border-top: 1px solid transparent;
+  transition: grid-template-rows 0.5s var(--ease), visibility 0s linear 0.5s,
+    border-color 0.3s linear 0.2s;
+}
+
+.log-item.is-open .log-detail {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  border-top-color: var(--line);
+  transition: grid-template-rows 0.5s var(--ease), visibility 0s, border-color 0.3s linear;
+}
+
+.log-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.log-body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1rem, 3vw, 1.9rem);
+  padding: 1.15rem clamp(0.9rem, 2vw, 1.3rem) 1.35rem;
+  background: var(--ink-2);
+}
+
+.log-fig {
+  margin: 0;
+  min-width: 0;
+}
+
+.log-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-sm);
+  background: var(--ink-0);
+}
+
+.log-fig figcaption {
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.log-points {
+  display: grid;
+  gap: 0.62rem;
+  align-content: start;
+}
+
+.log-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.68;
+  color: var(--text-2);
+}
+
+.log-points li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--signal);
+}
+
+.log-points strong {
+  color: var(--text-1);
+  font-weight: 500;
+}
+
+.log-body .chips {
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.log-body .link {
+  margin-top: 1.15rem;
 }
 
 .log-empty {
@@ -2838,6 +3048,13 @@ kbd {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  /* The 0fr → 1fr expanders delay visibility until the slide finishes;
+     with the durations forced to ~0 that delay would just hide content. */
+  .case-detail,
+  .log-detail {
+    transition-delay: 0s;
   }
 
   .mask-reveal {

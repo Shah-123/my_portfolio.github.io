@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="ECG trace above a clinical risk gauge and feature readouts">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="hf-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -19,11 +39,11 @@
 
   <rect width="1200" height="750" fill="url(#hf-bg)"/>
   <rect width="1200" height="750" fill="url(#hf-grid)"/>
-  <circle cx="600" cy="300" r="340" fill="url(#hf-glow)"/>
+  <circle class="glow" cx="600" cy="300" r="340" fill="url(#hf-glow)"/>
 
   <g transform="translate(96 140)">
     <text x="0" y="-24" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">ECG · LEAD II</text>
-    <path d="M0 120 H 90 l 18 -14 l 14 28 l 16 -140 l 18 190 l 16 -64 H 250 q 26 0 34 -26 q 8 -26 30 -26 H 380
+    <path class="glow" style="animation-delay:.9s" d="M0 120 H 90 l 18 -14 l 14 28 l 16 -140 l 18 190 l 16 -64 H 250 q 26 0 34 -26 q 8 -26 30 -26 H 380
              H 470 l 18 -14 l 14 28 l 16 -140 l 18 190 l 16 -64 H 630 q 26 0 34 -26 q 8 -26 30 -26 H 760
              H 850 l 18 -14 l 14 28 l 16 -140 l 18 190 l 16 -64 H 1010"
           fill="none" stroke="url(#hf-fade)" stroke-width="2.5" stroke-linejoin="round"/>
@@ -34,22 +54,22 @@
     <g font-size="15">
       <text x="0" y="44" fill="#9AA2AE">ejection_fraction</text>
       <rect x="0" y="56" width="300" height="6" rx="3" fill="#1B2129"/>
-      <rect x="0" y="56" width="222" height="6" rx="3" fill="#2EE6A8"/>
+      <rect class="bar" style="animation-delay:0.00s" x="0" y="56" width="222" height="6" rx="3" fill="#2EE6A8"/>
       <text x="0" y="106" fill="#9AA2AE">serum_creatinine</text>
       <rect x="0" y="118" width="300" height="6" rx="3" fill="#1B2129"/>
-      <rect x="0" y="118" width="186" height="6" rx="3" fill="#2EE6A8" fill-opacity=".8"/>
+      <rect class="bar" style="animation-delay:0.09s" x="0" y="118" width="186" height="6" rx="3" fill="#2EE6A8" fill-opacity=".8"/>
       <text x="0" y="168" fill="#9AA2AE">age</text>
       <rect x="0" y="180" width="300" height="6" rx="3" fill="#1B2129"/>
-      <rect x="0" y="180" width="138" height="6" rx="3" fill="#565F6C"/>
+      <rect class="bar" style="animation-delay:0.18s" x="0" y="180" width="138" height="6" rx="3" fill="#565F6C"/>
       <text x="0" y="230" fill="#9AA2AE">time</text>
       <rect x="0" y="242" width="300" height="6" rx="3" fill="#1B2129"/>
-      <rect x="0" y="242" width="96" height="6" rx="3" fill="#565F6C"/>
+      <rect class="bar" style="animation-delay:0.27s" x="0" y="242" width="96" height="6" rx="3" fill="#565F6C"/>
     </g>
   </g>
 
   <g transform="translate(760 470)">
     <path d="M-160 0 A 160 160 0 0 1 160 0" fill="none" stroke="#1B2129" stroke-width="22" stroke-linecap="round"/>
-    <path d="M-160 0 A 160 160 0 0 1 96 -128" fill="none" stroke="#2EE6A8" stroke-width="22" stroke-linecap="round"/>
+    <path class="glow" style="animation-delay:1.4s" d="M-160 0 A 160 160 0 0 1 96 -128" fill="none" stroke="#2EE6A8" stroke-width="22" stroke-linecap="round"/>
     <text x="0" y="-42" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="52" fill="#E9EBEE">68%</text>
     <text x="0" y="-8" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#2EE6A8">RISK SCORE</text>
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">

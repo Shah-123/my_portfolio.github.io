@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Field monitoring records feeding a forecast model whose output drives campaign resource allocation">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="pm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E1116"/>
+      <stop offset="1" stop-color="#06070A"/>
+    </linearGradient>
+    <pattern id="pm-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="pm-glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="pm-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#565F6C"/>
+    </marker>
+    <marker id="pm-arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#2EE6A8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#pm-bg)"/>
+  <rect width="1200" height="750" fill="url(#pm-grid)"/>
+  <circle class="glow" cx="600" cy="360" r="330" fill="url(#pm-glow)"/>
+
+  <!-- ── A · field records ─────────────────────────────── -->
+  <g font-family="ui-monospace,'JetBrains Mono',monospace">
+    <rect x="76" y="190" width="250" height="310" rx="12" fill="#0A0C10" stroke="#2A313B"/>
+    <text x="100" y="228" font-size="14" letter-spacing="1.2" fill="#2EE6A8">monitor_form</text>
+    <line x1="100" y1="244" x2="302" y2="244" stroke="#2A313B"/>
+
+    <g>
+      <rect x="100" y="262" width="14" height="14" rx="3" fill="none" stroke="#3A434F" stroke-width="1.4"/>
+      <rect class="wk" x="126" y="265" width="150" height="8" rx="4" fill="#2F3742"/>
+    </g>
+    <g>
+      <rect x="100" y="298" width="14" height="14" rx="3" fill="none" stroke="#3A434F" stroke-width="1.4"/>
+      <rect class="wk" style="animation-delay:.5s" x="126" y="301" width="118" height="8" rx="4" fill="#2F3742"/>
+    </g>
+    <g>
+      <rect x="100" y="334" width="14" height="14" rx="3" fill="#F5A524" fill-opacity=".22" stroke="#F5A524" stroke-width="1.4"/>
+      <rect class="wk" style="animation-delay:1s" x="126" y="337" width="164" height="8" rx="4" fill="#3A434F"/>
+      <circle class="blink" cx="300" cy="341" r="4" fill="#F5A524"/>
+    </g>
+    <g>
+      <rect x="100" y="370" width="14" height="14" rx="3" fill="none" stroke="#3A434F" stroke-width="1.4"/>
+      <rect class="wk" style="animation-delay:1.5s" x="126" y="373" width="132" height="8" rx="4" fill="#2F3742"/>
+    </g>
+    <g>
+      <rect x="100" y="406" width="14" height="14" rx="3" fill="#F5A524" fill-opacity=".22" stroke="#F5A524" stroke-width="1.4"/>
+      <rect class="wk" style="animation-delay:2s" x="126" y="409" width="104" height="8" rx="4" fill="#3A434F"/>
+      <circle class="blink" style="animation-delay:.8s" cx="300" cy="413" r="4" fill="#F5A524"/>
+    </g>
+    <g>
+      <rect x="100" y="442" width="14" height="14" rx="3" fill="none" stroke="#3A434F" stroke-width="1.4"/>
+      <rect class="wk" style="animation-delay:2.5s" x="126" y="445" width="146" height="8" rx="4" fill="#2F3742"/>
+    </g>
+
+    <text x="201" y="536" text-anchor="middle" font-size="14" letter-spacing="2.2" fill="#9AA2AE">FIELD RECORDS</text>
+  </g>
+
+  <path class="flow" d="M336 345 H 424" fill="none" stroke="#565F6C" stroke-opacity=".8" stroke-width="1.6"
+        stroke-dasharray="4 6" marker-end="url(#pm-ar)"/>
+  <text x="380" y="326" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12"
+        letter-spacing="1.8" fill="#646C79">features</text>
+
+  <!-- ── B · regressor ─────────────────────────────────── -->
+  <g font-family="ui-monospace,'JetBrains Mono',monospace">
+    <rect x="436" y="190" width="250" height="310" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".45"/>
+    <text x="460" y="228" font-size="14" letter-spacing="1.2" fill="#2EE6A8">predict()</text>
+    <line x1="460" y1="244" x2="662" y2="244" stroke="#2A313B"/>
+
+    <g stroke="#1B2129">
+      <line x1="460" y1="290" x2="662" y2="290"/>
+      <line x1="460" y1="345" x2="662" y2="345"/>
+      <line x1="460" y1="400" x2="662" y2="400"/>
+    </g>
+    <line x1="460" y1="262" x2="460" y2="424" stroke="#2F3742"/>
+    <line x1="452" y1="424" x2="662" y2="424" stroke="#2F3742"/>
+
+    <path class="pulse" d="M462 414 L 660 288 L 660 258 L 462 384 Z" fill="#2EE6A8" fill-opacity=".12"/>
+    <path d="M462 414 L 660 288" fill="none" stroke="#2EE6A8" stroke-width="2.2"/>
+
+    <g class="wk" fill="#565F6C">
+      <circle cx="478" cy="404" r="5"/><circle cx="500" cy="392" r="5"/><circle cx="516" cy="410" r="5"/>
+      <circle cx="540" cy="378" r="5"/><circle cx="558" cy="386" r="5"/><circle cx="580" cy="356" r="5"/>
+      <circle cx="598" cy="364" r="5"/><circle cx="618" cy="336" r="5"/><circle cx="636" cy="344" r="5"/>
+      <circle cx="652" cy="312" r="5"/>
+      <circle cx="492" cy="360" r="5"/><circle cx="566" cy="330" r="5"/><circle cx="628" cy="300" r="5"/>
+    </g>
+    <circle class="ring" cx="652" cy="312" r="13" fill="none" stroke="#2EE6A8" stroke-width="1.4"/>
+
+    <text x="460" y="460" font-size="12" letter-spacing="1.6" fill="#646C79">PREDICTED GAP</text>
+    <g>
+      <rect x="590" y="452" width="20" height="8" rx="2" fill="#2F3742"/>
+      <rect x="614" y="452" width="20" height="8" rx="2" fill="#3A434F"/>
+      <rect class="blink" x="638" y="452" width="24" height="8" rx="2" fill="#F5A524"/>
+    </g>
+    <text x="460" y="482" font-size="11" fill="#565F6C">children missed per district</text>
+
+    <text x="561" y="536" text-anchor="middle" font-size="14" letter-spacing="2.2" fill="#9AA2AE">NAC FORECAST</text>
+  </g>
+
+  <path class="flow" d="M696 345 H 784" fill="none" stroke="#565F6C" stroke-opacity=".8" stroke-width="1.6"
+        stroke-dasharray="4 6" marker-end="url(#pm-ar)"/>
+  <text x="740" y="326" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12"
+        letter-spacing="1.8" fill="#646C79">rank</text>
+
+  <!-- ── C · allocation grid ───────────────────────────── -->
+  <g font-family="ui-monospace,'JetBrains Mono',monospace">
+    <rect x="796" y="190" width="328" height="310" rx="12" fill="#0A0C10" stroke="#2A313B"/>
+    <text x="820" y="228" font-size="14" letter-spacing="1.2" fill="#F5A524">allocate()</text>
+    <line x1="820" y1="244" x2="1100" y2="244" stroke="#2A313B"/>
+
+    <g fill="#151A21" stroke="#2A313B">
+      <rect x="820" y="262" width="40" height="40" rx="6"/>
+      <rect x="916" y="262" width="40" height="40" rx="6"/>
+      <rect x="964" y="262" width="40" height="40" rx="6"/>
+      <rect x="1060" y="262" width="40" height="40" rx="6"/>
+      <rect x="820" y="310" width="40" height="40" rx="6"/>
+      <rect x="868" y="310" width="40" height="40" rx="6"/>
+      <rect x="964" y="310" width="40" height="40" rx="6"/>
+      <rect x="1012" y="310" width="40" height="40" rx="6"/>
+      <rect x="1060" y="310" width="40" height="40" rx="6"/>
+      <rect x="820" y="358" width="40" height="40" rx="6"/>
+      <rect x="868" y="358" width="40" height="40" rx="6"/>
+      <rect x="964" y="358" width="40" height="40" rx="6"/>
+      <rect x="1012" y="358" width="40" height="40" rx="6"/>
+      <rect x="868" y="406" width="40" height="40" rx="6"/>
+      <rect x="916" y="406" width="40" height="40" rx="6"/>
+      <rect x="1012" y="406" width="40" height="40" rx="6"/>
+      <rect x="1060" y="406" width="40" height="40" rx="6"/>
+    </g>
+
+    <!-- forecast gaps -->
+    <g fill="#F5A524" fill-opacity=".16" stroke="#F5A524" stroke-opacity=".75">
+      <rect x="868" y="262" width="40" height="40" rx="6"/>
+      <rect x="1012" y="262" width="40" height="40" rx="6"/>
+      <rect x="916" y="358" width="40" height="40" rx="6"/>
+      <rect x="820" y="406" width="40" height="40" rx="6"/>
+      <rect x="964" y="406" width="40" height="40" rx="6"/>
+    </g>
+
+    <!-- teams dispatched to the three worst -->
+    <g fill="none" stroke="#2EE6A8" stroke-width="1.4">
+      <rect class="ring" x="865" y="259" width="46" height="46" rx="8"/>
+      <rect class="ring" style="animation-delay:1.4s" x="1009" y="259" width="46" height="46" rx="8"/>
+      <rect class="ring" style="animation-delay:2.8s" x="913" y="355" width="46" height="46" rx="8"/>
+    </g>
+    <g fill="#2EE6A8">
+      <circle class="blink" cx="900" cy="270" r="4"/>
+      <circle class="blink" style="animation-delay:.7s" cx="1044" cy="270" r="4"/>
+      <circle class="blink" style="animation-delay:1.4s" cx="948" cy="366" r="4"/>
+    </g>
+
+    <g font-size="11" letter-spacing="1.4">
+      <rect x="820" y="462" width="10" height="10" rx="2" fill="#F5A524" fill-opacity=".5" stroke="#F5A524"/>
+      <text x="838" y="471" fill="#646C79">GAP FORECAST</text>
+      <rect x="952" y="462" width="10" height="10" rx="2" fill="none" stroke="#2EE6A8"/>
+      <text x="970" y="471" fill="#646C79">TEAM DISPATCHED</text>
+    </g>
+
+    <text x="960" y="536" text-anchor="middle" font-size="14" letter-spacing="2.2" fill="#9AA2AE">CAMPAIGN ALLOCATION</text>
+  </g>
+
+  <!-- ── feedback: this round's misses train the next ───── -->
+  <path class="flow-slow" d="M960 500 C 960 604, 700 618, 460 600 C 330 590, 210 566, 201 512"
+        fill="none" stroke="#2EE6A8" stroke-opacity=".65" stroke-width="1.6" stroke-dasharray="6 7"
+        marker-end="url(#pm-arg)"/>
+  <text x="580" y="636" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13"
+        letter-spacing="2.2" fill="#2EE6A8">MONITORED OUTCOME FEEDS THE NEXT ROUND</text>
+
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
+    <text x="56" y="76">POLIO ICM · COVERAGE FORECAST</text>
+    <text x="1144" y="702" text-anchor="end">SCIKIT-LEARN</text>
+  </g>
+</svg>

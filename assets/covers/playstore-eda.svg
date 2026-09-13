@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Bubble chart of app installs against rating, sized by review volume">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="ps-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -15,7 +35,7 @@
 
   <rect width="1200" height="750" fill="url(#ps-bg)"/>
   <rect width="1200" height="750" fill="url(#ps-grid)"/>
-  <circle cx="560" cy="375" r="340" fill="url(#ps-glow)"/>
+  <circle class="glow" cx="560" cy="375" r="340" fill="url(#ps-glow)"/>
 
   <g transform="translate(140 140)">
     <text x="0" y="-20" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">INSTALLS × RATING · SIZED BY REVIEWS</text>
@@ -28,7 +48,7 @@
     <line x1="0" y1="-10" x2="0" y2="440" stroke="#2F3742"/>
     <line x1="-10" y1="440" x2="720" y2="440" stroke="#2F3742"/>
 
-    <g fill="#565F6C" fill-opacity=".38" stroke="#565F6C" stroke-opacity=".5">
+    <g class="wk" fill="#565F6C" fill-opacity=".38" stroke="#565F6C" stroke-opacity=".5">
       <circle cx="72" cy="386" r="18"/><circle cx="146" cy="332" r="26"/><circle cx="214" cy="358" r="14"/>
       <circle cx="286" cy="278" r="34"/><circle cx="352" cy="316" r="20"/><circle cx="410" cy="240" r="28"/>
       <circle cx="472" cy="292" r="16"/><circle cx="530" cy="196" r="40"/><circle cx="588" cy="264" r="22"/>
@@ -37,9 +57,9 @@
       <circle cx="112" cy="410" r="11"/><circle cx="322" cy="200" r="18"/><circle cx="450" cy="160" r="20"/>
     </g>
     <g fill="#2EE6A8" fill-opacity=".55" stroke="#2EE6A8">
-      <circle cx="530" cy="196" r="40"/>
-      <circle cx="640" cy="150" r="30"/>
-      <circle cx="286" cy="278" r="34"/>
+      <circle class="glow" cx="530" cy="196" r="40"/>
+      <circle class="glow" style="animation-delay:.9s" cx="640" cy="150" r="30"/>
+      <circle class="glow" style="animation-delay:1.8s" cx="286" cy="278" r="34"/>
     </g>
 
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">

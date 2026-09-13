@@ -1,4 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Business intelligence dashboard with KPI tiles, a bar chart and a donut breakdown">
+  <style>
+    @keyframes dashflow { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%,100% { opacity:.16 } 50% { opacity:.5 } }
+    @keyframes blink { 0%,100% { opacity:1 } 50% { opacity:.3 } }
+    @keyframes bar { 0%,100% { transform:scaleY(.55) } 50% { transform:scaleY(1) } }
+    @keyframes glow { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wk { 0%,100% { opacity:.72 } 50% { opacity:1 } }
+    @keyframes ring { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes evals { 0%,100% { transform:scaleY(.9) } 50% { transform:scaleY(1.06) } }
+    .flow { animation: dashflow 1.5s linear infinite; }
+    .flow-slow { animation: dashflow 3s linear infinite; }
+    .pulse { animation: pulse 3.6s ease-in-out infinite; }
+    .blink { animation: blink 2.2s ease-in-out infinite; }
+    .glow { animation: glow 2.8s ease-in-out infinite; }
+    .wk { animation: wk 3s ease-in-out infinite; }
+    .ring { animation: ring 4.2s ease-in-out infinite; }
+    .bar { transform-box: fill-box; transform-origin: center; animation: bar 1.9s ease-in-out infinite; }
+    .evalbar { transform-box: fill-box; transform-origin: top center; animation: evals 4.5s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
   <defs>
     <linearGradient id="pb-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0E1116"/>
@@ -15,7 +35,7 @@
 
   <rect width="1200" height="750" fill="url(#pb-bg)"/>
   <rect width="1200" height="750" fill="url(#pb-grid)"/>
-  <circle cx="600" cy="375" r="340" fill="url(#pb-glow)"/>
+  <circle class="glow" cx="600" cy="375" r="340" fill="url(#pb-glow)"/>
 
   <g font-family="ui-monospace,'JetBrains Mono',monospace">
     <g>
@@ -31,7 +51,7 @@
       <text x="472" y="252" font-size="12" fill="#2EE6A8">▲ 6.8%</text>
     </g>
     <g>
-      <rect x="788" y="136" width="316" height="130" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".45"/>
+      <rect class="glow" style="animation-delay:1.4s" x="788" y="136" width="316" height="130" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".45"/>
       <text x="818" y="176" font-size="12" letter-spacing="2.2" fill="#2EE6A8">MARGIN</text>
       <text x="818" y="228" font-size="40" fill="#E9EBEE">31.6%</text>
       <text x="818" y="252" font-size="12" fill="#565F6C">▼ 1.2%</text>
@@ -48,14 +68,14 @@
     </g>
     <line x1="30" y1="256" x2="632" y2="256" stroke="#2F3742"/>
     <g>
-      <rect x="60" y="164" width="44" height="92" rx="4" fill="#3A434F"/>
-      <rect x="112" y="132" width="44" height="124" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect x="186" y="146" width="44" height="110" rx="4" fill="#3A434F"/>
-      <rect x="238" y="108" width="44" height="148" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect x="312" y="120" width="44" height="136" rx="4" fill="#3A434F"/>
-      <rect x="364" y="82" width="44" height="174" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect x="438" y="100" width="44" height="156" rx="4" fill="#3A434F"/>
-      <rect x="490" y="60" width="44" height="196" rx="4" fill="#2EE6A8"/>
+      <rect class="glow" style="animation-delay:0.00s" x="60" y="164" width="44" height="92" rx="4" fill="#3A434F"/>
+      <rect class="glow" style="animation-delay:0.09s" x="112" y="132" width="44" height="124" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.18s" x="186" y="146" width="44" height="110" rx="4" fill="#3A434F"/>
+      <rect class="glow" style="animation-delay:0.27s" x="238" y="108" width="44" height="148" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.36s" x="312" y="120" width="44" height="136" rx="4" fill="#3A434F"/>
+      <rect class="glow" style="animation-delay:0.45s" x="364" y="82" width="44" height="174" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.54s" x="438" y="100" width="44" height="156" rx="4" fill="#3A434F"/>
+      <rect class="glow" style="animation-delay:0.63s" x="490" y="60" width="44" height="196" rx="4" fill="#2EE6A8"/>
     </g>
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">
       <text x="82" y="282" text-anchor="middle">Q1</text>
@@ -70,9 +90,9 @@
     <text x="30" y="42" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">BY SEGMENT</text>
     <g transform="translate(158 168)" fill="none" stroke-width="30">
       <circle cx="0" cy="0" r="72" stroke="#1B2129"/>
-      <circle cx="0" cy="0" r="72" stroke="#2EE6A8" stroke-dasharray="192 452" transform="rotate(-90)"/>
-      <circle cx="0" cy="0" r="72" stroke="#565F6C" stroke-dasharray="122 452" stroke-dashoffset="-192" transform="rotate(-90)"/>
-      <circle cx="0" cy="0" r="72" stroke="#3A434F" stroke-dasharray="78 452" stroke-dashoffset="-314" transform="rotate(-90)"/>
+      <circle class="ring" cx="0" cy="0" r="72" stroke="#2EE6A8" stroke-dasharray="192 452" transform="rotate(-90)"/>
+      <circle class="ring" style="animation-delay:1.4s" cx="0" cy="0" r="72" stroke="#565F6C" stroke-dasharray="122 452" stroke-dashoffset="-192" transform="rotate(-90)"/>
+      <circle class="ring" style="animation-delay:2.8s" cx="0" cy="0" r="72" stroke="#3A434F" stroke-dasharray="78 452" stroke-dashoffset="-314" transform="rotate(-90)"/>
     </g>
     <text x="158" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="24" fill="#E9EBEE">42%</text>
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#9AA2AE">
