@@ -500,8 +500,8 @@ const CONFIG = {
 
     const COMMANDS = [
       { group: "navigate", icon: "01", label: "About", hint: "#about", go: "#about" },
-      { group: "navigate", icon: "02", label: "Stack", hint: "#stack", go: "#stack" },
-      { group: "navigate", icon: "03", label: "Selected work", hint: "#work", go: "#work" },
+      { group: "navigate", icon: "02", label: "Selected work", hint: "#work", go: "#work" },
+      { group: "navigate", icon: "03", label: "Stack", hint: "#stack", go: "#stack" },
       { group: "navigate", icon: "04", label: "Journey", hint: "#journey", go: "#journey" },
       { group: "navigate", icon: "05", label: "Credentials", hint: "#credentials", go: "#credentials" },
       { group: "navigate", icon: "06", label: "Contact", hint: "#contact", go: "#contact" },
