@@ -171,7 +171,7 @@ const CONFIG = {
     { text: "  ok   runtime        vanilla-js", cls: "ok" },
     { text: "  ok   renderer       webgl / three.js", cls: "ok" },
     { text: "  ok   agent graph    10 nodes online", cls: "ok" },
-    { text: "  ok   retrieval      hybrid · mrr 1.00", cls: "ok" },
+    { text: "  ok   retrieval      hybrid · bm25+dense", cls: "ok" },
     { text: "> ready", cls: "dim" },
   ];
 

@@ -280,7 +280,7 @@
               <div><dt>supervisor</dt><dd>1</dd></div>
               <div><dt>agents</dt><dd data-count="10">0</dd></div>
               <div><dt>state</dt><dd class="t-ok">streaming</dd></div>
-              <div><dt>retrieval</dt><dd class="t-ok">MRR 1.00</dd></div>
+              <div><dt>retrieval</dt><dd class="t-ok">hybrid</dd></div>
             </dl>
           </div>
 
@@ -438,12 +438,12 @@
                         data-suffix="s">0</b></dd>
                   </div>
                   <div>
-                    <dt>Retrieval MRR</dt>
-                    <dd><b data-count="1.00" data-decimals="2">0</b></dd>
+                    <dt>Retrieval</dt>
+                    <dd><b class="metric-text">BM25 + dense</b></dd>
                   </div>
                   <div>
-                    <dt>Objection F1</dt>
-                    <dd><b data-count="1.00" data-decimals="2">0</b></dd>
+                    <dt>Objections</dt>
+                    <dd><b class="metric-text">statute-audited</b></dd>
                   </div>
                   <div>
                     <dt>Eval scenarios</dt>
@@ -515,9 +515,9 @@
                   <li>Engineered a hybrid RAG pipeline fusing <strong>BM25 and dense vector search via
                       RRF (k = 60)</strong>, with LLM reranking and an automated citation-audit engine
                     against an authenticated legal corpus.</li>
-                  <li>Established a <strong>quantitative evaluation harness</strong> measuring retrieval
-                    performance (MRR 1.00) and multi-agent courtroom behaviour across 32 labelled
-                    scenarios — Objection F1 1.00, ground accuracy 100%.</li>
+                  <li>Established a <strong>quantitative evaluation harness</strong> scoring retrieval
+                    quality and multi-agent courtroom behaviour across 32 labelled scenarios, with
+                    objection correctness audited against the statute rather than asserted.</li>
                 </ul>
                 <ul class="chips" aria-label="Technologies used">
                   <li>LangGraph</li><li>Python</li><li>FastAPI</li><li>Express.js</li>
