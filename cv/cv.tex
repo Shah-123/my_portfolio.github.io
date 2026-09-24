@@ -1,0 +1,253 @@
+%==============================================================================
+%  SHAHKAR AHMAD  --  DATA SCIENCE CV (two pages)
+%------------------------------------------------------------------------------
+%  Overleaf: New Project > Blank Project > replace main.tex with this file >
+%  Recompile. Compiler: pdfLaTeX (Overleaf's default). No other files needed.
+%  Paper: A4. For US applications change `a4paper` to `letterpaper` (twice).
+%  The CV is the long-form companion to resume.tex: same design, every
+%  project, fuller detail. Send the one-page resume unless a CV is requested.
+%==============================================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \input{glyphtounicode}
+  \pdfgentounicode=1 % keeps the PDF text machine-readable for ATS parsers
+\fi
+\usepackage{charter}
+\usepackage[a4paper,hmargin=0.55in,vmargin=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{muted}{HTML}{555555}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Shahkar Ahmad - Curriculum Vitae (Data Science)}, pdfauthor={Shahkar Ahmad}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedright
+
+\titleformat{\section}{\color{accent}\bfseries\large}{}{0pt}{\MakeUppercase}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\setlist[itemize]{leftmargin=1.2em, label={\small\textbullet}, itemsep=1.2pt,
+  parsep=0pt, topsep=2pt, partopsep=0pt}
+
+% \project{Title}{Links | Date}{Context and tech stack}
+% \needspace keeps a project's heading and first bullets on the same page.
+\newcommand{\project}[3]{%
+  \par\addvspace{5pt}\needspace{6\baselineskip}\textbf{#1}\hfill{\small #2}\\[-1pt]
+  {\small\itshape\color{muted} #3}\par}
+
+%==============================================================================
+\begin{document}
+
+%------------------------------- HEADER ---------------------------------------
+\begin{center}
+  {\fontsize{24}{28}\selectfont\bfseries\color{accent} Shahkar Ahmad}\\[4pt]
+  {\large Data Science \textbullet{} Machine Learning \textbullet{} NLP \textbullet{} LLM Evaluation}\\[4pt]
+  \small
+  Peshawar, Pakistan \enspace\textbar\enspace +92 332 9507635 \enspace\textbar\enspace
+  \href{mailto:shahkarahmad342@gmail.com}{shahkarahmad342@gmail.com} \enspace\textbar\enspace
+  \href{https://github.com/Shah-123}{github.com/Shah-123}\\[1pt]
+  \href{https://www.linkedin.com/in/shahkar-ahmad-730b41279/}{linkedin.com/in/shahkar-ahmad-730b41279}
+  \enspace\textbar\enspace
+  \href{https://shah-123.github.io/my_portfolio.github.io/}{shah-123.github.io/my\_portfolio.github.io}
+\end{center}
+\vspace{-6pt}
+
+%------------------------------- PROFILE --------------------------------------
+\section{Profile}
+Final-year BS Computer Science (AI) student at the University of Peshawar, graduating in October
+2026 and seeking a \textbf{Data Science internship or junior Data Scientist role}. My projects cover
+the full workflow: auditing large real-world datasets, exploratory analysis, feature engineering
+without look-ahead, benchmarking against baselines, and deployment with FastAPI, Streamlit and
+Docker. My final year project extends this to LLM systems: RAG, multi-agent pipelines and
+LLM-as-judge evaluation.
+
+%------------------------------- EDUCATION ------------------------------------
+\section{Education}
+\textbf{University of Peshawar} \hfill Peshawar, Pakistan\\
+BS Computer Science, Artificial Intelligence specialisation \hfill
+\textit{Oct 2022 -- Oct 2026 (expected)}
+% CGPA: if it is 3.0 or higher, add   \item \textbf{CGPA:} X.XX / 4.00
+% as the first bullet in the list below.
+\begin{itemize}
+  \item \textbf{Final Year Project:} \textit{AI Content Factory: Stateful Multi-Agent Content
+        Orchestration \& Evaluation Engine} (team of 2; supervisor: Dr.\ Asim Jalal)
+  \item \textbf{Relevant coursework:} Machine Learning, Deep Learning, Database Systems,
+        Data Structures, Software Engineering
+        % Add Probability & Statistics / Linear Algebra here if you took them.
+\end{itemize}
+
+%------------------------------- SKILLS ---------------------------------------
+\section{Technical Skills}
+\textbf{Programming:} Python (pandas, NumPy), SQL, TypeScript\\
+\textbf{Machine Learning:} scikit-learn, XGBoost, CatBoost; classification, regression, ensembles,
+time-based \& k-fold CV\\
+\textbf{Deep Learning \& NLP:} TensorFlow/Keras (CNN, RNN, LSTM, BiLSTM), text tokenisation,
+Hugging Face Datasets\\
+\textbf{Statistics \& Analysis:} EDA, hypothesis tests (t-test, Mann--Whitney U), correlation,
+outliers, SciPy, statsmodels\\
+\textbf{Visualisation \& BI:} Matplotlib, Seaborn, Plotly, Power BI, Streamlit dashboards\\
+\textbf{LLMs \& GenAI:} LangChain, LangGraph, RAG (FAISS, ChromaDB, BM25), LLM-as-judge
+(G-Eval, DeepEval), OpenAI\\
+\textbf{Engineering:} FastAPI, Docker, Git, GitHub Actions CI, pytest, PostgreSQL, SQLite, Jupyter\\
+\textbf{Spoken languages:} English, Urdu, Pashto
+
+%------------------------------- DS PROJECTS ----------------------------------
+\section{Data Science \& Machine Learning Projects}
+
+\project{Football Match Outcome Prediction \& Transfermarkt Data Audit}
+  {\href{https://github.com/Shah-123/football-match-outcome-prediction}{GitHub} \textbar{} 2026}
+  {Python, pandas, scikit-learn, Plotly}
+\begin{itemize}
+  \item Wrote a standard-library ETL that audits a 10-table Transfermarkt export and
+        outputs an analysis-ready core of 31 leagues (2012--2025): 63K games, 1.6M appearances,
+        2.3M lineup rows and 900K match events.
+  \item Scoped the core by measured join coverage (100\% for domestic leagues vs.\ 28\% for cups) so
+        joins cannot silently drop rows; fixed uncounted second-yellow dismissals and renamed
+        scrape-date fields that would leak future data.
+  \item Parsed own goals from free text, lifting scoreline reconciliation from 91.2\% to 98.5\%;
+        showed that league-position columns were post-match standings (target leakage) and excluded them.
+  \item Predicted Premier League outcomes with sequential Elo ratings and rolling 5-match form built
+        without look-ahead. On a time-based holdout of 760 matches (2024--25): \textbf{48.0\% accuracy
+        vs.\ 41.7\% majority baseline} and 45.4\% for club identity alone (macro-F1 0.36, log loss
+        1.05); near-zero draw recall is documented, not hidden.
+\end{itemize}
+
+\project{Emotion Detection from Text: NLP Classifier \& API}
+  {\href{https://github.com/Shah-123/Emotion_detection}{GitHub} \textbar{} 2026}
+  {TensorFlow/Keras, scikit-learn, Hugging Face Datasets, FastAPI, Docker, pytest}
+\begin{itemize}
+  \item Built a 6-class emotion classifier on \textit{dair-ai/emotion} (16K train, 2K test). EDA of
+        class imbalance (joy 33.5\% vs.\ surprise 3.6\%) and sentence length (95th percentile:
+        41 words) set a 50-token input.
+  \item SimpleRNN and LSTM baselines failed to converge; a BiLSTM with spatial dropout, global
+        max-pooling, early stopping and learning-rate scheduling reached \textbf{92.5\% test accuracy,
+        macro-F1 0.88}.
+  \item Deployed a FastAPI endpoint and web UI in Docker; fixed a train/serve padding mismatch and
+        normalised apostrophes and accents, recovering a 0.2-point accuracy drop on realistically
+        typed input (8 unit tests).
+\end{itemize}
+
+\project{Pakistan House Price Prediction}
+  {\href{https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction}{GitHub} \textbar{} 2024}
+  {pandas, scikit-learn, XGBoost, CatBoost, Streamlit, Plotly}
+\begin{itemize}
+  \item Cleaned 99.5K property listings from 5 cities: grouped 1,389 sparse locations into 245
+        categories, trimmed price and area outliers with IQR rules and log-transformed the price.
+  \item Compared linear regression, decision tree, CatBoost and XGBoost in a shared scikit-learn
+        pipeline, inside a Streamlit app with side-by-side error metrics and a price estimator.
+\end{itemize}
+
+\project{ODI Cricket Score Prediction}
+  {\href{https://github.com/Shah-123/datascience/tree/main/Cricket_APP}{GitHub} \textbar{} 2024}
+  {pandas, scikit-learn, XGBoost, FastAPI, Streamlit}
+\begin{itemize}
+  \item Engineered match-state features from 540K first-innings deliveries across 10 major teams:
+        balls and wickets left, current score, run rate, runs in the last 30 balls, venue and teams.
+  \item Trained an XGBoost regressor in a scikit-learn pipeline to project the final innings total,
+        served through a FastAPI \texttt{/predict} endpoint and a Streamlit interface.
+\end{itemize}
+
+\project{Polio Campaign Monitoring Analytics}
+  {\href{https://github.com/Shah-123/datascience/tree/main/ICM\%20Project}{GitHub} \textbar{} 2024}
+  {Real-world public-health data \textbullet{} pandas, scikit-learn, Streamlit, Plotly}
+\begin{itemize}
+  \item Processed 120K door-to-door polio-campaign monitoring records (788 monitors, 104 union
+        councils) into 10.9K monitor $\times$ campaign profiles with engineered coverage-gap features.
+  \item Built a Streamlit dashboard where supervisors upload monitoring data, review monitor- and
+        campaign-level summaries, and export the results.
+\end{itemize}
+
+\project{Student Performance Analysis}
+  {\href{https://github.com/Shah-123/datascience/tree/main/Student_preformance}{GitHub} \textbar{} 2024}
+  {pandas, scikit-learn, Seaborn}
+\begin{itemize}
+  \item Analysed exam results for 1,000 students: reading and writing correlate at 0.95, and scores
+        rise with parental education (maths average 71.0 vs.\ 64.2) and test preparation.
+  \item Linear-regression pipeline for maths scores: R$^2$ 0.89, MAE 4.1 points, 5-fold CV MAPE 7.2\%.
+\end{itemize}
+
+\project{Business Intelligence \& Exploratory Analysis}
+  {2024}
+  {Power BI, pandas, Streamlit, SciPy, scikit-learn}
+\begin{itemize}
+  \item \textbf{Superstore sales dashboard}
+        (\href{https://github.com/Shah-123/PowerBI_projects}{GitHub}): Power BI report on 5.9K
+        orders: KPI cards, slicers, trend and map views.
+  \item \textbf{Netflix catalogue EDA}
+        (\href{https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb}{GitHub}):
+        missing-value audit and content trends for 8.8K titles, with a Streamlit app.
+  \item \textbf{EDA Master}
+        (\href{https://github.com/Shah-123/datascience/tree/main/EDA\%20App}{GitHub}): Streamlit tool
+        automating EDA on any CSV: hypothesis tests, clustering, PCA/t-SNE.
+\end{itemize}
+
+%------------------------------- AI PROJECTS ----------------------------------
+\section{Applied AI \& LLM Systems}
+
+\project{AI Content Factory: Multi-Agent Content Orchestration \& Evaluation Engine}
+  {\href{https://github.com/Shah-123/Ai-Content-Facotry}{GitHub} \textbar{} 2025--26}
+  {BS Final Year Project, team of 2 \textbullet{} LangGraph, ChromaDB, OpenAI \& Gemini APIs,
+   FastAPI, React, PostgreSQL, Docker}
+\begin{itemize}
+  \item Co-developed a 17-node LangGraph workflow turning one topic into a fact-checked article,
+        social posts, podcast and video, with parallel writers, checkpointed crash recovery and
+        human-in-the-loop review.
+  \item Built RAG over uploaded documents: embedding-based semantic chunking and ChromaDB retrieval
+        with fallbacks.
+  \item Designed the evaluation stack: an in-graph G-Eval judge (coherence, relevance, accuracy, tone),
+        on-demand DeepEval, and a rule-based citation verifier that forces revision when a link is
+        not backed by evidence. Runs scored 3.7--4.0/5 on 2.8K--4.4K-word articles; the thesis
+        states the limits (the same model writes and judges; n = 3).
+  \item Built an ablation experiment with deterministic repetition and source-concentration metrics,
+        so results do not depend on an LLM judge; shipped with CI and 200+ pytest tests.
+\end{itemize}
+
+\project{MootCourtSimulator: Voice-First AI Moot Court}
+  {\href{https://shah-123.github.io/my_portfolio.github.io/}{Case study} \textbar{} 2026}
+  {\textbf{Honorable Mention, Top 5 of 35 projects (GIK Institute \& SkyLabs AI)} \textbullet{}
+   LangGraph, FastAPI, React 19, PostgreSQL}
+\begin{itemize}
+  \item A LangGraph supervisor routes AI Judge, Opposing Counsel and Witness agents as a student
+        argues aloud.
+  \item Built hybrid retrieval over an authenticated legal corpus (BM25 and dense vectors fused with
+        Reciprocal Rank Fusion, $k{=}60$, plus LLM reranking and a citation audit) and a
+        32-scenario labelled evaluation suite.
+  \item Cut time-to-first-audio from 16.1\,s to 6.9\,s with a streaming speech-to-text and
+        text-to-speech architecture.
+\end{itemize}
+
+\project{Retrieval-Augmented Generation Pipelines}
+  {\href{https://github.com/Shah-123/YouTubeVideoSummarizer}{GitHub}
+   \textbar{} \href{https://github.com/Shah-123/Corrective-RAG-}{GitHub} \textbar{} 2025--26}
+  {LangChain, LangGraph, FAISS, OpenAI API, Ollama}
+\begin{itemize}
+  \item YouTube transcript Q\&A (FAISS retrieval with an LCEL chain that answers only from retrieved
+        context), and a LangGraph RAG graph over a textbook PDF compared across OpenAI and a local
+        Llama 3.1 model.
+\end{itemize}
+
+%------------------------------- AWARDS ---------------------------------------
+\section{Awards, Certifications \& Hackathons}
+\begin{itemize}
+  \item \textbf{Honorable Mention, Top 5 of 35 projects}, for MootCourtSimulator; GIK Institute \&
+        SkyLabs AI \hfill Aug 2026
+  \item \textbf{Advanced AI Bootcamp}, Certificate of Completion (Grade B+); GIK Institute \&
+        Asher Aziz Foundation \hfill Aug 2026
+  \item \textbf{Qwenathon 2026}, Qwen Peshawar AI Hackathon; participant, project: Moot Court AI
+        \hfill Sep 2026
+\end{itemize}
+
+\vspace{4pt}
+{\small\itshape References available on request.}
+
+\end{document}
