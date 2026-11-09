@@ -1807,6 +1807,8 @@ kbd {
    ────────────────────────────────────────────────────────────── */
 .cases {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -1822,8 +1824,27 @@ kbd {
 }
 
 .case--featured {
+  grid-column: 1 / -1;
   border-color: var(--signal-line);
   box-shadow: 0 0 0 1px var(--signal-line), var(--shadow-md);
+}
+
+/* Art beside the argument, not stacked above it — halves the cover's width
+   and lets the flagship span both columns without becoming a billboard. */
+.case--featured .case-main {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+}
+
+/* Centred rather than stretched: filling the column would crop the diagram's
+   edge labels off. The divider moves to the copy, which is the taller of the
+   two, so it still runs the full height of the card. */
+.case--featured .case-media {
+  border-bottom: 0;
+  align-self: center;
+}
+
+.case--featured .case-head {
+  border-left: 1px solid var(--line);
 }
 
 .case-main {
@@ -1836,9 +1857,9 @@ kbd {
   border-bottom: 1px solid var(--line);
   overflow: hidden;
   background: var(--ink-0);
-  /* 2.4:1 crops the 16:10 artwork vertically through its centre band,
-     so diagrams read in full width and no label is ever sliced. */
-  aspect-ratio: 2.4 / 1;
+  /* Matches the artwork's own 16:10, so the whole diagram is visible and
+     nothing is cropped. In the two-up grid that lands near 350px tall. */
+  aspect-ratio: 16 / 10;
 }
 
 .case-media img {
@@ -1922,13 +1943,19 @@ kbd {
 /* Metrics row */
 .metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   margin-top: 0.4rem;
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
   overflow: hidden;
+}
+
+/* Three metrics in a two-up grid would leave a dead cell — let an odd
+   last one span the row instead. */
+.metrics > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .metrics > div {

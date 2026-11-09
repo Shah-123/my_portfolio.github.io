@@ -28,13 +28,6 @@
   }
 }
 
-/* ── ≤ 1100px — case art gets taller as the card narrows ──── */
-@media (max-width: 1100px) {
-  .case-media {
-    aspect-ratio: 2 / 1;
-  }
-}
-
 /* ── ≤ 1024px — hero, about, stack and contact collapse ───── */
 @media (max-width: 1024px) {
   .hero {
@@ -107,6 +100,26 @@
   .creds-gallery {
     grid-template-columns: minmax(0, 1fr);
     max-width: 560px;
+  }
+
+  /* One column again — and the cover goes back to a short banner crop,
+     because 16:10 across a full-width card is the billboard we just left. */
+  .cases,
+  .case--featured .case-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case--featured .case-media {
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* The spread's vertical divider has nothing to divide in one column. */
+  .case--featured .case-head {
+    border-left: 0;
+  }
+
+  .case-media {
+    aspect-ratio: 2.4 / 1;
   }
 }
 
@@ -587,6 +600,11 @@
     grid-template-rows: 1fr !important;
     visibility: visible !important;
     border-top-color: #bbb !important;
+  }
+
+  .cases,
+  .case-main {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 
   .case,
