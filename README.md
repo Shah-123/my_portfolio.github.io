@@ -4,9 +4,9 @@ Personal portfolio site for **Shahkar Ahmad**, AI Engineer (agentic systems, Lan
 hybrid RAG). Built as a static site: no framework, no build step — open `index.html` or push
 to GitHub Pages.
 
-**Design language:** a quiet dark interface with one accent (teal), sentence-case labels and
-plain section names, a live Three.js agent-topology graph, a command palette and a credentials
-gallery. Dark is primary; a light theme is included. Polished against the
+**Design language:** editorial graphite and bronze. Instrument Serif for headings, Instrument
+Sans for text, one accent, hairline rules instead of boxes, and a portrait in the hero. Dark is
+primary; a warm ivory light theme is included. Built against the
 [tasteskill](https://github.com/Leonxlnx/taste-skill) rules: no scroll reveals, overlays or
 custom cursor; the hero enters once on load and everything else stands still.
 
@@ -23,11 +23,11 @@ Any static server works. There is nothing to install.
 
 | File | Purpose |
 |---|---|
-| `index.html` | All content and markup. Sections: hero, about, work, stack, journey, credentials, contact |
-| `style.css` | Design tokens + components. Breakpoint-free base; edit tokens in `:root` to retheme |
-| `mediaqueries.css` | Responsive layer (1200 → 420px), print styles, `hover: none` and `no-js` fallbacks |
-| `script.js` | Behaviour. Command palette, 3D graph, counters, case expanders, filters, form |
-| `assets/covers/` | Hand-drawn SVG cover art per project, composed for a 2.4:1 crop band |
+| `index.html` | All content and markup. Sections: hero, work, about, expertise, experience, recognition, contact |
+| `style.css` | Tokens, components, responsive layer, print and `no-js` fallbacks. Edit tokens in `:root` to retheme |
+| `script.js` | Behaviour. Theme, menu, command palette, case expanders, filters, form. No dependencies |
+| `assets/portrait.jpg` | Hero portrait (960×1200, 4:5 crop of the formal headshot) |
+| `assets/covers/` | Hand-drawn SVG cover art per project, in the site's bronze palette |
 | `assets/credentials/` | Certificate and hackathon scans shown in the credentials gallery |
 | `assets/Shahkar Ahmad Shah.pdf` | The canonical CV, linked from every "Download CV" control |
 
@@ -53,15 +53,12 @@ const CONFIG = {
 
 ## Behaviour notes
 
-- **3D agent graph** — Three.js is loaded via dynamic `import()` from a CDN. If the CDN is
-  unreachable, WebGL is unavailable, or the viewport is under 720px, the panel falls back to a
-  static SVG topology. The loop pauses off-screen and on `visibilitychange`.
 - **Command palette** — `Ctrl/Cmd+K` (or `/`). Fuzzy search over sections, projects, skills,
   external links and actions. Fully keyboard driven and focus-trapped.
-- **Motion** — the hero enters once on load (CSS only); hovers step and underline. With
-  `prefers-reduced-motion` set, the entrance is skipped and the graph renders one static frame.
+- **Motion** — the hero enters once on load (CSS only); hovers underline and shift. With
+  `prefers-reduced-motion` set, the entrance and transitions are skipped.
 - **No-JS** — the page is fully readable without JavaScript: case studies and the
-  more-projects rows render expanded, and skill bars show their level.
+  more-projects rows render expanded.
 
 ## Verification
 

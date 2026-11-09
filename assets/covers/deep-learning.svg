@@ -21,15 +21,15 @@
   </style>
   <defs>
     <linearGradient id="dl-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0E1116"/>
-      <stop offset="1" stop-color="#06070A"/>
+      <stop offset="0" stop-color="#141312"/>
+      <stop offset="1" stop-color="#0D0D0C"/>
     </linearGradient>
     <pattern id="dl-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="dl-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#C4A484" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#C4A484" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -37,69 +37,69 @@
   <rect width="1200" height="750" fill="url(#dl-grid)"/>
   <circle class="glow" cx="580" cy="375" r="340" fill="url(#dl-glow)"/>
 
-  <g stroke="#2A313B" stroke-opacity=".8" stroke-width="1" stroke-dasharray="4 6">
+  <g stroke="#2E2B28" stroke-opacity=".8" stroke-width="1" stroke-dasharray="4 6">
     <path class="flow" d="M228 375 H 300" /><path class="flow" style="animation-delay:.3s" d="M420 375 H 476" /><path class="flow" style="animation-delay:.6s" d="M572 375 H 628" /><path class="flow" style="animation-delay:.9s" d="M708 375 H 764" />
   </g>
 
   <g transform="translate(96 375)">
-    <g fill="#151A21" stroke="#2F3742">
+    <g fill="#191816" stroke="#34302C">
       <rect x="0" y="-150" width="112" height="300" rx="4"/>
       <rect x="14" y="-140" width="112" height="300" rx="4"/>
-      <rect x="28" y="-130" width="112" height="300" rx="4" fill="#171C23"/>
+      <rect x="28" y="-130" width="112" height="300" rx="4" fill="#1B1A18"/>
     </g>
-    <text x="70" y="196" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#9AA2AE">INPUT</text>
-    <text x="70" y="220" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">224²×3</text>
+    <text x="70" y="196" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#A8A29A">INPUT</text>
+    <text x="70" y="220" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6F6A63">224²×3</text>
   </g>
 
   <g transform="translate(300 375)">
-    <g fill="#151A21" stroke="#2F3742">
+    <g fill="#191816" stroke="#34302C">
       <rect x="0" y="-118" width="88" height="236" rx="4"/>
       <rect x="14" y="-108" width="88" height="236" rx="4"/>
-      <rect x="28" y="-98" width="88" height="236" rx="4" fill="#171C23"/>
+      <rect x="28" y="-98" width="88" height="236" rx="4" fill="#1B1A18"/>
     </g>
-    <text x="58" y="164" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#9AA2AE">CONV</text>
-    <text x="58" y="188" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">64f</text>
+    <text x="58" y="164" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#A8A29A">CONV</text>
+    <text x="58" y="188" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6F6A63">64f</text>
   </g>
 
   <g transform="translate(476 375)">
-    <g fill="#151A21" stroke="#2F3742">
+    <g fill="#191816" stroke="#34302C">
       <rect x="0" y="-86" width="66" height="172" rx="4"/>
       <rect x="14" y="-76" width="66" height="172" rx="4"/>
-      <rect x="28" y="-66" width="66" height="172" rx="4" fill="#171C23"/>
+      <rect x="28" y="-66" width="66" height="172" rx="4" fill="#1B1A18"/>
     </g>
-    <text x="47" y="132" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#9AA2AE">POOL</text>
-    <text x="47" y="156" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">128f</text>
+    <text x="47" y="132" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#A8A29A">POOL</text>
+    <text x="47" y="156" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6F6A63">128f</text>
   </g>
 
   <g transform="translate(628 375)">
-    <g class="glow" fill="#151A21" stroke="#2EE6A8" stroke-opacity=".55">
+    <g class="glow" fill="#191816" stroke="#C4A484" stroke-opacity=".55">
       <rect x="0" y="-58" width="48" height="116" rx="4"/>
       <rect x="14" y="-48" width="48" height="116" rx="4"/>
-      <rect x="28" y="-38" width="48" height="116" rx="4" fill="#101619"/>
+      <rect x="28" y="-38" width="48" height="116" rx="4" fill="#141312"/>
     </g>
-    <text x="38" y="104" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#2EE6A8">CONV</text>
-    <text x="38" y="128" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">256f</text>
+    <text x="38" y="104" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#C4A484">CONV</text>
+    <text x="38" y="128" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6F6A63">256f</text>
   </g>
 
   <g transform="translate(800 375)">
-    <g class="flow-slow" stroke="#2A313B" stroke-width="1" stroke-opacity=".7" stroke-dasharray="4 6">
+    <g class="flow-slow" stroke="#2E2B28" stroke-width="1" stroke-opacity=".7" stroke-dasharray="4 6">
       <path d="M0 -108 L 120 -54"/><path d="M0 -108 L 120 0"/><path d="M0 -108 L 120 54"/>
       <path d="M0 -36 L 120 -54"/><path d="M0 -36 L 120 0"/><path d="M0 -36 L 120 54"/>
       <path d="M0 36 L 120 -54"/><path d="M0 36 L 120 0"/><path d="M0 36 L 120 54"/>
       <path d="M0 108 L 120 -54"/><path d="M0 108 L 120 0"/><path d="M0 108 L 120 54"/>
     </g>
-    <g fill="#171C23" stroke="#3A434F">
+    <g fill="#1B1A18" stroke="#433E39">
       <circle cx="0" cy="-108" r="13"/><circle cx="0" cy="-36" r="13"/>
       <circle cx="0" cy="36" r="13"/><circle cx="0" cy="108" r="13"/>
     </g>
-    <g fill="#171C23" stroke="#3A434F">
+    <g fill="#1B1A18" stroke="#433E39">
       <circle cx="120" cy="-54" r="13"/><circle cx="120" cy="54" r="13"/>
     </g>
-    <circle class="blink" cx="120" cy="0" r="13" fill="#2EE6A8"/>
-    <text x="60" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#9AA2AE">DENSE · SOFTMAX</text>
+    <circle class="blink" cx="120" cy="0" r="13" fill="#C4A484"/>
+    <text x="60" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#A8A29A">DENSE · SOFTMAX</text>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6F6A63">
     <text x="56" y="76">CNN · RNN · TRANSFER LEARNING</text>
     <text x="1144" y="702" text-anchor="end">TENSORFLOW · KERAS</text>
   </g>

@@ -8,7 +8,7 @@
   <meta name="description"
     content="Shahkar Ahmad — AI Engineer working on LLM fine-tuning (LoRA, GRPO), retrieval-augmented generation and reliable multi-agent systems, with evaluation harnesses and measured results." />
   <meta name="author" content="Shahkar Ahmad" />
-  <meta name="theme-color" content="#06070a" />
+  <meta name="theme-color" content="#121110" />
   <link rel="canonical" href="https://shah-123.github.io/my_portfolio.github.io/" />
 
   <meta property="og:type" content="website" />
@@ -27,10 +27,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
 
   <script type="application/ld+json">
   {
@@ -75,35 +74,31 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="grid-bg" aria-hidden="true"></div>
-
   <!-- ═══════════════════════ HEADER ═══════════════════════ -->
   <header class="site-header" id="header">
-    <nav class="nav shell" aria-label="Primary">
-      <a class="wordmark" href="#top">
-        Shahkar Ahmad
-      </a>
+    <div class="wrap header-in">
+      <a class="brand" href="#top">Shahkar Ahmad</a>
 
-      <ul class="nav-list" id="navList">
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#work">Work</a></li>
-        <li><a class="nav-link" href="#stack">Stack</a></li>
-        <li><a class="nav-link" href="#journey">Journey</a></li>
-        <li><a class="nav-link" href="#credentials">Credentials</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#expertise">Expertise</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#recognition">Recognition</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
 
-      <div class="nav-tools">
-        <button class="palette-trigger" id="paletteOpen" aria-label="Open command palette" aria-keyshortcuts="Control+K Meta+K">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      <div class="tools">
+        <button class="icon-btn" id="paletteOpen" type="button" aria-label="Search the site"
+          aria-keyshortcuts="Control+K Meta+K">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
             aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
             <path d="m20 20-3.5-3.5" />
           </svg>
-          <kbd>Ctrl</kbd><kbd>K</kbd>
         </button>
 
-        <button class="icon-btn" id="themeToggle" aria-label="Switch colour theme">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
@@ -116,431 +111,274 @@
           </svg>
         </button>
 
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-          <span></span><span></span><span></span>
+        <a class="btn btn--sm header-cv" href="./assets/Shahkar%20Ahmad%20Shah.pdf"
+          download="Shahkar_Ahmad_Shah_CV.pdf">Download CV</a>
+
+        <button class="icon-btn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="menu">
+          <span></span><span></span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- Mobile menu -->
   <div class="menu" id="menu" aria-hidden="true">
-    <p class="menu-label">// navigate</p>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#stack">Stack</a>
-    <a href="#journey">Journey</a>
-    <a href="#credentials">Credentials</a>
-    <a href="#contact">Contact</a>
+    <nav class="menu-links" aria-label="Mobile">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#recognition">Recognition</a>
+      <a href="#contact">Contact</a>
+    </nav>
     <div class="menu-foot">
+      <a class="btn" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">Download CV</a>
       <a class="link" href="https://github.com/Shah-123" target="_blank" rel="noopener">GitHub</a>
       <a class="link" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
         rel="noopener">LinkedIn</a>
-      <a class="link" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">CV</a>
     </div>
   </div>
 
   <!-- ═══════════════════ COMMAND PALETTE ═══════════════════ -->
-  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" aria-hidden="true">
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Search the site" aria-hidden="true">
     <div class="palette-panel">
       <div class="palette-input-row">
-        <span class="palette-prompt" aria-hidden="true">›</span>
-        <input id="paletteInput" type="text" placeholder="search projects, sections, links…" autocomplete="off"
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+          aria-hidden="true">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.5-3.5" />
+        </svg>
+        <input id="paletteInput" type="text" placeholder="Search projects, sections and links" autocomplete="off"
           autocapitalize="off" spellcheck="false" aria-label="Search the site" aria-controls="paletteResults"
           aria-autocomplete="list" role="combobox" aria-expanded="false" />
         <kbd class="palette-esc">Esc</kbd>
       </div>
       <ul class="palette-results" id="paletteResults" role="listbox" aria-label="Results"></ul>
       <div class="palette-foot">
-        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
-        <span><kbd>↵</kbd> open</span>
-        <span><kbd>esc</kbd> close</span>
+        <span><kbd>↑</kbd><kbd>↓</kbd> Move</span>
+        <span><kbd>↵</kbd> Open</span>
+        <span><kbd>Esc</kbd> Close</span>
       </div>
     </div>
   </div>
 
   <main id="main">
-    <span id="top"></span>
 
     <!-- ═══════════════════════ HERO ═══════════════════════ -->
-    <section class="hero" aria-labelledby="heroName">
-      <div class="shell">
-        <div class="hero-grid">
+    <section class="hero" id="top" aria-labelledby="heroName">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-role">AI Engineer · LLM fine-tuning, RAG and multi-agent systems</p>
+          <h1 class="hero-name" id="heroName">Shahkar Ahmad</h1>
+          <p class="hero-lede">
+            I build LLM systems and <em>test them before I trust them</em>: multi-agent graphs with
+            verified retrieval, RL fine-tuning with execution-checked rewards, and evaluation gates
+            that catch unsupported claims before they ship.
+          </p>
 
-          <div class="hero-content">
-            <h1 class="hero-name" id="heroName">
-              <span class="line"><span class="word">Shahkar</span></span>
-              <span class="line"><span class="word accent">Ahmad</span></span>
-            </h1>
-
-            <p class="hero-role">
-              <span class="role-primary">AI Engineer</span>
-              <span class="role-sep" aria-hidden="true">·</span>
-              <span class="role-tags">LLM Fine-Tuning · RAG · Multi-Agent Systems</span>
-            </p>
-
-            <p class="hero-lede">
-              I build <strong>LLM systems and test them before I trust them</strong>:
-              multi-agent graphs with verified retrieval, RL fine-tuning with execution-checked
-              rewards, and evaluation gates that catch unsupported claims before they ship.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                </svg>
-                <span>Download CV</span>
-              </a>
-              <a class="btn btn--ghost" href="#work">
-                <span>View work</span>
-              </a>
-            </div>
-
-            <div class="hero-meta">
-              <p class="status"><span class="status-dot" aria-hidden="true"></span> Applying for a research Master's · open to AI / ML roles</p>
-              <div class="hero-socials">
-                <a class="social-btn" href="https://github.com/Shah-123" target="_blank" rel="noopener"
-                  aria-label="GitHub profile">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path
-                      d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
-                  </svg>
-                </a>
-                <a class="social-btn" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
-                  rel="noopener" aria-label="LinkedIn profile">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path
-                      d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
-                  </svg>
-                </a>
-                <a class="social-btn" href="mailto:shahkarahmad342@gmail.com" aria-label="Send an email">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m2 7 10 6 10-6" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Live agent graph -->
-          <div class="graph-panel panel" id="graphPanel">
-            <div class="panel-bar">
-              <span class="panel-title">Agent topology</span>
-              </div>
-
-            <div class="graph-stage">
-              <canvas id="agentGraph" aria-hidden="true"></canvas>
-
-              <!-- Shown only when WebGL is unavailable -->
-              <svg class="graph-fallback" viewBox="0 0 400 300" role="img"
-                aria-label="Diagram of a supervisor agent routing work to six specialist agents">
-                <g class="fb-edges" fill="none" stroke="currentColor" stroke-width="1">
-                  <path d="M200 150 L90 70" />
-                  <path d="M200 150 L200 55" />
-                  <path d="M200 150 L310 70" />
-                  <path d="M200 150 L90 230" />
-                  <path d="M200 150 L200 245" />
-                  <path d="M200 150 L310 230" />
-                </g>
-                <g class="fb-nodes" fill="currentColor">
-                  <circle cx="200" cy="150" r="13" class="fb-core" />
-                  <circle cx="90" cy="70" r="6" /><circle cx="200" cy="55" r="6" />
-                  <circle cx="310" cy="70" r="6" /><circle cx="90" cy="230" r="6" />
-                  <circle cx="200" cy="245" r="6" /><circle cx="310" cy="230" r="6" />
-                </g>
+          <div class="hero-actions">
+            <a class="btn" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
-            </div>
-
-            <dl class="telemetry">
-              <div><dt>supervisor</dt><dd>1</dd></div>
-              <div><dt>agents</dt><dd data-count="10">0</dd></div>
-              <div><dt>state</dt><dd class="t-ok">streaming</dd></div>
-              <div><dt>retrieval</dt><dd class="t-ok">hybrid</dd></div>
-            </dl>
+              Download CV
+            </a>
+            <a class="btn btn--ghost" href="#work">View selected work</a>
           </div>
-
         </div>
 
-      </div>
-    </section>
+        <figure class="hero-portrait">
+          <img src="./assets/portrait.jpg" width="960" height="1200" fetchpriority="high"
+            alt="Portrait of Shahkar Ahmad in a dark suit and tie against a blue-grey background" />
+        </figure>
 
-    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
-    <section id="about" aria-labelledby="aboutTitle">
-      <div class="shell">
-        <div class="section-head">
-          <h2 class="section-title" id="aboutTitle">About me. <em>I build LLM systems you can check.</em></h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="panel">
-            <div class="panel-bar">
-              <span class="panel-title">About</span>
-            </div>
-            <div class="panel-body">
-              <p class="about-statement">
-                I work where LLM engineering meets applied machine learning. I take ideas from
-                papers and prototypes, then turn them into pipelines that still work when you
-                test them.
-              </p>
-              <p>
-                My focus is systems where <strong>correctness is easy to check</strong>. That means a
-                supervisor agent that routes the work, retrieval that combines keyword and vector
-                search then reranks, citations checked against a trusted source, and a human
-                checkpoint before anything is final.
-              </p>
-              <p>
-                I also do the unglamorous work properly: data pipelines, evaluation harnesses,
-                feature engineering and interfaces people can actually use. A model nobody can
-                question isn't finished.
-              </p>
-              <p class="about-note">
-                <span class="note-key">Currently</span> BS CS (AI Specialisation), University of
-                Peshawar: all graduation requirements completed, degree conferral pending. Applying
-                for a research Master's in China. Research interests: LLM fine-tuning and adaptation,
-                RAG, LLM reasoning and evaluation, reliable multi-agent systems, and hallucination
-                detection and fact verification.
-              </p>
-            </div>
+        <dl class="hero-facts">
+          <div>
+            <dt>Now</dt>
+            <dd><span class="status-dot" aria-hidden="true"></span>Applying for a research Master's, open to AI / ML roles</dd>
           </div>
-
-          <dl class="spec panel">
-            <div class="panel-bar">
-              <span class="panel-title">Profile</span>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-key">Role</dt>
-              <dd class="spec-val">AI Engineer</dd>
-              <dd class="spec-note">LLMs · fine-tuning · RAG · multi-agent</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-key">Experience</dt>
-              <dd class="spec-val">Intern</dd>
-              <dd class="spec-note">AI Engineer Intern — The Nerd Camp, Jan → May 2026</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-key">Education</dt>
-              <dd class="spec-val">BS CS</dd>
-              <dd class="spec-note">AI Specialisation — University of Peshawar, 2022 → 2026 · CGPA 3.13</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-key">Projects</dt>
-              <dd class="spec-val" data-count="14" data-suffix="+">0</dd>
-              <dd class="spec-note">Agents · RAG · ML · Data</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-key">Based in</dt>
-              <dd class="spec-val">Peshawar</dd>
-              <dd class="spec-note">Pakistan · open to remote</dd>
-            </div>
-          </dl>
-        </div>
+          <div>
+            <dt>Recognition</dt>
+            <dd>Honorable Mention, top 5 of 35 at GIK Institute</dd>
+          </div>
+          <div>
+            <dt>Experience</dt>
+            <dd>AI Engineer Intern, The Nerd Camp</dd>
+          </div>
+          <div>
+            <dt>Based in</dt>
+            <dd>Peshawar, Pakistan · open to remote</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
     <!-- ═══════════════════════ WORK ═══════════════════════ -->
-    <section id="work" aria-labelledby="workTitle">
-      <div class="shell">
-        <div class="section-head">
-          <h2 class="section-title" id="workTitle">Selected projects</h2>
-          <p class="section-note">
+    <section class="section" id="work" aria-labelledby="workTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 class="sec-title" id="workTitle">Selected work</h2>
+          <p class="sec-note">
             Multi-agent systems, verified retrieval and RL fine-tuning, each with an evaluation
             behind it.
           </p>
-        </div>
+        </header>
 
         <div class="cases">
 
-          <!-- ── 01 · MOOTCOURT SIMULATOR ─────────────────── -->
-          <article class="case panel case--featured" id="project-mootcourt" data-cat="agents rag">
+          <!-- MootCourtSimulator -->
+          <article class="case case--lead" id="project-mootcourt" data-cat="agents rag">
+            <div class="case-media">
+              <img src="./assets/covers/mootcourt-simulator.svg" width="1200" height="750" loading="lazy"
+                decoding="async"
+                alt="Supervisor node routing to Judge, Opposing Counsel and Witness agents above a hybrid retrieval layer" />
+            </div>
 
-            <div class="case-main">
-              <div class="case-media">
-                <img src="./assets/covers/mootcourt-simulator.svg" width="1200" height="750" loading="lazy"
-                  decoding="async"
-                  alt="Supervisor node routing to Judge, Opposing Counsel and Witness agents above a hybrid retrieval layer" />
-                <span class="case-flag">Bootcamp Capstone · GIKI</span>
-              </div>
+            <div class="case-body">
+              <p class="case-meta"><span>2026</span><span>Bootcamp capstone, GIKI</span></p>
+              <h3 class="case-title">MootCourtSimulator</h3>
+              <p class="case-sub">Multi-agent LLM system with verified legal retrieval. Argue a live case against AI agents.</p>
+              <p class="case-award">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="m12 2 2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 7.1-1.01L12 2Z" />
+                </svg>
+                Honorable Mention, top 5 of 35 projects · GIK Institute, Aug 2026
+              </p>
+              <p class="case-desc">
+                A student stands up and argues. From the bench an <strong>AI Judge</strong> questions
+                them and rules on the law; across the aisle <strong>AI Opposing Counsel</strong>
+                cross-examines and objects on evidence; on the stand an <strong>AI Witness</strong>
+                testifies under oath. Nobody types. The whole hearing is spoken, in real time,
+                against a court that talks back, so every objection lands grounded in statute
+                instead of plausibility.
+              </p>
 
-              <div class="case-head">
-                <h3 class="case-title">MootCourtSimulator</h3>
-                <p class="case-sub"><span class="case-year">2026</span> · Multi-agent LLM system with verified legal retrieval — argue a live case against AI agents</p>
-                <p class="case-award">
-                  <span class="award-star" aria-hidden="true">★</span>
-                  Honorable Mention — Top 5 of 35 projects · GIK Institute, Aug 2026
-                </p>
-                <p class="case-desc">
-                  A student stands up and argues. From the bench an <strong>AI Judge</strong> questions
-                  them and rules on the law; across the aisle <strong>AI Opposing Counsel</strong>
-                  cross-examines and objects on evidence; on the stand an <strong>AI Witness</strong>
-                  testifies under oath. Nobody types. The whole hearing is spoken, in real time,
-                  against a court that talks back — the first moot-court simulator built to be
-                  <em>argued</em> rather than prompted, so every objection lands grounded in statute
-                  instead of plausibility.
-                </p>
+              <dl class="facts">
+                <div><dt>Time to first audio</dt><dd>6.9s <span class="was">from 16.1s</span></dd></div>
+                <div><dt>Retrieval</dt><dd>BM25 + dense</dd></div>
+                <div><dt>Objections</dt><dd>Statute-audited</dd></div>
+                <div><dt>Eval scenarios</dt><dd>32</dd></div>
+              </dl>
 
-                <dl class="metrics">
-                  <div>
-                    <dt>Time to first audio</dt>
-                    <dd><span class="metric-strike">16.1s</span> <b data-count="6.9" data-decimals="1"
-                        data-suffix="s">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Retrieval</dt>
-                    <dd><b class="metric-text">BM25 + dense</b></dd>
-                  </div>
-                  <div>
-                    <dt>Objections</dt>
-                    <dd><b class="metric-text">statute-audited</b></dd>
-                  </div>
-                  <div>
-                    <dt>Eval scenarios</dt>
-                    <dd><b data-count="32">0</b></dd>
-                  </div>
-                </dl>
-
-                <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-mootcourt">
-                  <span class="case-toggle-label" data-open="Close case file">Open case file</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </button>
-              </div>
+              <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-mootcourt">
+                <span class="case-toggle-label" data-open="Close case study">Read case study</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
             </div>
 
             <div class="case-detail" id="detail-mootcourt">
               <div class="case-detail-inner">
-                <div class="case-brief">
-                  <p class="brief-label">// the premise</p>
-                  <p class="case-lede">
-                    Mooting is how lawyers learn to argue — a simulated hearing, real procedure, a bench
-                    that interrupts you mid-sentence. It teaches judgement, not recall: you have to hold
-                    your case in your head while someone tries to take it apart. The catch is that it
-                    needs a full room — judge, opposing counsel, witnesses — which is exactly why
-                    students get so few reps. MootCourtSimulator fills the room with agents instead, so
-                    a student can stand up and plead a case aloud, any hour, against a court that
-                    answers back.
-                  </p>
+                <div class="detail-grid">
+                  <div class="case-brief">
+                    <h4 class="detail-label">The premise</h4>
+                    <p>
+                      Mooting is how lawyers learn to argue: a simulated hearing, real procedure, a bench
+                      that interrupts you mid-sentence. It teaches judgement, not recall. The catch is that
+                      it needs a full room (judge, opposing counsel, witnesses), which is exactly why
+                      students get so few reps. MootCourtSimulator fills the room with agents instead, so
+                      a student can plead a case aloud, any hour, against a court that answers back.
+                    </p>
+                    <dl class="roles">
+                      <div>
+                        <dt>Student · Counsel</dt>
+                        <dd>Speaks their submissions out loud. Speech is transcribed, handed to whoever's
+                          turn it is, and answered in voice.</dd>
+                      </div>
+                      <div>
+                        <dt>AI Judge</dt>
+                        <dd>Keeps the bench: puts questions to counsel, weighs the submissions and rules on
+                          each objection after looking the statute up.</dd>
+                      </div>
+                      <div>
+                        <dt>AI Opposing Counsel</dt>
+                        <dd>Argues the other side, presses your weaknesses in cross-examination and objects
+                          to evidence it considers inadmissible.</dd>
+                      </div>
+                      <div>
+                        <dt>AI Witness</dt>
+                        <dd>Testifies under oath from the case record, and is held to that record when their
+                          answer drifts from it.</dd>
+                      </div>
+                    </dl>
+                  </div>
 
-                  <dl class="roles">
-                    <div>
-                      <dt>Student · Counsel</dt>
-                      <dd>Speaks their submissions out loud. Speech is transcribed, handed to whoever's
-                        turn it is, and answered in voice.</dd>
-                    </div>
-                    <div>
-                      <dt>AI Judge</dt>
-                      <dd>Keeps the bench: puts questions to counsel, weighs the submissions and rules on
-                        each objection after looking the statute up.</dd>
-                    </div>
-                    <div>
-                      <dt>AI Opposing Counsel</dt>
-                      <dd>Argues the other side — presses your weaknesses in cross-examination and objects
-                        to evidence it considers inadmissible.</dd>
-                    </div>
-                    <div>
-                      <dt>AI Witness</dt>
-                      <dd>Testifies under oath from the case record, and is held to that record when their
-                        answer drifts from it.</dd>
-                    </div>
-                  </dl>
-
-                  <p class="brief-label">// how the room is built</p>
-                </div>
-
-                <ul class="case-points">
-                  <li>Carried the spoken loop end to end over a <strong>contract-first streaming
-                      architecture</strong> (Express API + Python FastAPI): real-time STT in, agent
-                    reasoning, TTS out — time-to-first-audio cut from 16.1s to 6.9s, so the court
-                    answers at something like conversational speed.</li>
-                  <li>Architected the courtroom as a <strong>LangGraph state machine</strong>, with a
-                    supervisor router deciding whose turn it is and orchestrating independent Judge,
-                    Opposing Counsel and Witness agents backed by <strong>two-tier memory</strong>.</li>
-                  <li>Implemented <strong>ReAct-based Judge agents</strong> with dynamic statute-lookup tools,
-                    and Opposing Counsel executing autonomous evidentiary objections verified against
-                    the <strong>Qanun-e-Shahadat Order 1984</strong>.</li>
-                  <li>Engineered a hybrid RAG pipeline fusing <strong>BM25 and dense vector search via
-                      RRF (k = 60)</strong>, with LLM reranking and an automated citation-audit engine
-                    against an authenticated legal corpus.</li>
-                  <li>Established a <strong>quantitative evaluation harness</strong> scoring retrieval
-                    quality and multi-agent courtroom behaviour across 32 labelled scenarios, with
-                    objection correctness audited against the statute rather than asserted.</li>
-                </ul>
-                <ul class="chips" aria-label="Technologies used">
-                  <li>LangGraph</li><li>Python</li><li>OpenAI API</li><li>Whisper</li><li>FastAPI</li>
-                  <li>MLflow</li><li>Express.js</li><li>React 19</li><li>PostgreSQL</li><li>Drizzle ORM</li>
-                </ul>
-                <div class="case-links">
-                  <!-- INPUT A: MootCourtSimulator repository URL (see script.js → CONFIG.mootcourtRepo).
-                       The repo is private until the owner publishes it; the badge says so. -->
-                  <a class="link" href="#" data-pending-link="mootcourtRepo" aria-disabled="true">
-                    Repository
-                    <span class="badge-private">private</span>
-                  </a>
+                  <div>
+                    <h4 class="detail-label">How the room is built</h4>
+                    <ul class="points">
+                      <li>Carried the spoken loop end to end over a <strong>contract-first streaming
+                          architecture</strong> (Express API + Python FastAPI): real-time STT in, agent
+                        reasoning, TTS out. Time to first audio cut from 16.1s to 6.9s.</li>
+                      <li>Architected the courtroom as a <strong>LangGraph state machine</strong>, with a
+                        supervisor router deciding whose turn it is and orchestrating independent Judge,
+                        Opposing Counsel and Witness agents backed by <strong>two-tier memory</strong>.</li>
+                      <li>Implemented <strong>ReAct-based Judge agents</strong> with dynamic statute-lookup tools,
+                        and Opposing Counsel executing autonomous evidentiary objections verified against
+                        the <strong>Qanun-e-Shahadat Order 1984</strong>.</li>
+                      <li>Engineered a hybrid RAG pipeline fusing <strong>BM25 and dense vector search via
+                          RRF (k = 60)</strong>, with LLM reranking and an automated citation-audit engine
+                        against an authenticated legal corpus.</li>
+                      <li>Established a <strong>quantitative evaluation harness</strong> scoring retrieval
+                        quality and multi-agent courtroom behaviour across 32 labelled scenarios, with
+                        objection correctness audited against the statute rather than asserted.</li>
+                    </ul>
+                    <ul class="chips" aria-label="Technologies used">
+                      <li>LangGraph</li><li>Python</li><li>OpenAI API</li><li>Whisper</li><li>FastAPI</li>
+                      <li>MLflow</li><li>Express.js</li><li>React 19</li><li>PostgreSQL</li><li>Drizzle ORM</li>
+                    </ul>
+                    <!-- The repository is private until the owner publishes it (script.js → CONFIG). -->
+                    <a class="link" href="#" data-pending-link="mootcourtRepo" aria-disabled="true">
+                      Repository <span class="badge-private">Private</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- ── 02 · TEXT-TO-SQL WITH GRPO ───────────────── -->
-          <article class="case panel case--featured" id="project-text2sql" data-cat="llm">
+          <!-- Text-to-SQL with GRPO -->
+          <article class="case case--lead case--flip" id="project-text2sql" data-cat="llm">
+            <div class="case-media">
+              <img src="./assets/covers/text2sql-grpo.svg" width="1200" height="750" loading="lazy"
+                decoding="async"
+                alt="A policy model samples a group of SQL queries, each is executed against SQLite, and execution-matched rewards flow back to the policy" />
+            </div>
 
-            <div class="case-main">
-              <div class="case-media">
-                <img src="./assets/covers/text2sql-grpo.svg" width="1200" height="750" loading="lazy"
-                  decoding="async"
-                  alt="A policy model samples a group of SQL queries, each is executed against SQLite, and execution-matched rewards flow back to the policy" />
-              </div>
+            <div class="case-body">
+              <p class="case-meta"><span>2026</span><span>Reinforcement learning</span></p>
+              <h3 class="case-title">Text-to-SQL with GRPO</h3>
+              <p class="case-sub">Reinforcement learning with execution-verified rewards.</p>
+              <p class="case-desc">
+                Natural-language questions in, SQL out, and the reward is whether the query
+                actually returns the right rows. Qwen2.5-Coder-3B fine-tuned with
+                <strong>GRPO</strong> (Group Relative Policy Optimization) and LoRA on a single
+                16 GB GPU, with every sampled query executed against SQLite and checked against
+                the reference result.
+              </p>
 
-              <div class="case-head">
-                <h3 class="case-title">Text-to-SQL with GRPO</h3>
-                <p class="case-sub"><span class="case-year">2026</span> · Reinforcement learning with execution-verified rewards</p>
-                <p class="case-desc">
-                  Natural-language questions in, SQL out, and the reward is whether the query
-                  actually returns the right rows. Qwen2.5-Coder-3B fine-tuned with
-                  <strong>GRPO</strong> (Group Relative Policy Optimization) and LoRA on a single
-                  16 GB GPU, with every sampled query executed against SQLite and checked against
-                  the reference result.
-                </p>
+              <dl class="facts">
+                <div><dt>Spider exec. accuracy</dt><dd>67.6% <span class="was">from 64.5%</span></dd></div>
+                <div><dt>BIRD Mini-Dev</dt><dd>38.2% <span class="was">from 32.6%</span></dd></div>
+                <div><dt>Reward</dt><dd>Execution-verified</dd></div>
+                <div><dt>GPU</dt><dd>16 GB</dd></div>
+              </dl>
 
-                <dl class="metrics">
-                  <div>
-                    <dt>Spider exec. acc.</dt>
-                    <dd><span class="metric-strike">64.5%</span> <b data-count="67.6" data-decimals="1"
-                        data-suffix="%">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>BIRD Mini-Dev</dt>
-                    <dd><span class="metric-strike">32.6%</span> <b data-count="38.2" data-decimals="1"
-                        data-suffix="%">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Reward</dt>
-                    <dd><b class="metric-text">execution-verified</b></dd>
-                  </div>
-                  <div>
-                    <dt>GPU</dt>
-                    <dd><b data-count="16" data-suffix=" GB">0</b></dd>
-                  </div>
-                </dl>
-
-                <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-text2sql">
-                  <span class="case-toggle-label">Read architecture</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </button>
-              </div>
+              <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-text2sql">
+                <span class="case-toggle-label" data-open="Close case study">Read case study</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
             </div>
 
             <div class="case-detail" id="detail-text2sql">
               <div class="case-detail-inner">
-                <ul class="case-points">
+                <ul class="points">
                   <li>Fine-tuned <strong>Qwen2.5-Coder-3B with GRPO</strong> to convert natural-language
                     questions into SQL queries.</li>
                   <li>Used <strong>execution-based rewards</strong>: each generated query is run against
@@ -553,1302 +391,831 @@
                   <li>PyTorch</li><li>Hugging Face TRL</li><li>GRPO</li><li>LoRA</li><li>PEFT</li>
                   <li>SQLite</li><li>Gradio</li><li>Python</li>
                 </ul>
-                <div class="case-links">
-                  <a class="link" href="https://github.com/Shah-123/text2sql-grpo" target="_blank" rel="noopener">
-                    Repository
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 17 17 7M8 7h9v9" />
-                    </svg>
-                  </a>
-                </div>
+                <a class="link" href="https://github.com/Shah-123/text2sql-grpo" target="_blank" rel="noopener">
+                  Repository
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- ── 03 · AI CONTENT FACTORY ──────────────────── -->
-          <article class="case panel" id="project-content-factory" data-cat="agents llm">
+          <div class="cases-grid">
 
-            <div class="case-main">
+            <!-- AI Content Factory -->
+            <article class="case" id="project-content-factory" data-cat="agents llm">
               <div class="case-media">
                 <img src="./assets/covers/ai-content-factory.svg" width="1200" height="750" loading="lazy"
                   decoding="async"
                   alt="A ten-node agent graph fanning out from one prompt into blog, social, podcast and video outputs" />
-                <span class="case-flag">Final Year Project</span>
               </div>
-
-              <div class="case-head">
+              <div class="case-body">
+                <p class="case-meta"><span>2025 – 2026</span><span>Final year project</span></p>
                 <h3 class="case-title">AI Content Factory</h3>
-                <p class="case-sub"><span class="case-year">2025 — 2026</span> · Evaluation-gated multi-agent content generation</p>
                 <p class="case-desc">
                   One prompt in, a full media kit out. A ten-agent LangGraph pipeline researches,
                   writes, fact-checks and renders blog posts, social campaigns, podcasts and video.
                   Every draft is scored for quality, relevance and factual grounding, and a human
-                  approves the outline before generation continues. Final Year Project (team of 2),
-                  supervised by Dr. Syed Muhammad Asim Jalal.
+                  approves the outline before generation continues. Team of 2, supervised by
+                  Dr. Syed Muhammad Asim Jalal.
                 </p>
-
-                <dl class="metrics">
-                  <div>
-                    <dt>Agents in graph</dt>
-                    <dd><b data-count="10">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Output formats</dt>
-                    <dd><b data-count="4">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Podcast length</dt>
-                    <dd><b data-count="3" data-suffix=" min">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Execution</dt>
-                    <dd><b class="metric-text">parallel</b></dd>
-                  </div>
+                <dl class="facts">
+                  <div><dt>Agents in graph</dt><dd>10</dd></div>
+                  <div><dt>Output formats</dt><dd>4</dd></div>
+                  <div><dt>Podcast length</dt><dd>3 min</dd></div>
                 </dl>
-
                 <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-factory">
-                  <span class="case-toggle-label">Read architecture</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span class="case-toggle-label" data-open="Close details">Read details</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
               </div>
-            </div>
-
-            <div class="case-detail" id="detail-factory">
-              <div class="case-detail-inner">
-                <ul class="case-points">
-                  <li>Built a <strong>10-agent LangGraph system</strong> that researches a topic and
-                    produces blog posts, social media content, podcasts and video from a single prompt.</li>
-                  <li>Integrated <strong>Retrieval-Augmented Generation</strong> (ChromaDB) so agents write
-                    from relevant source material rather than from memory.</li>
-                  <li>Evaluated content quality, relevance and factual grounding with
-                    <strong>DeepEval and G-Eval</strong>, alongside a separate citation-verification step.</li>
-                  <li>Designed a <strong>Human-in-the-Loop interrupt</strong> for outline approval, and gave
-                    <strong>parallel writing agents separate research material</strong> to cut duplicated
-                    content.</li>
-                  <li>Integrated the <strong>Tavily API</strong> for fact-checking and QA evaluation, and
-                    <strong>Gemini 2.5 Flash native audio</strong> to synthesise three-minute podcast
-                    summaries.
-                  </li>
-                </ul>
-                <ul class="chips" aria-label="Technologies used">
-                  <li>LangGraph</li><li>LangChain</li><li>ChromaDB</li><li>DeepEval</li><li>Python</li>
-                  <li>OpenAI API</li><li>Gemini API</li><li>Tavily</li><li>MoviePy</li><li>Pexels API</li>
-                </ul>
-                <div class="case-links">
+              <div class="case-detail" id="detail-factory">
+                <div class="case-detail-inner">
+                  <ul class="points">
+                    <li>Built a <strong>10-agent LangGraph system</strong> that researches a topic and
+                      produces blog posts, social media content, podcasts and video from a single prompt.</li>
+                    <li>Integrated <strong>retrieval-augmented generation</strong> (ChromaDB) so agents write
+                      from relevant source material rather than from memory.</li>
+                    <li>Evaluated content quality, relevance and factual grounding with
+                      <strong>DeepEval and G-Eval</strong>, alongside a separate citation-verification step.</li>
+                    <li>Designed a <strong>human-in-the-loop interrupt</strong> for outline approval, and gave
+                      <strong>parallel writing agents separate research material</strong> to cut duplicated
+                      content.</li>
+                    <li>Integrated the <strong>Tavily API</strong> for fact-checking and QA evaluation, and
+                      <strong>Gemini 2.5 Flash native audio</strong> to synthesise three-minute podcast
+                      summaries.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used">
+                    <li>LangGraph</li><li>LangChain</li><li>ChromaDB</li><li>DeepEval</li><li>Python</li>
+                    <li>OpenAI API</li><li>Gemini API</li><li>Tavily</li><li>MoviePy</li><li>Pexels API</li>
+                  </ul>
                   <a class="link" href="https://github.com/Shah-123/Ai-Content-Facotry" target="_blank" rel="noopener">
                     Repository
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 17 17 7M8 7h9v9" />
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- ── 04 · LIVE AGENT HUB ──────────────────────── -->
-          <article class="case panel" id="project-live-agent-hub" data-cat="agents">
-
-            <div class="case-main">
+            <!-- Live Agent Hub -->
+            <article class="case" id="project-live-agent-hub" data-cat="agents">
               <div class="case-media">
                 <img src="./assets/covers/live-agent-hub.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="A live broadcast node radiating messages to eight distinct AI persona avatars" />
               </div>
-
-              <div class="case-head">
+              <div class="case-body">
+                <p class="case-meta"><span>2025</span><span>Full-stack platform</span></p>
                 <h3 class="case-title">Live Agent Hub</h3>
-                <p class="case-sub"><span class="case-year">2025</span> · AI streamer practice platform</p>
                 <p class="case-desc">
-                  A full-stack simulator of a live Twitch chat populated by eight distinct AI
-                  personas — built so streamers can practise against a room that behaves like
-                  people, not a script.
+                  A simulator of a live Twitch chat populated by eight distinct AI personas, built so
+                  streamers can practise against a room that behaves like people, not a script.
                 </p>
-
-                <dl class="metrics">
-                  <div>
-                    <dt>AI personas</dt>
-                    <dd><b data-count="8">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Layers</dt>
-                    <dd><b class="metric-text">full-stack</b></dd>
-                  </div>
-                  <div>
-                    <dt>Context</dt>
-                    <dd><b class="metric-text">live screen</b></dd>
-                  </div>
+                <dl class="facts">
+                  <div><dt>AI personas</dt><dd>8</dd></div>
+                  <div><dt>Layers</dt><dd>Full-stack</dd></div>
+                  <div><dt>Context</dt><dd>Live screen</dd></div>
                 </dl>
-
                 <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-hub">
-                  <span class="case-toggle-label">Read architecture</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span class="case-toggle-label" data-open="Close details">Read details</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
               </div>
-            </div>
-
-            <div class="case-detail" id="detail-hub">
-              <div class="case-detail-inner">
-                <ul class="case-points">
-                  <li>Built a full-stack platform simulating a live Twitch chat with
-                    <strong>8 distinct AI personas</strong> driven by OpenAI completion endpoints.
-                  </li>
-                  <li>Engineered <strong>humanised agent traits</strong> — slang integration, typo
-                    simulation, chattiness filters, and dynamic screen-context reactions during
-                    streams.</li>
-                  <li>Architected an <strong>Express.js backend</strong> on PostgreSQL / Supabase beside a
-                    <strong>React + Vite</strong> interactive frontend.
-                  </li>
-                </ul>
-                <ul class="chips" aria-label="Technologies used">
-                  <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Radix UI</li>
-                  <li>Express.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Supabase</li>
-                  <li>OpenAI API</li>
-                </ul>
-                <div class="case-links">
+              <div class="case-detail" id="detail-hub">
+                <div class="case-detail-inner">
+                  <ul class="points">
+                    <li>Built a full-stack platform simulating a live Twitch chat with
+                      <strong>8 distinct AI personas</strong> driven by OpenAI completion endpoints.</li>
+                    <li>Engineered <strong>humanised agent traits</strong>: slang, typo simulation,
+                      chattiness filters, and dynamic screen-context reactions during streams.</li>
+                    <li>Architected an <strong>Express.js backend</strong> on PostgreSQL / Supabase beside a
+                      <strong>React + Vite</strong> interactive frontend.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used">
+                    <li>React</li><li>Vite</li><li>Tailwind CSS</li><li>Radix UI</li>
+                    <li>Express.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Supabase</li><li>OpenAI API</li>
+                  </ul>
                   <a class="link" href="https://github.com/Shah-123/Live-Agent-Hub-" target="_blank" rel="noopener">
                     Repository
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 17 17 7M8 7h9v9" />
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- ── 05 · CHESSMASTERMIND ─────────────────────── -->
-          <article class="case panel" id="project-chess" data-cat="ml">
-
-            <div class="case-main">
+            <!-- ChessMastermind -->
+            <article class="case" id="project-chess" data-cat="ml">
               <div class="case-media">
                 <img src="./assets/covers/chess-agent.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="A minimax search tree with alpha-beta pruned branches and a position evaluation bar" />
               </div>
-
-              <div class="case-head">
+              <div class="case-body">
+                <p class="case-meta"><span>2025</span><span>Search engine</span></p>
                 <h3 class="case-title">ChessMastermind</h3>
-                <p class="case-sub"><span class="case-year">2025</span> · Custom chess AI engine — written from scratch</p>
                 <p class="case-desc">
                   No LLM, no engine library doing the thinking. A search engine built from first
                   principles: minimax with alpha-beta pruning, iterative deepening, aspiration
                   windows and quiescence search, over a hand-written positional evaluation.
                 </p>
-
-                <dl class="metrics">
-                  <div>
-                    <dt>Search</dt>
-                    <dd><b class="metric-text">α-β</b></dd>
-                  </div>
-                  <div>
-                    <dt>Pruning</dt>
-                    <dd><b data-count="4" data-suffix=" techniques">0</b></dd>
-                  </div>
-                  <div>
-                    <dt>Engine</dt>
-                    <dd><b class="metric-text">from scratch</b></dd>
-                  </div>
+                <dl class="facts">
+                  <div><dt>Search</dt><dd>Alpha-beta</dd></div>
+                  <div><dt>Pruning</dt><dd>4 techniques</dd></div>
+                  <div><dt>Engine</dt><dd>From scratch</dd></div>
                 </dl>
-
                 <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-chess">
-                  <span class="case-toggle-label">Read architecture</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span class="case-toggle-label" data-open="Close details">Read details</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
               </div>
-            </div>
-
-            <div class="case-detail" id="detail-chess">
-              <div class="case-detail-inner">
-                <ul class="case-points">
-                  <li>Developed a chess engine from scratch implementing <strong>minimax with alpha-beta
-                      pruning, iterative deepening, aspiration windows and quiescence search</strong>.</li>
-                  <li>Engineered <strong>transposition tables (FEN hashing), MVV-LVA move ordering,
-                      killer moves and history heuristics</strong> for search optimisation.</li>
-                  <li>Wrote evaluation functions analysing <strong>piece-square tables, pawn structure
-                      (passed / isolated), king safety and knight outposts</strong>.</li>
-                </ul>
-                <ul class="chips" aria-label="Technologies used">
-                  <li>Python</li><li>python-chess</li><li>FastAPI</li><li>Streamlit</li><li>NumPy</li>
-                </ul>
-                <div class="case-links">
+              <div class="case-detail" id="detail-chess">
+                <div class="case-detail-inner">
+                  <ul class="points">
+                    <li>Developed a chess engine from scratch implementing <strong>minimax with alpha-beta
+                        pruning, iterative deepening, aspiration windows and quiescence search</strong>.</li>
+                    <li>Engineered <strong>transposition tables (FEN hashing), MVV-LVA move ordering,
+                        killer moves and history heuristics</strong> for search optimisation.</li>
+                    <li>Wrote evaluation functions analysing <strong>piece-square tables, pawn structure
+                        (passed / isolated), king safety and knight outposts</strong>.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used">
+                    <li>Python</li><li>python-chess</li><li>FastAPI</li><li>Streamlit</li><li>NumPy</li>
+                  </ul>
                   <a class="link" href="https://github.com/Shah-123/chessAgent" target="_blank" rel="noopener">
                     Repository
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 17 17 7M8 7h9v9" />
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- ── 06 · YOUTUBE SUMMARISER ──────────────────── -->
-          <article class="case panel" id="project-yt" data-cat="llm">
-
-            <div class="case-main">
+            <!-- YouTube Video Summariser -->
+            <article class="case" id="project-yt" data-cat="llm">
               <div class="case-media">
                 <img src="./assets/covers/yt-summarizer.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="An audio waveform condensing into structured chapter summaries" />
               </div>
-
-              <div class="case-head">
+              <div class="case-body">
+                <p class="case-meta"><span>2024</span><span>LLM pipeline</span></p>
                 <h3 class="case-title">YouTube Video Summariser</h3>
-                <p class="case-sub"><span class="case-year">2024</span> · Transcript to structured brief</p>
                 <p class="case-desc">
                   An LLM pipeline that pulls a video transcript and returns chapter summaries,
-                  key insights and action items — structure instead of a wall of text.
+                  key insights and action items: structure instead of a wall of text.
                 </p>
-
                 <button class="case-toggle" type="button" aria-expanded="false" aria-controls="detail-yt">
-                  <span class="case-toggle-label">Read details</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
+                  <span class="case-toggle-label" data-open="Close details">Read details</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
               </div>
-            </div>
-
-            <div class="case-detail" id="detail-yt">
-              <div class="case-detail-inner">
-                <ul class="case-points">
-                  <li>Built an LLM-powered pipeline extracting <strong>YouTube transcripts</strong> to
-                    generate structured chapter summaries, key insights and action items.</li>
-                </ul>
-                <ul class="chips" aria-label="Technologies used">
-                  <li>LangChain</li><li>YouTube Transcript API</li><li>GPT-4</li><li>Python</li>
-                </ul>
-                <div class="case-links">
-                  <a class="link" href="https://github.com/Shah-123/YouTubeVideoSummarizer" target="_blank"
-                    rel="noopener">
+              <div class="case-detail" id="detail-yt">
+                <div class="case-detail-inner">
+                  <ul class="points">
+                    <li>Built an LLM-powered pipeline extracting <strong>YouTube transcripts</strong> to
+                      generate structured chapter summaries, key insights and action items.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used">
+                    <li>LangChain</li><li>YouTube Transcript API</li><li>GPT-4</li><li>Python</li>
+                  </ul>
+                  <a class="link" href="https://github.com/Shah-123/YouTubeVideoSummarizer" target="_blank" rel="noopener">
                     Repository
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" aria-hidden="true">
-                      <path d="M7 17 17 7M8 7h9v9" />
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
                   </a>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
 
+          </div>
         </div>
 
-        <!-- ── MORE WORK ──────────────────────────────────── -->
+        <!-- More projects -->
         <div class="more">
           <div class="more-head">
             <h3 class="more-title">More projects</h3>
-            <div class="filters" role="group" aria-label="Filter additional projects by category">
-              <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
-              <button class="filter" data-filter="rag" aria-pressed="false">RAG</button>
-              <button class="filter" data-filter="ml" aria-pressed="false">ML</button>
-              <button class="filter" data-filter="data" aria-pressed="false">Data</button>
+            <div class="filters" role="group" aria-label="Filter more projects by category">
+              <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" type="button" data-filter="rag" aria-pressed="false">RAG</button>
+              <button class="filter" type="button" data-filter="ml" aria-pressed="false">ML</button>
+              <button class="filter" type="button" data-filter="data" aria-pressed="false">Data</button>
             </div>
           </div>
 
-          <div class="log panel" id="moreGrid">
-            <div class="log-head" aria-hidden="true">
-              <span>No.</span><span>Project</span><span>Stack</span><span>Year</span><span>Link</span><span></span>
-            </div>
-
-            <div class="log-item is-open" data-cat="rag">
+          <div class="log" id="moreGrid">
+            <div class="log-item" data-cat="rag">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-crag"
-                  aria-label="Corrective-RAG — show project details">
-                  <span class="log-idx">07</span>
-                  <span class="log-name">Corrective-RAG
-                    <em>Retrieval that grades its own context and re-queries below threshold rather than
-                      answering from weak evidence.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-crag">
+                  <span class="log-name">Corrective-RAG</span>
+                  <span class="log-sum">Retrieval that grades its own context and re-queries below threshold rather than answering from weak evidence.</span>
                   <span class="log-stack">LangChain · Vector DB</span>
                   <span class="log-year">2025</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-crag">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/corrective-rag.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="Retrieval pipeline with a grading loop that re-queries the vector store" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/corrective-rag.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Retrieval pipeline with a grading loop that re-queries the vector store" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>A retrieval graph on <strong>LangGraph</strong>: a <strong>retrieve</strong> node searches a
-                          <strong>FAISS</strong> index and hands the hits to a <strong>generate</strong> node that
-                          composes the answer — the baseline pipeline every corrective-RAG variant is built on top
-                          of.</li>
-                        <li>The corpus is <strong>PDFs</strong> — loaded, split with a recursive character splitter and
-                          embedded — and the generator is pinned to a prompt that says <strong>answer only from the
-                            context, or say you don't know</strong>.</li>
-                        <li>The same graph runs against <strong>OpenAI or a local Ollama model</strong>, so retrieval
-                          quality can be compared with and without an API key.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>LangGraph</li><li>LangChain</li><li>FAISS</li><li>OpenAI API</li><li>Ollama</li>
-                        <li>Python</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank"
-                        rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>A retrieval graph on <strong>LangGraph</strong>: a <strong>retrieve</strong> node searches a <strong>FAISS</strong> index and hands the hits to a <strong>generate</strong> node that composes the answer — the baseline pipeline every corrective-RAG variant is built on top of.</li>
+                    <li>The corpus is <strong>PDFs</strong> — loaded, split with a recursive character splitter and embedded — and the generator is pinned to a prompt that says <strong>answer only from the context, or say you don't know</strong>.</li>
+                    <li>The same graph runs against <strong>OpenAI or a local Ollama model</strong>, so retrieval quality can be compared with and without an API key.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>LangGraph</li><li>LangChain</li><li>FAISS</li><li>OpenAI API</li><li>Ollama</li> <li>Python</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/Corrective-RAG-" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="ml">
+            <div class="log-item" data-cat="ml">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-dl"
-                  aria-label="Deep Learning Projects — show project details">
-                  <span class="log-idx">08</span>
-                  <span class="log-name">Deep Learning Projects
-                    <em>CNN, RNN and transfer-learning experiments — image classification, sequence
-                      modelling and fine-tuning pretrained backbones.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-dl">
+                  <span class="log-name">Deep Learning Projects</span>
+                  <span class="log-sum">CNN, RNN and transfer-learning experiments — image classification, sequence modelling and fine-tuning pretrained backbones.</span>
                   <span class="log-stack">TensorFlow · Keras</span>
                   <span class="log-year">2025</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/DL-mini-projects" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-dl">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/deep-learning.svg" width="1200" height="750" loading="lazy"
-                        decoding="async"
-                        alt="Convolutional network: stacked feature-map volumes narrowing into a dense classifier" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/deep-learning.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Convolutional network: stacked feature-map volumes narrowing into a dense classifier" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>Three self-contained exercises: a <strong>cats-vs-dogs CNN</strong> (three conv-and-pool
-                          blocks over 256×256 images), an <strong>MNIST</strong> dense classifier, and an
-                          <strong>ANN over a 440,000-row customer-churn set</strong>.</li>
-                        <li>The classification project ships a <strong>Streamlit app</strong> beside its training
-                          notebook and loads the saved model — so the network gets demoed rather than left in a
-                          cell.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>TensorFlow</li><li>Keras</li><li>Streamlit</li><li>Python</li><li>CNN</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/DL-mini-projects" target="_blank"
-                        rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>Three self-contained exercises: a <strong>cats-vs-dogs CNN</strong> (three conv-and-pool blocks over 256×256 images), an <strong>MNIST</strong> dense classifier, and an <strong>ANN over a 440,000-row customer-churn set</strong>.</li>
+                    <li>The classification project ships a <strong>Streamlit app</strong> beside its training notebook and loads the saved model — so the network gets demoed rather than left in a cell.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>TensorFlow</li><li>Keras</li><li>Streamlit</li><li>Python</li><li>CNN</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/DL-mini-projects" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="ml">
+            <div class="log-item" data-cat="ml">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-polio"
-                  aria-label="Polio Monitors Predictor — show project details">
-                  <span class="log-idx">09</span>
-                  <span class="log-name">Polio Monitors Predictor
-                    <em>Forecasted "Not Available Children" field metrics to optimise campaign resource
-                      allocation during intra-campaign monitoring.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-polio">
+                  <span class="log-name">Polio Monitors Predictor</span>
+                  <span class="log-sum">Forecasted "Not Available Children" field metrics to optimise campaign resource allocation during intra-campaign monitoring.</span>
                   <span class="log-stack">Scikit-Learn · Pandas</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project"
-                  target="_blank" rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-polio">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/polio-monitor.svg" width="1200" height="750" loading="lazy"
-                        decoding="async"
-                        alt="Field monitoring records feeding a forecast model whose output drives campaign resource allocation" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/polio-monitor.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Field monitoring records feeding a forecast model whose output drives campaign resource allocation" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>Built on <strong>ICM_Data.csv</strong> — intra-campaign monitoring records from the field,
-                          where the "Not Available" child count is the measure of whether a district was actually
-                          covered.</li>
-                        <li>A <strong>scikit-learn</strong> model over that data, wrapped in a dashboard app so a
-                          supervisor can query the forecast instead of opening a notebook.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>Scikit-Learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project"
-                        target="_blank" rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>Built on <strong>ICM_Data.csv</strong> — intra-campaign monitoring records from the field, where the "Not Available" child count is the measure of whether a district was actually covered.</li>
+                    <li>A <strong>scikit-learn</strong> model over that data, wrapped in a dashboard app so a supervisor can query the forecast instead of opening a notebook.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>Scikit-Learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/datascience/tree/main/ICM%20Project" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="ml">
+            <div class="log-item" data-cat="ml">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-odi"
-                  aria-label="ODI Run Predictor — show project details">
-                  <span class="log-idx">10</span>
-                  <span class="log-name">ODI Run Predictor
-                    <em>Regression over ball-by-ball match state — overs, wickets and run rate — reaching
-                      R² 0.92 on innings totals.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-odi">
+                  <span class="log-name">ODI Run Predictor</span>
+                  <span class="log-sum">Regression over ball-by-ball match state — overs, wickets and run rate — reaching R² 0.92 on innings totals.</span>
                   <span class="log-stack">Scikit-Learn · Streamlit</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-odi">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/odi-cricket.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="Scatter plot of match data with a fitted regression line and prediction band" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/odi-cricket.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Scatter plot of match data with a fitted regression line and prediction band" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>Predicts an ODI innings total from match state — <strong>venue, batting and bowling side,
-                            balls and wickets in hand, current score, run rate and runs from the last five
-                            overs</strong>.</li>
-                        <li>An <strong>XGBoost regressor inside a scikit-learn Pipeline</strong> — scaler and one-hot
-                          encoder on the categorical side — with a Streamlit front end and a FastAPI
-                          <strong>/predict</strong> endpoint behind it.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>XGBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>FastAPI</li><li>Pandas</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor" target="_blank"
-                        rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>Predicts an ODI innings total from match state — <strong>venue, batting and bowling side, balls and wickets in hand, current score, run rate and runs from the last five overs</strong>.</li>
+                    <li>An <strong>XGBoost regressor inside a scikit-learn Pipeline</strong> — scaler and one-hot encoder on the categorical side — with a Streamlit front end and a FastAPI <strong>/predict</strong> endpoint behind it.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>XGBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>FastAPI</li><li>Pandas</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/Cricket-Odi-Runs-Predictor" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="ml">
+            <div class="log-item" data-cat="ml">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-heart"
-                  aria-label="Heart Failure Prediction — show project details">
-                  <span class="log-idx">11</span>
-                  <span class="log-name">Heart Failure Prediction
-                    <em>Classification pipeline over patient clinical metrics for medical risk
-                      assessment, surfacing the features behind each prediction.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-heart">
+                  <span class="log-name">Heart Failure Prediction</span>
+                  <span class="log-sum">Classification pipeline over patient clinical metrics for medical risk assessment, surfacing the features behind each prediction.</span>
                   <span class="log-stack">Scikit-Learn · Streamlit</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link"
-                  href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-heart">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/heart-failure.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="ECG trace above a clinical risk gauge and feature readouts" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/heart-failure.svg" width="1200" height="750" loading="lazy" decoding="async" alt="ECG trace above a clinical risk gauge and feature readouts" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>Binary classification on the <strong>heart-failure clinical records</strong> set — 5,000
-                          patients, 13 columns — with logistic regression and a <strong>grid-searched random
-                            forest</strong> compared on the same 80/20 split.</li>
-                        <li>Shipped as a <strong>Streamlit</strong> app returning the risk probability; feature
-                          importance sits beside the prediction, because in a clinical score <strong>which measurement
-                            moved the answer</strong> matters as much as the answer.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>Scikit-Learn</li><li>Streamlit</li><li>Pandas</li><li>Seaborn</li><li>Plotly</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction"
-                        target="_blank" rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>Binary classification on the <strong>heart-failure clinical records</strong> set — 5,000 patients, 13 columns — with logistic regression and a <strong>grid-searched random forest</strong> compared on the same 80/20 split.</li>
+                    <li>Shipped as a <strong>Streamlit</strong> app returning the risk probability; feature importance sits beside the prediction, because in a clinical score <strong>which measurement moved the answer</strong> matters as much as the answer.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>Scikit-Learn</li><li>Streamlit</li><li>Pandas</li><li>Seaborn</li><li>Plotly</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/datascience/tree/main/heart_faliure_prediction" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="ml">
+            <div class="log-item" data-cat="ml">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-house"
-                  aria-label="House Price Prediction — show project details">
-                  <span class="log-idx">12</span>
-                  <span class="log-name">House Price Prediction
-                    <em>Gradient-boosted ensembles on location, size and condition, with
-                      feature-importance analysis explaining what moves the number.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-house">
+                  <span class="log-name">House Price Prediction</span>
+                  <span class="log-sum">Gradient-boosted ensembles on location, size and condition, with feature-importance analysis explaining what moves the number.</span>
                   <span class="log-stack">Scikit-Learn · Ensembles</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction"
-                  target="_blank" rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-house">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/house-price.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="Ensemble of decision trees producing a price estimate with feature importances" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/house-price.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Ensemble of decision trees producing a price estimate with feature importances" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li><strong>Gradient-boosted regression</strong> — XGBoost, against CatBoost, decision-tree and
-                          linear baselines in the app — over close to 100,000 Pakistan property listings: city,
-                          location, property type, purpose, bedrooms, baths and area in marla.</li>
-                        <li>The target is <strong>log-transformed and IQR-trimmed</strong> before fitting, and the
-                          Streamlit app reports error per model side by side, so the comparison is visible rather than
-                          asserted.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>XGBoost</li><li>CatBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>Plotly</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction"
-                        target="_blank" rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li><strong>Gradient-boosted regression</strong> — XGBoost, against CatBoost, decision-tree and linear baselines in the app — over close to 100,000 Pakistan property listings: city, location, property type, purpose, bedrooms, baths and area in marla.</li>
+                    <li>The target is <strong>log-transformed and IQR-trimmed</strong> before fitting, and the Streamlit app reports error per model side by side, so the comparison is visible rather than asserted.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>XGBoost</li><li>CatBoost</li><li>Scikit-Learn</li><li>Streamlit</li><li>Plotly</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/datascience/tree/main/Houses_price_prediction" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="data">
+            <div class="log-item" data-cat="data">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-playstore"
-                  aria-label="Google Play Store EDA — show project details">
-                  <span class="log-idx">13</span>
-                  <span class="log-name">Google Play Store EDA
-                    <em>Exploratory analysis across 10,000+ Android apps — category saturation,
-                      rating-to-install relationships and monetisation patterns.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-playstore">
+                  <span class="log-name">Google Play Store EDA</span>
+                  <span class="log-sum">Exploratory analysis across 10,000+ Android apps — category saturation, rating-to-install relationships and monetisation patterns.</span>
                   <span class="log-stack">Pandas · Matplotlib</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/playstore_data_analysis" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-playstore">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/playstore-eda.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="Bubble chart of app installs against rating, sized by review volume" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/playstore-eda.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Bubble chart of app installs against rating, sized by review volume" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>Exploratory analysis over the full <strong>googleplaystore.csv</strong> dump — 10,841 apps
-                          across 13 columns — with the free-text size, installs and price fields
-                          <strong>parsed into numbers</strong> before anything is aggregated.</li>
-                        <li>Category saturation, rating against installs, and how free versus paid apps actually
-                          monetise — structured as <strong>questions with charts as answers</strong> rather than a
-                          descriptive data dump.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>Pandas</li><li>Matplotlib</li><li>Python</li><li>EDA</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/playstore_data_analysis" target="_blank"
-                        rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>Exploratory analysis over the full <strong>googleplaystore.csv</strong> dump — 10,841 apps across 13 columns — with the free-text size, installs and price fields <strong>parsed into numbers</strong> before anything is aggregated.</li>
+                    <li>Category saturation, rating against installs, and how free versus paid apps actually monetise — structured as <strong>questions with charts as answers</strong> rather than a descriptive data dump.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>Pandas</li><li>Matplotlib</li><li>Python</li><li>EDA</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/playstore_data_analysis" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="data">
+            <div class="log-item" data-cat="data">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-powerbi"
-                  aria-label="Power BI Dashboards — show project details">
-                  <span class="log-idx">14</span>
-                  <span class="log-name">Power BI Dashboards
-                    <em>BI reports built for decisions — modelled data, defined DAX measures and KPI
-                      views that answer a specific question.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-powerbi">
+                  <span class="log-name">Power BI Dashboards</span>
+                  <span class="log-sum">BI reports built for decisions — modelled data, defined DAX measures and KPI views that answer a specific question.</span>
                   <span class="log-stack">Power BI · DAX</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/PowerBI_projects" target="_blank"
-                  rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-powerbi">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/power-bi.svg" width="1200" height="750" loading="lazy" decoding="async"
-                        alt="Business intelligence dashboard with KPI tiles, a bar chart and a donut breakdown" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/power-bi.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Business intelligence dashboard with KPI tiles, a bar chart and a donut breakdown" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>A <strong>Superstore sales dashboard</strong> shipped as a <strong>.pbix</strong>, with the
-                          source dataset (XLSX and CSV) and the background art committed beside it — the report is
-                          reproducible from the folder alone.</li>
-                        <li>The data behind it carries <strong>23 fields</strong> — segment, region, city, category,
-                          sub-category, ship mode, payment mode, sales, quantity, profit and returns — enough to read
-                          <strong>margin against revenue</strong> instead of only totalling sales.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>Power BI</li><li>DAX</li><li>Excel</li><li>Data modelling</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/PowerBI_projects" target="_blank"
-                        rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>A <strong>Superstore sales dashboard</strong> shipped as a <strong>.pbix</strong>, with the source dataset (XLSX and CSV) and the background art committed beside it — the report is reproducible from the folder alone.</li>
+                    <li>The data behind it carries <strong>23 fields</strong> — segment, region, city, category, sub-category, ship mode, payment mode, sales, quantity, profit and returns — enough to read <strong>margin against revenue</strong> instead of only totalling sales.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>Power BI</li><li>DAX</li><li>Excel</li><li>Data modelling</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/PowerBI_projects" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="log-item is-open" data-cat="data">
+            <div class="log-item" data-cat="data">
               <div class="log-row">
-                <button class="log-toggle" type="button" aria-expanded="true" aria-controls="logdetail-netflix"
-                  aria-label="Netflix Catalogue EDA — show project details">
-                  <span class="log-idx">15</span>
-                  <span class="log-name">Netflix Catalogue EDA
-                    <em>Analysis across 8,800+ titles — the shift from film to series, genre dominance
-                      and where regional content grew fastest.</em></span>
+                <button class="log-toggle" type="button" aria-expanded="false" aria-controls="logdetail-netflix">
+                  <span class="log-name">Netflix Catalogue EDA</span>
+                  <span class="log-sum">Analysis across 8,800+ titles — the shift from film to series, genre dominance and where regional content grew fastest.</span>
                   <span class="log-stack">Pandas · Streamlit</span>
                   <span class="log-year">2024</span>
+                  <svg class="log-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
                 </button>
-                <a class="log-link" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb"
-                  target="_blank" rel="noopener">repo ↗</a>
-                <span class="log-caret" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </span>
               </div>
               <div class="log-detail" id="logdetail-netflix">
                 <div class="log-detail-inner">
                   <div class="log-body">
-                    <figure class="log-fig">
-                      <img src="./assets/covers/netflix-eda.svg" width="1200" height="750" loading="lazy"
-                        decoding="async" alt="Stacked area chart of catalogue growth by year beside a genre distribution" />
-                    </figure>
+                    <div class="log-fig"><img src="./assets/covers/netflix-eda.svg" width="1200" height="750" loading="lazy" decoding="async" alt="Stacked area chart of catalogue growth by year beside a genre distribution" /></div>
                     <div>
-                      <ul class="log-points">
-                        <li>A first pass over the catalogue dump: a <strong>null audit</strong>, then the
-                          <strong>film-versus-series split</strong> and the <strong>rating distribution</strong> — the
-                          finding being that films still outnumber series.</li>
-                        <li>The sharpest result is about the file itself: of its 26 columns, <strong>14 are entirely
-                            empty</strong>, so the workable dataset is twelve fields wide — worth knowing before
-                          anyone builds a dashboard on it.</li>
-                      </ul>
-                      <ul class="chips" aria-label="Technologies used">
-                        <li>Pandas</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Jupyter</li>
-                      </ul>
-                      <a class="link" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb"
-                        target="_blank" rel="noopener">Repository ↗</a>
+                  <ul class="points">
+                    <li>A first pass over the catalogue dump: a <strong>null audit</strong>, then the <strong>film-versus-series split</strong> and the <strong>rating distribution</strong> — the finding being that films still outnumber series.</li>
+                    <li>The sharpest result is about the file itself: of its 26 columns, <strong>14 are entirely empty</strong>, so the workable dataset is twelve fields wide — worth knowing before anyone builds a dashboard on it.</li>
+                  </ul>
+                  <ul class="chips" aria-label="Technologies used"><li>Pandas</li><li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Jupyter</li></ul>
+                  <a class="link" href="https://github.com/Shah-123/datascience/blob/main/netflexEDA.ipynb" target="_blank" rel="noopener">Repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <p class="log-empty" id="logEmpty" hidden>// no entries match this filter</p>
+            <p class="log-empty" id="logEmpty" hidden>No projects match this filter.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════ STACK ═══════════════════════ -->
-    <section id="stack" aria-labelledby="stackTitle">
-      <div class="shell">
-        <div class="section-head">
-          <h2 class="section-title" id="stackTitle">Skills and tools</h2>
-          <p class="section-note">
-            Grouped by where it sits in the pipeline — models, fine-tuning and retrieval first,
-            then the plumbing that ships it.
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section class="section section--alt" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap split">
+        <header class="split-head">
+          <h2 class="sec-title" id="aboutTitle">About</h2>
+        </header>
+
+        <div class="split-body">
+          <p class="about-lead">
+            I work where LLM engineering meets applied machine learning. I take ideas from papers and
+            prototypes, then turn them into pipelines that <em>still work when you test them</em>.
           </p>
-        </div>
 
-        <div class="stack-grid">
-
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">LLMs and agents</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">LangGraph &amp; LangChain</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Multi-agent systems</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">OpenAI API &amp; Ollama</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Prompt engineering</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Human-in-the-loop design</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Model Context Protocol</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-            </div>
+          <div class="about-cols">
+            <p>
+              My focus is systems where <strong>correctness is easy to check</strong>. That means a
+              supervisor agent that routes the work, retrieval that combines keyword and vector
+              search then reranks, citations checked against a trusted source, and a human
+              checkpoint before anything is final.
+            </p>
+            <p>
+              I also do the unglamorous work properly: data pipelines, evaluation harnesses,
+              feature engineering and interfaces people can actually use. A model nobody can
+              question isn't finished.
+            </p>
           </div>
 
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">LLM fine-tuning</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">LoRA &amp; QLoRA</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">GRPO (RL fine-tuning)</span>
-                <span class="skill-meta"><span class="skill-level">Intermediate</span>
-                  <span class="bar" data-level="3" role="img" aria-label="Intermediate, 3 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Hugging Face PEFT &amp; TRL</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">PyTorch</span>
-                <span class="skill-meta"><span class="skill-level">Intermediate</span>
-                  <span class="bar" data-level="3" role="img" aria-label="Intermediate, 3 out of 5"><i></i></span></span>
-              </div>
-            </div>
-          </div>
+          <p class="about-note">
+            <strong>Currently.</strong> BS CS (AI Specialisation), University of Peshawar: all graduation
+            requirements completed, degree conferral pending. Applying for a research Master's in China.
+            Research interests: LLM fine-tuning and adaptation, RAG, LLM reasoning and evaluation,
+            reliable multi-agent systems, and hallucination detection and fact verification.
+          </p>
 
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">RAG and retrieval</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">RAG systems</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">BM25, dense retrieval &amp; RRF</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">LLM reranking</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">FAISS &amp; ChromaDB</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">LLM evaluation (DeepEval, G-Eval)</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">Machine learning</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">Scikit-Learn</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">TensorFlow &amp; Keras</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">EDA &amp; feature engineering</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">NumPy &amp; Pandas</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Matplotlib &amp; Seaborn</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">Languages and backend</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">Python</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">TypeScript</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">SQL &amp; PostgreSQL</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">FastAPI</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Express.js</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Drizzle ORM &amp; Supabase</span>
-                <span class="skill-meta"><span class="skill-level">Intermediate</span>
-                  <span class="bar" data-level="3" role="img" aria-label="Intermediate, 3 out of 5"><i></i></span></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="stack-col panel">
-            <div class="panel-bar">
-              <span class="panel-title">Frontend and tools</span>
-            </div>
-            <div class="panel-body">
-              <div class="skill">
-                <span class="skill-name">React &amp; Vite</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Tailwind CSS</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Streamlit &amp; Gradio</span>
-                <span class="skill-meta"><span class="skill-level">Expert</span>
-                  <span class="bar" data-level="5" role="img" aria-label="Expert, 5 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">Git &amp; GitHub</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">pytest</span>
-                <span class="skill-meta"><span class="skill-level">Intermediate</span>
-                  <span class="bar" data-level="3" role="img" aria-label="Intermediate, 3 out of 5"><i></i></span></span>
-              </div>
-              <div class="skill">
-                <span class="skill-name">MoviePy &amp; Jupyter</span>
-                <span class="skill-meta"><span class="skill-level">Advanced</span>
-                  <span class="bar" data-level="4" role="img" aria-label="Advanced, 4 out of 5"><i></i></span></span>
-              </div>
-            </div>
-          </div>
-
+          <dl class="profile">
+            <div><dt>Role</dt><dd>AI Engineer <span>LLMs · fine-tuning · RAG · multi-agent</span></dd></div>
+            <div><dt>Experience</dt><dd>AI Engineer Intern <span>The Nerd Camp, Jan – May 2026</span></dd></div>
+            <div><dt>Education</dt><dd>BS Computer Science <span>AI Specialisation, University of Peshawar, 2022 – 2026 · CGPA 3.13</span></dd></div>
+            <div><dt>Projects</dt><dd>14+ <span>Agents · RAG · ML · Data</span></dd></div>
+            <div><dt>Based in</dt><dd>Peshawar <span>Pakistan · open to remote</span></dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════════════ JOURNEY ═══════════════════════ -->
-    <section id="journey" aria-labelledby="journeyTitle">
-      <div class="shell">
-        <div class="section-head">
-          <h2 class="section-title" id="journeyTitle">Experience and education</h2>
-          <p class="section-note">
+    <!-- ═══════════════════════ EXPERTISE ═══════════════════════ -->
+    <section class="section" id="expertise" aria-labelledby="expertiseTitle">
+      <div class="wrap split">
+        <header class="split-head">
+          <h2 class="sec-title" id="expertiseTitle">Expertise</h2>
+          <p class="sec-note">
+            Grouped by where it sits in the pipeline: models, fine-tuning and retrieval first, then
+            the plumbing that ships it.
+          </p>
+        </header>
+
+        <div class="split-body skills">
+          <div class="skill-group">
+            <h3>LLMs and agents</h3>
+            <ul>
+              <li>LangGraph &amp; LangChain</li><li>Multi-agent systems</li><li>OpenAI API &amp; Ollama</li>
+              <li>Prompt engineering</li><li>Human-in-the-loop design</li><li>Model Context Protocol</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>LLM fine-tuning</h3>
+            <ul>
+              <li>LoRA &amp; QLoRA</li><li>GRPO (RL fine-tuning)</li><li>Hugging Face PEFT &amp; TRL</li>
+              <li>PyTorch</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>RAG and retrieval</h3>
+            <ul>
+              <li>RAG systems</li><li>BM25, dense retrieval &amp; RRF</li><li>LLM reranking</li>
+              <li>FAISS &amp; ChromaDB</li><li>LLM evaluation (DeepEval, G-Eval)</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Machine learning</h3>
+            <ul>
+              <li>Scikit-Learn</li><li>TensorFlow &amp; Keras</li><li>EDA &amp; feature engineering</li>
+              <li>NumPy &amp; Pandas</li><li>Matplotlib &amp; Seaborn</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Languages and backend</h3>
+            <ul>
+              <li>Python</li><li>TypeScript</li><li>SQL &amp; PostgreSQL</li><li>FastAPI</li>
+              <li>Express.js</li><li>Drizzle ORM &amp; Supabase</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend and tools</h3>
+            <ul>
+              <li>React &amp; Vite</li><li>Tailwind CSS</li><li>Streamlit &amp; Gradio</li>
+              <li>Git &amp; GitHub</li><li>pytest</li><li>MoviePy &amp; Jupyter</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+    <section class="section section--alt" id="experience" aria-labelledby="experienceTitle">
+      <div class="wrap split">
+        <header class="split-head">
+          <h2 class="sec-title" id="experienceTitle">Experience and education</h2>
+          <p class="sec-note">
             From exploratory data analysis in 2024 to fine-tuning and multi-agent research in 2026.
           </p>
-        </div>
+        </header>
 
-        <ol class="timeline" id="timeline">
-          <span class="timeline-spine" aria-hidden="true"><i id="timelineFill"></i></span>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">Oct 2022</p>
-              <h3 class="tl-title">BS Computer Science — University of Peshawar</h3>
+        <ol class="split-body timeline">
+          <li class="tl tl--now">
+            <p class="tl-date">2026 – now</p>
+            <div>
+              <h3 class="tl-title">Degree complete and research Master's applications</h3>
               <p class="tl-body">
-                Started the degree with an AI Specialisation track.
+                All BS graduation requirements completed; degree conferral pending. Applying for a
+                research Master's in China, with IELTS Academic scheduled for December 2026. Focus: LLM
+                fine-tuning, RAG, LLM reasoning and evaluation, and hallucination detection.
               </p>
-              <p class="tl-tag">education</p>
             </div>
           </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2024</p>
-              <h3 class="tl-title">First models in production shape</h3>
+          <li class="tl">
+            <p class="tl-date">Aug 2026</p>
+            <div>
+              <h3 class="tl-title">Advanced AI Bootcamp and MootCourtSimulator, GIK Institute</h3>
               <p class="tl-body">
-                Polio Monitors Predictor forecasting "Not Available Children" field metrics for
-                campaign resource allocation, the ODI Run Predictor reaching R² 0.92, and an
-                LLM-powered YouTube transcript summariser.
+                Seven weeks on transformers, LLM fine-tuning, post-training and alignment (PEFT, RLHF),
+                agentic RAG and LLMOps. Capstone: MootCourtSimulator, a voice-first courtroom of AI
+                agents with hybrid BM25 + semantic retrieval, LLM reranking and citation verification
+                against the Qanun-e-Shahadat Order 1984. Honorable Mention, top 5 of 35.
               </p>
-              <p class="tl-tag">scikit-learn · pandas · langchain</p>
+              <p class="tl-tags">LangGraph · Whisper · Hybrid RAG · FastAPI · MLflow</p>
             </div>
           </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2025</p>
-              <h3 class="tl-title">Search engines and full-stack agents</h3>
-              <p class="tl-body">
-                ChessMastermind — a from-scratch engine with alpha-beta pruning, iterative deepening,
-                aspiration windows and quiescence search. Then Live Agent Hub: eight AI personas on
-                an Express + PostgreSQL + React stack.
-              </p>
-              <p class="tl-tag">python · typescript · express · react</p>
-            </div>
-          </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2025 — 2026</p>
-              <h3 class="tl-title">AI Content Factory — Final Year Project</h3>
-              <p class="tl-body">
-                A ten-agent LangGraph system turning one prompt into blogs, social posts, podcasts and
-                video, with RAG for source material, DeepEval / G-Eval scoring and citation checks,
-                and a human approval gate on the outline. Team of 2, supervised by Dr. Syed Muhammad
-                Asim Jalal.
-              </p>
-              <p class="tl-tag">langgraph · rag · deepeval · hitl</p>
-            </div>
-          </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2025 → present</p>
-              <h3 class="tl-title">Research Collaborator — ML for Molecular Property Prediction</h3>
-              <p class="tl-body">
-                Remote collaboration with Muhammad Amjad (Master's student, Department of Pharmacy, GNU,
-                South Korea). Predicted the enhancement / penetration ratio of 70 surfactant compounds
-                at two concentrations (140 samples) from RDKit descriptors: R² 0.56, MAE 0.09 against
-                0.17 for a mean-value baseline.
-              </p>
-              <p class="tl-tag">research · rdkit · scikit-learn</p>
-            </div>
-          </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">Jan — May 2026</p>
-              <h3 class="tl-title">AI Engineer Intern — The Nerd Camp, Peshawar</h3>
-              <p class="tl-body">
-                Five-month remote, part-time internship building AI and ML-based applications.
-                Recognised by the CEO; experience letter available on request.
-              </p>
-              <p class="tl-tag">experience</p>
-            </div>
-          </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2026</p>
+          <li class="tl">
+            <p class="tl-date">2026</p>
+            <div>
               <h3 class="tl-title">Text-to-SQL with GRPO</h3>
               <p class="tl-body">
                 Fine-tuned Qwen2.5-Coder-3B with GRPO and LoRA on a single 16 GB GPU, using
                 execution-verified rewards against SQLite. Execution accuracy 64.5% → 67.6% on Spider
                 and 32.6% → 38.2% on BIRD Mini-Dev.
               </p>
-              <p class="tl-tag">pytorch · trl · grpo · lora</p>
+              <p class="tl-tags">PyTorch · TRL · GRPO · LoRA</p>
             </div>
           </li>
-
-          <li class="tl-item">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">Aug 2026</p>
-              <h3 class="tl-title">Advanced AI Bootcamp &amp; MootCourtSimulator — GIK Institute</h3>
+          <li class="tl">
+            <p class="tl-date">Jan – May 2026</p>
+            <div>
+              <h3 class="tl-title">AI Engineer Intern, The Nerd Camp, Peshawar</h3>
               <p class="tl-body">
-                Seven weeks on transformers, LLM fine-tuning, post-training and alignment (PEFT, RLHF),
-                agentic RAG and LLMOps. Capstone: MootCourtSimulator, a voice-first courtroom of AI
-                agents with hybrid BM25 + semantic retrieval, LLM reranking and citation verification
-                against the Qanun-e-Shahadat Order 1984. Honorable Mention, Top 5 of 35.
+                Five-month remote, part-time internship building AI and ML-based applications.
+                Recognised by the CEO; experience letter available on request.
               </p>
-              <p class="tl-tag">langgraph · whisper · hybrid rag · fastapi · mlflow</p>
             </div>
           </li>
-
-          <li class="tl-item tl-item--now">
-            <span class="tl-node" aria-hidden="true"></span>
-            <div class="tl-card panel">
-              <p class="tl-date">2026 → <span class="tl-live"><span class="led" aria-hidden="true"></span>current</span></p>
-              <h3 class="tl-title">Degree complete &amp; research Master's applications</h3>
+          <li class="tl">
+            <p class="tl-date">2025 – now</p>
+            <div>
+              <h3 class="tl-title">Research collaborator, ML for molecular property prediction</h3>
               <p class="tl-body">
-                All BS graduation requirements completed; degree conferral pending. Applying for a
-                research Master's in China, with IELTS Academic scheduled for December 2026. Focus: LLM
-                fine-tuning, RAG, LLM reasoning and evaluation, and hallucination detection.
+                Remote collaboration with Muhammad Amjad (Master's student, Department of Pharmacy, GNU,
+                South Korea). Predicted the enhancement / penetration ratio of 70 surfactant compounds
+                at two concentrations (140 samples) from RDKit descriptors: R² 0.56, MAE 0.09 against
+                0.17 for a mean-value baseline.
               </p>
-              <p class="tl-tag">open to research opportunities</p>
+              <p class="tl-tags">Research · RDKit · Scikit-Learn</p>
+            </div>
+          </li>
+          <li class="tl">
+            <p class="tl-date">2025 – 2026</p>
+            <div>
+              <h3 class="tl-title">AI Content Factory, final year project</h3>
+              <p class="tl-body">
+                A ten-agent LangGraph system turning one prompt into blogs, social posts, podcasts and
+                video, with RAG for source material, DeepEval / G-Eval scoring and citation checks,
+                and a human approval gate on the outline. Team of 2, supervised by Dr. Syed Muhammad
+                Asim Jalal.
+              </p>
+              <p class="tl-tags">LangGraph · RAG · DeepEval · Human in the loop</p>
+            </div>
+          </li>
+          <li class="tl">
+            <p class="tl-date">2025</p>
+            <div>
+              <h3 class="tl-title">Search engines and full-stack agents</h3>
+              <p class="tl-body">
+                ChessMastermind, a from-scratch engine with alpha-beta pruning, iterative deepening,
+                aspiration windows and quiescence search. Then Live Agent Hub: eight AI personas on
+                an Express + PostgreSQL + React stack.
+              </p>
+              <p class="tl-tags">Python · TypeScript · Express · React</p>
+            </div>
+          </li>
+          <li class="tl">
+            <p class="tl-date">2024</p>
+            <div>
+              <h3 class="tl-title">First models in production shape</h3>
+              <p class="tl-body">
+                Polio Monitors Predictor forecasting "Not Available Children" field metrics for
+                campaign resource allocation, the ODI Run Predictor reaching R² 0.92, and an
+                LLM-powered YouTube transcript summariser.
+              </p>
+              <p class="tl-tags">Scikit-Learn · Pandas · LangChain</p>
+            </div>
+          </li>
+          <li class="tl">
+            <p class="tl-date">Oct 2022</p>
+            <div>
+              <h3 class="tl-title">BS Computer Science, University of Peshawar</h3>
+              <p class="tl-body">Started the degree with an AI Specialisation track.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ═══════════════════════ CREDENTIALS ═══════════════════════ -->
-    <section id="credentials" aria-labelledby="credsTitle">
-      <div class="shell">
-        <div class="section-head">
-          <h2 class="section-title" id="credsTitle">Awards and certificates</h2>
-          <p class="section-note">
-            Awards, certificates and hackathons, each issued by the organiser.
-          </p>
-        </div>
+    <!-- ═══════════════════════ RECOGNITION ═══════════════════════ -->
+    <section class="section" id="recognition" aria-labelledby="recognitionTitle">
+      <div class="wrap">
+        <header class="sec-head">
+          <h2 class="sec-title" id="recognitionTitle">Awards and certificates</h2>
+          <p class="sec-note">Awards, certificates and hackathons, each issued by the organiser.</p>
+        </header>
 
-        <div class="creds-gallery">
-          <figure class="cred-card panel">
+        <div class="creds">
+          <article class="cred">
             <div class="cred-media">
               <img src="./assets/credentials/mootcourt-honorable-mention.jpeg" width="1600" height="1202"
                 loading="lazy" decoding="async"
                 alt="Certificate of Honorable Mention awarded to the project MootCourtSimulator, selected among the top five of thirty-five participating projects" />
-              <span class="cred-tag cred-tag--award">Award</span>
             </div>
-            <figcaption class="cred-body">
-              <p class="cred-name">Honorable Mention — Top 5 of 35</p>
-              <p class="cred-org">GIK Institute &amp; SkyElectric · for the project “MootCourtSimulator”</p>
-              <p class="cred-date">Aug 2026</p>
-            </figcaption>
-          </figure>
+            <p class="cred-kind">Award · Aug 2026</p>
+            <h3 class="cred-name">Honorable Mention, top 5 of 35</h3>
+            <p class="cred-org">GIK Institute &amp; SkyElectric, for the project MootCourtSimulator</p>
+          </article>
 
-          <figure class="cred-card panel">
+          <article class="cred">
             <div class="cred-media">
               <img src="./assets/credentials/ai-bootcamp-completion.jpeg" width="1600" height="1203"
                 loading="lazy" decoding="async"
                 alt="Certificate of completion of the Advanced AI Bootcamp awarded to Shahkar Ahmad with an overall grade of B plus" />
-              <span class="cred-tag">Certificate</span>
             </div>
-            <figcaption class="cred-body">
-              <p class="cred-name">Advanced AI Bootcamp — Grade B+</p>
-              <p class="cred-org">GIK Institute &amp; Asher Aziz Foundation · Skylabs AI</p>
-              <p class="cred-date">Aug 2026</p>
-            </figcaption>
-          </figure>
+            <p class="cred-kind">Certificate · Aug 2026</p>
+            <h3 class="cred-name">Advanced AI Bootcamp, grade B+</h3>
+            <p class="cred-org">GIK Institute &amp; Asher Aziz Foundation · Skylabs AI</p>
+          </article>
 
-          <figure class="cred-card panel">
+          <article class="cred">
             <div class="cred-media">
               <img src="./assets/credentials/qwenathon-2026-participation.png" width="1600" height="1203"
                 loading="lazy" decoding="async"
                 alt="Qwenathon 2026 certificate of participation awarded to Shahkar Ahmad Shah, team Xtreme Coders, project Moot Court AI" />
-              <span class="cred-tag cred-tag--hack">Hackathon</span>
             </div>
-            <figcaption class="cred-body">
-              <p class="cred-name">Qwenathon 2026 — Participant</p>
-              <p class="cred-org">Qwen Peshawar AI Hackathon · team Xtreme Coders · Moot Court AI</p>
-              <p class="cred-date">12 Sep 2026</p>
-            </figcaption>
-          </figure>
+            <p class="cred-kind">Hackathon · 12 Sep 2026</p>
+            <h3 class="cred-name">Qwenathon 2026, participant</h3>
+            <p class="cred-org">Qwen Peshawar AI Hackathon · team Xtreme Coders · Moot Court AI</p>
+          </article>
         </div>
 
-        <ul class="creds-list">
-          <li class="cred-line"><span class="cred-key">Degree</span> BS Computer Science — AI
-            Specialisation · University of Peshawar · 2022 — 2026 · CGPA 3.13 / 4.00 · all requirements
-            completed, conferral pending</li>
-          <li class="cred-line"><span class="cred-key">Bootcamp</span> Advanced AI Bootcamp (7 weeks) ·
-            GIK Institute · Aug 2026</li>
-          <li class="cred-line"><span class="cred-key">FSc</span> Government College Peshawar ·
-            998 / 1100 (90.7%) · BISE Peshawar · 2022</li>
-          <li class="cred-line"><span class="cred-key">English</span> IELTS Academic scheduled for
-            December 2026</li>
-          <li class="cred-line"><span class="cred-key">Languages</span> Urdu · Pashto (native) · English
-            (professional)</li>
-          <li class="cred-line"><span class="cred-key">References</span> Dr. Syed Muhammad Asim Jalal
-            (FYP supervisor) &amp; Dr. Rahman Ali · Assistant Professors, Dept. of Computer Science,
-            University of Peshawar · letters linked in the CV</li>
-        </ul>
+        <dl class="facts-list">
+          <div><dt>Degree</dt><dd>BS Computer Science, AI Specialisation · University of Peshawar · 2022 – 2026 ·
+              CGPA 3.13 / 4.00 · all requirements completed, conferral pending</dd></div>
+          <div><dt>Bootcamp</dt><dd>Advanced AI Bootcamp (7 weeks) · GIK Institute · Aug 2026</dd></div>
+          <div><dt>FSc</dt><dd>Government College Peshawar · 998 / 1100 (90.7%) · BISE Peshawar · 2022</dd></div>
+          <div><dt>English</dt><dd>IELTS Academic scheduled for December 2026</dd></div>
+          <div><dt>Languages</dt><dd>Urdu · Pashto (native) · English (professional)</dd></div>
+          <div><dt>References</dt><dd>Dr. Syed Muhammad Asim Jalal (FYP supervisor) &amp; Dr. Rahman Ali ·
+              Assistant Professors, Dept. of Computer Science, University of Peshawar · letters linked in the CV</dd></div>
+        </dl>
       </div>
     </section>
 
     <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
-    <section id="contact" class="contact" aria-labelledby="contactTitle">
-      <div class="shell">
-        <div class="contact-grid">
-          <div>
-            <h2 class="contact-title" id="contactTitle">Get in touch</h2>
-            <p class="contact-lede">
-              Applying for research Master's programmes in China, and open to research
-              collaborations, AI / ML roles, and straightforward conversations about where LLM
-              systems actually work.
-            </p>
+    <section class="section section--alt contact" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="contact-title" id="contactTitle">Get in touch</h2>
+          <p class="contact-lede">
+            Applying for research Master's programmes in China, and open to research
+            collaborations, AI / ML roles, and straightforward conversations about where LLM
+            systems actually work.
+          </p>
 
-            <a class="contact-email" href="mailto:shahkarahmad342@gmail.com">shahkarahmad342@gmail.com</a>
+          <a class="contact-email" href="mailto:shahkarahmad342@gmail.com">shahkarahmad342@gmail.com</a>
 
-            <div class="channels">
-              <a class="channel" href="https://github.com/Shah-123" target="_blank" rel="noopener">
-                <span class="channel-key">GitHub</span>
-                <span class="channel-val">Shah-123</span>
-                <span class="channel-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="channel" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
+          <ul class="channels">
+            <li><a class="channel" href="https://github.com/Shah-123" target="_blank" rel="noopener">
+                <span class="channel-key">GitHub</span><span class="channel-val">Shah-123</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="channel" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
                 rel="noopener">
-                <span class="channel-key">LinkedIn</span>
-                <span class="channel-val">shahkar-ahmad</span>
-                <span class="channel-arrow" aria-hidden="true">↗</span>
-              </a>
-              <a class="channel" href="tel:+923329507635">
-                <span class="channel-key">Phone</span>
-                <span class="channel-val">+92 332 9507635</span>
-                <span class="channel-arrow" aria-hidden="true">↗</span>
-              </a>
-              <span class="channel">
-                <span class="channel-key">WeChat</span>
-                <span class="channel-val">shahkar_302</span>
-              </span>
-              <a class="channel" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
-                <span class="channel-key">CV</span>
-                <span class="channel-val">Shahkar_Ahmad_Shah_CV.pdf</span>
-                <span class="channel-arrow" aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="panel form-panel">
-            <div class="panel-bar">
-              <span class="panel-title">Send a message</span>
-              </div>
-
-            <!-- INPUT C: paste your Formspree form ID into the action below. -->
-            <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-              novalidate>
-              <div class="field">
-                <label for="cf-name">Name</label>
-                <input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2"
-                  placeholder="your name" />
-                <p class="field-error" id="err-name" hidden></p>
-              </div>
-
-              <div class="field">
-                <label for="cf-email">Email</label>
-                <input id="cf-email" name="email" type="email" autocomplete="email" required
-                  placeholder="you@company.com" />
-                <p class="field-error" id="err-email" hidden></p>
-              </div>
-
-              <div class="field">
-                <label for="cf-message">Message</label>
-                <textarea id="cf-message" name="message" rows="5" required minlength="12"
-                  placeholder="what are you building?"></textarea>
-                <p class="field-error" id="err-message" hidden></p>
-              </div>
-
-              <!-- Honeypot — hidden from people, delicious to bots -->
-              <div class="hp" aria-hidden="true">
-                <label for="cf-company">Company</label>
-                <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
-              </div>
-
-              <input type="text" name="_subject" value="Portfolio enquiry — shahkarahmad342@gmail.com" hidden />
-
-              <button class="btn btn--submit" type="submit" id="cfSubmit">
-                <span class="btn-label">Send message</span>
-              </button>
-
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
-          </div>
+                <span class="channel-key">LinkedIn</span><span class="channel-val">shahkar-ahmad</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span></a></li>
+            <li><a class="channel" href="tel:+923329507635">
+                <span class="channel-key">Phone</span><span class="channel-val">+92 332 9507635</span>
+                <span class="channel-arrow" aria-hidden="true">↗</span></a></li>
+            <li><span class="channel">
+                <span class="channel-key">WeChat</span><span class="channel-val">shahkar_302</span></span></li>
+            <li><a class="channel" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
+                <span class="channel-key">CV</span><span class="channel-val">Shahkar_Ahmad_Shah_CV.pdf</span>
+                <span class="channel-arrow" aria-hidden="true">↓</span></a></li>
+          </ul>
         </div>
+
+        <!-- Paste your Formspree form ID into the action below (and CONFIG.formspreeId in script.js). -->
+        <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <h3 class="form-title">Send a message</h3>
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2" />
+            <p class="field-error" id="err-name" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            <p class="field-error" id="err-email" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required minlength="12"></textarea>
+            <p class="field-error" id="err-message" hidden></p>
+          </div>
+
+          <!-- Honeypot: hidden from people, filled by bots -->
+          <div class="hp" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <input type="text" name="_subject" value="Portfolio enquiry" hidden />
+
+          <button class="btn btn--submit" type="submit" id="cfSubmit">
+            <span class="btn-label">Send message</span>
+          </button>
+
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
   <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
   <footer class="site-footer">
-    <div class="shell footer-grid">
-      <a class="wordmark" href="#top">
-        Shahkar Ahmad
-      </a>
-
-      <ul class="footer-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <p class="footer-note">
-        © <span id="year">2026</span> Shahkar Ahmad
-      </p>
+    <div class="wrap footer-in">
+      <a class="brand" href="#top">Shahkar Ahmad</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-note">© <span id="year">2026</span> Shahkar Ahmad</p>
     </div>
   </footer>
 

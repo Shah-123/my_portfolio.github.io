@@ -17,80 +17,80 @@
   </style>
   <defs>
     <linearGradient id="ad-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0E1116"/>
-      <stop offset="1" stop-color="#06070A"/>
+      <stop offset="0" stop-color="#141312"/>
+      <stop offset="1" stop-color="#0D0D0C"/>
     </linearGradient>
     <pattern id="ad-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="ad-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#C4A484" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#C4A484" stop-opacity="0"/>
     </radialGradient>
     <marker id="ad-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#565F6C"/>
+      <path d="M0 0 10 5 0 10z" fill="#605B55"/>
     </marker>
     <marker id="ad-ar-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#2EE6A8"/>
+      <path d="M0 0 10 5 0 10z" fill="#C4A484"/>
     </marker>
   </defs>
   <rect width="1200" height="750" fill="url(#ad-bg)"/>
   <rect width="1200" height="750" fill="url(#ad-grid)"/>
   <circle cx="600" cy="375" r="380" fill="url(#ad-glow)"/>
-  <g class="flow-slow" stroke="#565F6C" stroke-opacity=".6" stroke-width="1.5" stroke-dasharray="3 7" fill="none" marker-end="url(#ad-ar)">
+  <g class="flow-slow" stroke="#605B55" stroke-opacity=".6" stroke-width="1.5" stroke-dasharray="3 7" fill="none" marker-end="url(#ad-ar)">
     <path d="M562 242 C 460 276, 372 284, 336 298"/>
     <path d="M600 258 L 600 296"/>
     <path d="M638 242 C 740 276, 828 284, 864 298"/>
   </g>
-  <g class="flow" stroke="#9AA2AE" stroke-opacity=".45" stroke-width="1.4" fill="none" stroke-dasharray="5 6" marker-end="url(#ad-ar)">
+  <g class="flow" stroke="#A8A29A" stroke-opacity=".45" stroke-width="1.4" fill="none" stroke-dasharray="5 6" marker-end="url(#ad-ar)">
     <path d="M250 368 C 250 384, 250 392, 250 406"/>
     <path d="M600 368 L 600 406"/>
     <path d="M950 368 C 950 384, 950 392, 950 406"/>
   </g>
-  <circle class="pulse" cx="600" cy="205" r="68" fill="none" stroke="#2EE6A8" stroke-opacity=".18" stroke-width="1"/>
-  <circle cx="600" cy="205" r="50" fill="#0A0C10" stroke="#2EE6A8" stroke-width="1.6"/>
-  <text x="600" y="201" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#E9EBEE">SUPERVISOR</text>
-  <text x="600" y="221" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#2EE6A8">router</text>
+  <circle class="pulse" cx="600" cy="205" r="68" fill="none" stroke="#C4A484" stroke-opacity=".18" stroke-width="1"/>
+  <circle cx="600" cy="205" r="50" fill="#111110" stroke="#C4A484" stroke-width="1.6"/>
+  <text x="600" y="201" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="1.8" fill="#EEEAE3">SUPERVISOR</text>
+  <text x="600" y="221" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1.4" fill="#C4A484">router</text>
   <g>
-    <rect x="170" y="300" width="160" height="66" rx="7" fill="#151A21" stroke="#2EE6A8" stroke-width="1.2"/>
-    <text x="250.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#2EE6A8">JUDGE</text>
-    <text x="250.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">ReAct</text>
-    <rect x="520" y="300" width="160" height="66" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
-    <text x="600.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">COUNSEL</text>
-    <text x="600.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">objects</text>
-    <rect x="870" y="300" width="160" height="66" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
-    <text x="950.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">WITNESS</text>
-    <text x="950.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">testimony</text>
+    <rect x="170" y="300" width="160" height="66" rx="7" fill="#191816" stroke="#C4A484" stroke-width="1.2"/>
+    <text x="250.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#C4A484">JUDGE</text>
+    <text x="250.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">ReAct</text>
+    <rect x="520" y="300" width="160" height="66" rx="7" fill="#191816" stroke="#2E2B28" stroke-width="1.2"/>
+    <text x="600.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#EEEAE3">COUNSEL</text>
+    <text x="600.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">objects</text>
+    <rect x="870" y="300" width="160" height="66" rx="7" fill="#191816" stroke="#2E2B28" stroke-width="1.2"/>
+    <text x="950.0" y="330.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#EEEAE3">WITNESS</text>
+    <text x="950.0" y="350.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">testimony</text>
   </g>
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1.2" fill="#646C79">
-    <rect x="352" y="320" width="7" height="7" rx="1.5" fill="#9AA2AE" fill-opacity=".85"/>
-    <rect x="352" y="340" width="7" height="7" rx="1.5" fill="#9AA2AE" fill-opacity=".35"/>
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1.2" fill="#6F6A63">
+    <rect x="352" y="320" width="7" height="7" rx="1.5" fill="#A8A29A" fill-opacity=".85"/>
+    <rect x="352" y="340" width="7" height="7" rx="1.5" fill="#A8A29A" fill-opacity=".35"/>
     <text x="368" y="327">short-term</text>
     <text x="368" y="347">long-term</text>
   </g>
-  <rect x="120" y="410" width="960" height="96" rx="9" fill="#0A0C10" stroke="#2A313B" stroke-width="1.2"/>
-  <text x="146" y="434" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#646C79">HYBRID RETRIEVAL</text>
-  <g class="flow" stroke="#565F6C" stroke-opacity=".55" stroke-width="1.4" fill="none" stroke-dasharray="4 6" marker-end="url(#ad-ar)">
+  <rect x="120" y="410" width="960" height="96" rx="9" fill="#111110" stroke="#2E2B28" stroke-width="1.2"/>
+  <text x="146" y="434" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#6F6A63">HYBRID RETRIEVAL</text>
+  <g class="flow" stroke="#605B55" stroke-opacity=".55" stroke-width="1.4" fill="none" stroke-dasharray="4 6" marker-end="url(#ad-ar)">
     <path d="M312 470 L 370 470"/>
     <path d="M520 470 L 578 470"/>
     <path d="M738 470 L 796 470"/>
   </g>
   <g>
-    <rect x="148" y="448" width="164" height="44" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
-    <text x="230.0" y="475.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="1.5" fill="#9AA2AE">BM25 + DENSE</text>
-    <rect x="370" y="448" width="150" height="44" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
-    <text x="445.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#9AA2AE">RRF</text>
-    <text x="445.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">k = 60</text>
-    <rect x="578" y="448" width="160" height="44" rx="7" fill="#151A21" stroke="#2A313B" stroke-width="1.2"/>
-    <text x="658.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E9EBEE">RERANK</text>
-    <text x="658.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">llm</text>
-    <rect class="glow" x="796" y="448" width="174" height="44" rx="7" fill="#151A21" stroke="#F5A524" stroke-width="1.2"/>
-    <text x="883.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#F5A524">CITE AUDIT</text>
-    <text x="883.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#646C79">100% grounded</text>
+    <rect x="148" y="448" width="164" height="44" rx="7" fill="#191816" stroke="#2E2B28" stroke-width="1.2"/>
+    <text x="230.0" y="475.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="1.5" fill="#A8A29A">BM25 + DENSE</text>
+    <rect x="370" y="448" width="150" height="44" rx="7" fill="#191816" stroke="#2E2B28" stroke-width="1.2"/>
+    <text x="445.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#A8A29A">RRF</text>
+    <text x="445.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">k = 60</text>
+    <rect x="578" y="448" width="160" height="44" rx="7" fill="#191816" stroke="#2E2B28" stroke-width="1.2"/>
+    <text x="658.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#EEEAE3">RERANK</text>
+    <text x="658.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">llm</text>
+    <rect class="glow" x="796" y="448" width="174" height="44" rx="7" fill="#191816" stroke="#E6D9C6" stroke-width="1.2"/>
+    <text x="883.0" y="467.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.5" fill="#E6D9C6">CITE AUDIT</text>
+    <text x="883.0" y="487.0" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11" letter-spacing="1.2" fill="#6F6A63">100% grounded</text>
   </g>
-  <text x="56" y="566" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#646C79">VOICE-FIRST &#183; STT / TTS</text>
-  <text x="1144" y="566" text-anchor="end" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#646C79">TTFA 16.1s &#8594; 6.9s</text>
-  <g fill="#2EE6A8">
+  <text x="56" y="566" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#6F6A63">VOICE-FIRST &#183; STT / TTS</text>
+  <text x="1144" y="566" text-anchor="end" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2" fill="#6F6A63">TTFA 16.1s &#8594; 6.9s</text>
+  <g fill="#C4A484">
     <rect class="bar" style="animation-delay:0.00s" x="330.0" y="557.5" width="4.5" height="5" rx="2.2" fill-opacity="0.35"/>
     <rect class="bar" style="animation-delay:0.07s" x="342.5" y="555.5" width="4.5" height="9" rx="2.2" fill-opacity="0.41"/>
     <rect class="bar" style="animation-delay:0.14s" x="355.0" y="552.5" width="4.5" height="15" rx="2.2" fill-opacity="0.50"/>
@@ -136,7 +136,7 @@
     <rect class="bar" style="animation-delay:2.94s" x="855.0" y="555.5" width="4.5" height="9" rx="2.2" fill-opacity="0.41"/>
     <rect class="bar" style="animation-delay:3.01s" x="867.5" y="557.5" width="4.5" height="5" rx="2.2" fill-opacity="0.35"/>
   </g>
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6F6A63">
     <text x="56" y="196">LANGGRAPH · STATE MACHINE</text>
     <text x="1144" y="196" text-anchor="end">QANUN-E-SHAHADAT ORDER 1984</text>
     <text x="56" y="606">MULTI-AGENT · MOOT COURT</text>

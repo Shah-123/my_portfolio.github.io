@@ -21,15 +21,15 @@
   </style>
   <defs>
     <linearGradient id="pb-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0E1116"/>
-      <stop offset="1" stop-color="#06070A"/>
+      <stop offset="0" stop-color="#141312"/>
+      <stop offset="1" stop-color="#0D0D0C"/>
     </linearGradient>
     <pattern id="pb-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="pb-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#C4A484" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#C4A484" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -39,45 +39,45 @@
 
   <g font-family="ui-monospace,'JetBrains Mono',monospace">
     <g>
-      <rect x="96" y="136" width="316" height="130" rx="12" fill="#0A0C10" stroke="#2A313B"/>
-      <text x="126" y="176" font-size="12" letter-spacing="2.2" fill="#646C79">REVENUE</text>
-      <text x="126" y="228" font-size="40" fill="#E9EBEE">4.82M</text>
-      <text x="126" y="252" font-size="12" fill="#2EE6A8">▲ 12.4%</text>
+      <rect x="96" y="136" width="316" height="130" rx="12" fill="#111110" stroke="#2E2B28"/>
+      <text x="126" y="176" font-size="12" letter-spacing="2.2" fill="#6F6A63">REVENUE</text>
+      <text x="126" y="228" font-size="40" fill="#EEEAE3">4.82M</text>
+      <text x="126" y="252" font-size="12" fill="#C4A484">▲ 12.4%</text>
     </g>
     <g>
-      <rect x="442" y="136" width="316" height="130" rx="12" fill="#0A0C10" stroke="#2A313B"/>
-      <text x="472" y="176" font-size="12" letter-spacing="2.2" fill="#646C79">ACTIVE USERS</text>
-      <text x="472" y="228" font-size="40" fill="#E9EBEE">38.1K</text>
-      <text x="472" y="252" font-size="12" fill="#2EE6A8">▲ 6.8%</text>
+      <rect x="442" y="136" width="316" height="130" rx="12" fill="#111110" stroke="#2E2B28"/>
+      <text x="472" y="176" font-size="12" letter-spacing="2.2" fill="#6F6A63">ACTIVE USERS</text>
+      <text x="472" y="228" font-size="40" fill="#EEEAE3">38.1K</text>
+      <text x="472" y="252" font-size="12" fill="#C4A484">▲ 6.8%</text>
     </g>
     <g>
-      <rect class="glow" style="animation-delay:1.4s" x="788" y="136" width="316" height="130" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".45"/>
-      <text x="818" y="176" font-size="12" letter-spacing="2.2" fill="#2EE6A8">MARGIN</text>
-      <text x="818" y="228" font-size="40" fill="#E9EBEE">31.6%</text>
-      <text x="818" y="252" font-size="12" fill="#565F6C">▼ 1.2%</text>
+      <rect class="glow" style="animation-delay:1.4s" x="788" y="136" width="316" height="130" rx="12" fill="#111110" stroke="#C4A484" stroke-opacity=".45"/>
+      <text x="818" y="176" font-size="12" letter-spacing="2.2" fill="#C4A484">MARGIN</text>
+      <text x="818" y="228" font-size="40" fill="#EEEAE3">31.6%</text>
+      <text x="818" y="252" font-size="12" fill="#605B55">▼ 1.2%</text>
     </g>
   </g>
 
   <g transform="translate(96 300)">
-    <rect x="0" y="0" width="662" height="314" rx="12" fill="#0A0C10" stroke="#2A313B"/>
-    <text x="30" y="42" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">QUARTERLY PERFORMANCE</text>
-    <g stroke="#1B2129">
+    <rect x="0" y="0" width="662" height="314" rx="12" fill="#111110" stroke="#2E2B28"/>
+    <text x="30" y="42" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#6F6A63">QUARTERLY PERFORMANCE</text>
+    <g stroke="#1F1D1B">
       <line x1="30" y1="96" x2="632" y2="96"/>
       <line x1="30" y1="152" x2="632" y2="152"/>
       <line x1="30" y1="208" x2="632" y2="208"/>
     </g>
-    <line x1="30" y1="256" x2="632" y2="256" stroke="#2F3742"/>
+    <line x1="30" y1="256" x2="632" y2="256" stroke="#34302C"/>
     <g>
-      <rect class="glow" style="animation-delay:0.00s" x="60" y="164" width="44" height="92" rx="4" fill="#3A434F"/>
-      <rect class="glow" style="animation-delay:0.09s" x="112" y="132" width="44" height="124" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect class="glow" style="animation-delay:0.18s" x="186" y="146" width="44" height="110" rx="4" fill="#3A434F"/>
-      <rect class="glow" style="animation-delay:0.27s" x="238" y="108" width="44" height="148" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect class="glow" style="animation-delay:0.36s" x="312" y="120" width="44" height="136" rx="4" fill="#3A434F"/>
-      <rect class="glow" style="animation-delay:0.45s" x="364" y="82" width="44" height="174" rx="4" fill="#2EE6A8" fill-opacity=".55"/>
-      <rect class="glow" style="animation-delay:0.54s" x="438" y="100" width="44" height="156" rx="4" fill="#3A434F"/>
-      <rect class="glow" style="animation-delay:0.63s" x="490" y="60" width="44" height="196" rx="4" fill="#2EE6A8"/>
+      <rect class="glow" style="animation-delay:0.00s" x="60" y="164" width="44" height="92" rx="4" fill="#433E39"/>
+      <rect class="glow" style="animation-delay:0.09s" x="112" y="132" width="44" height="124" rx="4" fill="#C4A484" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.18s" x="186" y="146" width="44" height="110" rx="4" fill="#433E39"/>
+      <rect class="glow" style="animation-delay:0.27s" x="238" y="108" width="44" height="148" rx="4" fill="#C4A484" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.36s" x="312" y="120" width="44" height="136" rx="4" fill="#433E39"/>
+      <rect class="glow" style="animation-delay:0.45s" x="364" y="82" width="44" height="174" rx="4" fill="#C4A484" fill-opacity=".55"/>
+      <rect class="glow" style="animation-delay:0.54s" x="438" y="100" width="44" height="156" rx="4" fill="#433E39"/>
+      <rect class="glow" style="animation-delay:0.63s" x="490" y="60" width="44" height="196" rx="4" fill="#C4A484"/>
     </g>
-    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#646C79">
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#6F6A63">
       <text x="82" y="282" text-anchor="middle">Q1</text>
       <text x="208" y="282" text-anchor="middle">Q2</text>
       <text x="334" y="282" text-anchor="middle">Q3</text>
@@ -86,23 +86,23 @@
   </g>
 
   <g transform="translate(788 300)">
-    <rect x="0" y="0" width="316" height="314" rx="12" fill="#0A0C10" stroke="#2A313B"/>
-    <text x="30" y="42" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#646C79">BY SEGMENT</text>
+    <rect x="0" y="0" width="316" height="314" rx="12" fill="#111110" stroke="#2E2B28"/>
+    <text x="30" y="42" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" letter-spacing="2.2" fill="#6F6A63">BY SEGMENT</text>
     <g transform="translate(158 168)" fill="none" stroke-width="30">
-      <circle cx="0" cy="0" r="72" stroke="#1B2129"/>
-      <circle class="ring" cx="0" cy="0" r="72" stroke="#2EE6A8" stroke-dasharray="192 452" transform="rotate(-90)"/>
-      <circle class="ring" style="animation-delay:1.4s" cx="0" cy="0" r="72" stroke="#565F6C" stroke-dasharray="122 452" stroke-dashoffset="-192" transform="rotate(-90)"/>
-      <circle class="ring" style="animation-delay:2.8s" cx="0" cy="0" r="72" stroke="#3A434F" stroke-dasharray="78 452" stroke-dashoffset="-314" transform="rotate(-90)"/>
+      <circle cx="0" cy="0" r="72" stroke="#1F1D1B"/>
+      <circle class="ring" cx="0" cy="0" r="72" stroke="#C4A484" stroke-dasharray="192 452" transform="rotate(-90)"/>
+      <circle class="ring" style="animation-delay:1.4s" cx="0" cy="0" r="72" stroke="#605B55" stroke-dasharray="122 452" stroke-dashoffset="-192" transform="rotate(-90)"/>
+      <circle class="ring" style="animation-delay:2.8s" cx="0" cy="0" r="72" stroke="#433E39" stroke-dasharray="78 452" stroke-dashoffset="-314" transform="rotate(-90)"/>
     </g>
-    <text x="158" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="24" fill="#E9EBEE">42%</text>
-    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#9AA2AE">
-      <circle cx="38" cy="272" r="5" fill="#2EE6A8"/><text x="54" y="277">Retail</text>
-      <circle cx="140" cy="272" r="5" fill="#565F6C"/><text x="156" y="277">B2B</text>
-      <circle cx="222" cy="272" r="5" fill="#3A434F"/><text x="238" y="277">Other</text>
+    <text x="158" y="176" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="24" fill="#EEEAE3">42%</text>
+    <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="12" fill="#A8A29A">
+      <circle cx="38" cy="272" r="5" fill="#C4A484"/><text x="54" y="277">Retail</text>
+      <circle cx="140" cy="272" r="5" fill="#605B55"/><text x="156" y="277">B2B</text>
+      <circle cx="222" cy="272" r="5" fill="#433E39"/><text x="238" y="277">Other</text>
     </g>
   </g>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6F6A63">
     <text x="56" y="76">POWER BI · KPI REPORTING</text>
     <text x="1144" y="702" text-anchor="end">DAX · MODELING</text>
   </g>
