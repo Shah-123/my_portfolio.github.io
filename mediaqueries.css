@@ -20,7 +20,7 @@
 
   .nav-link {
     padding: 0.4rem 0.45rem;
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
   }
 
   .hero-grid {
@@ -135,7 +135,12 @@
 
   .hero-role {
     gap: 0.25rem 0.6rem;
-    font-size: 0.68rem;
+    font-size: 0.875rem;
+  }
+
+  /* The role and its tags wrap onto two lines here; a separator would dangle. */
+  .role-sep {
+    display: none;
   }
 
   .hero-meta {
@@ -171,7 +176,7 @@
   }
 
   .filter {
-    font-size: 0.64rem;
+    font-size: 0.8125rem;
     padding: 0.3rem 0.6rem;
   }
 
@@ -186,7 +191,7 @@
   .channel {
     grid-template-columns: 5.5rem minmax(0, 1fr) auto;
     gap: 0.7rem;
-    font-size: 0.72rem;
+    font-size: 0.8125rem;
   }
 
   .footer-grid {
@@ -298,10 +303,6 @@
     margin-left: 0;
   }
 
-  .scroll-cue {
-    margin-top: 2rem;
-  }
-
   .graph-stage {
     aspect-ratio: 4 / 3;
   }
@@ -312,7 +313,7 @@
 
   .case-flag,
   .case-idx {
-    font-size: 0.56rem;
+    font-size: 0.8125rem;
     padding: 0.2rem 0.45rem;
   }
 
@@ -350,11 +351,6 @@
     align-self: center;
   }
 
-  .ticker-group span {
-    padding: 0.85rem 0.7rem;
-    font-size: 0.7rem;
-  }
-
   .menu a {
     font-size: 1.2rem;
     padding: 0.6rem 0;
@@ -366,7 +362,7 @@
 
   .palette-foot {
     gap: 0.7rem;
-    font-size: 0.6rem;
+    font-size: 0.8125rem;
   }
 }
 
@@ -383,7 +379,7 @@
 
   .panel-bar {
     padding: 0.55rem 0.7rem;
-    font-size: 0.62rem;
+    font-size: 0.8125rem;
   }
 
   .panel-year {
@@ -410,10 +406,6 @@
   .hero {
     min-height: auto;
     padding-block: 6.5rem 2.5rem;
-  }
-
-  .scroll-cue {
-    display: none;
   }
 
   .menu {
@@ -478,37 +470,11 @@
     background: var(--ink-1);
   }
 
-  .panel:hover::before,
-  .panel:hover::after {
-    width: 9px;
-    height: 9px;
-  }
-
-  /* The custom cursor is pointless without a pointer — keep the native one. */
-  .cursor-ring,
-  .cursor-dot {
-    display: none;
-  }
-
-  body.cursor-ready,
-  body.cursor-ready a,
-  body.cursor-ready button {
-    cursor: auto;
-  }
 }
 
 /* ── No JavaScript — everything must still be readable ────── */
-.no-js .reveal {
-  opacity: 1;
-  transform: none;
-}
-
 .no-js .bar i {
   width: calc(var(--lvl, 3) * 20%);
-}
-
-.no-js .mask-reveal {
-  clip-path: none;
 }
 
 .no-js .case-detail {
@@ -531,24 +497,12 @@
   display: none;
 }
 
-.no-js .boot {
-  display: none !important;
-}
-
 /* ── Print ────────────────────────────────────────────────── */
 @media print {
   .site-header,
   .menu,
-  .boot,
   .palette,
   .grid-bg,
-  .scanlines,
-  .grain,
-  .progress,
-  .cursor-ring,
-  .cursor-dot,
-  .ticker,
-  .scroll-cue,
   .filters,
   .graph-panel,
   .case-toggle,
@@ -573,25 +527,6 @@
     border-color: #bbb;
     background: #fff;
     box-shadow: none;
-  }
-
-  .panel::before,
-  .panel::after {
-    display: none;
-  }
-
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .mask-reveal {
-    clip-path: none !important;
-  }
-
-  .char {
-    opacity: 1 !important;
-    transform: none !important;
   }
 
   /* Show every case study in full — a printed portfolio shouldn't hide work. */

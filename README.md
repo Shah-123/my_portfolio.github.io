@@ -4,9 +4,11 @@ Personal portfolio site for **Shahkar Ahmad**, AI Engineer (agentic systems, Lan
 hybrid RAG). Built as a static site: no framework, no build step — open `index.html` or push
 to GitHub Pages.
 
-**Design language:** "Agentic OS" — a terminal-forward dark interface with a command palette,
-a live Three.js agent-topology graph, and a credentials gallery. Dark is primary; a paper-terminal
-light theme is included.
+**Design language:** a quiet dark interface with one accent (teal), sentence-case labels and
+plain section names, a live Three.js agent-topology graph, a command palette and a credentials
+gallery. Dark is primary; a light theme is included. Polished against the
+[tasteskill](https://github.com/Leonxlnx/taste-skill) rules: no scroll reveals, overlays or
+custom cursor; the hero enters once on load and everything else stands still.
 
 ## Run locally
 
@@ -21,10 +23,10 @@ Any static server works. There is nothing to install.
 
 | File | Purpose |
 |---|---|
-| `index.html` | All content and markup. Sections: hero, ticker, about, stack, work, journey, credentials, contact |
+| `index.html` | All content and markup. Sections: hero, about, work, stack, journey, credentials, contact |
 | `style.css` | Design tokens + components. Breakpoint-free base; edit tokens in `:root` to retheme |
 | `mediaqueries.css` | Responsive layer (1200 → 420px), print styles, `hover: none` and `no-js` fallbacks |
-| `script.js` | Behaviour. Boot sequence, command palette, 3D graph, reveals, counters, filters, form |
+| `script.js` | Behaviour. Command palette, 3D graph, counters, case expanders, filters, form |
 | `assets/covers/` | Hand-drawn SVG cover art per project, composed for a 2.4:1 crop band |
 | `assets/credentials/` | Certificate and hackathon scans shown in the credentials gallery |
 | `assets/Shahkar Ahmad Shah.pdf` | The canonical CV, linked from every "Download CV" control |
@@ -56,10 +58,10 @@ const CONFIG = {
   static SVG topology. The loop pauses off-screen and on `visibilitychange`.
 - **Command palette** — `Ctrl/Cmd+K` (or `/`). Fuzzy search over sections, projects, skills,
   external links and actions. Fully keyboard driven and focus-trapped.
-- **Motion** — every animation is gated on `prefers-reduced-motion`. With it set, the boot
-  sequence is skipped, the graph renders one static frame, and reveals appear instantly.
-- **No-JS** — the page is fully readable without JavaScript: the boot overlay never mounts,
-  case studies and `more_work.log` rows render expanded, and skill bars show their level.
+- **Motion** — the hero enters once on load (CSS only); hovers step and underline. With
+  `prefers-reduced-motion` set, the entrance is skipped and the graph renders one static frame.
+- **No-JS** — the page is fully readable without JavaScript: case studies and the
+  more-projects rows render expanded, and skill bars show their level.
 
 ## Verification
 
