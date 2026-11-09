@@ -26,7 +26,7 @@ Any static server works. There is nothing to install.
 | `index.html` | All content and markup. Sections: hero, work, about, expertise, experience, recognition, contact |
 | `style.css` | Tokens, components, responsive layer, print and `no-js` fallbacks. Edit tokens in `:root` to retheme |
 | `script.js` | Behaviour. Theme, menu, command palette, case expanders, filters, form. No dependencies |
-| `assets/portrait.jpg` | Hero portrait (960×1200, cropped from the original photo in `assets/`) |
+| `assets/portrait.jpg` | Hero portrait (960×1200, 4:5 crop of the formal headshot) |
 | `assets/covers/` | Hand-drawn SVG cover art per project, in the site's bronze palette |
 | `assets/credentials/` | Certificate and hackathon scans shown in the credentials gallery |
 | `assets/Shahkar Ahmad Shah.pdf` | The canonical CV, linked from every "Download CV" control |
