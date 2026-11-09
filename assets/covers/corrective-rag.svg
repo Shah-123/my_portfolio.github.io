@@ -21,21 +21,21 @@
   </style>
   <defs>
     <linearGradient id="cr-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0E1116"/>
-      <stop offset="1" stop-color="#06070A"/>
+      <stop offset="0" stop-color="#141312"/>
+      <stop offset="1" stop-color="#0D0D0C"/>
     </linearGradient>
     <pattern id="cr-grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#FFFFFF" stroke-opacity=".035" stroke-width="1"/>
     </pattern>
     <radialGradient id="cr-glow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#2EE6A8" stop-opacity=".24"/>
-      <stop offset="1" stop-color="#2EE6A8" stop-opacity="0"/>
+      <stop offset="0" stop-color="#C4A484" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#C4A484" stop-opacity="0"/>
     </radialGradient>
     <marker id="cr-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#565F6C"/>
+      <path d="M0 0 10 5 0 10z" fill="#605B55"/>
     </marker>
     <marker id="cr-arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 10 5 0 10z" fill="#2EE6A8"/>
+      <path d="M0 0 10 5 0 10z" fill="#C4A484"/>
     </marker>
   </defs>
 
@@ -44,56 +44,56 @@
   <circle class="glow" cx="600" cy="330" r="340" fill="url(#cr-glow)"/>
 
   <g>
-    <rect x="112" y="268" width="130" height="168" rx="10" fill="#151A21" stroke="#2A313B"/>
-    <rect x="128" y="252" width="130" height="168" rx="10" fill="#151A21" stroke="#2A313B"/>
-    <rect x="144" y="236" width="130" height="168" rx="10" fill="#171C23" stroke="#2F3742"/>
-    <g fill="#2F3742">
+    <rect x="112" y="268" width="130" height="168" rx="10" fill="#191816" stroke="#2E2B28"/>
+    <rect x="128" y="252" width="130" height="168" rx="10" fill="#191816" stroke="#2E2B28"/>
+    <rect x="144" y="236" width="130" height="168" rx="10" fill="#1B1A18" stroke="#34302C"/>
+    <g fill="#34302C">
       <rect class="wk" x="166" y="268" width="86" height="7" rx="3.5"/>
       <rect class="wk" style="animation-delay:.6s" x="166" y="288" width="66" height="7" rx="3.5"/>
       <rect class="wk" style="animation-delay:1.2s" x="166" y="308" width="78" height="7" rx="3.5"/>
       <rect class="wk" style="animation-delay:1.8s" x="166" y="328" width="52" height="7" rx="3.5"/>
     </g>
-    <text x="193" y="470" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">CORPUS</text>
+    <text x="193" y="470" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#A8A29A">CORPUS</text>
   </g>
 
-  <path class="flow" d="M290 330 H 428" fill="none" stroke="#565F6C" stroke-opacity=".8" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#cr-ar)"/>
+  <path class="flow" d="M290 330 H 428" fill="none" stroke="#605B55" stroke-opacity=".8" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#cr-ar)"/>
 
   <g>
-    <circle class="ring" cx="560" cy="330" r="118" fill="none" stroke="#2A313B"/>
-    <g fill="#565F6C">
+    <circle class="ring" cx="560" cy="330" r="118" fill="none" stroke="#2E2B28"/>
+    <g fill="#605B55">
       <circle cx="512" cy="286" r="6"/><circle cx="576" cy="266" r="6"/>
       <circle cx="620" cy="316" r="6"/><circle cx="494" cy="356" r="6"/>
       <circle cx="548" cy="382" r="6"/><circle cx="608" cy="388" r="6"/>
       <circle cx="536" cy="326" r="6"/>
     </g>
-    <g fill="#2EE6A8">
+    <g fill="#C4A484">
       <circle class="blink" cx="576" cy="330" r="8"/><circle class="blink" style="animation-delay:1.1s" cx="530" cy="352" r="8"/>
     </g>
-    <text x="560" y="490" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">EMBEDDINGS</text>
+    <text x="560" y="490" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#A8A29A">EMBEDDINGS</text>
   </g>
 
-  <path class="flow" style="animation-delay:.45s" d="M690 330 H 818" fill="none" stroke="#565F6C" stroke-opacity=".8" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#cr-ar)"/>
+  <path class="flow" style="animation-delay:.45s" d="M690 330 H 818" fill="none" stroke="#605B55" stroke-opacity=".8" stroke-width="1.5" stroke-dasharray="4 6" marker-end="url(#cr-ar)"/>
 
   <g>
-    <rect class="glow" x="828" y="236" width="256" height="188" rx="12" fill="#0A0C10" stroke="#2EE6A8" stroke-opacity=".55"/>
-    <text x="858" y="286" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.4" fill="#2EE6A8">grade()</text>
-    <g fill="#2F3742">
+    <rect class="glow" x="828" y="236" width="256" height="188" rx="12" fill="#111110" stroke="#C4A484" stroke-opacity=".55"/>
+    <text x="858" y="286" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="15" letter-spacing="1.4" fill="#C4A484">grade()</text>
+    <g fill="#34302C">
       <rect class="wk" style="animation-delay:.3s" x="858" y="312" width="196" height="7" rx="3.5"/>
       <rect class="wk" style="animation-delay:.9s" x="858" y="332" width="160" height="7" rx="3.5"/>
       <rect class="wk" style="animation-delay:1.5s" x="858" y="352" width="176" height="7" rx="3.5"/>
     </g>
     <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13">
-      <text x="858" y="396" fill="#646C79">relevance</text>
-      <text x="1054" y="396" text-anchor="end" fill="#E9EBEE">0.42</text>
+      <text x="858" y="396" fill="#6F6A63">relevance</text>
+      <text x="1054" y="396" text-anchor="end" fill="#EEEAE3">0.42</text>
     </g>
-    <text x="956" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#9AA2AE">EVALUATOR</text>
+    <text x="956" y="470" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="14" letter-spacing="2.2" fill="#A8A29A">EVALUATOR</text>
   </g>
 
   <path class="flow-slow" d="M956 500 C 956 606, 700 620, 560 570 C 480 542, 466 494, 486 448"
-        fill="none" stroke="#2EE6A8" stroke-opacity=".7" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#cr-arg)"/>
-  <text x="740" y="628" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.2" fill="#2EE6A8">RE-QUERY IF LOW</text>
+        fill="none" stroke="#C4A484" stroke-opacity=".7" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#cr-arg)"/>
+  <text x="740" y="628" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.2" fill="#C4A484">RE-QUERY IF LOW</text>
 
-  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#646C79">
+  <g font-family="ui-monospace,'JetBrains Mono',monospace" font-size="13" letter-spacing="2.4" fill="#6F6A63">
     <text x="56" y="76">SELF-CORRECTING RETRIEVAL</text>
     <text x="1144" y="76" text-anchor="end">LANGCHAIN</text>
   </g>

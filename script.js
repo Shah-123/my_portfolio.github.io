@@ -1,8 +1,7 @@
 /* ==========================================================================
-   SHAHKAR AHMAD — Portfolio v5 "Agentic OS"
-   Terminal chrome, command palette, 3D agent graph, case studies, form.
-   Every animated path checks prefers-reduced-motion first.
-   Three.js is dynamically imported — a CDN or WebGL failure degrades to SVG.
+   SHAHKAR AHMAD — Portfolio v7
+   Theme, menu, command palette, case studies, project filters, contact form.
+   No framework, no dependencies; every animated path respects reduced motion.
    ========================================================================== */
 
 /* ─────────────────────────────────────────────────────────────
@@ -22,20 +21,16 @@ const CONFIG = {
   formspreeId: "YOUR_FORM_ID",
 
   email: "shahkarahmad342@gmail.com",
-  threeVersion: "0.169.0",
 };
 
 (function () {
   "use strict";
 
   const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const finePointer = window.matchMedia("(pointer: fine)");
-  const smallScreen = window.matchMedia("(max-width: 720px)");
   let reduced = motionQuery.matches;
 
   const $ = (sel, ctx) => (ctx || document).querySelector(sel);
   const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
-  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
 
   /* ── PENDING LINKS (CONFIG-driven) ───────────────────────── */
   function initPendingLinks() {
@@ -66,7 +61,7 @@ const CONFIG = {
   /* ── THEME ─────────────────────────────────────────────── */
   function applyThemeMeta(theme) {
     const meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#06070a" : "#f2f4f6");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#121110" : "#f6f3ee");
   }
 
   function initTheme() {
@@ -84,8 +79,6 @@ const CONFIG = {
       } catch (e) {
         /* private mode — theme just won't persist */
       }
-      // Let the agent graph re-read the palette.
-      document.dispatchEvent(new CustomEvent("themechange", { detail: { theme: next } }));
     });
   }
 
@@ -118,8 +111,8 @@ const CONFIG = {
   /* ── ACTIVE NAV LINK ───────────────────────────────────── */
   function initActiveNav() {
     const links = $$(".nav-link");
-    // The hero has no nav link, so reaching it clears the highlight.
-    const sections = $$("main section[id], .hero");
+    // The hero (#top) has no nav link, so reaching it clears the highlight.
+    const sections = $$("main section[id]");
     if (!links.length || !sections.length) return;
 
     const observer = new IntersectionObserver(
@@ -134,83 +127,6 @@ const CONFIG = {
     );
 
     sections.forEach((s) => observer.observe(s));
-  }
-
-  /* ── SKILL BARS ────────────────────────────────────────── */
-  function initBars() {
-    const bars = $$(".bar");
-    if (!bars.length) return;
-
-    bars.forEach((b) => b.style.setProperty("--lvl", b.dataset.level || "3"));
-
-    if (reduced) {
-      bars.forEach((b) => b.classList.add("is-lit"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-lit");
-          obs.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    bars.forEach((b) => observer.observe(b));
-  }
-
-  /* ── STAT COUNTERS ─────────────────────────────────────── */
-  function initCounters() {
-    const stats = $$("[data-count]");
-    if (!stats.length) return;
-
-    const render = (el, value) => {
-      const decimals = Number(el.dataset.decimals || 0);
-      el.textContent = decimals ? value.toFixed(decimals) : String(Math.round(value));
-      if (el.dataset.suffix) el.textContent += el.dataset.suffix;
-    };
-
-    // Values like a year read better placed than counted up to.
-    stats.forEach((el) => {
-      if (el.dataset.plain === "true") render(el, Number(el.dataset.count) || 0);
-    });
-
-    const animated = stats.filter((el) => el.dataset.plain !== "true");
-    if (reduced) {
-      animated.forEach((el) => render(el, Number(el.dataset.count) || 0));
-      return;
-    }
-
-    const run = (el) => {
-      const target = Number(el.dataset.count) || 0;
-      const decimals = Number(el.dataset.decimals || 0);
-      const duration = decimals ? 1400 : 1100;
-      const start = performance.now();
-
-      const step = (now) => {
-        const p = clamp((now - start) / duration, 0, 1);
-        const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p); // easeOutExpo
-        render(el, target * eased);
-        if (p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    };
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          run(entry.target);
-          obs.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    animated.forEach((el) => observer.observe(el));
   }
 
   /* ── CASE STUDY EXPANDERS ──────────────────────────────── */
@@ -279,42 +195,6 @@ const CONFIG = {
     });
   }
 
-  /* ── TIMELINE SPINE ────────────────────────────────────── */
-  function initTimeline() {
-    const tl = $("#timeline");
-    const fill = $("#timelineFill");
-    if (!tl || !fill) return;
-
-    if (reduced) {
-      fill.style.setProperty("--fill", "1");
-      return;
-    }
-
-    let ticking = false;
-
-    const update = () => {
-      const r = tl.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const start = vh * 0.82;
-      const span = r.height * 0.88;
-      fill.style.setProperty("--fill", clamp((start - r.top) / span, 0, 1).toFixed(4));
-      ticking = false;
-    };
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(update);
-        }
-      },
-      { passive: true }
-    );
-    window.addEventListener("resize", update, { passive: true });
-    update();
-  }
-
   /* ── COMMAND PALETTE ───────────────────────────────────── */
   function initPalette() {
     const overlay = $("#palette");
@@ -324,42 +204,42 @@ const CONFIG = {
     if (!overlay || !input || !list) return;
 
     const COMMANDS = [
-      { group: "navigate", icon: "01", label: "About", hint: "#about", go: "#about" },
-      { group: "navigate", icon: "02", label: "Selected work", hint: "#work", go: "#work" },
-      { group: "navigate", icon: "03", label: "Stack", hint: "#stack", go: "#stack" },
-      { group: "navigate", icon: "04", label: "Journey", hint: "#journey", go: "#journey" },
-      { group: "navigate", icon: "05", label: "Credentials", hint: "#credentials", go: "#credentials" },
-      { group: "navigate", icon: "06", label: "Contact", hint: "#contact", go: "#contact" },
+      { group: "Sections", icon: "→", label: "Selected work", hint: "Section", go: "#work" },
+      { group: "Sections", icon: "→", label: "About", hint: "Section", go: "#about" },
+      { group: "Sections", icon: "→", label: "Expertise", hint: "Section", go: "#expertise" },
+      { group: "Sections", icon: "→", label: "Experience and education", hint: "Section", go: "#experience" },
+      { group: "Sections", icon: "→", label: "Awards and certificates", hint: "Section", go: "#recognition" },
+      { group: "Sections", icon: "→", label: "Contact", hint: "Section", go: "#contact" },
 
-      { group: "projects", icon: "›", label: "MootCourtSimulator — argue a case against AI agents", hint: "2026", go: "#project-mootcourt", open: true },
-      { group: "projects", icon: "›", label: "Text-to-SQL with GRPO — execution-verified RL", hint: "2026", go: "#project-text2sql", open: true },
-      { group: "projects", icon: "›", label: "AI Content Factory — 10-agent pipeline (FYP)", hint: "2025–26", go: "#project-content-factory", open: true },
-      { group: "projects", icon: "›", label: "Live Agent Hub — AI personas", hint: "2025", go: "#project-live-agent-hub", open: true },
-      { group: "projects", icon: "›", label: "ChessMastermind — engine from scratch", hint: "2025", go: "#project-chess", open: true },
-      { group: "projects", icon: "›", label: "YouTube Video Summariser", hint: "2024", go: "#project-yt", open: true },
+      { group: "Projects", icon: "◆", label: "MootCourtSimulator — argue a case against AI agents", hint: "2026", go: "#project-mootcourt", open: true },
+      { group: "Projects", icon: "◆", label: "Text-to-SQL with GRPO — execution-verified RL", hint: "2026", go: "#project-text2sql", open: true },
+      { group: "Projects", icon: "◆", label: "AI Content Factory — 10-agent pipeline (FYP)", hint: "2025–26", go: "#project-content-factory", open: true },
+      { group: "Projects", icon: "◆", label: "Live Agent Hub — AI personas", hint: "2025", go: "#project-live-agent-hub", open: true },
+      { group: "Projects", icon: "◆", label: "ChessMastermind — engine from scratch", hint: "2025", go: "#project-chess", open: true },
+      { group: "Projects", icon: "◆", label: "YouTube Video Summariser", hint: "2024", go: "#project-yt", open: true },
 
-      { group: "credentials", icon: "★", label: "Honorable Mention — Top 5 of 35, GIK Institute", hint: "2026", go: "#credentials" },
-      { group: "credentials", icon: "✓", label: "Advanced AI Bootcamp — Grade B+", hint: "2026", go: "#credentials" },
-      { group: "credentials", icon: "⚑", label: "Qwenathon 2026 — participant, team Xtreme Coders", hint: "hackathon", go: "#credentials" },
+      { group: "Recognition", icon: "★", label: "Honorable Mention — Top 5 of 35, GIK Institute", hint: "2026", go: "#recognition" },
+      { group: "Recognition", icon: "✓", label: "Advanced AI Bootcamp — Grade B+", hint: "2026", go: "#recognition" },
+      { group: "Recognition", icon: "⚑", label: "Qwenathon 2026 — participant, team Xtreme Coders", hint: "Hackathon", go: "#recognition" },
 
-      { group: "skills", icon: "#", label: "LangGraph & LangChain", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "Multi-agent workflows", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "LLM fine-tuning — LoRA, QLoRA, GRPO", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "Hugging Face PEFT & TRL", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "Hybrid RAG & retrieval", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "Model Context Protocol", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "Python & TypeScript", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "FastAPI & Express.js", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "PostgreSQL & Drizzle", hint: "stack", go: "#stack" },
-      { group: "skills", icon: "#", label: "React & Tailwind", hint: "stack", go: "#stack" },
+      { group: "Expertise", icon: "#", label: "LangGraph & LangChain", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "Multi-agent workflows", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "LLM fine-tuning — LoRA, QLoRA, GRPO", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "Hugging Face PEFT & TRL", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "Hybrid RAG & retrieval", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "Model Context Protocol", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "Python & TypeScript", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "FastAPI & Express.js", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "PostgreSQL & Drizzle", hint: "Skill", go: "#expertise" },
+      { group: "Expertise", icon: "#", label: "React & Tailwind", hint: "Skill", go: "#expertise" },
 
-      { group: "links", icon: "↗", label: "GitHub — Shah-123", hint: "external", url: "https://github.com/Shah-123" },
-      { group: "links", icon: "↗", label: "LinkedIn — Shahkar Ahmad", hint: "external", url: "https://www.linkedin.com/in/shahkar-ahmad-730b41279/" },
-      { group: "links", icon: "↓", label: "Download CV (PDF)", hint: "file", url: "./assets/Shahkar%20Ahmad%20Shah.pdf" },
-      { group: "links", icon: "@", label: "Email shahkarahmad342@gmail.com", hint: "mailto", url: "mailto:" + CONFIG.email },
+      { group: "Links", icon: "↗", label: "GitHub — Shah-123", hint: "External", url: "https://github.com/Shah-123" },
+      { group: "Links", icon: "↗", label: "LinkedIn — Shahkar Ahmad", hint: "External", url: "https://www.linkedin.com/in/shahkar-ahmad-730b41279/" },
+      { group: "Links", icon: "↓", label: "Download CV (PDF)", hint: "PDF", url: "./assets/Shahkar%20Ahmad%20Shah.pdf" },
+      { group: "Links", icon: "@", label: "Email shahkarahmad342@gmail.com", hint: "Email", url: "mailto:" + CONFIG.email },
 
-      { group: "actions", icon: "◐", label: "Toggle colour theme", hint: "action", fn: () => $("#themeToggle")?.click() },
-      { group: "actions", icon: "↑", label: "Back to top", hint: "action", fn: () => window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }) },
+      { group: "Actions", icon: "◐", label: "Toggle colour theme", hint: "Action", fn: () => $("#themeToggle")?.click() },
+      { group: "Actions", icon: "↑", label: "Back to top", hint: "Action", fn: () => window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }) },
     ];
 
     let results = [];
@@ -402,7 +282,7 @@ const CONFIG = {
       if (!results.length) {
         const li = document.createElement("li");
         li.className = "p-empty";
-        li.textContent = "// no matches — try 'rag', 'adalat', 'github'";
+        li.textContent = "No matches. Try 'rag', 'grpo' or 'github'.";
         list.appendChild(li);
         input.setAttribute("aria-expanded", "false");
         return;
@@ -414,7 +294,7 @@ const CONFIG = {
           currentGroup = r.cmd.group;
           const h = document.createElement("li");
           h.className = "p-group";
-          h.textContent = "// " + currentGroup;
+          h.textContent = currentGroup;
           h.setAttribute("role", "presentation");
           list.appendChild(h);
         }
@@ -585,9 +465,9 @@ const CONFIG = {
     const label = $(".btn-label", submit);
 
     const fields = [
-      { input: $("#cf-name"), err: $("#err-name"), test: (v) => v.trim().length >= 2, msg: "enter at least 2 characters" },
-      { input: $("#cf-email"), err: $("#err-email"), test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()), msg: "enter a valid email address" },
-      { input: $("#cf-message"), err: $("#err-message"), test: (v) => v.trim().length >= 12, msg: "tell me a little more (12+ characters)" },
+      { input: $("#cf-name"), err: $("#err-name"), test: (v) => v.trim().length >= 2, msg: "Enter at least 2 characters." },
+      { input: $("#cf-email"), err: $("#err-email"), test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()), msg: "Enter a valid email address." },
+      { input: $("#cf-message"), err: $("#err-message"), test: (v) => v.trim().length >= 12, msg: "Tell me a little more (12 characters or more)." },
     ].filter((f) => f.input);
 
     const setFieldError = (f, msg) => {
@@ -631,7 +511,7 @@ const CONFIG = {
 
       if (!ok) {
         status.className = "form-status is-err";
-        status.textContent = "// fix the highlighted fields and retry";
+        status.textContent = "Fix the highlighted fields and try again.";
         return;
       }
 
@@ -645,7 +525,7 @@ const CONFIG = {
         const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
         const body = encodeURIComponent(`${message}\n\n— ${name}\n${email}`);
         status.className = "form-status is-ok";
-        status.textContent = "// formspree not configured — opening your mail client instead";
+        status.textContent = "The form isn't connected yet, so your mail app is opening instead.";
         window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
         return;
       }
@@ -653,7 +533,7 @@ const CONFIG = {
       submit.disabled = true;
       if (label) label.textContent = "Sending…";
       status.className = "form-status";
-      status.textContent = "// transmitting…";
+      status.textContent = "Sending your message…";
 
       try {
         const res = await fetch(form.action, {
@@ -666,324 +546,21 @@ const CONFIG = {
           form.reset();
           fields.forEach((f) => setFieldError(f, ""));
           status.className = "form-status is-ok";
-          status.textContent = "// message sent — I'll reply within a day";
-          if (label) label.textContent = "Sent ✓";
+          status.textContent = "Message sent. I'll reply within a day.";
+          if (label) label.textContent = "Sent";
           window.setTimeout(() => {
             if (label) label.textContent = "Send message";
           }, 3200);
         } else {
           const data = await res.json().catch(() => ({}));
-          throw new Error(data?.error || `request failed (${res.status})`);
+          throw new Error(data?.error || `Request failed (${res.status})`);
         }
       } catch (err) {
         status.className = "form-status is-err";
-        status.textContent = `// ${err.message} — email me directly instead`;
+        status.textContent = `${err.message}. Email me directly instead.`;
         if (label) label.textContent = "Send message";
       } finally {
         submit.disabled = false;
-      }
-    });
-  }
-
-  /* ── 3D AGENT GRAPH ────────────────────────────────────── */
-  function hasWebGL() {
-    try {
-      const c = document.createElement("canvas");
-      return Boolean(
-        window.WebGLRenderingContext && (c.getContext("webgl2") || c.getContext("webgl"))
-      );
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function cssColor(varName, fallback) {
-    const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-    return v || fallback;
-  }
-
-  async function initAgentGraph() {
-    const panel = $("#graphPanel");
-    const canvas = $("#agentGraph");
-    if (!panel || !canvas) return;
-
-    const degrade = () => panel.classList.add("no-webgl");
-
-    if (!hasWebGL() || smallScreen.matches) {
-      degrade();
-      return;
-    }
-
-    let THREE;
-    try {
-      THREE = await import(
-        `https://cdn.jsdelivr.net/npm/three@${CONFIG.threeVersion}/build/three.module.js`
-      );
-    } catch (e) {
-      degrade(); // CDN blocked or offline — the SVG topology takes over
-      return;
-    }
-
-    const stage = canvas.parentElement;
-    let width = stage.clientWidth || 600;
-    let height = stage.clientHeight || 450;
-
-    let renderer;
-    try {
-      renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    } catch (e) {
-      degrade();
-      return;
-    }
-
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setSize(width, height, false);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(46, width / height, 0.1, 100);
-    camera.position.set(0, 0.4, 9.4);
-
-    const world = new THREE.Group();
-    scene.add(world);
-
-    /* Topology: one supervisor, ten workers on a Fibonacci sphere. */
-    const WORKERS = 10;
-    const RADIUS = 3.15;
-    const golden = Math.PI * (3 - Math.sqrt(5));
-    const workerPos = [];
-
-    for (let i = 0; i < WORKERS; i++) {
-      const y = 1 - (i / (WORKERS - 1)) * 2;
-      const r = Math.sqrt(Math.max(0, 1 - y * y));
-      const theta = golden * i;
-      workerPos.push(
-        new THREE.Vector3(Math.cos(theta) * r * RADIUS, y * RADIUS * 0.72, Math.sin(theta) * r * RADIUS)
-      );
-    }
-
-    const supervisorPos = new THREE.Vector3(0, 0, 0);
-
-    /* Materials — recoloured on theme change. */
-    const supMat = new THREE.MeshBasicMaterial({ color: cssColor("--signal", "#2ee6a8") });
-    const haloMat = new THREE.MeshBasicMaterial({
-      color: cssColor("--signal", "#2ee6a8"),
-      transparent: true,
-      opacity: 0.13,
-    });
-    const workerMat = new THREE.MeshBasicMaterial({ color: cssColor("--plasma", "#8b5cf6") });
-    const edgeMat = new THREE.LineBasicMaterial({
-      color: cssColor("--signal", "#2ee6a8"),
-      transparent: true,
-      opacity: 0.24,
-    });
-    const meshEdgeMat = new THREE.LineBasicMaterial({
-      color: cssColor("--plasma", "#8b5cf6"),
-      transparent: true,
-      opacity: 0.14,
-    });
-    const packetMat = new THREE.MeshBasicMaterial({ color: cssColor("--signal-hi", "#74f7cb") });
-
-    const sphere = new THREE.SphereGeometry(1, 22, 22);
-
-    const supervisor = new THREE.Mesh(sphere, supMat);
-    supervisor.scale.setScalar(0.3);
-    world.add(supervisor);
-
-    const halo = new THREE.Mesh(sphere, haloMat);
-    halo.scale.setScalar(0.56);
-    world.add(halo);
-
-    workerPos.forEach((p) => {
-      const m = new THREE.Mesh(sphere, workerMat);
-      m.position.copy(p);
-      m.scale.setScalar(0.115);
-      world.add(m);
-    });
-
-    /* Edges: supervisor → every worker, plus nearest-neighbour links. */
-    const edges = [];
-    const hubPts = [];
-    workerPos.forEach((p) => {
-      hubPts.push(supervisorPos.x, supervisorPos.y, supervisorPos.z, p.x, p.y, p.z);
-      edges.push([supervisorPos.clone(), p.clone()]);
-    });
-
-    const hubGeo = new THREE.BufferGeometry();
-    hubGeo.setAttribute("position", new THREE.Float32BufferAttribute(hubPts, 3));
-    world.add(new THREE.LineSegments(hubGeo, edgeMat));
-
-    const meshPts = [];
-    workerPos.forEach((p, i) => {
-      const distances = workerPos
-        .map((q, j) => ({ j, d: p.distanceTo(q) }))
-        .filter((o) => o.j !== i)
-        .sort((a, b) => a.d - b.d)
-        .slice(0, 2);
-
-      distances.forEach(({ j }) => {
-        if (j < i) return; // emit each pair once
-        const q = workerPos[j];
-        meshPts.push(p.x, p.y, p.z, q.x, q.y, q.z);
-        edges.push([p.clone(), q.clone()]);
-      });
-    });
-
-    const meshGeo = new THREE.BufferGeometry();
-    meshGeo.setAttribute("position", new THREE.Float32BufferAttribute(meshPts, 3));
-    world.add(new THREE.LineSegments(meshGeo, meshEdgeMat));
-
-    /* Packets travelling the graph. */
-    const packetGeo = new THREE.SphereGeometry(0.055, 8, 8);
-    const packets = Array.from({ length: 16 }, () => {
-      const mesh = new THREE.Mesh(packetGeo, packetMat);
-      world.add(mesh);
-      return {
-        mesh,
-        edge: Math.floor(Math.random() * edges.length),
-        t: Math.random(),
-        speed: 0.0035 + Math.random() * 0.0075,
-        dir: Math.random() < 0.5 ? 1 : -1,
-      };
-    });
-
-    /* Depth: a faint starfield behind the topology. */
-    const starPts = [];
-    for (let i = 0; i < 260; i++) {
-      starPts.push(
-        (Math.random() - 0.5) * 26,
-        (Math.random() - 0.5) * 18,
-        -3 - Math.random() * 16
-      );
-    }
-    const starGeo = new THREE.BufferGeometry();
-    starGeo.setAttribute("position", new THREE.Float32BufferAttribute(starPts, 3));
-    const starMat = new THREE.PointsMaterial({
-      color: 0x7f8b9c,
-      size: 0.035,
-      transparent: true,
-      opacity: 0.45,
-      sizeAttenuation: true,
-    });
-    scene.add(new THREE.Points(starGeo, starMat));
-
-    /* Pointer parallax */
-    let targetX = 0;
-    let targetY = 0;
-    let pointerX = 0;
-    let pointerY = 0;
-
-    if (!reduced) {
-      window.addEventListener(
-        "pointermove",
-        (e) => {
-          targetX = (e.clientX / window.innerWidth - 0.5) * 0.5;
-          targetY = (e.clientY / window.innerHeight - 0.5) * 0.34;
-        },
-        { passive: true }
-      );
-    }
-
-    /* Resize */
-    const resize = () => {
-      width = stage.clientWidth || width;
-      height = stage.clientHeight || height;
-      if (!width || !height) return;
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height, false);
-    };
-
-    if (typeof ResizeObserver === "function") {
-      new ResizeObserver(resize).observe(stage);
-    } else {
-      window.addEventListener("resize", resize, { passive: true });
-    }
-    resize();
-
-    /* Theme sync */
-    const recolor = () => {
-      supMat.color.set(cssColor("--signal", "#2ee6a8"));
-      haloMat.color.set(cssColor("--signal", "#2ee6a8"));
-      workerMat.color.set(cssColor("--plasma", "#8b5cf6"));
-      edgeMat.color.set(cssColor("--signal", "#2ee6a8"));
-      meshEdgeMat.color.set(cssColor("--plasma", "#8b5cf6"));
-      packetMat.color.set(cssColor("--signal-hi", "#74f7cb"));
-      if (reduced) renderer.render(scene, camera);
-    };
-    document.addEventListener("themechange", recolor);
-
-    /* Reduced motion: one composed frame, no loop, no rAF cost. */
-    if (reduced) {
-      world.rotation.set(-0.18, 0.6, 0);
-      packets.forEach((p) => {
-        const [a, b] = edges[p.edge];
-        p.mesh.position.lerpVectors(a, b, p.t);
-      });
-      renderer.render(scene, camera);
-      return;
-    }
-
-    /* Only animate while the hero is actually on screen. */
-    let visible = true;
-    if (typeof IntersectionObserver === "function") {
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((en) => {
-            visible = en.isIntersecting;
-          });
-        },
-        { threshold: 0 }
-      ).observe(panel);
-    }
-
-    let raf = 0;
-    const clock = new THREE.Clock();
-    const tmp = new THREE.Vector3();
-
-    const frame = () => {
-      raf = requestAnimationFrame(frame);
-      if (!visible || document.hidden) return;
-
-      const dt = Math.min(clock.getDelta(), 0.05);
-      const step = dt * 60; // normalise to ~60fps regardless of refresh rate
-
-      world.rotation.y += 0.0022 * step;
-
-      pointerX += (targetX - pointerX) * 0.045 * step;
-      pointerY += (targetY - pointerY) * 0.045 * step;
-      world.rotation.x = pointerY;
-      world.rotation.z = pointerX * 0.12;
-
-      const pulse = 1 + Math.sin(clock.elapsedTime * 1.6) * 0.06;
-      supervisor.scale.setScalar(0.3 * pulse);
-      halo.scale.setScalar(0.56 + Math.sin(clock.elapsedTime * 1.1) * 0.05);
-
-      packets.forEach((p) => {
-        p.t += p.speed * p.dir * step;
-        if (p.t > 1 || p.t < 0) {
-          p.edge = Math.floor(Math.random() * edges.length);
-          p.dir = Math.random() < 0.5 ? 1 : -1;
-          p.t = p.dir === 1 ? 0 : 1;
-        }
-        const [a, b] = edges[p.edge];
-        p.mesh.position.copy(tmp.lerpVectors(a, b, p.t));
-        // Arc slightly outward so packets read as traffic, not a straight line.
-        p.mesh.position.multiplyScalar(1 + Math.sin(p.t * Math.PI) * 0.06);
-      });
-
-      renderer.render(scene, camera);
-    };
-
-    frame();
-
-    /* Free the GPU when the tab goes away. */
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        cancelAnimationFrame(raf);
-        raf = 0;
-      } else if (!raf && !reduced) {
-        clock.getDelta();
-        frame();
       }
     });
   }
@@ -1000,31 +577,17 @@ const CONFIG = {
     initTheme();
     initMenu();
     initActiveNav();
-    initBars();
-    initCounters();
     initCases();
     initLogRows();
     initFilters();
-    initTimeline();
     initPalette();
     initForm();
     initYear();
-
-    // 3D is independent — never let it block the page.
-    initAgentGraph().catch(() => {
-      const panel = $("#graphPanel");
-      if (panel) panel.classList.add("no-webgl");
-    });
   }
 
   // Keep up if the user flips the OS motion setting mid-session.
   const onMotionChange = () => {
     reduced = motionQuery.matches;
-    if (reduced) {
-      $$(".bar").forEach((b) => b.classList.add("is-lit"));
-      const fill = $("#timelineFill");
-      if (fill) fill.style.setProperty("--fill", "1");
-    }
   };
 
   if (motionQuery.addEventListener) {
