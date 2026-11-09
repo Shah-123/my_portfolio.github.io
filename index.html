@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
@@ -73,38 +73,24 @@
 </head>
 
 <body>
-  <!-- Boot overlay is display:none until JS opts in, so a script failure can never trap the page. -->
-  <div class="boot" id="boot" aria-hidden="true">
-    <pre class="boot-log" id="bootLog"></pre>
-    <div class="boot-bar"><i id="bootBar"></i></div>
-  </div>
-
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="grid-bg" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="progress" id="progress" aria-hidden="true"><i></i></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ═══════════════════════ HEADER ═══════════════════════ -->
   <header class="site-header" id="header">
     <nav class="nav shell" aria-label="Primary">
       <a class="wordmark" href="#top">
-        <span class="wm-prompt" aria-hidden="true">›</span><span class="wm-user">shahkar</span><span
-          class="wm-at" aria-hidden="true">@</span><span class="wm-host">ai</span><span class="wm-caret"
-          aria-hidden="true"></span>
-        <span class="sr-only">Shahkar Ahmad — home</span>
+        Shahkar Ahmad
       </a>
 
       <ul class="nav-list" id="navList">
-        <li><a class="nav-link" href="#about"><i>01</i> About</a></li>
-        <li><a class="nav-link" href="#work"><i>02</i> Work</a></li>
-        <li><a class="nav-link" href="#stack"><i>03</i> Stack</a></li>
-        <li><a class="nav-link" href="#journey"><i>04</i> Journey</a></li>
-        <li><a class="nav-link" href="#credentials"><i>05</i> Credentials</a></li>
-        <li><a class="nav-link" href="#contact"><i>06</i> Contact</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#work">Work</a></li>
+        <li><a class="nav-link" href="#stack">Stack</a></li>
+        <li><a class="nav-link" href="#journey">Journey</a></li>
+        <li><a class="nav-link" href="#credentials">Credentials</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-tools">
@@ -140,12 +126,12 @@
   <!-- Mobile menu -->
   <div class="menu" id="menu" aria-hidden="true">
     <p class="menu-label">// navigate</p>
-    <a href="#about"><i>01</i> About</a>
-    <a href="#work"><i>02</i> Work</a>
-    <a href="#stack"><i>03</i> Stack</a>
-    <a href="#journey"><i>04</i> Journey</a>
-    <a href="#credentials"><i>05</i> Credentials</a>
-    <a href="#contact"><i>06</i> Contact</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#stack">Stack</a>
+    <a href="#journey">Journey</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact">Contact</a>
     <div class="menu-foot">
       <a class="link" href="https://github.com/Shah-123" target="_blank" rel="noopener">GitHub</a>
       <a class="link" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
@@ -182,38 +168,32 @@
         <div class="hero-grid">
 
           <div class="hero-content">
-            <p class="term-line" data-type="&gt; whoami --verbose">
-              <span class="term-prompt" aria-hidden="true">›</span>
-              <span class="term-text">whoami --verbose</span>
-            </p>
-
             <h1 class="hero-name" id="heroName">
-              <span class="line"><span class="word" data-type>Shahkar</span></span>
-              <span class="line"><span class="word accent" data-type>Ahmad</span></span>
+              <span class="line"><span class="word">Shahkar</span></span>
+              <span class="line"><span class="word accent">Ahmad</span></span>
             </h1>
 
             <p class="hero-role">
               <span class="role-primary">AI Engineer</span>
-              <span class="role-sep" aria-hidden="true">//</span>
+              <span class="role-sep" aria-hidden="true">·</span>
               <span class="role-tags">LLM Fine-Tuning · RAG · Multi-Agent Systems</span>
             </p>
 
-            <p class="hero-lede" data-type>
-              I build <strong>LLM systems that are measured, not demoed</strong> —
+            <p class="hero-lede">
+              I build <strong>LLM systems and test them before I trust them</strong>:
               multi-agent graphs with verified retrieval, RL fine-tuning with execution-checked
               rewards, and evaluation gates that catch unsupported claims before they ship.
             </p>
 
             <div class="hero-actions">
-              <a class="btn" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf" data-magnetic>
+              <a class="btn" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
                   stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
                 <span>Download CV</span>
               </a>
-              <a class="btn btn--ghost" href="#work" data-magnetic>
-                <span class="btn-prompt" aria-hidden="true">›</span>
+              <a class="btn btn--ghost" href="#work">
                 <span>View work</span>
               </a>
             </div>
@@ -249,10 +229,8 @@
           <!-- Live agent graph -->
           <div class="graph-panel panel" id="graphPanel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ graph://agent-topology ]</span>
-              <span class="panel-live"><span class="led" aria-hidden="true"></span>live</span>
-            </div>
+              <span class="panel-title">Agent topology</span>
+              </div>
 
             <div class="graph-stage">
               <canvas id="agentGraph" aria-hidden="true"></canvas>
@@ -287,40 +265,20 @@
 
         </div>
 
-        <p class="scroll-cue"><span class="scroll-cue-track" aria-hidden="true"></span> scroll</p>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════ TICKER ═══════════════════════ -->
-    <section class="ticker" aria-label="Core technologies">
-      <div class="ticker-track">
-        <div class="ticker-group">
-          <span>LangGraph</span><i>//</i><span>Multi-Agent</span><i>//</i><span>LoRA / QLoRA</span><i>//</i><span>GRPO</span><i>//</i><span>Hugging Face TRL</span><i>//</i><span>PEFT</span><i>//</i>
-          <span>Hybrid RAG</span><i>//</i><span>BM25 + RRF</span><i>//</i><span>LLM Reranking</span><i>//</i><span>FAISS</span><i>//</i><span>ChromaDB</span><i>//</i><span>DeepEval</span><i>//</i>
-          <span>PyTorch</span><i>//</i><span>Python</span><i>//</i><span>SQL</span><i>//</i><span>FastAPI</span><i>//</i><span>Gradio</span><i>//</i><span>Ollama</span><i>//</i>
-        </div>
-        <div class="ticker-group" aria-hidden="true">
-          <span>LangGraph</span><i>//</i><span>Multi-Agent</span><i>//</i><span>LoRA / QLoRA</span><i>//</i><span>GRPO</span><i>//</i><span>Hugging Face TRL</span><i>//</i><span>PEFT</span><i>//</i>
-          <span>Hybrid RAG</span><i>//</i><span>BM25 + RRF</span><i>//</i><span>LLM Reranking</span><i>//</i><span>FAISS</span><i>//</i><span>ChromaDB</span><i>//</i><span>DeepEval</span><i>//</i>
-          <span>PyTorch</span><i>//</i><span>Python</span><i>//</i><span>SQL</span><i>//</i><span>FastAPI</span><i>//</i><span>Gradio</span><i>//</i><span>Ollama</span><i>//</i>
-        </div>
       </div>
     </section>
 
     <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
     <section id="about" aria-labelledby="aboutTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">01</span> // about</p>
-          <h2 class="section-title" id="aboutTitle">Agents that <em>reason</em>, retrieval that <em>defends itself</em>
-          </h2>
+        <div class="section-head">
+          <h2 class="section-title" id="aboutTitle">About me. <em>I build LLM systems you can check.</em></h2>
         </div>
 
         <div class="about-grid">
-          <div class="panel reveal">
+          <div class="panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ about.md ]</span>
+              <span class="panel-title">About</span>
             </div>
             <div class="panel-body">
               <p class="about-statement">
@@ -340,7 +298,7 @@
                 question isn't finished.
               </p>
               <p class="about-note">
-                <span class="note-key">currently</span> BS CS (AI Specialisation), University of
+                <span class="note-key">Currently</span> BS CS (AI Specialisation), University of
                 Peshawar: all graduation requirements completed, degree conferral pending. Applying
                 for a research Master's in China. Research interests: LLM fine-tuning and adaptation,
                 RAG, LLM reasoning and evaluation, reliable multi-agent systems, and hallucination
@@ -349,33 +307,32 @@
             </div>
           </div>
 
-          <dl class="spec panel reveal">
+          <dl class="spec panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ profile.env ]</span>
+              <span class="panel-title">Profile</span>
             </div>
             <div class="spec-row">
-              <dt class="spec-key">role</dt>
+              <dt class="spec-key">Role</dt>
               <dd class="spec-val">AI Engineer</dd>
               <dd class="spec-note">LLMs · fine-tuning · RAG · multi-agent</dd>
             </div>
             <div class="spec-row">
-              <dt class="spec-key">experience</dt>
+              <dt class="spec-key">Experience</dt>
               <dd class="spec-val">Intern</dd>
               <dd class="spec-note">AI Engineer Intern — The Nerd Camp, Jan → May 2026</dd>
             </div>
             <div class="spec-row">
-              <dt class="spec-key">education</dt>
+              <dt class="spec-key">Education</dt>
               <dd class="spec-val">BS CS</dd>
               <dd class="spec-note">AI Specialisation — University of Peshawar, 2022 → 2026 · CGPA 3.13</dd>
             </div>
             <div class="spec-row">
-              <dt class="spec-key">projects</dt>
+              <dt class="spec-key">Projects</dt>
               <dd class="spec-val" data-count="14" data-suffix="+">0</dd>
               <dd class="spec-note">Agents · RAG · ML · Data</dd>
             </div>
             <div class="spec-row">
-              <dt class="spec-key">based_in</dt>
+              <dt class="spec-key">Based in</dt>
               <dd class="spec-val">Peshawar</dd>
               <dd class="spec-note">Pakistan · open to remote</dd>
             </div>
@@ -387,24 +344,18 @@
     <!-- ═══════════════════════ WORK ═══════════════════════ -->
     <section id="work" aria-labelledby="workTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">02</span> // selected work</p>
-          <h2 class="section-title" id="workTitle">Six systems, <em>one thread</em></h2>
+        <div class="section-head">
+          <h2 class="section-title" id="workTitle">Selected projects</h2>
           <p class="section-note">
-            Agents that reason under a supervisor, retrieval that grades and corrects itself,
-            and pipelines that stop for a human before they commit.
+            Multi-agent systems, verified retrieval and RL fine-tuning, each with an evaluation
+            behind it.
           </p>
         </div>
 
         <div class="cases">
 
           <!-- ── 01 · MOOTCOURT SIMULATOR ─────────────────── -->
-          <article class="case panel case--featured reveal" id="project-mootcourt" data-cat="agents rag">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://mootcourt-simulator ]</span>
-              <span class="panel-year">2026</span>
-            </div>
+          <article class="case panel case--featured" id="project-mootcourt" data-cat="agents rag">
 
             <div class="case-main">
               <div class="case-media">
@@ -416,7 +367,7 @@
 
               <div class="case-head">
                 <h3 class="case-title">MootCourtSimulator</h3>
-                <p class="case-sub">Multi-agent LLM system with verified legal retrieval — argue a live case against AI agents</p>
+                <p class="case-sub"><span class="case-year">2026</span> · Multi-agent LLM system with verified legal retrieval — argue a live case against AI agents</p>
                 <p class="case-award">
                   <span class="award-star" aria-hidden="true">★</span>
                   Honorable Mention — Top 5 of 35 projects · GIK Institute, Aug 2026
@@ -536,24 +487,18 @@
           </article>
 
           <!-- ── 02 · TEXT-TO-SQL WITH GRPO ───────────────── -->
-          <article class="case panel case--featured reveal" id="project-text2sql" data-cat="llm">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://text2sql-grpo ]</span>
-              <span class="panel-year">2026</span>
-            </div>
+          <article class="case panel case--featured" id="project-text2sql" data-cat="llm">
 
             <div class="case-main">
               <div class="case-media">
                 <img src="./assets/covers/text2sql-grpo.svg" width="1200" height="750" loading="lazy"
                   decoding="async"
                   alt="A policy model samples a group of SQL queries, each is executed against SQLite, and execution-matched rewards flow back to the policy" />
-                <span class="case-idx">02</span>
               </div>
 
               <div class="case-head">
                 <h3 class="case-title">Text-to-SQL with GRPO</h3>
-                <p class="case-sub">Reinforcement learning with execution-verified rewards</p>
+                <p class="case-sub"><span class="case-year">2026</span> · Reinforcement learning with execution-verified rewards</p>
                 <p class="case-desc">
                   Natural-language questions in, SQL out, and the reward is whether the query
                   actually returns the right rows. Qwen2.5-Coder-3B fine-tuned with
@@ -622,12 +567,7 @@
           </article>
 
           <!-- ── 03 · AI CONTENT FACTORY ──────────────────── -->
-          <article class="case panel reveal" id="project-content-factory" data-cat="agents llm">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://ai-content-factory ]</span>
-              <span class="panel-year">2025 — 2026</span>
-            </div>
+          <article class="case panel" id="project-content-factory" data-cat="agents llm">
 
             <div class="case-main">
               <div class="case-media">
@@ -639,7 +579,7 @@
 
               <div class="case-head">
                 <h3 class="case-title">AI Content Factory</h3>
-                <p class="case-sub">Evaluation-gated multi-agent content generation</p>
+                <p class="case-sub"><span class="case-year">2025 — 2026</span> · Evaluation-gated multi-agent content generation</p>
                 <p class="case-desc">
                   One prompt in, a full media kit out. A ten-agent LangGraph pipeline researches,
                   writes, fact-checks and renders blog posts, social campaigns, podcasts and video.
@@ -712,23 +652,17 @@
           </article>
 
           <!-- ── 04 · LIVE AGENT HUB ──────────────────────── -->
-          <article class="case panel reveal" id="project-live-agent-hub" data-cat="agents">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://live-agent-hub ]</span>
-              <span class="panel-year">2025</span>
-            </div>
+          <article class="case panel" id="project-live-agent-hub" data-cat="agents">
 
             <div class="case-main">
               <div class="case-media">
                 <img src="./assets/covers/live-agent-hub.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="A live broadcast node radiating messages to eight distinct AI persona avatars" />
-                <span class="case-idx">04</span>
               </div>
 
               <div class="case-head">
                 <h3 class="case-title">Live Agent Hub</h3>
-                <p class="case-sub">AI streamer practice platform</p>
+                <p class="case-sub"><span class="case-year">2025</span> · AI streamer practice platform</p>
                 <p class="case-desc">
                   A full-stack simulator of a live Twitch chat populated by eight distinct AI
                   personas — built so streamers can practise against a room that behaves like
@@ -792,23 +726,17 @@
           </article>
 
           <!-- ── 05 · CHESSMASTERMIND ─────────────────────── -->
-          <article class="case panel reveal" id="project-chess" data-cat="ml">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://chessmastermind ]</span>
-              <span class="panel-year">2025</span>
-            </div>
+          <article class="case panel" id="project-chess" data-cat="ml">
 
             <div class="case-main">
               <div class="case-media">
                 <img src="./assets/covers/chess-agent.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="A minimax search tree with alpha-beta pruned branches and a position evaluation bar" />
-                <span class="case-idx">05</span>
               </div>
 
               <div class="case-head">
                 <h3 class="case-title">ChessMastermind</h3>
-                <p class="case-sub">Custom chess AI engine — written from scratch</p>
+                <p class="case-sub"><span class="case-year">2025</span> · Custom chess AI engine — written from scratch</p>
                 <p class="case-desc">
                   No LLM, no engine library doing the thinking. A search engine built from first
                   principles: minimax with alpha-beta pruning, iterative deepening, aspiration
@@ -867,23 +795,17 @@
           </article>
 
           <!-- ── 06 · YOUTUBE SUMMARISER ──────────────────── -->
-          <article class="case panel reveal" id="project-yt" data-cat="llm">
-            <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ project://yt-summariser ]</span>
-              <span class="panel-year">2024</span>
-            </div>
+          <article class="case panel" id="project-yt" data-cat="llm">
 
             <div class="case-main">
               <div class="case-media">
                 <img src="./assets/covers/yt-summarizer.svg" width="1200" height="750" loading="lazy" decoding="async"
                   alt="An audio waveform condensing into structured chapter summaries" />
-                <span class="case-idx">06</span>
               </div>
 
               <div class="case-head">
                 <h3 class="case-title">YouTube Video Summariser</h3>
-                <p class="case-sub">Transcript to structured brief</p>
+                <p class="case-sub"><span class="case-year">2024</span> · Transcript to structured brief</p>
                 <p class="case-desc">
                   An LLM pipeline that pulls a video transcript and returns chapter summaries,
                   key insights and action items — structure instead of a wall of text.
@@ -925,20 +847,20 @@
         </div>
 
         <!-- ── MORE WORK ──────────────────────────────────── -->
-        <div class="more reveal">
+        <div class="more">
           <div class="more-head">
-            <h3 class="more-title"><span class="eyebrow-idx" aria-hidden="true">›</span> more_work.log</h3>
+            <h3 class="more-title">More projects</h3>
             <div class="filters" role="group" aria-label="Filter additional projects by category">
-              <button class="filter is-active" data-filter="all" aria-pressed="true">all</button>
-              <button class="filter" data-filter="rag" aria-pressed="false">rag</button>
-              <button class="filter" data-filter="ml" aria-pressed="false">ml</button>
-              <button class="filter" data-filter="data" aria-pressed="false">data</button>
+              <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+              <button class="filter" data-filter="rag" aria-pressed="false">RAG</button>
+              <button class="filter" data-filter="ml" aria-pressed="false">ML</button>
+              <button class="filter" data-filter="data" aria-pressed="false">Data</button>
             </div>
           </div>
 
           <div class="log panel" id="moreGrid">
             <div class="log-head" aria-hidden="true">
-              <span>idx</span><span>project</span><span>stack</span><span>year</span><span>link</span><span></span>
+              <span>No.</span><span>Project</span><span>Stack</span><span>Year</span><span>Link</span><span></span>
             </div>
 
             <div class="log-item is-open" data-cat="rag">
@@ -967,7 +889,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/corrective-rag.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="Retrieval pipeline with a grading loop that re-queries the vector store" />
-                      <figcaption>fig. 07 — corrective retrieval loop</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1020,7 +941,6 @@
                       <img src="./assets/covers/deep-learning.svg" width="1200" height="750" loading="lazy"
                         decoding="async"
                         alt="Convolutional network: stacked feature-map volumes narrowing into a dense classifier" />
-                      <figcaption>fig. 08 — conv stack to classifier</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1069,7 +989,6 @@
                       <img src="./assets/covers/polio-monitor.svg" width="1200" height="750" loading="lazy"
                         decoding="async"
                         alt="Field monitoring records feeding a forecast model whose output drives campaign resource allocation" />
-                      <figcaption>fig. 09 — field data to allocation</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1116,7 +1035,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/odi-cricket.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="Scatter plot of match data with a fitted regression line and prediction band" />
-                      <figcaption>fig. 10 — match state to projected total</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1165,7 +1083,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/heart-failure.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="ECG trace above a clinical risk gauge and feature readouts" />
-                      <figcaption>fig. 11 — clinical features to risk score</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1213,7 +1130,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/house-price.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="Ensemble of decision trees producing a price estimate with feature importances" />
-                      <figcaption>fig. 12 — boosted trees, explained</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1261,7 +1177,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/playstore-eda.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="Bubble chart of app installs against rating, sized by review volume" />
-                      <figcaption>fig. 13 — installs vs rating</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1309,7 +1224,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/power-bi.svg" width="1200" height="750" loading="lazy" decoding="async"
                         alt="Business intelligence dashboard with KPI tiles, a bar chart and a donut breakdown" />
-                      <figcaption>fig. 14 — KPI tiles and breakdowns</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1357,7 +1271,6 @@
                     <figure class="log-fig">
                       <img src="./assets/covers/netflix-eda.svg" width="1200" height="750" loading="lazy"
                         decoding="async" alt="Stacked area chart of catalogue growth by year beside a genre distribution" />
-                      <figcaption>fig. 15 — catalogue growth by year</figcaption>
                     </figure>
                     <div>
                       <ul class="log-points">
@@ -1388,9 +1301,8 @@
     <!-- ═══════════════════════ STACK ═══════════════════════ -->
     <section id="stack" aria-labelledby="stackTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">03</span> // stack</p>
-          <h2 class="section-title" id="stackTitle">What I <em>reach for</em></h2>
+        <div class="section-head">
+          <h2 class="section-title" id="stackTitle">Skills and tools</h2>
           <p class="section-note">
             Grouped by where it sits in the pipeline — models, fine-tuning and retrieval first,
             then the plumbing that ships it.
@@ -1399,10 +1311,9 @@
 
         <div class="stack-grid">
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ llms_and_agents ]</span>
+              <span class="panel-title">LLMs and agents</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1438,10 +1349,9 @@
             </div>
           </div>
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ llm_fine_tuning ]</span>
+              <span class="panel-title">LLM fine-tuning</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1467,10 +1377,9 @@
             </div>
           </div>
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ rag_and_retrieval ]</span>
+              <span class="panel-title">RAG and retrieval</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1501,10 +1410,9 @@
             </div>
           </div>
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ machine_learning ]</span>
+              <span class="panel-title">Machine learning</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1535,10 +1443,9 @@
             </div>
           </div>
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ languages_and_backend ]</span>
+              <span class="panel-title">Languages and backend</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1574,10 +1481,9 @@
             </div>
           </div>
 
-          <div class="stack-col panel reveal">
+          <div class="stack-col panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ frontend_and_tools ]</span>
+              <span class="panel-title">Frontend and tools</span>
             </div>
             <div class="panel-body">
               <div class="skill">
@@ -1620,19 +1526,17 @@
     <!-- ═══════════════════════ JOURNEY ═══════════════════════ -->
     <section id="journey" aria-labelledby="journeyTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">04</span> // journey</p>
-          <h2 class="section-title" id="journeyTitle">Four years, <em>compounding</em></h2>
+        <div class="section-head">
+          <h2 class="section-title" id="journeyTitle">Experience and education</h2>
           <p class="section-note">
-            From exploratory data analysis to supervisor-routed agent graphs with evaluation
-            harnesses. Same engineer, rising altitude.
+            From exploratory data analysis in 2024 to fine-tuning and multi-agent research in 2026.
           </p>
         </div>
 
         <ol class="timeline" id="timeline">
           <span class="timeline-spine" aria-hidden="true"><i id="timelineFill"></i></span>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">Oct 2022</p>
@@ -1644,7 +1548,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2024</p>
@@ -1658,7 +1562,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2025</p>
@@ -1672,7 +1576,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2025 — 2026</p>
@@ -1687,7 +1591,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2025 → present</p>
@@ -1702,7 +1606,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">Jan — May 2026</p>
@@ -1715,7 +1619,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2026</p>
@@ -1729,7 +1633,7 @@
             </div>
           </li>
 
-          <li class="tl-item reveal">
+          <li class="tl-item">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">Aug 2026</p>
@@ -1744,7 +1648,7 @@
             </div>
           </li>
 
-          <li class="tl-item tl-item--now reveal">
+          <li class="tl-item tl-item--now">
             <span class="tl-node" aria-hidden="true"></span>
             <div class="tl-card panel">
               <p class="tl-date">2026 → <span class="tl-live"><span class="led" aria-hidden="true"></span>current</span></p>
@@ -1764,22 +1668,20 @@
     <!-- ═══════════════════════ CREDENTIALS ═══════════════════════ -->
     <section id="credentials" aria-labelledby="credsTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">05</span> // credentials</p>
-          <h2 class="section-title" id="credsTitle">Paper that <em>backs it up</em></h2>
+        <div class="section-head">
+          <h2 class="section-title" id="credsTitle">Awards and certificates</h2>
           <p class="section-note">
-            Awards, certifications and hackathon floors — dated, signed and issued by
-            someone other than me.
+            Awards, certificates and hackathons, each issued by the organiser.
           </p>
         </div>
 
         <div class="creds-gallery">
-          <figure class="cred-card panel reveal">
+          <figure class="cred-card panel">
             <div class="cred-media">
               <img src="./assets/credentials/mootcourt-honorable-mention.jpeg" width="1600" height="1202"
                 loading="lazy" decoding="async"
                 alt="Certificate of Honorable Mention awarded to the project MootCourtSimulator, selected among the top five of thirty-five participating projects" />
-              <span class="cred-tag cred-tag--award">award</span>
+              <span class="cred-tag cred-tag--award">Award</span>
             </div>
             <figcaption class="cred-body">
               <p class="cred-name">Honorable Mention — Top 5 of 35</p>
@@ -1788,12 +1690,12 @@
             </figcaption>
           </figure>
 
-          <figure class="cred-card panel reveal">
+          <figure class="cred-card panel">
             <div class="cred-media">
               <img src="./assets/credentials/ai-bootcamp-completion.jpeg" width="1600" height="1203"
                 loading="lazy" decoding="async"
                 alt="Certificate of completion of the Advanced AI Bootcamp awarded to Shahkar Ahmad with an overall grade of B plus" />
-              <span class="cred-tag">certification</span>
+              <span class="cred-tag">Certificate</span>
             </div>
             <figcaption class="cred-body">
               <p class="cred-name">Advanced AI Bootcamp — Grade B+</p>
@@ -1802,12 +1704,12 @@
             </figcaption>
           </figure>
 
-          <figure class="cred-card panel reveal">
+          <figure class="cred-card panel">
             <div class="cred-media">
               <img src="./assets/credentials/qwenathon-2026-participation.png" width="1600" height="1203"
                 loading="lazy" decoding="async"
                 alt="Qwenathon 2026 certificate of participation awarded to Shahkar Ahmad Shah, team Xtreme Coders, project Moot Court AI" />
-              <span class="cred-tag cred-tag--hack">hackathon</span>
+              <span class="cred-tag cred-tag--hack">Hackathon</span>
             </div>
             <figcaption class="cred-body">
               <p class="cred-name">Qwenathon 2026 — Participant</p>
@@ -1818,18 +1720,18 @@
         </div>
 
         <ul class="creds-list">
-          <li class="cred-line reveal"><span class="cred-key">degree</span> BS Computer Science — AI
+          <li class="cred-line"><span class="cred-key">Degree</span> BS Computer Science — AI
             Specialisation · University of Peshawar · 2022 — 2026 · CGPA 3.13 / 4.00 · all requirements
             completed, conferral pending</li>
-          <li class="cred-line reveal"><span class="cred-key">bootcamp</span> Advanced AI Bootcamp (7 weeks) ·
+          <li class="cred-line"><span class="cred-key">Bootcamp</span> Advanced AI Bootcamp (7 weeks) ·
             GIK Institute · Aug 2026</li>
-          <li class="cred-line reveal"><span class="cred-key">fsc</span> Government College Peshawar ·
+          <li class="cred-line"><span class="cred-key">FSc</span> Government College Peshawar ·
             998 / 1100 (90.7%) · BISE Peshawar · 2022</li>
-          <li class="cred-line reveal"><span class="cred-key">english</span> IELTS Academic scheduled for
+          <li class="cred-line"><span class="cred-key">English</span> IELTS Academic scheduled for
             December 2026</li>
-          <li class="cred-line reveal"><span class="cred-key">languages</span> Urdu · Pashto (native) · English
+          <li class="cred-line"><span class="cred-key">Languages</span> Urdu · Pashto (native) · English
             (professional)</li>
-          <li class="cred-line reveal"><span class="cred-key">references</span> Dr. Syed Muhammad Asim Jalal
+          <li class="cred-line"><span class="cred-key">References</span> Dr. Syed Muhammad Asim Jalal
             (FYP supervisor) &amp; Dr. Rahman Ali · Assistant Professors, Dept. of Computer Science,
             University of Peshawar · letters linked in the CV</li>
         </ul>
@@ -1839,15 +1741,9 @@
     <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
     <section id="contact" class="contact" aria-labelledby="contactTitle">
       <div class="shell">
-        <div class="section-head reveal">
-          <p class="eyebrow"><span class="eyebrow-idx">06</span> // contact</p>
-        </div>
-
         <div class="contact-grid">
-          <div class="reveal">
-            <h2 class="contact-title" id="contactTitle">
-              Let's build something <em>intelligent</em>
-            </h2>
+          <div>
+            <h2 class="contact-title" id="contactTitle">Get in touch</h2>
             <p class="contact-lede">
               Applying for research Master's programmes in China, and open to research
               collaborations, AI / ML roles, and straightforward conversations about where LLM
@@ -1858,59 +1754,57 @@
 
             <div class="channels">
               <a class="channel" href="https://github.com/Shah-123" target="_blank" rel="noopener">
-                <span class="channel-key">github</span>
+                <span class="channel-key">GitHub</span>
                 <span class="channel-val">Shah-123</span>
                 <span class="channel-arrow" aria-hidden="true">↗</span>
               </a>
               <a class="channel" href="https://www.linkedin.com/in/shahkar-ahmad-730b41279/" target="_blank"
                 rel="noopener">
-                <span class="channel-key">linkedin</span>
+                <span class="channel-key">LinkedIn</span>
                 <span class="channel-val">shahkar-ahmad</span>
                 <span class="channel-arrow" aria-hidden="true">↗</span>
               </a>
               <a class="channel" href="tel:+923329507635">
-                <span class="channel-key">phone</span>
+                <span class="channel-key">Phone</span>
                 <span class="channel-val">+92 332 9507635</span>
                 <span class="channel-arrow" aria-hidden="true">↗</span>
               </a>
               <span class="channel">
-                <span class="channel-key">wechat</span>
+                <span class="channel-key">WeChat</span>
                 <span class="channel-val">shahkar_302</span>
               </span>
               <a class="channel" href="./assets/Shahkar%20Ahmad%20Shah.pdf" download="Shahkar_Ahmad_Shah_CV.pdf">
-                <span class="channel-key">cv</span>
+                <span class="channel-key">CV</span>
                 <span class="channel-val">Shahkar_Ahmad_Shah_CV.pdf</span>
                 <span class="channel-arrow" aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
 
-          <div class="panel form-panel reveal">
+          <div class="panel form-panel">
             <div class="panel-bar">
-              <span class="panel-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="panel-title">[ send_message ]</span>
-              <span class="panel-live"><span class="led" aria-hidden="true"></span>online</span>
-            </div>
+              <span class="panel-title">Send a message</span>
+              </div>
 
             <!-- INPUT C: paste your Formspree form ID into the action below. -->
             <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
               novalidate>
               <div class="field">
-                <label for="cf-name"><span class="field-prompt" aria-hidden="true">›</span> name</label>
+                <label for="cf-name">Name</label>
                 <input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2"
                   placeholder="your name" />
                 <p class="field-error" id="err-name" hidden></p>
               </div>
 
               <div class="field">
-                <label for="cf-email"><span class="field-prompt" aria-hidden="true">›</span> email</label>
+                <label for="cf-email">Email</label>
                 <input id="cf-email" name="email" type="email" autocomplete="email" required
                   placeholder="you@company.com" />
                 <p class="field-error" id="err-email" hidden></p>
               </div>
 
               <div class="field">
-                <label for="cf-message"><span class="field-prompt" aria-hidden="true">›</span> message</label>
+                <label for="cf-message">Message</label>
                 <textarea id="cf-message" name="message" rows="5" required minlength="12"
                   placeholder="what are you building?"></textarea>
                 <p class="field-error" id="err-message" hidden></p>
@@ -1924,9 +1818,8 @@
 
               <input type="text" name="_subject" value="Portfolio enquiry — shahkarahmad342@gmail.com" hidden />
 
-              <button class="btn btn--submit" type="submit" id="cfSubmit" data-magnetic>
+              <button class="btn btn--submit" type="submit" id="cfSubmit">
                 <span class="btn-label">Send message</span>
-                <span class="btn-prompt" aria-hidden="true">↵</span>
               </button>
 
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -1941,22 +1834,19 @@
   <footer class="site-footer">
     <div class="shell footer-grid">
       <a class="wordmark" href="#top">
-        <span class="wm-prompt" aria-hidden="true">›</span><span class="wm-user">shahkar</span><span
-          class="wm-at" aria-hidden="true">@</span><span class="wm-host">ai</span>
+        Shahkar Ahmad
       </a>
 
       <ul class="footer-links">
-        <li><a href="#about">about</a></li>
-        <li><a href="#work">work</a></li>
-        <li><a href="#stack">stack</a></li>
-        <li><a href="#journey">journey</a></li>
-        <li><a href="#credentials">credentials</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
       <p class="footer-note">
-        <span class="footer-status"><span class="status-dot" aria-hidden="true"></span> built with vanilla js · three.js
-          · no framework</span>
         © <span id="year">2026</span> Shahkar Ahmad
       </p>
     </div>

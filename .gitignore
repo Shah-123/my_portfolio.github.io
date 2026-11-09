@@ -1,6 +1,7 @@
 # Tooling / agent working dirs
 .claude/
 .qwen/
+skills-lock.json
 
 # OS noise
 .DS_Store

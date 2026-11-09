@@ -115,40 +115,11 @@ const CONFIG = {
     });
   }
 
-  /* ── HEADER STATE + SCROLL PROGRESS ────────────────────── */
-  function initScrollChrome() {
-    const header = $("#header");
-    const bar = $("#progress i");
-    let ticking = false;
-
-    const update = () => {
-      const y = window.scrollY;
-      if (header) header.classList.toggle("is-stuck", y > 24);
-      if (bar) {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.transform = `scaleX(${max > 0 ? clamp(y / max, 0, 1) : 0})`;
-      }
-      ticking = false;
-    };
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(update);
-        }
-      },
-      { passive: true }
-    );
-    window.addEventListener("resize", update, { passive: true });
-    update();
-  }
-
   /* ── ACTIVE NAV LINK ───────────────────────────────────── */
   function initActiveNav() {
     const links = $$(".nav-link");
-    const sections = $$("main section[id]");
+    // The hero has no nav link, so reaching it clears the highlight.
+    const sections = $$("main section[id], .hero");
     if (!links.length || !sections.length) return;
 
     const observer = new IntersectionObserver(
@@ -163,152 +134,6 @@ const CONFIG = {
     );
 
     sections.forEach((s) => observer.observe(s));
-  }
-
-  /* ── BOOT SEQUENCE ─────────────────────────────────────── */
-  const BOOT_LINES = [
-    { text: "> shahkar@ai:~$ init --profile=agentic", cls: "" },
-    { text: "  ok   runtime        vanilla-js", cls: "ok" },
-    { text: "  ok   renderer       webgl / three.js", cls: "ok" },
-    { text: "  ok   agent graph    10 nodes online", cls: "ok" },
-    { text: "  ok   retrieval      hybrid · bm25+dense", cls: "ok" },
-    { text: "> ready", cls: "dim" },
-  ];
-
-  function initBoot(done) {
-    const boot = $("#boot");
-    const log = $("#bootLog");
-    const bar = $("#bootBar");
-
-    let finished = false;
-    const finish = () => {
-      if (finished) return;
-      finished = true;
-      document.body.classList.add("boot-done");
-      window.setTimeout(() => {
-        document.body.classList.remove("booting", "boot-done");
-        if (boot) boot.setAttribute("aria-hidden", "true");
-      }, 560);
-      done();
-    };
-
-    // Never run twice in a session, and never run without motion.
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem("booted") === "1";
-      sessionStorage.setItem("booted", "1");
-    } catch (e) {
-      seen = true; // storage blocked — assume shown, don't trap the reader
-    }
-
-    if (!boot || !log || reduced || seen) {
-      finish();
-      return;
-    }
-
-    document.body.classList.add("booting");
-    boot.setAttribute("aria-hidden", "false");
-
-    // Hard failsafe: whatever happens, the overlay is gone in 2.5s.
-    const failsafe = window.setTimeout(finish, 2500);
-    ["keydown", "pointerdown", "wheel", "touchstart"].forEach((evt) =>
-      window.addEventListener(evt, finish, { once: true, passive: true })
-    );
-
-    const total = BOOT_LINES.length;
-    BOOT_LINES.forEach((line, i) => {
-      window.setTimeout(() => {
-        const span = document.createElement("span");
-        if (line.cls) span.className = line.cls;
-        span.textContent = line.text;
-        log.appendChild(span);
-        log.appendChild(document.createTextNode("\n"));
-        if (bar) bar.style.width = ((i + 1) / total) * 100 + "%";
-        if (i === total - 1) {
-          window.clearTimeout(failsafe);
-          window.setTimeout(finish, 260);
-        }
-      }, 130 + i * 150);
-    });
-  }
-
-  /* ── TYPING + REVEALS ──────────────────────────────────── */
-  function splitChars(el) {
-    const text = el.textContent;
-    el.textContent = "";
-    el.setAttribute("aria-label", text);
-
-    const chars = [];
-    [...text].forEach((ch) => {
-      const s = document.createElement("span");
-      s.className = "char";
-      s.setAttribute("aria-hidden", "true");
-      s.textContent = ch === " " ? "\u00A0" : ch;
-      el.appendChild(s);
-      chars.push(s);
-    });
-    return chars;
-  }
-
-  function runTyping() {
-    const termText = $(".term-text");
-    const words = $$(".hero-name .word");
-    const lede = $(".hero-lede");
-
-    if (reduced) {
-      if (lede) lede.classList.add("mask-reveal", "is-in");
-      return;
-    }
-
-    let cursor = 0;
-
-    if (termText) {
-      const chars = splitChars(termText);
-      chars.forEach((c, i) => {
-        window.setTimeout(() => c.classList.add("is-shown"), 60 + i * 26);
-      });
-      cursor = 60 + chars.length * 26;
-    }
-
-    words.forEach((word) => {
-      const chars = splitChars(word);
-      chars.forEach((c) => {
-        cursor += 34;
-        const at = cursor;
-        window.setTimeout(() => c.classList.add("is-shown"), at);
-      });
-      cursor += 90;
-    });
-
-    if (lede) {
-      lede.classList.add("mask-reveal");
-      window.setTimeout(() => lede.classList.add("is-in"), cursor + 60);
-    }
-  }
-
-  /* ── SCROLL REVEAL ─────────────────────────────────────── */
-  function initReveal() {
-    const items = $$(".reveal");
-
-    if (reduced) {
-      items.forEach((el) => el.classList.add("is-in"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries
-          .filter((e) => e.isIntersecting)
-          .forEach((entry, i) => {
-            entry.target.style.transitionDelay = Math.min(i * 70, 420) + "ms";
-            entry.target.classList.add("is-in");
-            obs.unobserve(entry.target);
-          });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
-    );
-
-    items.forEach((el) => observer.observe(el));
   }
 
   /* ── SKILL BARS ────────────────────────────────────────── */
@@ -750,66 +575,6 @@ const CONFIG = {
     });
   }
 
-  /* ── CUSTOM CURSOR ─────────────────────────────────────── */
-  function initCursor() {
-    if (reduced || !finePointer.matches) return;
-
-    const ring = $(".cursor-ring");
-    const dot = $(".cursor-dot");
-    if (!ring || !dot) return;
-
-    let mx = window.innerWidth / 2;
-    let my = window.innerHeight / 2;
-    let rx = mx;
-    let ry = my;
-
-    window.addEventListener(
-      "mousemove",
-      (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-        document.body.classList.add("cursor-ready");
-      },
-      { passive: true }
-    );
-
-    document.addEventListener("mouseleave", () => document.body.classList.remove("cursor-ready"));
-
-    const loop = () => {
-      rx += (mx - rx) * 0.17;
-      ry += (my - ry) * 0.17;
-      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-      dot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
-      requestAnimationFrame(loop);
-    };
-    loop();
-
-    const hot = "a, button, input, textarea, .case, .skill, .spec-row, .log-row, .board-cell, .cred";
-    document.addEventListener("mouseover", (e) => {
-      if (e.target.closest(hot)) document.body.classList.add("cursor-hot");
-    });
-    document.addEventListener("mouseout", (e) => {
-      if (e.target.closest(hot)) document.body.classList.remove("cursor-hot");
-    });
-  }
-
-  /* ── MAGNETIC BUTTONS ──────────────────────────────────── */
-  function initMagnetic() {
-    if (reduced || !finePointer.matches) return;
-
-    $$("[data-magnetic]").forEach((el) => {
-      el.addEventListener("mousemove", (e) => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) * 0.2;
-        const y = (e.clientY - r.top - r.height / 2) * 0.3;
-        el.style.transform = `translate(${x}px, ${y}px)`;
-      });
-      el.addEventListener("mouseleave", () => {
-        el.style.transform = "";
-      });
-    });
-  }
-
   /* ── CONTACT FORM ──────────────────────────────────────── */
   function initForm() {
     const form = $("#contactForm");
@@ -1234,9 +999,7 @@ const CONFIG = {
     initPendingLinks();
     initTheme();
     initMenu();
-    initScrollChrome();
     initActiveNav();
-    initReveal();
     initBars();
     initCounters();
     initCases();
@@ -1244,8 +1007,6 @@ const CONFIG = {
     initFilters();
     initTimeline();
     initPalette();
-    initCursor();
-    initMagnetic();
     initForm();
     initYear();
 
@@ -1254,22 +1015,15 @@ const CONFIG = {
       const panel = $("#graphPanel");
       if (panel) panel.classList.add("no-webgl");
     });
-
-    // Hero typing waits for the boot overlay so they don't fight.
-    initBoot(runTyping);
   }
 
   // Keep up if the user flips the OS motion setting mid-session.
   const onMotionChange = () => {
     reduced = motionQuery.matches;
     if (reduced) {
-      $$(".reveal").forEach((el) => el.classList.add("is-in"));
       $$(".bar").forEach((b) => b.classList.add("is-lit"));
-      $$(".char").forEach((c) => c.classList.add("is-shown"));
-      $$(".mask-reveal").forEach((m) => m.classList.add("is-in"));
       const fill = $("#timelineFill");
       if (fill) fill.style.setProperty("--fill", "1");
-      document.body.classList.remove("cursor-ready", "cursor-hot", "booting", "boot-done");
     }
   };
 
