@@ -507,7 +507,8 @@ const CONFIG = {
       { group: "navigate", icon: "06", label: "Contact", hint: "#contact", go: "#contact" },
 
       { group: "projects", icon: "›", label: "MootCourtSimulator — argue a case against AI agents", hint: "2026", go: "#project-mootcourt", open: true },
-      { group: "projects", icon: "›", label: "AI Content Factory — 10-agent pipeline", hint: "2025–26", go: "#project-content-factory", open: true },
+      { group: "projects", icon: "›", label: "Text-to-SQL with GRPO — execution-verified RL", hint: "2026", go: "#project-text2sql", open: true },
+      { group: "projects", icon: "›", label: "AI Content Factory — 10-agent pipeline (FYP)", hint: "2025–26", go: "#project-content-factory", open: true },
       { group: "projects", icon: "›", label: "Live Agent Hub — AI personas", hint: "2025", go: "#project-live-agent-hub", open: true },
       { group: "projects", icon: "›", label: "ChessMastermind — engine from scratch", hint: "2025", go: "#project-chess", open: true },
       { group: "projects", icon: "›", label: "YouTube Video Summariser", hint: "2024", go: "#project-yt", open: true },
@@ -518,6 +519,8 @@ const CONFIG = {
 
       { group: "skills", icon: "#", label: "LangGraph & LangChain", hint: "stack", go: "#stack" },
       { group: "skills", icon: "#", label: "Multi-agent workflows", hint: "stack", go: "#stack" },
+      { group: "skills", icon: "#", label: "LLM fine-tuning — LoRA, QLoRA, GRPO", hint: "stack", go: "#stack" },
+      { group: "skills", icon: "#", label: "Hugging Face PEFT & TRL", hint: "stack", go: "#stack" },
       { group: "skills", icon: "#", label: "Hybrid RAG & retrieval", hint: "stack", go: "#stack" },
       { group: "skills", icon: "#", label: "Model Context Protocol", hint: "stack", go: "#stack" },
       { group: "skills", icon: "#", label: "Python & TypeScript", hint: "stack", go: "#stack" },
